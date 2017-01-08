@@ -1,0 +1,215 @@
+-# Parte I - Hablemos de JavaScript
+
+# Introducción
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+## Sobre este libro
+
+He tenido grandes maestros, que me han enseñado mucho y he leído muchos libros sobre este mundillo... pero nunca he logrado dar con el libro que solucionará todas las dudas o me diera una base sólida sobre la que crecer en un lenguaje tan fascinante y estigmatizado como es JavaScript.
+
+Por eso, este libro esta escrito como me hubiera gustado que fueran aquellos que yo leía cuando empezaba a programar en JavaScript.
+
+Este libro que tienes ahora mismo ante tus ojos, es el resultado de mi esfuerzo personal, con el objeto de crear un instrumento sencillo y simple que muestre al lector la base de un lenguaje tan peculiar y extendido como JavaScript.
+
+Mi idea, es empezar desde cero y hacer un viaje juntos desde los abismos profundos de la duda, pasando por el pseudocódigo hasta llegar al maravilloso mundo de las *[llamadas Ajax](https://es.wikipedia.org/wiki/AJAX)*, haciendo muchas paradas en el camino, en las que aprenderemos todo lo que necesitas para empezar tu aventura como desarrollador *[Front-end](https://es.wikipedia.org/wiki/Front-end_y_back-end)* con sólidas bases en JavaScript.
+
+
+## Esto va de ser una comunidad
+
+Este libro esta licenciado bajo *[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)*, lo que permite compartir, distribuir, adaptarlo siempre y cuando no lo hagas con fines comerciales, atribuyas el crédito al autor y compartas las modificaciones bajo la misma licencia.
+
+
+Todo el código fuente, esta en *[este repositorio de GitHub](https://github.com/UlisesGascon/javascript-inspirate)*, desde este lugar espero poder ayudaros con las dudas que os puedan ir surgiendo, y también cuento con vuestras -siempre interesantes- aportaciones y sugerencias a través de *[estos issues](https://github.com/UlisesGascon/javascript-inspirate/issues)*
+
+Este libro es algo vivo y por ello estará evolucionando constantemente. Recuerda que tu puedes formar parte de todo esto, colaborando.
+
+Existen muchas formas de colaborar:
+
+- Avisando de los errores y de las posibles erratas que pudieses encontrar en el código.
+- Mejorando los ejemplos.
+- Traduciendo este libro a otros idiomas para que llegue a más lectores.
+- Compartiendo tus sensaciones en twitter con el hashtag *[#JavascriptInspirate](https://twitter.com/search?f=tweets&q=%23JavascriptInspirate&src=typd)*.
+
+Encontrarás más información en el archivo *[contributing.md](https://github.com/UlisesGascon/javascript-inspirate/blob/master/CONTRIBUTING.md)*, dentro de nuestro *[repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
+
+
+## ¿Qué necesito saber antes de empezar?
+
+No es necesario tener experiencia programando, pero si que es importante tener claro el contexto de cómo se hacen páginas web estáticas, ya que en la parte III nos centraremos en la manipulación dinámica del *[DOM](https://es.wikipedia.org/wiki/Document_Object_Model)* y las *[llamadas AJAX](https://es.wikipedia.org/wiki/AJAX)*.
+
+No me extenderé mucho acerca de *[HTML](https://es.wikipedia.org/wiki/HTML)* y *[CSS](https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada)*, por lo que espero que ya tengáis cierto conocimiento adquirido. Aunque vuestro nivel de conocimientos y experiencia sea relativamente bajo, hemos procurado evitar que esto sea un freno a tu aprendizaje en JavaScript.
+
+Si tienes experiencia en otros lenguajes de programación, jugarás con ventaja al principio, pero no te confies...
+
+Si ya has trabajado con *[JQuery](https://jquery.com/)* hablaremos de como hacer todo lo que haces con JavaScript en los últimos capítulos.
+
+## ¿Qué aprenderemos?
+
+- Pseudocódigo.
+- A pensar como un programador.
+- Trabajar fluidamente con funciones.
+- Dominar las bases de JavaScript (estructuras del lenguaje).
+- Ajax y sus peticiones.
+- Manipulación dinámica del DOM.
+
+
+## ¿Qué no aprenderemos?
+
+JavaScript es un universo inmenso que va creciendo a pasos agigantados con expansiones. Recuerda que la idea es sentar las bases del lenguaje, por lo que no veremos cosas como:
+
+
+Bases de datos
+
+: Ya sean *[SQL](https://es.wikipedia.org/wiki/Base_de_datos_relacional)* o *[NoSQL](https://es.wikipedia.org/wiki/NoSQL)*, es algo que no pretendemos tratar en este libro.
+
+
+Paradigmas  *[POO](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, *[Funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)*, etc...)
+
+: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScirpt, pero no iremos más allá.
+
+
+HTML5 APIs
+
+: Aunque hablaremos de pasada sobre cosas tan potentes como *[LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)*, queda muy lejos de las bases de JavaScript sobre las que queremos centrarnos.
+
+
+Regex (*[Expresiones Regulares](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular)*)
+
+: Es algo muy útil en el día a día, y será mencionado, pero solo por encima para entender como enfrentarnos a ello como desarrolladores noveles.
+
+
+Patrones de diseño (*[Decorator](https://en.wikipedia.org/wiki/Decorator_pattern)*, *[Façade](https://en.wikipedia.org/wiki/Facade_pattern)*...)
+
+: Son muchos *[los patrones](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)* que podemos aplicar a JavaScript para que nuestro código adquiera "super poderes", pero esto también queda muy lejos de nuestros objetivos.
+
+
+Testing
+
+: Uno de los pilares del buen código, es hacer testing o seguir filosofías como *TDD* o *TBD*. Pero para alguien que empieza en este mundillo, creo que sería un freno a tu aprendizaje.
+
+
+*[Git](https://git-scm.com/)* y *[Github](https://github.com/)*
+
+: Otra de las cosas sin las que uno no puede considerarse un desarrollador de verdad, si no sabe manejarse con fluidez en ello.
+
+
+Frameworks  *[Angular](https://angularjs.org/)*, *[React](https://facebook.github.io/react/)*, *[Polymer](https://www.polymer-project.org/1.0/)*, *[Backbone](http://backbonejs.org/)*, etc...)
+
+: *[La fiebre MV* de JavaScript](https://gist.github.com/g6scheme/4157554)* quedará fuera de este libro por motivos evidentes... pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
+
+
+Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
+
+: La idea de este libro es trabajar sobre JavaScript -vieja escuela-, al estilo de *[Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford)*. Por eso no trabajaremos con *[JQuery](https://jquery.com/)* directamente, ni con ninguna otra librería, aunque si recomendaremos otras muchas librerías.
+
+
+ECMAScript 6, ECMAScript 7
+
+: Aunque hablaremos de ciertas cosas que ha traído consigo *[ECMAScript 6](http://es6-features.org/#Constants)*, sin embargo nos centraremos en el clásico *[ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/)* (vigente desde 2011) con una *[compatibilidad nativa](http://kangax.github.io/compat-table/es5/)* envidiable.
+
+
+Node.js
+
+: Me encanta *[Node.js](https://es.wikipedia.org/wiki/Node.js)*, por tener todo el potencial de JavaScript, sin las restricciones del navegador... bucear en un *[mundo asíncrono](https://www.todojs.com/controlar-la-ejecucion-asincrona/)* de posibilidades infinitas donde puedes crear desde *[servidores Http](https://es.wikipedia.org/wiki/Servidor_web)*, hasta cosas tan alucinantes como *[robots](https://github.com/OSWeekends/OSWaldito/)*...
+
+: *[Node.js](https://es.wikipedia.org/wiki/Node.js)* da para una colección de libros por si mismo, y por ello queda muy lejos de nuestros objetivos.
+
+
+*[Gulp](http://gulpjs.com/)*, *[Grunt](http://gruntjs.com/)*, *[Broccoli](http://broccolijs.com/)*...
+
+: Aunque la automatización y la gestión de tareas es otra de las cosas que más me apasionan, queda también lejos de los objetivos que nos hemos marcado. ¡Lo siento!...
+
+De paso también me gustaría desmitificar algunas cosas:
+
+Matemáticas
+
+: Programar es hacer magia con máquinas, las matemáticas son opcionales...
+
+
+Matemáticas Avanzadas, Estadística, etc...
+
+: Para dominar los conocimientos y las técnicas de JavaScript, solo necesitas... saber sumar, restar, dividir y multiplicar... ¡solo eso!
+
+
+Física nuclear
+
+: Un poco de humor.
+
+
+*[Inteligencia Artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)*
+
+: Esto queda un poco lejos aún, pero sigue trabajando... ¡Padawan!
+
+
+
+## Importante
+
+
+Humor
+
+: Si no te ríes en algún momento mientras lees este libro.... claramente no es para ti y no he cumplido el reto de intentar enseñarte cosas alucinantes con un poco de humor :-D
+
+
+Cero coste, 0$
+
+: Este libro es completamente gratuito, con un doble objetivo, que nadie se quede sin aprender por no tener recursos y además para contribuir de este modo a la comunidad del *[software libre](https://es.wikipedia.org/wiki/Software_libre)*.
+
+: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propio plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
+
+
+Adaptable
+
+: En principio este libro esta disponible en tres formatos básicos *pdf*, *mobi*, *epub* y su código fuente esta en *[Markua](http://markua.com/)*. Pero partiendo del [repositorio en GitHub]() puede ser convertido a más formatos.
+
+
+Este libro esta vivo
+
+: Con el tiempo irá creciendo y mejorándose. Mantente al día desde su *[página oficial](https://leanpub.com/javascript-inspirate/)*
+
+
+Un mar de recursos
+
+: La mayoría de los links del libro, os dirigen a blogs técnicos y a la documentación oficial de *[Mozilla Developer Network](https://developer.mozilla.org/es/)*. Si un concepto resulta difícil de entender o deseas profundizar más... estos links pueden ser un buen punto de partida.
+
+
+Facilidades
+
+: La mayor parte del código está creado con la nomenclatura en español, para facilitar la comprensión y lectura por parte de nuevos desarrolladores. No obstante, recuerda que esto no está considerado una buena practica en entornos profesionales.
+
+
+¡A tu ritmo!
+
+: A lo largo del libro observaréis que hay numerosos ejemplos explicativos. Sin embargo no encontraréis ejercicios, para así hacer más ágil su lectura y para que os animéis a venir a una de las muchas reuniones de la comunidad (*[JS Dojo](https://www.meetup.com/es-ES/JS-Dojo-Madrid/)*, *[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*...) y practicar con proyectos de verdad y con el tiempo lleguéis a proponer vuestros propios proyectos dentro de la comunidad.
+
+
+## Convenciones utilizadas en este libro
+
+
+### Ejecuta el código
+
+Todos los ejemplos de código que veras en el libro tienen significado por si mismos y pueden ser ejecutados en la consola del navegador sin problema alguno, es más, os lo recomendamos encarecidamente.
+
+
+### Iconos utilizados en este libro
+
+I> Cuando veas este inoco sabrás que tendras un lugar desde el que ampliar conocimientos y profundizar un poco más en los conceptos del capítulo.
+
+
+W> Cuando veas este icono sabrás que debes prestar mucha atención, ya que se trata de un concepto clave para entender el capítulo en el que te encuentras.
+
+
+T> Cuando veas este icono sabrás que ese trata de un consejo que puedes seguir o no...
+
+
+{icon=users}
+G> Cuando veas este icono sabrás que estamos hablando de cosas relacionadas con la comunidad de desarrolladores.
+
+
+{icon=history}
+G> Cuando veas este icono sabrás que los enlaces te llevarán a *[web.archive.org](http://web.archive.org)*, la máquina del tiempo de Internet.
+
+
+{icon=book}
+G> Cuando veas este icono sabrás que ha llegado el momento de preparar un buen café y dedicar un tiempo a leer con calma los links y ver algunos vídeos también.

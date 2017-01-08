@@ -1,0 +1,351 @@
+# Capítulo 9 - Objetos
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+## *[Objetos Literales](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)*
+
+Junto a las funciones, de las cuales hablaremos en el próximo capítulo, los objetos son la clave para dominar el JavaScript de hoy.
+
+I> **Pero antes de nada aclaremos un concepto básico:**
+I>
+I> No es necesario saber *[programación orientada a objetos](https://es.wikipedia.
+I> org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, para trabajar con objetos.
+
+De hecho hasta la llegada de ECMAScript 6 no había algo como *[Class](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)*, ya que en JavaScript este paradigma se hace de otra forma, gracias a *[Protoype](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype)*.
+
+W> Pero... ¡no os agobiéis! con saber que no estamos haciendo *[Programación Orientada a Objetos
+W> (POO)](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*
+W> nos vale.
+
+Vamos a trabajar con *[Objetos (Objetos literales)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object)*, básicamente son como arrays, en el sentido que son una variable especial que nos permite almacenar muchas cosas dentro de si misma.
+
+A diferencia de las arrays, aquí las cosas tienen nombre (propiedades) y en caso de almacenar una función dentro del objeto recibirá el nombre de *Método*, aunque sea exactamente igual que una función normal.
+
+La forma de almacenar datos dentro de objetos, tiene mucha relevancia, y por eso la mayoría de servicios web basados en *[API REST](http://www.desarrolloweb.com/articulos/que-es-rest-caracteristicas-sistemas.html)*, dan soporte al formato de intercambio de datos *[JSON (JavaScript Object Notation)](https://es.wikipedia.org/wiki/JSON)*.
+
+JSON básicamente es un objeto de los que veremos a continuación, pero que fue serializado de tal forma que es una cadena de texto, que puede ser parseada de vuelta. Esta forma de trabajar es claramente más fácil que el clásico y obsoleto XML, para el intercambio de datos cliente-servidor en el contexto del desarrollo web.
+
+{pagebreak}
+
+## Manejo
+
+- **Creando un objeto**
+
+    Vacío:
+
+    {lang=js}
+    ~~~~~~~
+    var miObjeto = {};
+    ~~~~~~~
+
+    Con propiedades:
+
+    {lang=js}
+    ~~~~~~~
+    var miObjeto = {
+	    cadena: 'esto es una cadena',
+	    numero: 2,
+	    booleano: false
+	};
+    ~~~~~~~
+
+    Con Métodos:
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	    saludar: function(){
+			console.log("hola!");
+		}
+	};
+    ~~~~~~~
+
+- **Usando las propiedades y métodos**
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	// Recuperando el valor de propiedad1
+	console.log("miObjeto.propiedad1:", miObjeto.propiedad1);
+
+	// Ejecutando el método
+	miObjeto.metodo()
+    ~~~~~~~
+
+{pagebreak}
+
+- **Cambiar un valor de una propiedad**
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  propiedad1: "Datos"
+	};
+
+	miObjeto.propiedad1 = 123456789;
+
+	console.log(miObjeto.propiedad1);
+    ~~~~~~~
+
+- **Borrando elementos**
+
+    Utilizaremos el controvertido operador *[delete](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/delete)*. Te recomiendo *[esta lectura](http://perfectionkills.com/understanding-delete/)*, para mejorar tu comprensión acerca de este operador.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  propiedad1: "Datos",
+	  borrame: "Quiero ser borrado"
+	};
+
+	console.log(miObjeto.borrame);
+
+	delete miObjeto.borrame;
+
+	console.log(miObjeto.borrame);
+    ~~~~~~~
+
+## Métodos
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+- ***[.defineProperties()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/defineProperties)***
+
+	Define nuevas propiedades o modifica las existentes directamente en el objeto, retornando el objeto modificado.
+
+  I> Realmente nos permite llevar nuestros objetos mucho más allá. No obstante transciende de
+  I> nuestros objetivos, pero es un buen punto de partida.
+  I>
+  I> *[Más información](http://stackoverflow.com/a/18557503)...*
+
+    {lang=js}
+    ~~~~~~~
+    var miObjeto = {propiedad: "Propiedad original..."}
+	Object.defineProperties(miObjeto, {
+	  "propiedad1": {
+	    value: true,
+	    writable: true
+	  },
+	  "propiedad2": {
+	    value: "Cadena de texto",
+	    writable: false
+	  }
+	});
+	console.info(miObjeto);
+	miObjeto.propiedad = "Propiedad original Modificada";
+	console.info(miObjeto.propiedad);
+	miObjeto.propiedad2 = "Cadena de texto... ¿modificada?";
+	console.info(miObjeto.propiedad2);
+    ~~~~~~~
+
+- ***[.getOwnPropertyDescriptor()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/getOwnPropertyDescriptor)***
+
+	Devuelve los detalles de las propiedades y métodos del objeto. En caso de no existir retornará *undefined*.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	console.info(Object.getOwnPropertyDescriptor(miObjeto, 'propiedad1'));
+	// {value: "Datos", writable: true, enumerable: true, configurable: true}
+
+	console.info(Object.getOwnPropertyDescriptor(miObjeto, 'inventado'));
+	// undefined
+    ~~~~~~~
+
+- ***[.getOwnPropertyNames()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/getOwnPropertyNames)***
+
+	Devuelve un array con todos los nombres de las propiedades y métodos del objeto.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	console.log(Object.getOwnPropertyNames(miObjeto));
+	// ["metodo", "propiedad1"]
+	~~~~~~~
+
+- ***[.isExtensible()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/isExtensible)***
+
+	Determina si un objeto es extensible, es decir que se puedan agregar nuevas propiedades al mismo.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	console.log("¿Se puede extender?", Object.isExtensible(miObjeto));
+
+	var sellado = Object.seal(miObjeto);
+	console.log("¿Se puede extender?", Object.isExtensible(sellado));
+
+	var congelado = Object.freeze(miObjeto);
+	console.log("¿Se puede extender?", Object.isExtensible(congelado));
+
+	Object.preventExtensions(miObjeto);
+	console.log("¿Se puede extender?", Object.isExtensible(miObjeto));
+    ~~~~~~~
+
+
+- ***[.hasOwnProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)***
+
+	Devuelve true o false si la propiedad existe o no.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	console.log("¿Tiene la propiedad \"propiedad1\"?", miObjeto.hasOwnProperty('propiedad1'));
+	console.log("¿Tiene la propiedad \"propiedad2\"?", miObjeto.hasOwnProperty('propiedad2'));
+    ~~~~~~~
+
+
+{pagebreak}
+
+
+- ***[.propertyIsEnumerable()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)***
+
+	Devuelve true o false, si la propiedad especificada es enumerable, y con ello sabemos si será incluida en la iteración de un bucle *For... In*.
+
+    {lang=js}
+    ~~~~~~~
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos"
+	};
+
+	console.log("¿Es enumerable \"propiedad1\"?", miObjeto.propertyIsEnumerable('propiedad1'));
+	console.log("¿Es enumerable \"metodo\"?", miObjeto.propertyIsEnumerable('propiedad2'));
+    ~~~~~~~
+
+- ***[.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString)***
+
+	Retorna como string (configuración regional) todas las propiedades.
+
+    {lang=js}
+    ~~~~~~~
+	var fecha = new Date();
+
+	var miObjeto = {
+	  metodo: function() {
+	  	console.log(miObjeto.propiedad1)
+	  },
+	  propiedad1: "Datos",
+	  fecha: fecha
+	};
+
+	miObjeto.toLocaleString()
+	console.log("La fecha es ", miObjeto.fecha);
+    ~~~~~~~
+
+
+
+
+## Métodos Avanzados
+
+Algunos de los métodos más utilizados requieren comprender en profundidad el manejo de funciones y en especial el *retorno*.
+
+I> Como aún no hemos hablado de funciones, mi recomendación es leer por
+I> encima los siguientes métodos y su funcionamiento... para retornar más adelante a este capítulo.
+
+
+{pagebreak}
+
+- ***[For... in](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/for...in)***
+
+	Itera sobre todas las propiedades de un objeto, en un orden arbitrario.
+
+    {lang=js}
+    ~~~~~~~
+	var objeto1 = {
+		propiedad1: "hola",
+		propiedad2: 2,
+		propiedad3: false,
+		propiedad4: [true,2,5, "..."],
+		propiedad5: {
+			dato: "más datos..."
+		},
+		metodo: function(){
+			console.log("hola");
+		}
+	}
+
+	function mostrar_propiedades(objeto, nombreObjeto) {
+	   var resultado = "";
+	   for (var i in objeto) {
+	      resultado += nombreObjeto + "." + i + " = " + objeto[i] + "\n";
+	   }
+	   return resultado;
+	}
+
+	mostrar_propiedades(objeto1, "objeto1");
+    ~~~~~~~
+
+
+
+## Usos Especiales
+
+### Trabajando con espacios y caracteres especiales
+
+{lang=js}
+~~~~~~~
+var miObjeto = {
+	nombre: "objeto",
+    "año": 2015,
+    "estado del sistema": "correcto"
+};
+
+console.log(miObjeto["año"]);
+miObjeto["estado del sistema"] = "fuera de servicio";
+console.log(miObjeto["estado del sistema"]);
+~~~~~~~
+
+{pagebreak}
+
+
+### Acortar objetos
+
+En ocasiones, especialmente al parsear datos de internet en formato JSON, los objetos pueden estar muy anidados... dificultando enormemente el manejo. Por eso podremos considerar una buena práctica, acortarlos con nuevas variables o sobreescribir al propio objeto con aquellos datos relevantes:
+
+
+{lang=js}
+~~~~~~~
+var objetoAbreviado = objeto.muy.largo["metodos y propiedades"];
+
+objetoAbreviado.propiedad1;
+~~~~~~~
+
+## Estructuras de datos
+
+Un buen manejo de objetos, nos dará las llaves para poder tener una estructura de datos eficiente en nuestra aplicación y en las *[comunicaciones cliente-servidor](https://es.wikipedia.org/wiki/Cliente-servidor)*.
+
+I> Los objetos, sientan las bases sobre las que luego almacenaremos mucha más información, 
+I> en el capítulo 13, veremos mucho más sobre esto.

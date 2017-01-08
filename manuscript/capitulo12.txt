@@ -1,0 +1,329 @@
+# Capítulo 12 - AJAX y más AJAX
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+## Entendiendo HTTP/s
+
+Http *(Hypertext Transfer Protocol)* es un protocolo de comunicación que utilizamos en nuestro día a día. Una de sus características clave es que no *[mantiene el estado](https://es.wikipedia.org/wiki/Protocolo_sin_estado)*, que ocasiona que tengamos que buscar alternativas para ello como las *[cookies](https://en.wikipedia.org/wiki/HTTP_cookie)*, *[localStorage](https://developer.mozilla.org/es/docs/DOM/Almacenamiento)*, etc...
+
+Como curiosidad la versión más utilizada de este protocolo es la 1.1 de 1999, aunque recientemente, tenemos ya liberada la versión 2 que incluye muchas mejoras en el empaquetamiento y transporte de la información.
+
+La parte clave a la hora de entender este protocolo, es que sigue un esquema petición-respuesta entre cliente y servidor, que hace que tengamos que refrescar la página para poder recibir la nueva información. Tal como funcionaba la web a principios del dos mil...
+
+Si nos adentramos un poco más, veremos que esa peticion-respuesta, básicamente se compone de mensajes con una estructura muy determinada.
+
+
+Línea inicial
+
+: En la petición se especifica el método utilizado.
+
+: En la respuesta se especifica un código de respuesta.
+
+
+Cabecera
+
+: Podremos encontrar todos los metadatos propios de la petición y la respuesta.
+
+
+Cuerpo
+
+: Esta parte es opcional y contiene por ejemplo html, css... textos planos, lo que sea en si el mensaje desde el servidor, así como desde el cliente.
+
+
+### Métodos
+
+Cuando navegamos por la web utilizando el navegador por defecto, siempre estamos haciendo uso del método *GET*, pero existen gran cantidad de métodos con lo que poder hacer las peticiones.
+
+Esto es importante, ya que desde las peticiones AJAX podremos especificar el método que utilizaremos, con lo que si estamos trabajando con una API REST, veremos que existe cierta "correlación" entre las rutas y los métodos usados.
+
+Los métodos más utilizados son *GET*, *POST (típico de formularios)*, *PUT* y *DELETE*.
+
+
+### Códigos de error
+
+Cuando nos llega la respuesta del servidor, siempre viene acompañada de un código numérico que nos confirma el resultado de la petición, por ejemplo, el *[mítico error 404](https://www.genbeta.com/web/error-404-not-found-historia-y-hazanas-de-este-mitico-codigo)*, que nos habremos encontrado en multitud de ocasiones navegando por la red.
+
+Estos códigos de estado puede dividirse en cinco categorías principales:
+
+- 1xx **Informativas**.
+- 2xx **Peticiones Correctas**.
+- 3xx **Redirecciones**.
+- 4xx **Errores Cliente**.
+- 5xx **Errores Servidor**.
+
+Siendo especialmente importantes para nosotros, los 4xx y los 5xx, ya que nos indican errores que están sucediendo y esto seguramente derive en un tráfico de datos erróneo.
+
+
+I> Aquí podéis encontrar la *[lista de completa](https://es.wikipedia.
+I> org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)* y la *[especificación](https://tools.ietf.
+I> org/html/rfc2616#section-10)*.
+
+
+W> **Misterioso estado 418**
+W>
+W> Existen algunos códigos tan increíbles como *[418. I´m a teapot](http://www.josevazquez.net/codigo
+W> -de-estado-http-418-i%C2%B4m-a-teapot/)*.
+
+
+## Trabajando con APIs
+
+Es innegable que cada día es más popular, escuchar términos como *API*, *API REST*... esto se debe a la manera de hacer la web hoy en día, con un gran desacoplamiento de cliente y servidor, que permite a un mismo backend, dar soporte a multiples soluciones de front, ya sean web, móviles, *[Internet Of Things (IoT)](https://es.wikipedia.org/wiki/Internet_de_las_cosas)*... e incluso otros backends.
+
+Para hacer que todo esto fluya, es necesario comprender que juegan muchos factores claves como:
+
+- ***[API](https://es.wikipedia.org/wiki/Interfaz_de_programaci%C3%B3n_de_aplicaciones)***
+- ***[REST](https://es.wikipedia.org/wiki/Transferencia_de_Estado_Representacional)***
+- ***[SOAP](https://es.wikipedia.org/wiki/Simple_Object_Access_Protocol)***
+
+
+Normalmente en el mundo de la web cuando nos referimos a una API, casi siempre hablamos de una API REST, que nos permite a través de una serie de urls y siguiendo una *[metodología CRUD](https://www.wikiwand.com/es/CRUD)*, trabajar con un backend desde el cliente.
+
+Esto permite conseguir datos (peticiones GET), actualizar datos (peticiones PUT), crear nuevos datos (peticiones POST) y eliminar datos (Peticiones Delete).
+
+En la mayoría de los casos, el intercambio de información entre el cliente y servidor se realiza utilizando un formato de intercambio de datos conocido como JSON y no XML como antiguamente. De todo esto hablaremos a lo largo de este último capítulo.
+
+
+I> Para ilustrar un poco el ejemplo, te invito a visitar *[jsonplaceholder](https://jsonplaceholder.
+I> typicode.com/)* que es una especie de *[Lorem Ipsum](https://es.wikipedia.org/wiki/Lorem_ipsum)*
+I> para peticiones Ajax.
+
+
+Supongamos que nuestro backend es un blog, y queremos crear, leer, actualizar y borrar posts. Nuestras rutas serían algo así:
+
+Petición GET a *api.loremblog.com/posts*
+
+: Nos devuelve un JSON con todos los post disponibles.
+
+
+Petición POST a *api.loremblog.com/posts*
+
+: Nos crea una nueva entrada en la base de datos, con los datos en JSON que le hemos pasado
+
+
+Petición PUT a *api.loremblog.com/posts/hello*
+
+: Nos permite actualizar la entrada (numero/nombre hello) con los datos JSON que hemos pasado.
+
+
+Petición DELETE a *api.loremblog.com/posts/hello*
+
+: Nos permite borrar la entrada (numero/nombre hello).
+
+
+I> Partiendo de esta filosofía, podremos atrevernos con muchas APIs, tan divertidas como [Twitter](
+I> https://dev.twitter.com/), *[Facebook](https://developers.facebook.com/)*, *[Spotify](https://
+I> developer.spotify.com/web-api/)* e incluso *[Yahoo!](https://developer.yahoo.com/everything.html)*
+
+
+
+## Peticiones AJAX
+
+Ya hemos visto que las peticiones Ajax son la esencia en la web de hoy, pero siempre que las utilicemos, debemos recordar, que nosotros somos consumidores/generadores de datos y que nuestra aplicación, esta dependiendo de manera permanente de otros sistemas.
+
+Esto quiere decir, que puede haber errores en su código, que hagan que las respuestas a nuestras peticiones no traigan los datos como esperamos. Por tanto, tendremos que hacer un esfuerzo adicional para validar todos los datos que recibimos. En ocasiones la documentación sobre la API, puede ser poco precisa o estar desfasada... dejándonos en una situación muy comprometida.
+
+Pero la mayoría de servicios grandes o empresas que orientan sus líneas de negocio al API suelen dar un buen servicio. Recordar también que existen APIs de pago. En ocasiones esto puede resultar complicado, si estamos desarrollando, tenemos que hacer muchas consultas y se dispone de poco presupuesto.
+
+Nosotros recomendamos, crear un sistema de archivos JSON que almacene ciertos datos estáticos, que sean iguales o muy similares a los que esperamos recibir de la API. Así podremos maquetar y desarrollar sin consumir realmente llamadas. Esto es especialmente útil, para sistemas muy caros como APIs de *Inteligencia Artificial como Servicio (AIaaS)*.
+
+![Imagen de CommitStrip.com](images/ajax-loop.jpg)
+
+### Errores más comunes (por código)
+
+Referimos a continuación una lista de los errores más comunes, y de algunas soluciones cuando no encontramos mucha documentación disponible sobre una API en concreto.
+
+Respuesta 200
+
+: *OK*. Este es el código esperado... y todo marcha bien.
+
+
+Respuesta 204
+
+: *Sin contenido*. No hemos enviado los datos, pero la petición ha resultado exitosa, seguramente con datos por defecto.
+
+
+Respuesta 401
+
+: *No autorizado*. Hemos olvidado utilizar el token. O nuestro token no esta correctamente configurado.
+
+
+Respuesta 403
+
+: *Prohibido*. No tenemos el token/acceso correcto. Puede ser que intentemos modificar elementos que no sean de nuestra competencia, como la configuración de otros usuarios, etc...
+
+
+Respuesta 404
+
+: *No encontrado*. Hemos apuntado a una ruta que no existe. Revisa la documentación.
+
+
+Respuesta 409
+
+: *Conflicto, ya existe*. Hemos intentado crear dos veces el mismo elemento, esto suele pasar si realizamos una doble llamada Ajax, por error. Típico de peticiones *POST*.
+
+
+### *[JSON](http://www.wikiwand.com/es/JSON)*
+
+Antes de realizar nuestra primera llamada Ajax, veamos como trabajar con JSON.
+
+Para la visualización, validación y conversión dinámica de datos contamos con alguna herramientas muy Útiles.
+
+- *[JSONLint](http://jsonlint.com/)*
+- *[JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)*
+- *[Online JSON Viewer](http://jsonviewer.stack.hu/)*
+- *[JSON Editor](http://braincast.nl/samples/jsoneditor/)*
+
+I> Es importante recordar que algunas respuesta JSON, pueden contener hasta varios megas de
+I> información.
+I> Necesitaras herramientas de visualización adicionales más allá de la consola de tu
+I> navegador.
+
+El navegador nos aporta dos formas básicas de interactuar con datos JSON.
+
+- ***[JSON.parse()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/parse)***
+
+    Que analiza la cadena JSON, validándola y retornando los valores como un dato válido de JavaScript. Lo más habitual es un objeto o array.
+
+    {lang=js}
+    ~~~~~~~
+    var objeto = JSON.parse('{"test": true}');
+    var lista = JSON.parse('[true, "NO", 23]');
+    var booleano = JSON.parse('false');
+    var texto = JSON.parse('"cadena!"');
+    ~~~~~~~
+
+- ***[JSON.stringify()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/STRINGIFY)***
+
+    Analiza los valores y retorna una cadena en formato JSON.
+
+    {lang=js}
+    ~~~~~~~
+    var objetoJSON = JSON.stringify({"test": true});
+    var listaJSON = JSON.stringify([true, "NO", 23]);
+    var booleanoJSON = JSON.stringify(false);
+    var textoJSON = JSON.stringify("cadena!");
+    ~~~~~~~
+
+
+### Peticiones
+
+La mecánica de las peticiones es realmente sencilla. Simplemente necesitamos saber a que URL vamos a realizar la petición, que método vamos a utilizar (GET, POST, PUT o DELETE) y con que función (callback) manejaremos los datos de vuelta.
+
+I> Lógicamente las peticiones Ajax son asíncronas por naturaleza. Si aún tienes dudas, sobre los
+I> callbacks y el manejo de la sincronía, este es un gran momento para retroceder al capítulo
+I> anterior y repasar esos conceptos antes de seguir.
+
+Si estáis familiarizados con JQuery, las peticiones Ajax son algo muy trivial, gracias a *[jQuery.ajax()](http://api.jquery.com/jquery.ajax/)*. Veamos el siguiente ejemplo:
+
+
+{lang=js}
+~~~~~~~
+$.ajax({
+    dataType: "json",
+    url: "<---URL---->",
+})
+ .done(function( data, textStatus, jqXHR ) {
+     console.log( "La solicitud se ha completado correctamente." );
+     console.log( data );
+ })
+ .fail(function( jqXHR, textStatus, errorThrown ) {
+      console.log( "La solicitud a fallado: " +  textStatus);
+});
+~~~~~~~
+
+### No recargamos pero somos asíncronos.
+
+![Imagen de gemsres.com](images/ajax.jpg)
+
+Como puedes ver, ya no es necesario recargar la página como antes, ya que el navegador se encarga de hacer la petición y gestionarla en un segundo plano. Ahora veremos como se hace con *[Vanilla.js](http://vanilla-js.com/)*, verás que realmente se entiende mejor el proceso y parece menos *mágico* que con JQuery.
+
+
+#### Hablemos de *[XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)*
+
+Para poder realizar peticiones Ajax, de manera nativa, los navegadores implementan un objeto desde el que podremos realizar las peticiones, llamado *[XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)*.
+
+Tiene sus propios eventos:
+
+
+
+- *[loadstart](https://developer.mozilla.org/en-US/docs/Web/Events/loadstart)*
+- *[progress](https://developer.mozilla.org/en-US/docs/Web/Events/progress)*
+- *[abort](https://developer.mozilla.org/en-US/docs/Web/Events/abort)*
+- *[error](https://developer.mozilla.org/en-US/docs/Web/Events/error)*
+- *[load](https://developer.mozilla.org/en-US/docs/Web/Events/load)*
+- *[timeout](https://developer.mozilla.org/en-US/docs/Web/Events/timeout)*
+- *[loadend](https://developer.mozilla.org/en-US/docs/Web/Events/loadend)*
+- *[readystatechange](https://developer.mozilla.org/en-US/docs/Web/Events/readystatechange)*
+
+Y sus propios estados de petición:
+
+- 0 *uninitialized*
+- 1 *loading*
+- 2 *loaded*
+- 3 *interactive*
+- 4 *complete*
+
+Mejor veamos como funciona con un ejemplo real y luego explicamos como gestionar algo que parece tan complejo, pero que realmente es sencillo.
+
+Para este ejemplo hemos decidido traer los datos de la *[película Hackers](http://www.imdb.com/title/tt0113243/)*, que además os *[recomiendo ver](http://www.imdb.com/videoplayer/vi2444991257?ref_=tt_pv_vi_aiv_1)*.
+
+Para ello utilizaremos *[OMBd Api](https://www.omdbapi.com/)*... una vez leída la documentación, sabremos que solo necesitamos apuntar a esta url, *[http://www.omdbapi.com/?t=Hackers&y=&plot=short&r=json](http://www.omdbapi.com/?t=Hackers&y=&plot=short&r=json)*.
+
+{lang=js}
+~~~~~~~
+var url = "http://www.omdbapi.com/?t=Hackers&y=&plot=short&r=json";
+var xmlHttp = new XMLHttpRequest();
+
+xmlHttp.onreadystatechange = function() {
+
+    if (xmlHttp.readyState === 4)
+       if(xmlHttp.status === 200) {
+          console.info(JSON.parse(xmlHttp.responseText));
+       } else if (xmlHttp.status === 404) {
+          console.error("ERROR! 404");
+          console.info(JSON.parse(xmlHttp.responseText));
+    }
+};
+xmlHttp.open("GET", url, true);
+xmlHttp.send();
+~~~~~~~
+
+Viendo el código es mucho más sencillo...
+
+**Vamos por pasos:**
+
+1. *Línea 1:* Primero definimos la URL.
+2. *Linea 2:* Luego instanciamos *XMLHttpRequest*, igual que hacíamos con *Date* en capítulos anteriores.
+3. *Linea 4:* Cada vez que cambiemos de estado en nuestra petición Ajax, el navegador ejecutará *xmlHttp.onreadystatechange* .
+    1. *Linea 6:* Filtramos por el *xmlHttp.readyState*, y esperamos al 4 (completado).. obviando todo lo demás.
+    2. *Linea 7:* Una vez confirmamos que se terminó toda la gestión de Ajax, pasamos a analizar los datos recibidos. Filtrando por código de estado con *xmlHttp.status*, y parseando o alertando al usuario del error en función de las circunstancias.
+4. *Linea 14:* Abrimos la petición con la url y el método deseado.
+5. *Linea 15:* Ejecutamos la petición.
+
+
+### *[CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS)*
+
+Un problema clásico a tener en cuenta es la posibilidad de que *[CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS)*, no esté habilitado en el servidor.
+
+*[CORS](https://developer.mozilla.org/es/docs/Web/HTTP/Access_control_CORS)* básicamente, es un parámetro que se envía desde las cabeceras HTTP del servidor y nos permite realizar peticiones AJAX. Existen algunos sitios web, que a pesar de tener, una API funcionando no han habilitado esta configuración:
+
+{lang=text}
+~~~~~~~
+"Access-Control-Allow-Origin", "*"
+"Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept"
+~~~~~~~
+
+Y por ello, cualquier petición que hagamos desde el navegador cliente no podrá realizarse.
+
+La mejor solución, es comunicarnos con los responsables de la API y facilitarles *[este link](http://enable-cors.org/index.html)*, donde *[Monsur Hossain](http://monsur.hossa.in/)* y *[Michael Hausenblas](http://mhausenblas.info/)*, explican como realizar las configuraciones adecuadas en muchos entornos.
+
+Si por desgracia esta opción esta descartada, no pasa nada.... existen más posibilidades.
+
+La primera y más útil es crear/configurar/usar un *[proxy](https://es.wikipedia.org/wiki/Servidor_proxy)*. La idea del proxy, es que realice una petición capturando esos datos y enviándolos de nuevo, teniendo CORS habilitado en la cabecera, de tal forma que podremos hacer peticiones Ajax, aunque tengamos que pasar por nuestro servidor.
+
+Lógicamente nos plantea un problema de tráfico, en nuestro servidor y una lentitud en nuestras peticiones, pero al menos podremos hacer las peticiones.
+
+I> Antes de configurar un proxy, puedes usar *[Crossorigin](http://crossorigin.me/)* para prototipar
+I> -es un *[proyecto Open Source](https://github.com/technoboy10/crossorigin.me)*- y podrás
+I> adaptarlo fácilmente a tus necesidades.
