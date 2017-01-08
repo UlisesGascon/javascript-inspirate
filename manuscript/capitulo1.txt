@@ -1,0 +1,394 @@
+# Capítulo 1 - JavaScript de hace 10 minutos
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+
+I> **Batallitas del abuelo**
+I>
+I> En este capítulo hablaré de la historía de nuestra industria y como hemos llegado hasta donde estamos.
+I> Algunos lectores ya estareís familiarizados con esto y no necesitaís repasar nuestra historia.
+I> En tal caso... simplemente pasad al siguiente capítulo.
+
+Voy a contarte una historia que narra el sacrificio y la lucha diaria de un grupo inmenso de personas por todo el mundo que creyeron, que una idea tan genial como interconectar ordenadores podría llegar a ser la mejor forma de compartir el conocimiento de la humanidad, convirtiendo Internet en una maravillosa y muy valiosa herramienta para la humanidad.
+
+Para llegar hasta donde estamos hoy... mucha *[sangre de unicornio](http://www.forbes.com/sites/quora/2013/06/27/the-myth-of-the-myth-of-the-unicorn-designer/#3f34d3c83504)* se ha derramado.
+
+**Y ahora nos pondremos serios para hablar de nuestra industria.**
+
+## La historia de nuestra industria
+
+{icon=coffee}
+G> #### Lecturas recomendadas:
+G>
+G> - *[History of the Internet by Melih Bilgil](https://www.youtube.com/watch?v=9hIQjrMHTv4)*
+G> - *[What is the Internet? by Code.org](https://www.youtube.com/watch?v=Dxcc6ycZ73M)*
+
+[La Evolución de la web](http://www.evolutionoftheweb.com/?hl=es#/evolution/night) desarrollada por el *[equipo de Google Chrome](https://github.com/GoogleChrome)* es un portal que nos permite visualizar los hitos más importantes en la historia de la web desde 1991 hasta 2013.
+
+### 1991 - 1993
+
+Los primeros años de la web pasan en mucha calma. Se crea *[HTTP](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol)* y HTML1 dando el pistoletazo de salida para que empezara el mundo web. El primer navegador web gráfico, *[Mosaic](https://es.wikipedia.org/wiki/Mosaic)*.
+
+### 1994 - 1995
+
+Surgen los tres navegadores principales de la época; *[Netscape Navigator](https://es.wikipedia.org/wiki/Netscape_Navigator)*, *[Opera](https://es.wikipedia.org/wiki/Opera_(navegador))* e *[Internet Explorer](https://es.wikipedia.org/wiki/Internet_Explorer)*. Se oficializa HTML2 y rápidamente es sustituido por HTML3.
+
+Por primera vez se pueden usar *[cookies](https://es.wikipedia.org/wiki/Cookie_(inform%C3%A1tica))*, pero aún estábamos muy lejos de tener que poner *[disclaimers](http://ec.europa.eu/ipg/basícs/legal/cookies/index_en.htm)*, claro que por aquel entonces, internet era mucho más salvaje y menos regulado. En un intento firme para hacer la web más segura, y permitir cosas tan futuristas por aquel entonces como el comercio electrónico, se implementa la *[capa SSL](https://es.wikipedia.org/wiki/Transport_Layer_Security)* y asi se crea el *[HTTPS](https://es.wikipedia.org/wiki/Hypertext_Transfer_Protocol_Secure)*, *[IMAPS](https://es.wikipedia.org/wiki/Internet_Message_Access_Protocol)*, *[POP3S](https://es.wikipedia.org/wiki/Post_Office_Protocol)*, *[SMTPS](https://en.wikipedia.org/wiki/SMTPS)*, *[FTPS](https://en.wikipedia.org/wiki/FTPS)*, etc...
+
+
+Corría el año 1995, cuando *[Brendan Eich](https://es.wikipedia.org/wiki/Brendan_Eich)* creo Mocha, a petición de *[Netscape](https://es.wikipedia.org/wiki/Netscape_Navigator)* con la idea de tener algún lenguaje de programación disponible en la web (lado de cliente). Luego se renombraría como LiveScript, para finalmente ser JavaScript. Una estrategia de marketing dudosa, que sigue hoy en día sembrando dudas planteando que *[Java](https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n))* y JavaScript son cercanos o iguales, lo que es *[completamente falso](http://javascriptisnotjava.io/)*.
+
+Además a lo largo de ese año, comienza una escalada de problemas para todos los desarrolladores del mundo, conocido como *["Browser Wars"](https://es.wikipedia.org/wiki/Guerra_de_navegadores)* que hasta hoy en día, seguimos sufriendo sus efectos.
+
+Básicamente, cada navegador decide hacer las implementaciones de los distintos componentes que vendrán en los años venideros de manera diferente, lo que obligaba a los *[webmasters](https://es.wikipedia.org/wiki/Webmaster)* a tener que hacer su código compatible para todos los navegadores al mismo tiempo, replicando esfuerzos y entorpeciendo el trabajo diario. Si a esto le sumamos que por aquel entonces los navegadores no se autoactualizaban, llegamos así a una situación realmente compleja y atípica que podría haberse evitado... pero por aquel entonces Internet era tan solo un producto novedoso con el que no se sabía muy bien como se monetizaría nada.
+
+Para intentar recordar un poco como era navegar entonces, algunos nostálgicos recordarán la usabilidad de la web en aquella época, con contadores de visitas, gifs animados, fotografías pixeladas y mezclas de color únicas. Era la infancia de la web, y aún se puede recordar en sitios como *[The world's Worst Website Ever](http://theworldsworstwebsiteever.com/)*.
+
+![The world's Worst Website Ever - Logo](images/twwwe_logo.gif)
+
+Dejamos esta época de internet con *39,14 Millones* de usuarios.
+
+### 1996 - 1998
+
+Arrancó esta época con un número inicial de usuarios de 100 millones, para terminar con 183,91 millones.
+
+Internet Explorer introduce una nueva etiqueta html *[iframe](https://es.wikipedia.org/wiki/Iframe)*, que permite la carga de una página web dentro de otra.
+
+En esta época, todavía se maquetaban las paginas web *[dentro de tablas](http://www.desarrolloweb.com/articulos/maquetacion-tablas-html.html)*. Conceptos como *[hojas de estilos](https://es.wikipedia.org/wiki/Hoja_de_estilo)* estaban muy lejos de ser viables. Van surgiendo tecnologías claves para suplir carencias básicas de *interacción*,  *interconectividad* y *visualización*.
+
+En esta época surgen tecnologías como los *[Applets de Java](https://es.wikipedia.org/wiki/Applet_Java)*, *[Flash](https://es.wikipedia.org/wiki/Animaci%C3%B3n_Flash)*, etc...
+
+*[XML](https://en.wikipedia.org/wiki/XML)* se convierte en el formato de intercambio de datos más extendido.
+
+En cuanto a HTML, sigue evolucionando, pasando rápidamente a la version 3.1 y 4, permitiendo la separación de la parte visual con CSS2. Por primera vez contenido y disposición gráfica de la información se separan.
+
+Empieza la era dorada de Flash. Por el momento *[CSS](https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada)* solo es un chiste comparado con las capacidades de Flash.
+
+*Mosaic* muere en su versión 2.1, Internet empieza a ser un mercado potencial. Se crean los primitivos sitios web de Google, Yahoo!, Altavista y Amazon.
+
+{icon=history}
+G> #### Web Archive:
+G>
+G> - *[Google Prototipo en 1998](http://web.archive.org/web/19981111184551/http://google.com/)*
+G> - *[Google Beta en 1998](http://web.archive.org/web/19981202230410/http://www.google.com/)*
+G> - *[Amazon en 1998](http://web.archive.org/web/19981212012532/http://amazon.com/)*
+
+### 1999 - 2007
+
+Fueron tiempos locos... con el cambio de siglo, Internet se consolido creando la famosa *["Burbuja puntocom"](https://es.wikipedia.org/wiki/Burbuja_punto_com) que empezó a cocinarse entorno a 1997, pero que termino de explotar en 2001-2002*.
+
+Sobrevivimos *[al efecto 2000](https://es.wikipedia.org/wiki/Problema_del_a%C3%B1o_2000)*, con
+305,09 millones de usuarios.
+
+Internet Explorer introduce *[ActiveX](https://en.wikipedia.org/wiki/ActiveX)* en la web.
+Se introducen los primero borradores de Ajax. En 2006 se introduce en los navegadores *[XMLHTTPRequest2](https://www.w3.org/TR/XMLHttpRequest2/)* y empieza la navegación asíncrona, lo que permite crear webs realmente dinámicas, que no necesitan una gran renderización en el lado del servidor.
+
+Esto hace posible la mejora en el desarrollo de las primeras *[plataformas de redes sociales (Web 2.0)](https://es.wikipedia.org/wiki/Web_2.0)*. Poco a poco en esta época, el peso de JavaScript va creciendo, ya que gran parte del procesamiento pronto se hará en el lado del cliente.
+
+En la parte más visual se empieza a introducir de manera experimental conceptos como *[SVG](https://es.wikipedia.org/wiki/Scalable_Vector_Graphics)* y *[Canvas](https://es.wikipedia.org/wiki/Canvas_(HTML))*.
+
+Aparecen en escena Facebook, Twitter, Linkedin, Youtube, etc... creando el embrión de lo que luego serían otras redes sociales.
+
+Aparece *[JQuery](https://es.wikipedia.org/wiki/JQuery)*, una librería para JavaScript que cambió para siempre la forma de interactuar entre JavaScript y HTML/CSS. En los años venideros, muchos maquetadores utilizarán esta librería como puerta de entrada a JavaScript.
+
+La época dorada del *[PHP (pre-Wordpress)](https://es.wikipedia.org/wiki/PHP)*, como motor de innovación para la web con proyectos como *[PHPBB](https://es.wikipedia.org/wiki/PhpBB)*, llegará a su fin.
+
+Con la llegada de *[Wordpress](https://es.wikipedia.org/wiki/WordPress)* (2003), *[Joomla](https://es.wikipedia.org/wiki/Joomla)* (2005), etc...   la web sufrirá en años sucesivos un cambio drástico.
+
+Los proyectos se dividirán en aquellos que puedan ser realizados con un *[CMS](https://es.wikipedia.org/wiki/Sistema_de_gesti%C3%B3n_de_contenidos)* (principalmente en PHP) y otros que necesitarán de un trabajo a medida.
+
+El mítico Netscape se despide para siempre con la versión 9 y nace Firefox.
+
+Termina 2007 con 1.500 millones de usuarios en Internet.
+
+{icon=history}
+G> #### Web Archive:
+G>
+G> - *[Amazon en 2000](http://web.archive.org/web/20000229081105/http://www.amazon.com/exec/obidos/subst/home/home.html)*
+G> - *[Google en 2000](http://web.archive.org/web/20001027222150/http://www.google.com/)*
+G> - *[Google en 2005](http://web.archive.org/web/20051114081503/http://www.google.com)*
+G> - *[Facebook en 2005 (AboutFace)](http://web.archive.org/web/20050213040632/http://facebook.com/)*
+G> - *[Facebook en 2005](http://web.archive.org/web/20051020000116/http://www.facebook.com)*
+G> - *[Amazon en 2005](http://web.archive.org/web/20051126094753/http://www.amazon.com/exec/obidos/subst/home/home.html)*
+G> - *[Youtube en 2005](http://web.archive.org/web/20050428014715/http://www.youtube.com/)*
+
+
+### 2008 en adelante...
+
+Empieza una nueva era... lo nativo va poco a poco desterrando las soluciones arcaicas y obsoletas como Applets, Flash, ActiveX...
+
+HTML5 y CSS3 dan el empujón que hacía falta para que la web despegara. *[Chrome](https://es.wikipedia.org/wiki/Google_Chrome)* nace justo aprovechando estos cambios de paradigma.
+
+Todo aquello que podia hacerse con Flash, ahora podrá hacerse mejor y más rápido de manera nativa juntando las tres fuerzas más imponentes de la web, CSS3, HTML5 y JavaScript.
+
+Se abre el desarrollo hacia una web mucho más *[semántica](https://es.wikipedia.org/wiki/Web_sem%C3%A1ntica)* con *[filosofías responsive](https://es.wikipedia.org/wiki/Dise%C3%B1o_web_adaptable)*, y empieza la era del "Internet en la palma de la mano" con los *[smartphones](https://es.wikipedia.org/wiki/Tel%C3%A9fono_inteligente)*.
+
+La popularidad y capacidad de la nueva Internet ocasionarán un cambio de paradigma que trastocará todo. Poco a poco, las aplicaciones de escritorio serán sustituidas por aplicaciones web, ocasionando una migración masiva de desarrolladores hacia el trio de la web (HTML, CSS y JavaScript).
+
+A lo largo de los años siguientes, serán muchas las empresas que decidan dar soporte a JavaScript en sus productos para asegurarse acceder a una masa crítica de programadores, este es el caso de los *[scripts para Photoshop](http://www.adobe.com/devnet/photoshop/scripting.html)*, *[Unity](https://unity3d.com/es/learn/tutorials/topics/scripting/c-vs-js-syntax)*, etc...
+
+También veremos que la complejidad de conseguir desarrolladores de APPs Nativas (*[Java](https://es.wikipedia.org/wiki/Java_(lenguaje_de_programaci%C3%B3n))*, *[Swift](https://es.wikipedia.org/wiki/Swift_(lenguaje_de_programaci%C3%B3n))* y *[Objetive-c](https://es.wikipedia.org/wiki/Objective-C)*) forzará a que lleguen los sistemas híbridos, donde JavaScript, HTML y CSS serán todo el conocimiento necesario para entrar en el mundo de los smartphones, gracias a soluciones como *[PhoneGap](https://es.wikipedia.org/wiki/PhoneGap)*.
+
+La fiebre por extender JavaScript, irá mucho más allá de lo imaginado y encontrará en *[Node.js](https://es.wikipedia.org/wiki/Node.js)* la pieza que faltaba para encajar en ciertos entornos como las *[aplicaciones de escritorio](http://electron.atom.io/)*, o la gestión de redes.
+
+Todo ello, permite que JavaScript deje de ser un lenguaje exclusivo de la web para ir mucho más allá, adentrándose incluso en el desarrollo del *[Internet of Things (IoT)](https://es.wikipedia.org/wiki/Internet_de_las_cosas)* y la *[Robótica](https://es.wikipedia.org/wiki/Rob%C3%B3tica)* con librerías como *[Cyclon.js](https://cylonjs.com/)*, *[J5](http://johnny-five.io/)*, etc...
+
+Internet de *[alta velocidad](https://es.wikipedia.org/wiki/L%C3%ADnea_de_abonado_digital_asim%C3%A9trica)* y la *[fibra óptica](https://es.wikipedia.org/wiki/Fibra_%C3%B3ptica)* supusieron una gran mejora en las comunicaciones, lo que ayudó a crear una Internet mucho más rica en contenido. En 2011 ya se manejaban 27.483 PB/mes, frente a los 10.000 PB/mes de 2007. La logística y las telecomunicaciones jugarán un papel importantisimo en el futuro desarrollo de nuestro planeta.
+
+
+{icon=history}
+G> #### Web Archive:
+G>
+G> - *[Google en 2010](http://web.archive.org/web/20101130235215/http://www.google.com/)*
+G> - *[Google en 2015](http://web.archive.org/web/20151215000203/http://www.google.com/)*
+G> - *[Amazon en 2010](http://web.archive.org/web/20101126032341/http://www.amazon.com/)*
+G> - *[Amazon en 2015](http://web.archive.org/web/20151127000839/http://www.amazon.com/)*
+G> - *[Youtube en 2010](http://web.archive.org/web/20100914234459/http://www.youtube.com/)*
+G> - *[Youtube en 2015](http://web.archive.org/web/20151115000036/https://www.youtube.com/)*
+G> - *[Facebook en 2010](http://web.archive.org/web/20100110004754/http://www.facebook.com/)*
+G> - *[Facebook en 2015](http://web.archive.org/web/20150731235552/https://facebook.com/)*
+
+
+## El largo camino del Developer
+
+Este esquemático *[mapa mental](https://coggle.it/diagram/WF5nS6mGe9w7iwoZ)*, puede ayudaros a visualizar lo que esta ocurriendo hoy en día en la web, y comprender como los profesionales de la industria, hemos ido migrando de nombres y funciones hasta donde estamos ahora mismo, que no es definitivo y lógicamente seguirá evolucionando.
+
+### Una historia de evolución
+
+Muy lejos quedan los tiempos en los que ser *[Webmaster](https://es.wikipedia.org/wiki/Webmaster)* era suficiente para gestionar todo lo que tenia que ver con la web, desde programación a gestión de los usuarios, pasando por el primitivo Marketing de la época.
+
+La web fue evolucionando rápidamente a nivel de desarrollo, aquel *webmaster* multiusos, paso a dividirse en dos grandes y muy diferenciados roles:
+
+Diseño
+
+: Encargado de hacer los diseños básicos con algún programa de la *[suit de Adobe](https://es.wikipedia.org/wiki/Adobe_Creative_Suite)* o similar.
+
+: En ocasiones también se encargaba de la parte de Flash, para crear animaciones y transiciones.
+
+
+Programación
+
+: Realizaba todas las tareas de desarrollo: JavaScript, PHP, Bases de datos, formularios, *[hosting](https://es.wikipedia.org/wiki/Alojamiento_web)*, etc... Las webs de entonces no eran muy complejas, gran parte de la lógica se hacía en el servidor y el verdadero reto era lograr los objetivos con la tecnología de la época.
+
+Aquellos eran los viejos tiempos... era como construir los primeros aviones. Materiales como la tela y madera servían para construir todo el entramado del fuselaje, un motor potente, unos controles sencillos y ya estabas volando.
+
+
+A medida que la web fue evolucionando, su complejidad también creció exponencialmente, y como consecuencia inmediata, la programación se dividió en dos grandes áreas.
+
+Diseñador/Maquetador
+
+: Antes con el diseño era suficiente. Pero poco a poco, el diseñador va asumiendo competencias básicas, para descargar de trabajo meramente estático a los programadores, que se centrarían en hacer la parte menos visual.
+
+: Ahora el diseñador tomará la iniciativa y convertirá los diseños en HTML y CSS.
+
+
+Front-End developer
+
+: Algunos desarrolladores, deciden que asumirán las funciones de interacción del lado del cliente (JavaScript) y dejando el servidor. En muchas ocasiones, el diseño quedará fuera de sus competencias.
+
+: A medida que JavaScript dejó de usarse solo para interpretación y empezó a ganar fuerza frente al renderizado total de datos en el servidor, se migrará de JQuery hacia JavaScript nativo y a las librerías MV* como Angular, Backbone, Ember...
+
+
+Back-End developer
+
+: El desarrollo en el servidor también sufrirá muchos cambios. Poco a poco, se migrará de proyectos web que basan la mayor parte de su programación en el renderizado de HTML, CSS y JavaScript, desde el servidor a la creación de *[APIs](https://es.wikipedia.org/wiki/Interfaz_de_programaci%C3%B3n_de_aplicaciones)*, donde prima el aislamiento del procesamiento de la información.
+
+: En cuanto a lenguajes de programación, poco a poco se irá viendo que más y más sistemas y lenguajes se esforzarán por entrar en el mundo de internet con nuevas librerías y arquitecturas. *[Apache](https://es.wikipedia.org/wiki/Servidor_HTTP_Apache)* logra hacer de puente para muchos, pero a la larga surgirán alternativas.
+
+: Mientras tanto, muchas iniciativas asaltan la web con ideas innovadoras como *[desarrollo ágil](https://es.wikipedia.org/wiki/Desarrollo_%C3%A1gil_de_software)*, *[eXtreme Programming (XP)](https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema)*.
+
+: El *[software libre](https://es.wikipedia.org/wiki/Software_libre)* acabó convirtiéndose en el standard dentro del sector gracias al *[mítico LAMP](https://es.wikipedia.org/wiki/LAMP)*.
+
+: Las bases de datos también evolucionarán y tendremos que convivir con dos maneras de entender el almacenaje, *[SQL](https://es.wikipedia.org/wiki/SQL)* y *[NoSQL](https://es.wikipedia.org/wiki/NoSQL)*. Lo que supondrá una dificultad añadida para el desarrollo de nuevos proyectos.
+
+: Otras áreas como la *[inteligencia artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)* y *[Big data](https://es.wikipedia.org/wiki/Big_data)* irán poco a poco demandando su hueco, por lo que dentro del backend iremos viendo nuevas áreas de especialización.
+
+
+Full Stack Developer
+
+: Surge una nueva clase de desarrolladores, que por avatares del destino no se encasillan en el *back* o en el *front*.
+
+: Y serán capaces de adentrarse en ambos mundos y suplir las necesidades de los equipos en estos dos frentes. Cada Full Stack Developer será diferente, cada uno será especialista en unas areas, y en otras pasará de largo.
+
+
+Mantenerse al día en la industria es cada vez más difícil. En cuestión de unos pocos años pasamos de construir aquellos aviones básicos con tela y madera a desarrollar cohetes capaces de *[surcar una galaxia](https://twitter.com/CodingCarlos/status/812977512296906752)*.
+
+Nuestra industria se vio totalmente superada. El crecimiento de Internet no era ni de lejos acorde a la cantidad de profesiones capaces de suplir esta demanda. Esto creó un *efecto llamada* que desató la llegada de muchos nuevos desarrolladores, que no sienten esta profesión con la pasión de aquellos que empezamos a construir un Internet mejor, nosotros realmente creíamos en lo que hacíamos y como lo hacíamos.
+
+La asimilación de programadores obsoletos de otras áreas y ajenos a la industria, condicionará mucho la manera de trabajar, especialmente con JavaScript.
+
+Básicamente podría decirse que esta industria se divide entre artesanos y mercenarios.
+
+
+### Una realidad caótica.
+
+A medida que esto crece, las barreras para entrar en la industria o cambiar de rol dentro de ella, aumentan.
+
+Para hacernos una ligera idea de lo que necesitamos saber en las diversas áreas, os dejo este *[esquema](https://coggle.it/diagram/WF5nS6mGe9w7iwoZ)*.
+
+**Cosas que todos deberíamos saber**
+
+- Manejo de Git/Github.
+- Entender como funciona HTTP y las APIs.
+- Manejo básico de terminal/consola.
+- Trabajar con FTP.
+- Manejo de SSH.
+
+{pagebreak}
+
+**¿Qué se espera de un Front-End Junior?**
+
+- Conocimiento bueno de HTML5.
+- Conocimiento bueno de CSS3.
+- Bases de testing.
+- Llamadas AJAX.
+- Trabajo con librerías como JQuery.
+- Conocimientos básicos de alguna librería MV*.
+
+**¿Qué se espera de un Front-End Senior?**
+
+- Lo mismo que de un Junior, pero en mayor profundidad y con experiencia.
+- Gestión de tareas  *[Gulp](http://gulpjs.com/)*, *[Grunt](http://gruntjs.com/)*, etc...).
+- *[Preprocesadores CSS](https://abalozz.es/que-es-un-preprocesador-de-css/)*.
+- Trabajo con *[Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)*.
+- Dominio del desarrollo Responsive.
+- Gestión de dependencias  *[RequireJS](http://requirejs.org/)*, *[Webpack](https://webpack.github.io/)*, *[Browsefy](http://browserify.org/)*, etc..).
+- Dominio/manejo fluido de un framework MV*.
+- Conocimientos de Node.js.
+- Conocimientos muy sólidos de JavaScript  *[Patrones de diseño](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)*, ES6, etc..).
+- Conocimientos avanzados sobre HTML5 APIs.
+- Buenas prácticas (documentación, *[refactorización](https://es.wikipedia.org/wiki/Refactorizaci%C3%B3n)*, etc...).
+
+
+**¿Qué se espera de un Back-End Junior?**
+
+- Conocimientos sólidos de programación (Algorítmia, lógica, etc...).
+- Saber trabajar con bases de datos relaciones y/o no relacionales.
+- Bases de una buena arquitectura (modularidad, *[microservicios](https://www.genbetadev.com/paradigmas-de-programacion/trabajar-con-microservicios-evitando-la-frustracion-de-las-enormes-aplicaciones-monoliticas)*, etc...).
+- Bases de nuevas arquitecturas  *[NoBackend](http://nobackend.org/)*, *[Serverless](https://en.wikipedia.org/wiki/Serverless_computing)*, *[WebSockets](https://es.wikipedia.org/wiki/WebSocket)*, etc...).
+- Desarrollo de aplicaciones seguras.
+- Conocimientos de protocolos como *[OAuth](https://es.wikipedia.org/wiki/OAuth)*, HTTP (server side), etc..
+- Al menos un lenguaje de programación con un buen nivel.
+- Trabajar con fluidez con un motor de plantillas.
+- Bases de HTML5 y CSS3.
+
+
+
+**¿Qué se espera de un Back-End Senior?**
+
+- Lo mismo que de un Junior, pero en mayor profundidad y con experiencia.
+- Despliegue en Servidores y servicios en la nube.
+- Al menos dos lenguajes de programación de Backend.
+- Buen nivel de JavaScript.
+- Bases de Node.js para la automatización  *[Yeoman](http://yeoman.io/)*, *[Gulp](http://gulpjs.com/)*, etc..).
+- Bases de la Integración continua  *[Jenkins](https://jenkins.io/)*, *[TravisCI](https://travis-ci.org/)*, etc...).
+- Experiencia con varias bases de datos diferentes.
+- Gestión de cacheo  *[Nginx](https://www.nginx.com/)*, etc...).
+- Creación de APIs.
+- Integración con otras plataformas y servicios.
+- *[Shell Scripting](https://en.wikipedia.org/wiki/Shell_script)*.
+
+
+
+
+### En el centro del huracán: JavaScript
+
+{icon=coffee}
+G> #### Lecturas recomendadas:
+G>
+G> - *[The Deep Roots of Javascript Fatigue by Calvin French-Owen](https://segment.com/blog/the-deep-roots-of-js-fatigue/)*
+G> - *[El estado del desarrollo Front-End en 2015 por Ashley Nolan](http://ashleynolan.co.uk/blog/frontend-tooling-survey-2015-results)*
+G> - *[How it feels to learn JavaScript in 2016 by Jose Aguinaga](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f#.3zltfkmkn)*
+G> - *[State of js](http://stateofjs.com/)*
+G> - *[How to avoid JavaScript fatigue and sleep well at night by Josh Mock](https://www.youtube.com/watch?v=T8Qb2fVE0rU&feature=player_embedded)*
+G> - *[The Magpie Developer](http://blog.codinghorror.com/the-magpie-developer/)*
+G> - *[The Sad State of Web Development](https://medium.com/@wob/the-sad-state-of-web-development-1603a861d29f#.62up3vtl1)*
+G> - *[A response to The Sad State of Web Development — Its not about Javascript really](https://www.reddit.com/r/programming/comments/40rwrk/a_response_to_the_sad_state_of_web_development/)*
+G> - *[How one developer just broke Node, Babel and thousands of projects in 11 lines of JavaScript](http://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)*
+G> - *[Is left-pad Indicative of a Fragile JavaScript Ecosystem?](http://developer.telerik.com/featured/left-pad-indicative-fragile-javascript-ecosystem/)*
+G> - *[Overcoming JavaScript Fatigue](http://developer.telerik.com/topics/web-development/overcoming-javascript-fatigue/)*
+G> - *[¿Y si el software Open Source desapareciera?](http://www.xataka.com/servicios/y-si-el-software-open-source-desapareciera)*
+
+Para los desarrolladores de JavaScript, todo ha sido complicado, ya que el crecimiento exponencial de las necesidades de todo Internet ha pasado por este lenguaje.
+
+Al ser el único lenguaje que se puede ejecutar en el navegador, muchos desarrolladores han tenido que pasar por el aro y aprenderlo.
+
+Otros muchos, han tenido que crear librerías y frameworks para intentar hacerlo más sencillo y ágil.
+
+Estos y más factores, han hecho que lleguemos a un punto de no retorno que oficialmente se conoce como *[JavaScript Fatigue](https://twitter.com/search?q=jsfatigue&src=typd)*.
+
+![Imagen de CommitStrip.com](images/js_frameworks_commitstrip.jpg)
+
+
+Durante estos años *[JavaScript se hace adulto](https://www.youtube.com/watch?v=ztspvPYybIY)* de la mano de *[Ryan Dahl](https://www.linkedin.com/in/ryan-dahl-a30235b4/)* cuando se libera *[Nodejs](https://nodejs.org/en/)*.
+
+Node.js supone un antes y un después en toda la industria. No solo para los desarrolladores de JavaScript, ya que Node.js no es únicamente un entorno para desarrollar *[servidores de internet clásicos (Http)](https://es.wikipedia.org/wiki/Servidor_web)*. Ya que su fuerte está en los nuevos paradigmas que maneja.
+
+Cosas como la asincronía, la orientación a eventos y el paralelismo... lo convierten rápidamente en uno de los entornos de desarrollo más rápido.
+
+Que fuera multiplataforma, se basará en el *[motor V8 de Google](https://developers.google.com/v8/)* e incluyera un gestor de paquetes tan evolucionado como *[NPM](https://www.npmjs.com/)*, hacen de Node.js una herramienta ideal para hacer cosas tan diversas como aplicaciones de red, automatización de tareas, etc...
+
+I> #### *[IO.js](https://iojs.org/es/)*
+I>
+I> Y no tardaron mucho en llegar los *[#jsDramas](https://twitter.
+I> com/hashtag/jsDrama?src=hash)* cuando la comunidad de Nodejs decide separarse en dos, *[IO
+I> .JS](https://iojs.org/es/)* y Nodejs.
+I>
+I> Creando una brecha que muchos consideraron insalvable. Al final Node.js reabsorbe a IO.js
+I> y acepta todos los cambios y la evolución que se deseaba originalmente.
+I>
+I> *[Mas información...](http://www.genbetadev.com/actualidad/tiempos-turbulentos-para-la-
+I> comunidad-node-js-ha-nacido-io-js)*
+
+A su vez, Node.js crea un peculiar efecto de absorción y fusionamiento de roles entre el frontEnd y backEnd, ya que ahora no existe una barrera de lenguaje real entre el back y el front. Solo es necesario aprender Node.js para entrar en el mundo del back.
+
+Como consecuencia se crean nuevos developers de JavaScript, a los que cada vez más, se les exige conocer y manejarse con Node.js.
+
+
+## Revolución... ¡Revolución!
+
+{icon=coffee}
+G> #### Lecturas recomendadas:
+G>
+G> - *[History of Gnu, Linux, Free and Open Source Software (Revolution OS)](https://www.youtube.com/watch?v=sujZg7jwKdk)*
+G> - *[Platform as a service (PaaS)](https://en.wikipedia.org/wiki/Platform_as_a_service)*
+G> - *[Manifiesto por el Desarrollo Ágil del Software](http://agilemanifesto.org/iso/es/)*
+
+
+A lo largo de estos años, muchas cosas han cambiado en el mundo del desarrollo del software.
+
+Para empezar se crearon nuevas maneras de entender el entorno de desarrollo. Ya no solo basta con crear nuestro código y subirlo al servidor *[vía FTP](https://es.wikipedia.org/wiki/File_Transfer_Protocol)* sin más.
+
+![Imagen de z2-environment](images/dev_test_prod.png)
+
+Ahora es importante seguir una filosofía de desarrollo más compleja, donde debemos usar un *[control de versiones](https://es.wikipedia.org/wiki/Control_de_versiones)* como *[Git](https://git-scm.com/)*.
+
+
+Nuestro entorno local ya no se conectará directamente al servidor de producción para subir los cambios en los proyectos, pasaremos primero por el entorno de testing, y una vez sepamos que todo funciona como debería, será subido a producción.
+
+Las subidas a producción, deberán de ser frecuentes, ya no será necesario tener una *[release](http://semver.org/lang/es/)* completa para hacer subidas a producción.
+
+Entramos en la era del desarrollo ágil, la *[programación extrema](https://es.wikipedia.org/wiki/Programaci%C3%B3n_extrema)* y la *[computación en la nube](https://es.wikipedia.org/wiki/Computaci%C3%B3n_en_la_nube)*. El tener servidores físicos en los sótanos de la empresa, se eliminará a favor de sistemas como *[Google Cloud](https://cloud.google.com/)*, *[Amazon Web Services](https://aws.amazon.com/es/)*, *[Heroku](https://dashboard.heroku.com/)* u otros proveedores.
+
+Todo será mucho más modular y escalable, todo estará mucho más interconectado, el *[login social](https://en.wikipedia.org/wiki/Social_login)* cambiará la manera de autentificarnos.
+
+Ya no reinventaremos la rueda tan a menudo y dependeremos mucho más de APIs y sistemas de terceros.
+
+El *[software libre](https://es.wikipedia.org/wiki/Software_libre)* dejó de sonar a cosa rara.
+
+La mayor parte de los servidores de internet montarán *[distribuciones Linux](https://es.wikipedia.org/wiki/Distribuci%C3%B3n_Linux)*. La colaboración entre desarrolladores de manera altruista bajo el sistema del software libre, creará algunos de los lenguajes, librerías y sistemas más sólidos.
+
+Esta idea de libertad, se extiende como la pólvora y da pie a extender estas filosofías a otras áreas como a la cultura con licencias *[Creative Commons](https://es.wikipedia.org/wiki/Creative_Commons)* o al mundo del hardware con el *[Hardware libre](https://es.wikipedia.org/wiki/Hardware_libre)*
+
+Al tener un entorno libre del que nutrirse muchos desarrolladores empiezan a innovar. Rápidamente la comunidad les sigue, se van constituyendo nuevos ciclos y formatos de innovación.
+
+Algunas empresas, poco a poco, verán este valor y migrarán de un modelo más tradicional de software privativo a uno más abierto y libre.
+
+Cambiarán muchas cosas, *[XML](https://es.wikipedia.org/wiki/Extensible_Markup_Language)* será destronado y *[JSON](https://es.wikipedia.org/wiki/JSON)* será el nuevo rey. Se idearán nuevas maneras de gestionar el tiempo real como *[WebSockets](https://es.wikipedia.org/wiki/WebSocket)*.
+
+Surgirán iniciativas con ideas tan potentes como *[Nobackend](http://nobackend.org/)*, que plantearán nuevos paradigmas, pero sobretodo la innovación y la creatividad empujarán sobre manera -como nunca antes- el mundo del software.
+
+{pagebreak}
+
+Precisamente la innovación pasará a formar parte del ADN de nuevos tipos de empresas como las *[Stratups](https://es.wikipedia.org/wiki/Empresa_emergente)*. El *[MVP](https://es.wikipedia.org/wiki/Producto_viable_m%C3%ADnimo)* y el prototipado serán un concepto *[mainstream](https://es.wikipedia.org/wiki/Mainstream)* al igual que la metodología *[Lean Startup](https://es.wikipedia.org/wiki/Lean_startup)*.

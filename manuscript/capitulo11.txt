@@ -1,0 +1,898 @@
+-# Parte III - Web dinámica y conectada...
+
+# Capítulo 11 - Hackeando HTML y CSS
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+![Imagen obtenida de javascript.info](images/arbol.png)
+
+A la hora de trabajar con el navegador fuera de la consola, disponemos básicamente de tres pilares:
+
+
+JavaScript
+
+: Que es lo que intentamos aprender a lo largo de este libro, y que nos permite en esencia programar sobre la web que esta renderizada en el cliente.
+
+
+BOM
+
+: *Browser Object Model*, que contiene navigator, *[history](https://developer.mozilla.org/es/docs/Web/API/history)*, *[screen](https://developer.mozilla.org/es/docs/Web/API/screen)*, *[location](https://developer.mozilla.org/es/docs/Web/API/Location)*, *[XMLHttpRequest](https://developer.mozilla.org/es/docs/XMLHttpRequest)*, etc... los cuales son hijos de *[window](https://developer.mozilla.org/pl/docs/Web/API/Window)*.
+
+
+DOM
+
+: *[Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*, es una interfaz para HTML, CSS y SVG que nos facilita una representación en forma de árbol sobre la que podremos trabajar con JavaScript.
+
+
+## BOM (Browser Object Model)
+
+Es una recopilación de los componentes más utilizados, aunque existen algunos más.
+
+
+### *[window.history](https://developer.mozilla.org/es/docs/Web/API/History)*
+
+Nos permite manipular el historial de la sesión actual, eso incluye solamente las páginas visitadas con la pestaña actual.
+
+Podemos averiguar la cantidad de páginas visitadas previamente, haciendo uso de la propiedad *[length](https://developer.mozilla.org/en-US/docs/Web/API/History/length)*.
+
+{lang=js}
+~~~~~~~
+history.length
+~~~~~~~
+
+También podemos realizar acciones, como mandar al usuario a la pagina inmediatamente siguiente con el método *[forward](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*, a la anterior con *[back()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)* o directamente a cualquier posición del historial con *[go()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*.
+
+
+{lang=js}
+~~~~~~~
+// Ir atrás
+history.go(-1);
+history.back();
+
+// Ir adelante
+history.go(1);
+history.forward();
+~~~~~~~
+
+
+### *[window.navigator](https://developer.mozilla.org/es/docs/Web/API/Navigator)*
+
+
+Es un API que nos permite sacar gran cantidad de información sobre la máquina donde se esta ejecutando nuestro script. Incluso dispone de algunos métodos tan interesantes como *[Navigator.vibrate()](https://developer.mozilla.org/es/docs/Web/API/Navigator/vibrate)*, que permite hacer vibrar el dispositivo (siempre que sea compatible).
+
+En el siguiente ejemplo, hacemos una lectura de gran información del sistema y además hacemos un par de cálculos interesantes para confirmar el nivel de batería.
+
+En la línea 28 hemos utilizado una *[promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, ya que *[navigator.getBattery()](https://developer.mozilla.org/es/docs/Web/API/Navigator/getBattery) lo requiere así. Recuerda que esta es otra de las formas válidas, que existen para manejar la asincronía.*
+
+
+
+
+{lang=js}
+~~~~~~~
+function conversorTiempo(segundos){
+	var fecha = new Date(segundos * 1000);
+	var hh = fecha.getUTCHours();
+	var mm = fecha.getUTCMinutes();
+	var ss = fecha.getSeconds();
+
+	if (hh < 10) {hh = "0"+hh;}
+	if (mm < 10) {mm = "0"+mm;}
+	if (ss < 10) {ss = "0"+ss;}
+
+	return hh+":"+mm+":"+ss;
+}
+
+function informacionSistema(){
+	console.log("appCodeName:", window.navigator.appCodeName);
+	console.log("appName:", window.navigator.appName);
+	console.log("appVersion:", window.navigator.appVersion);
+	console.log("platform:", window.navigator.platform);
+	console.log("product:", window.navigator.product);
+	console.log("userAgent:", window.navigator.userAgent);
+	console.log("javaEnabled:", window.navigator.javaEnabled());
+	console.log("language (used):", window.navigator.language);
+	console.log("language (support):", window.navigator.languages);
+	console.log("conectado a internet?", window.navigator.onLine);
+	console.log("mimeTypes:",window.navigator.mimeTypes);
+	console.log("Plugins:", navigator.plugins);
+
+	navigator.getBattery().then(function(bateria){
+		console.log("Batería cargando?", bateria.charging)
+
+		if(bateria.charging){
+			console.log("Tiempo de carga:", bateria.chargingTime)
+		}
+		console.log("Batería %:", bateria.level*100)
+		console.log("Tiempo restante:", conversorTiempo(bateria.dischargingTime))
+	});
+
+}
+~~~~~~~
+
+
+
+### *[window.screen](https://developer.mozilla.org/en-US/docs/Web/API/Screen)*
+
+Esta API nos permite sacar toda la información disponible de la pantallá (márgenes, profundidad del color...), así podremos bloquear y desbloquear la rotación de la pantalla en el dispositivo.
+
+
+{lang=js}
+~~~~~~~
+console.log("availTop:", window.screen.availTop);
+console.log("availLeft:", window.screen.availLeft);
+console.log("availHeight:", window.screen.availHeight);
+console.log("availWidth:", window.screen.availWidth);
+console.log("colorDepth:", window.screen.colorDepth);
+console.log("height:", window.screen.height);
+console.log("left:", window.screen.left);
+console.log("orientation:", window.screen.orientation);
+console.log("pixelDepth:", window.screen.pixelDepth);
+console.log("top:", window.screen.top);
+console.log("width:", window.screen.width);
+~~~~~~~
+
+{pagebreak}
+
+### *[Window.location](https://developer.mozilla.org/es/docs/Web/API/Window/location)* y *[Document.location](https://developer.mozilla.org/es/docs/Web/API/Document/location)*
+
+*[Según la W3C](https://www.w3.org/TR/html/browsers.html#dom-location)* ambos objetos son lo mismo.
+
+### Propiedades
+
+{lang=js}
+~~~~~~~
+var enlace = document.createElement('a');
+enlace.href = 'https://leanpub.com/javascript-inspirate';
+
+console.log("href:" ,enlace.href);
+console.log("protocol:", enlace.protocol);
+console.log("host:", enlace.host);
+console.log("hostname:", enlace.hostname);
+console.log("port:", enlace.port);
+console.log("pathname:", enlace.pathname);
+console.log("search:", enlace.search);
+console.log("hash:", enlace.hash);
+console.log("origin:", enlace.origin);
+~~~~~~~
+
+
+
+
+### Métodos:
+
+- ***[.assign()](https://developer.mozilla.org/en-US/docs/Web/API/Location/assign)***
+
+	Carga una nueva página.
+
+	{lang=js}
+	~~~~~~~
+	document.location.assign('https://leanpub.com/javascript-inspirate');
+	~~~~~~~
+
+- ***[.reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)***
+
+	Recarga la página actual con opciones para manejar el cacheado.
+
+	{lang=js}
+	~~~~~~~
+	// Recarga
+	document.location.reload();
+
+	// Recarga sin usar el cache
+	document.location.reload(true);
+	~~~~~~~
+
+- ***[.replace()](https://developer.mozilla.org/en-US/docs/Web/API/Location/replace)***
+
+	Carga una página nueva, sustituyendo la actual en el historial.
+
+	{lang=js}
+	~~~~~~~
+	document.location.replace('https://leanpub.com/javascript-inspirate');
+	~~~~~~~
+
+
+## *[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*
+
+Veamos como entiende la comunidad *[MDN (Mozilla Developer Network)](https://developer.mozilla.org)* el concepto *[DOM - Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*.
+
+{icon=quote-left}
+G> El modelo de objeto de documento (DOM) es una interfaz de programación para los documentos HTML
+G> y XML. Facilita una representación estructurada del documento y define de qué manera los
+G> programas pueden acceder, con el fin de modificar, tanto su estructura, estilo y contenido. El
+G> DOM da una representación del documento como un grupo de nodos y objetos estructurados que
+G> tienen propiedades y métodos. Esencialmente, conecta las páginas web a scripts o lenguajes de
+G> programación.
+G>
+G> Una página web es un documento. Éste documento puede exhibirse en la ventana de un navegador o
+G> también como código fuente HTML. Pero, en los dos casos, es el mismo documento. El modelo de
+G> objeto de documento (DOM) proporciona otras formas de presentar, guarda y manipular este mismo
+G> documento. El DOM es una representación completamente orientada al objeto de la página web y
+G> puede ser modificado con un lenguaje de script como JavaScript.
+
+
+Nosotros creemos que el DOM es patio de juegos de cualquier developer que se precie. Tanto si haces frontend y lo utilizas para mostrar información dinamicamente como si estás en el backend y lo utilizas para *[scrapear](https://es.wikipedia.org/wiki/Web_scraping)*.
+
+A los ojos de JavaScript el DOM es un objeto con el que podremos leer y modificar a nuestro antojo. Una vez se comprende con claridad la estructura de nodos que lo compone y sus métodos pricipales, está dominado.
+
+
+### Selectores
+
+El primer paso para poder manipular el DOM, es adquirir cierta destreza en el manejo de los selectores, ya que siempre los selectores serán el primer paso, para realizar operaciones de lectura o modificación del DOM.
+
+Es importante remarcar, que ciertos métodos para realizar selección de componentes, sufren del mismo problema que vimos en *arguments*, ya que aunque parecen *arrays*... realmente no lo son.
+
+Estos métodos son:
+
+- *[Node.childNodes](https://developer.mozilla.org/es/docs/Web/API/Node/childNodes)*
+- *[document.querySelectorAll](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*
+
+I> #### Podemos convertirlos fácilmente:
+I>
+I> {lang=js}
+I> ~~~~~~~
+I> var listaDivs = document.querySelectorAll('div');
+I> // Conversión
+I> var listaDivsArray = Array.prototype.slice.call(listaDivs);
+I> ~~~~~~~
+I>
+I> Más información sobre la conversión en [Convert NodeList to Array de David Walsh](https://
+I> davidwalsh.name/nodelist-array).
+
+### Selectores tradicionales
+
+- ***[.getElementById()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementById)***
+
+	Permite la selección de un elemento por su *[id](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/id)*.
+
+    {lang=js}
+	~~~~~~~
+    // <div id="miDiv"></div>
+    document.getElementById("miDiv");
+    ~~~~~~~
+
+- ***[.getElementsByName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByName)***
+
+	Permite la selección de varios elementos por su atributo *[name](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)*.
+
+    {lang=js}
+	~~~~~~~
+    // <form name="miForm"></form>
+    document.getElementsByName("miForm");
+	~~~~~~~
+
+
+
+- ***[.getElementsByTagName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByTagName)***
+
+	Permite la selección de varios elementos por su *[etiqueta](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)*.
+
+    {lang=js}
+	~~~~~~~
+    // <input>
+    document.getElementsByTagName("input");
+	~~~~~~~
+
+- ***[.getElementsByClassName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName)***
+
+	Permite la selección de varios elementos por su *[clase](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/class)*.
+
+    {lang=js}
+	~~~~~~~
+    // <div class="rojo"></div>
+    document.getElementsByClassName("rojo");
+    ~~~~~~~
+
+### Selectores Avanzados
+
+{icon=coffee}
+G> #### Lecturas recomendadas:
+G>
+G> - *[Los 30 selectores CSS que debes memorizar](https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048)*
+G> - *[Selectors Level 3 - W3C](https://www.w3.org/TR/css3-selectors/)*
+G> - *[CSS Cheat Sheet](http://www.cheetyr.com/css-selectors)*
+G> - *[Taming Advanced CSS Selectors by Inayaili de Leon](https://www.smashingmagazine.com/2009/08/taming-advanced-css-selectors/)*
+G> - *[Selectors en MDN](https://developer.mozilla.org/es/docs/Web/CSS/Introducci%C3%B3n/Selectors)*
+G> - *[CSS Selector Reference by w3schools](http://www.w3schools.com/cssref/css_selectors.asp)*
+G> - *[CSS Selectors by Adam Roberts](https://www.sitepoint.com/web-foundations/css-selectors/)*
+G> - *[CSS-TRICKS Selectors](https://css-tricks.com/almanac/selectors/)*
+G> - *[Interactive CSS Selectors by Ben Howdle](http://benhowdle.im/cssselectors/)*
+
+Si has trabajado intensamente con CSS3 ya sabrás que existen muchas posibilidades para realizar selecciones dentro de un documento html que van mucho más alla de la clase, id, etiqueta o propiedades, ya que *[el soporte](http://caniuse.com/#feat=css-sel3)* para ello es muy bueno en todos los navegadores.
+
+JavaScript no se queda atras y se pueden usar *[querySelector](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)* y *[querySelectorAll](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*  que además gozan de un gran *[soporte](http://caniuse.com/#search=querySelector)*.
+
+
+Veamos como se utilizan algunos selectores avanzados de CSS3:
+
+
+
+
+- URL que empieza con "javascript:"
+
+    {lang=css}
+	~~~~~~~
+    a[href^="javascript:"] {
+    	color:blue;
+    }
+	~~~~~~~
+
+- URL que contiene "google.es"
+
+    {lang=css}
+	~~~~~~~
+    a[href*="leanpub"] {
+    	color:orange;
+    }
+	~~~~~~~
+
+- URL que termina con ".pdf"
+
+    {lang=css}
+	~~~~~~~
+    a[href$=".pdf"] {
+    	color:red;
+    }
+	~~~~~~~
+
+{pagebreak}
+
+#### *[.querySelector()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)*
+
+Devuelve el primer elemento que coincida con el selector.
+
+{lang=html}
+~~~~~~~
+<div id="miDiv">
+    <span id="miId5" class="miClase" title="cinco"></span>
+    <span id="miId4" class="miClase" title="cuatro"></span>
+    <span id="miId3" class="miClase" title="tres"></span>
+    <span id="miId2" class="miClase" title="dos"></span>
+    <span id="miId1" class="miClase" title="uno"></span>
+</div>
+~~~~~~~
+
+{lang=js}
+~~~~~~~
+document.getElementById('miId1').title // uno
+document.querySelector('#miDiv .miClase').title // cinco
+document.querySelector('#miDiv #miId1.miClase').title // uno
+document.querySelector('#miDiv .inventado').title // ERROR -> undefined
+document.querySelector('#miDiv .miClase[title^=u]').title // uno
+~~~~~~~
+
+#### *[.querySelectorAll()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*
+
+Devuelve todos los elementos que coincidan con el selector en un pseudo-array.
+
+{lang=js}
+~~~~~~~
+document.querySelectorAll('p') // los párrafos
+document.querySelectorAll('div, img') // divs e imágenes
+document.querySelectorAll('a > img') // imágenes contenidas en enlaces
+~~~~~~~
+
+
+
+### Estilos con Javascript
+
+JavaScript también puede leer y alterar las reglas de estilo, que afectan a los elementos que componen el DOM.
+
+**Leer valores**
+
+{lang=js}
+~~~~~~~
+window.getComputedStyle(document.getElementById("id"));
+window.getComputedStyle(document.body).getPropertyValue('display');
+~~~~~~~
+
+**Cambiar valores**
+
+{lang=js}
+~~~~~~~
+document.body.style.display="none";
+document.getElementById("id").style.display="none";
+~~~~~~~
+
+{pagebreak}
+
+
+## Alterando el DOM
+
+### Trabajar sin JQuery
+
+Si llevas mucho tiempo trabajando con JQuery, sin duda, ya estás muy acostumbrado a utilizar ciertos métodos como *[show()](http://api.jquery.com/show/)*, *[hide()](http://api.jquery.com/hide/)*, *[empty()](http://api.jquery.com/empty/)*, *[append()](http://api.jquery.com/append/)* y muchos más...
+
+Para haceros la transición más fácil, *[HubSpot](http://product.hubspot.com/)* ha desarrollado *[You Might Not Need Jquery](http://youmightnotneedjquery.com/)*, que te permite visualizar como hacer todo lo que hacías con JQuery y que ahora harás con JavaScript.
+
+### Métodos esenciales
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+
+- ***[.textContent](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)***
+
+	Nos devuelve el texto de un elemento previamente seleccionado.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	console.log("Texto:", el.textContent);
+	~~~~~~~
+
+	También permite cambiarlo.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	el.textContent = "Nuevo contenido";
+	~~~~~~~
+
+- ***[.classList.contains()](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
+
+	Verifica si contiene cierta clase.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	el.classList.contains("rojo");
+	~~~~~~~
+
+
+- ***[.classList.add()](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
+
+	Permite añadir una clase al elemento.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	el.classList.add("rojo");
+	~~~~~~~
+
+- ***[.classList.remove(className)](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
+
+	Permite eliminar una clase del elemento.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	el.classList.remove("rojo");
+	~~~~~~~
+
+{pagebreak}
+
+- ***[.style.display](https://developer.mozilla.org/es/docs/Web/API/HTMLElement/style)***
+
+	Nos permite conocer y modificar la visualización de un elemento concreto.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+
+	// Conocer el estado actual
+	console.log(el.style.display);
+
+	// No mostrar
+	el.style.display = 'none';
+
+	// Mostrar
+	el.style.display = '';
+	~~~~~~~
+
+
+
+- ***[.cloneNode()](https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode)***
+
+	Permite clonar un nodo y clonar o no, sus nodos hijo también.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+
+	// Clon simple (sin hijos)
+	var c1 = el.cloneNode();
+
+	// Clon profundo (con hijos)
+	var c2 = el.cloneNode(true);
+	~~~~~~~
+
+- ***[.innerHTML](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)***
+	Cambia o devuelve la sintaxis HTML de un elemento... así como de sus hijos.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	// Ver el contenido
+	console.log("Contenido:", el.innerHTML);
+
+	// vaciar el contenido
+	el.innerHTML = '';
+
+	// Sustituir el contenido
+	el.innerHTML = 'Nuevo contenido';
+	~~~~~~~
+
+
+- ***[.getAttribute()](https://developer.mozilla.org/es/docs/Web/API/Element/getAttribute)***
+
+	Devolver el valor de cierto atributo o una cadena vacía en caso de no existir.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('fotoUsuario');
+	el.getAttribute('src');
+	~~~~~~~
+
+- ***[.setAttribute()](https://developer.mozilla.org/es/docs/Web/API/Element/setAttribute)***
+
+	Cambiar el valor de un atributo o lo añade si no existe.
+
+	{lang=js}
+	~~~~~~~
+	var el = document.getElementById('miDiv');
+	el.setAttribute('data-secreto', 'Mucho...');
+	~~~~~~~
+
+
+## Eventos
+
+Una de las mayores barreras a la hora de introducir el dinamismo en una web es la gestión de los eventos, ya que estos son asíncronos por naturaleza, por lo que no puedes saber de antemano. Por ejemplo, cuántos segundos tardará un usuario en pinchar sobre un botón... lo que sumado a un funcionamiento peculiar con propagaciones, hace que el dominio de los eventos sea una tarea complicada.
+
+I> Sin embargo, todo gran esfuerzo tiene una gran recompensa y el dominio de estos eventos
+I> nos abrirá las puertas a la *[programación dirigida a eventos](https://es.wikipedia.
+I> org/wiki/Programaci%C3%B3n_dirigida_por_eventos)*, y posteriormente a *[Node.js](https://
+I> nodejs.org/en/)*, si decidimos dar el gran paso hacia el *Back-End* o el *Full Stack*.
+
+### Funcionamiento
+
+Básicamente podemos seleccionar un elemento de HTML, y suscribir uno de los posibles eventos de los que dispone:
+
+- *[Eventos de ratón](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)*
+- *[Eventos de teclado](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)*
+- Y *[muchos más...](https://developer.mozilla.org/es/docs/Web/Reference/Events)*
+
+Una vez hemos definido estos detalles, en dónde escuchamos y qué esperamos, solo queda definir que haremos cuando esto ocurra.
+
+Lógicamente al tratarse de asincronía, debemos definir una función, ya sea en línea o reutilizable para gestionarlo todo.
+
+Si necesitamos información adicional sobre el evento sucedido, el propio sistema mandará *[un objeto con detalles clave sobre el evento](https://developer.mozilla.org/en-US/docs/Web/API/Event)*, como argumento a la hora de ejecutar nuestro callback.
+
+
+
+### Utilizando eventos
+
+Existen dos formas básicas de añadir eventos a nuestra aplicación. Una es por medio de html con atributos como *[onclick](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick)*, y la otra desde el JavaScript, haciendo uso de métodos como *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+
+Cuál es mejor o cuál es peor... realmente varia en función de las circunstancias del código y su programador. Yo creo firmemente, que es mucho mejor separar JavaScript, HTML y CSS.
+
+Así evitamos el *[antipatrón ](https://es.wikipedia.org/wiki/Antipatr%C3%B3n_de_dise%C3%B1o)* de mezclar JavaScript en el HTML. Por otra parte, si encapsulas tu código en una función anónima autoejecutada, no podrás acceder a las funciones directamente desde el HTML...
+
+Así que por estos motivos principales, recomendamos encarecidamente el uso de *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+
+
+#### Añadir un evento
+
+Veamos como funciona con *onclick*.
+
+{lang=html}
+~~~~~~~
+<body onclick="cambiarFondo()"></body>
+~~~~~~~
+
+{lang=js}
+~~~~~~~
+function cambiarFondo() {
+	// color = 'rgb(0-255,0-255,0-255)'
+	var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+	color += Math.floor((Math.random() * 255)) + ',';
+	color += Math.floor((Math.random() * 255)) + ')';
+	document.body.style.backgroundColor= color;
+	console.info("Nuevo color:", color);
+}
+~~~~~~~
+
+Veamos como funciona con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+
+{lang=js}
+~~~~~~~
+document.body.addEventListener('click', function (e) {
+    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    color += Math.floor((Math.random() * 255)) + ',';
+    color += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= color;
+    console.info("Nuevo color:", color);
+});
+~~~~~~~
+
+#### Eliminar un evento
+
+Los eventos ocupan memoria. Es un factor a tener en cuenta, especialmente, si queremos hacer una web con un buen soporte para smartphones. Si un evento deja de tener sentido, sencillamente puedes eliminarlo con *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*.
+
+{lang=js}
+~~~~~~~
+function cambiarColor (){
+    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    color += Math.floor((Math.random() * 255)) + ',';
+    color += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= color;
+    console.info("Nuevo color:", color);
+}
+
+document.body.addEventListener('click', cambiarColor);
+document.body.removeEventListener('click', cambiarColor);
+~~~~~~~
+
+#### Manejadores de eventos
+
+Cuando se dispara un evento, podemos recopilar mucha información útil, si no ignoramos el argumento que nos pasan.
+
+Podemos fácilmente crearnos una función que nos aporte información real sobre el evento y que no ejecute ninguna acción en nuestra aplicación. Este tipo de funciones son muy útiles y deberían estar en tu kit de herramientas para desarrollar webs como un artesano de verdad.
+
+{lang=js}
+~~~~~~~
+function manejadorEventos(elEvento) {
+  	// Compatibilizar el evento
+  	var evento = elEvento || window.event;
+
+  	// Imprimir detalles
+  	console.log("-----------------------------")
+  	console.log("Type: "+evento.type); // Tipo
+  	console.log("Bubbles: "+evento.bubbles);
+  	console.log("Cancelable: "+evento.cancelable);
+  	console.log("CurrentTarget: ", evento.currentTarget);
+	console.log("DefaultPrevented: "+evento.defaultPrevented);
+	console.log("EventPhase: "+evento.eventPhase);
+	console.log("Target: ", evento.target);
+	console.log("TimeStamp: "+evento.timeStamp);
+	console.log("IsTrusted: "+evento.isTrusted); // true - Usuario
+	console.log("=============================")
+}
+
+// Añadimos Listener
+document.addEventListener('click', function(evento){
+	manejadorEventos(evento);
+	// Más código
+});
+~~~~~~~
+
+{pagebreak}
+
+### Usos Avanzados
+
+#### Lanzar un evento manualmente con [.dispatchEvent()]()
+
+{lang=js}
+~~~~~~~
+document.body.addEventListener('click', function (e) {
+    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    color += Math.floor((Math.random() * 255)) + ',';
+    color += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= color;
+    console.info("Nuevo color:", color);
+});
+
+var lanzadorEventos = new Event('click');
+document.body.dispatchEvent(lanzadorEventos);
+~~~~~~~
+
+#### Compatibilidad con Internet Explorer <= IE8
+
+Si tienes la mala suerte de tener que dar soporte a versiones obsoletas de Internet Explorer, además de todo el sufrimiento acumulado, deberás añadirte una carga extra... y es que por aquel entonces Internet Explorer, no era compatible con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*, ni con *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*, así que necesitamos utilizar *[.attachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/attachEvent)* y *[.detachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/detachEvent)*.
+
+
+***[.attachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/attachEvent)***
+
+{lang=js}
+~~~~~~~
+document.attachEvent('onclick', function (e) {
+    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    color += Math.floor((Math.random() * 255)) + ',';
+    color += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= color;
+    console.info("Nuevo color:", color);
+});
+~~~~~~~
+
+***[.detachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/detachEvent)***
+
+{lang=js}
+~~~~~~~
+function cambiarColor (){
+    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    color += Math.floor((Math.random() * 255)) + ',';
+    color += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= color;
+    console.info("Nuevo color:", color);
+}
+
+document.body.attachEvent('onclick', cambiarColor);
+document.body.detachEvent('onclick', cambiarColor);
+~~~~~~~
+
+Dado este panorama de tener que usar dos métodos diferentes, cuando además tienen una estructura similar, pero no idéntica... tenemos un reto entre manos que merece una solución duradera.
+
+Aunque descartamos enseñar el uso de *[patrones](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)*, sería injusto por nuestra parte no arrojar al menos un poco de luz sobre el asunto, así que nos gustaría mostrarte un par de trucos de *"artesano veterano"*.
+
+Vamos a crear un objeto (literal), donde guardaremos todo lo necesario para manejar eventos, subiendo así el nivel de abstracción de vuestra aplicación.
+
+Ya no usaremos *.attachEvent()* o *.addEventListener()*. Ahora utilizaremos *.agregar()*, que internamente llamará a *.attachEvent()* o *.addEventListener()*, en función del navegador en el que nos encontremos.
+
+Cambiar de navegador en medio de la ejecución del script parece altamente improbable. No tiene mucho sentido comprobar cada vez que agreguemos un evento, si usaremos *.attachEvent()* o *.addEventListener()*.
+
+Por eso los patrones de diseño pueden ayudarnos a solucionar cosas así. En este caso usaremos *Init-time branching*, que es una variante de *[Lazy initialization](https://en.wikipedia.org/wiki/Lazy_initialization)*.
+
+Básicamente crearemos un objeto con los métodos *agregar* y *quitar* vacíos. Al ejecutarse el código por primera vez, comprobaremos que navegador usamos y en función de ello sobreescribirá *agregar* y *quitar*, llamando por debajo a los métodos correspondientes.
+
+Es un poco más de trabajo de lo esperado, pero así es mucho mas sencillo gestionar nuestra aplicación, ya que nuestros métodos se adaptarán y no así nuestro código.
+
+El valor añadido de usar este patrón esta, en que en un solo punto tomo una decisión que se extenderá por toda nuestra aplicación.
+
+{lang=js}
+~~~~~~~
+var eventos = {
+	agregar: null,
+	quitar: null,
+	manejador: function(evento) {
+        console.group("Manejador de Eventos");
+        console.log("-----------------------------");
+        console.log("Type: " + evento.type); // Tipo
+        console.log("Bubbles: " + evento.bubbles); // sube por el DOM
+        console.log("Cancelable: " + evento.cancelable);
+        console.log("CurrentTarget: ", evento.currentTarget);
+        console.log("DefaultPrevented: " + evento.defaultPrevented);
+        console.log("EventPhase: " + evento.eventPhase);
+        console.log("Target: ", evento.target);
+        console.log("TimeStamp: " + evento.timeStamp);
+        console.log("IsTrusted: " + evento.isTrusted); // true - Usuario
+        console.log("=============================");
+		console.groupEnd();
+	}
+}
+
+// Init-time branching (Patrón)
+if (typeof window.addEventListener === 'function') {
+    eventos.agregar = function(el, type, fn) {
+    	el.addEventListener(type, fn, false);
+	};
+	eventos.quitar = function(el, type, fn) {
+	   	el.removeEventListener(type, fn, false);
+	};
+} else { // Soporte para <= IE8
+    eventos.agregar = function(el, type, fn) {
+        el.attachEvent('on' + type, fn);
+    };
+    eventos.quitar = function(el, type, fn) {
+        el.detachEvent('on' + type, fn);
+    };
+}
+
+eventos.agregar(document.body, 'click', function (e) {
+	var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+	color += Math.floor((Math.random() * 255)) + ',';
+	color += Math.floor((Math.random() * 255)) + ')';
+	document.body.style.backgroundColor= color;
+	console.info("Nuevo color:", color);
+})
+~~~~~~~
+
+
+#### Delegación de Eventos
+
+Una de las técnicas más útiles para ahorrar memorIa, es utilizar la *delegación de eventos*, es decir, en vez de poner un evento por cada uno de los elementos que compone una estructura de datos, es preferible hacerlo únicamente, sobre el elemento padre común a todos ellos y simplemente filtrar cuál de los hijos fue disparado.
+
+
+**Modo Clásico (sin delegación)**
+
+{lang=html}
+~~~~~~~
+<ul id="miNav">
+	<li><a href="#nosotros">¿Quienes Somos?</a></li>
+	<li><a href="#objetivos">Los objetivos</a></li>
+	<li><a href="#equipo">Nuestro Equipo</a></li>
+	<li><a href="#detalles">Más detalles</a></li>
+	<li><a href="#contacta">Contactanos</a></li>
+</ul>
+~~~~~~~
+
+
+{lang=js}
+~~~~~~~
+var miNav = document.getElementById("miNav");
+var miNavLinks = miNav.getElementsByTagName("a");
+
+for (var i = 0; i < miNavLinks.length; i++) {
+    miNavLinks[i].onclick = function(){
+	    console.info(this.innerHTML);
+	}
+};
+~~~~~~~
+
+
+
+
+
+**Modo Delegando**
+
+{lang=js}
+~~~~~~~
+var miNav = document.getElementById("miNav");
+miNav.onclick = function(evento){
+
+var evento = evento || window.event;
+var elemento = evento.target || evento.srcElement;
+    console.info(elemento.innerHTML);
+};
+~~~~~~~
+
+
+
+#### Creación de Eventos Personalizados
+
+Otra estrategia más avanzada, es hacer nuestro código más modular e interconectado por eventos, aunque esto es más típico de Node.js. En el lado del cliente también podemos hacer uso de ello.
+
+I> Como verás incluso podemos disparar eventos, lo que amplia mucho las posibilidades para
+I> jugar con páginas web existentes desde la consola... ***[¡Yo no digo nada...!](https://gist
+I> .github.com/UlisesGascon/57ed4ed61fbc987b0e3265568a27f6c4)***
+
+{lang=js}
+~~~~~~~
+var evento = new Event('miEventoInventado');
+
+document.body.addEventListener('miEventoInventado', function (e) {
+	console.info(e); // {isTrusted: false}
+});
+
+document.body.dispatchEvent(evento);
+~~~~~~~
+
+
+{pagebreak}
+
+
+## Propagación (Capturing y Bubbling)
+
+Uno de los puntos de fricción más altos a la hora de trabajar con eventos, es entender como funciona la propagación que JavaScript realiza.
+
+![Imagen obtenida de W3C](images/eventflow.png)
+
+La mejor manera de entenderlo es con un *[ejemplo](http://jsfiddle.net/x72ez79t/)*.
+
+Si ejecutas el evento verás que existe un pequeño conflicto de intereses en el HTML.
+
+{lang=html}
+~~~~~~~
+<div id="parent">
+    <div id="children">
+        Click
+    </div>
+</div>
+~~~~~~~
+
+Tanto *parent* como *children* tienen eventos suscritos. El problema básico, que nos encontramos es que *children* está envuelto por *parent*, lo que hace que pinchemos, donde pinchemos siempre se disparan ambos.
+
+Esto se debe a la propagación, que funciona en tres fases:
+
+
+Capturing
+
+: Recorre todo el documento desde *document* hasta el elemento en sí.
+
+
+Target
+
+: Es cuando se llega al elementos en cuestión.
+
+
+Bubbling
+
+: Realiza el recorrido de vuelta hacía arriba desde el elemento en sí.
+
+
+Podemos interrumpir este proceso de propagación si hacemos uso de *[stopPropagation()](https://developer.mozilla.org/es/docs/Web/API/Event/stopPropagation)*.
+
+Como has podido ver, el ejemplo en sí que hemos utilizado aquí, fuerza un poco la situación, ya que existe mucho código duplicado y gestiona los eventos de una manera incorrecta.
+
+Otro método interesante, que no debemos perder de vista es *[.preventDefault](https://developer.mozilla.org/es/docs/Web/API/Event/preventDefault)*. Evita el comportamiento por defecto, por ejemplo si queremos que un link no actúe como tal.
+
+Al contrario de lo que pueda parecer ahora mismo, la propagación es uno de los mejores aliados a la hora de gestionar nuestros eventos, como vimos anteriormente con la *delegación de eventos*.

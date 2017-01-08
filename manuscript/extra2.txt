@@ -1,0 +1,286 @@
+# Anexo: Comunidad...
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+## ¡Forma parte!
+
+### Meetups
+
+Una de las maneras más efectivas de entrar en contacto con la comunidad y formar parte de un grupo de personas con el mismo interés, es *[Meetup](https://www.meetup.com)*.
+
+Existen muchos grupos dedicados al desarrollo. Estos son solo algunos de los más activos.
+
+{icon=users}
+G> #### Deberías conocer...
+G>
+G> - *[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*
+G> - *[MadridJS](http://www.meetup.com/es/madridjs/)*
+G> - *[Nodejs](http://www.meetup.com/es/Node-js-Madrid/)*
+G> - *[WordPress Madrid](http://www.meetup.com/es/WordPress-Madrid/)*
+G> - *[Hackathon Todos Incluidos](http://www.meetup.com/es/Hackathon-Todos-Incluidos/)*
+G> - *[Girls in Tech Spain](http://spain.girlsintech.org/)*
+G> - *[Hackathon Lovers](http://www.meetup.com/es/Hackathon-Lovers/)*
+G> - *[HTML5 Spain](http://www.meetup.com/es/HTML5-Spain/)*
+G> - *[API Addicts](http://www.meetup.com/es/ApiAddicts/)*
+G> - *[ReactMad](http://www.meetup.com/es/ReactMad/)*
+G> - *[Edupreneurs Madrid](http://www.meetup.com/es/edupreneursMAD/)*
+G> - *[IoT Madrid](http://www.meetup.com/es/iotmadrid/)*
+G> - *[Angular Madrid](https://www.meetup.com/es-ES/Angular_Madrid/)*
+G> - *[GDG Madrid](https://www.meetup.com/es-ES/GDGMadrid/)*
+G> - *[APP A Month](https://www.meetup.com/es-ES/App-a-Month-Madrid/)*
+G> - *[Docker Madrid](https://www.meetup.com/es-ES/Docker-Madrid/)*
+G> - *[Madrid Python](https://www.meetup.com/es-ES/Madrid-Python-Meetup/)*
+G> - *[Front-End Developers Madrid](https://www.meetup.com/es-ES/Front-end-Developers-Madrid/)*
+G> - *[Software Craftsmanship Madrid](https://www.meetup.com/es-ES/madswcraft/)*
+G> - *[Tetuan Valley](https://www.meetup.com/es-ES/TetuanValley/)*
+G> - *[JS Dojo Madrid](https://www.meetup.com/es-ES/JS-Dojo-Madrid/)*
+G> - *[Polymer Madrid](https://www.meetup.com/es-ES/Madrid-Polymer-Group/)*
+G> - *[ReactJS Spain](https://www.meetup.com/es-ES/ReactJS-Spain/)*
+G> - *[AdaLab](http://adalab.es/)*
+G> - *[FrontGirls](http://frontgirls.io/)*
+
+### Otras formas
+
+También hay una gran oferta de eventos fuera de Meetup, como son:
+
+{icon=users}
+G> #### Deberías conocer...
+G>
+G> - *[Campus Madrid Events](https://www.campus.co/madrid/es/events)*
+G> - *[Betabeers](https://betabeers.com/)*
+G> - *[MediaLab Prado](http://medialab-prado.es/)*
+
+
+## Desarrolladores que deberías seguir.
+
+Esta lista se regenera de manera automática -cada vez- que se actualiza el libro. Recoge la información pública directamente de Twitter y la organiza por orden alfabético, tomando como referencia el *@userId*.
+
+W> La lista no pretende ser exhaustiva ni completa en absoluto, por supuesto, no esta 
+W> todo el mundo y es meramente indicativa.
+
+
+- ***[Ariya Hidayat](https://twitter.com/AriyaHidayat)***
+
+	@AriyaHidayat: *Software Provocateur. Author of PhantomJS and Esprima. Running engineering at @ShapeSecurity.*
+
+- ***[BrendanEich](https://twitter.com/BrendanEich)***
+
+	@BrendanEich: *Brendan Eich invented JavaScript, co-founded http://mozilla.org , and has founded a new startup, https://brave.com/ .*
+
+- ***[Simeon.__proto__](https://twitter.com/DotProto)***
+
+	@DotProto: *Oh, hello there. I'm Simeon , a Front End Engineer at @Blizzard_ent. JS lover, NIH fighter, and smitten with the open web. Opinions are my own.*
+
+- ***[John Papa](https://twitter.com/John_Papa)***
+
+	@John_Papa: *Husband, father, and Catholic enjoying every minute with my family. Disney fanatic, evangelist, HTML/CSS/JavaScript dev, speaker, and Pluralsight author.*
+
+- ***[Matias Arriola](https://twitter.com/MatiasArriola)***
+
+	@MatiasArriola: *When you see me again, it won't be me.*
+
+- ***[Pascal Precht ʕ•̫͡•ʔ](https://twitter.com/PascalPrecht)***
+
+	@PascalPrecht: *I like headphones, art, skateboarding and coding. Angular GDE at @Google, @thoughtram co-founder and creator of @5thingsAngular*
+
+- ***[Sacha Greif](https://twitter.com/SachaGreif)***
+
+	@SachaGreif: *Originally from Paris, but now living in Osaka. I co-wrote @DiscoverMeteor, and created @Telescpe and @SidebarIO. Addicted to #Hearthstone and #BJJ.*
+
+- ***[Simo Ahava](https://twitter.com/SimoAhava)***
+
+	@SimoAhava: *Senior Data Advocate at @ReaktorNow | Google Analytics | Google Tag Manager | Passionate blogger | Experienced speaker | Google Developer Expert*
+
+- ***[Addy Osmani](https://twitter.com/addyosmani)***
+
+	@addyosmani: *Engineer at Google working on @GoogleChrome • Author • Creator of TodoMVC, @Yeoman, Material Design Lite, Critical • Husband*
+
+- ***[Amjad Masad](https://twitter.com/amasad)***
+
+	@amasad: *Founder @replit. Previously JavaScript @facebook (@babeljs, @reactnative)*
+
+- ***[xnoɹǝʃ uɐıɹq](https://twitter.com/brianleroux)***
+
+	@brianleroux: *starting something new @begin *
+
+- ***[Chris Heilmann](https://twitter.com/codepo8)***
+
+	@codepo8: *Londoner, German, European. Developer Evangelist - all things open web, writing and helping. Works at Microsoft on Edge, opinions totally my own. #nofilter*
+
+- ***[cody lindley](https://twitter.com/codylindley)***
+
+	@codylindley: *Senior UI Engineer at Citrix 4 @Grasshopper. In all I do lover of Christ, people, logic & dying art of debate, conversation, & reason. Husband, father to 3 boys*
+
+- ***[Carlos Hernández](https://twitter.com/codingcarlos)***
+
+	@codingcarlos: *Me levanto y programo. Bueno, programo sentado. Gamifico cosas, a veces prestidigito y hago música rara. Papi de @gamify_es*
+
+- ***[David Walsh](https://twitter.com/davidwalshblog)***
+
+	@davidwalshblog: *Mozilla Sr. Web Developer, Front-End Engineer, MooTools Core Developer, Javascript Fanatic, CSS Tinkerer, Node Hacker, web, VR, and open source lover.*
+
+- ***[Dejan Dimic](https://twitter.com/dejan_dimic)***
+
+	@dejan_dimic: *Minds are like parachutes - they only function when open. - Thomas Dewar*
+
+- ***[Dan Shaw](https://twitter.com/dshaw)***
+
+	@dshaw: *CTO and Co-Founder of @NodeSource - secure, reliable, extensible Node.js. Always bet on #nodejs!*
+
+- ***[Duc Nguyen](https://twitter.com/ducntq)***
+
+	@ducntq: *Khổ vì công nghệ*
+
+- ***[Elijah Manor](https://twitter.com/elijahmanor)***
+
+	@elijahmanor: *{priorities:['Christian','Family','Work'], work:['@LeanKit', '@PluralSight', '@eggheadio'], tech:['#JavaScript', '#ReactJS','#jQuery'], titles:['@MVPAward']}*
+
+- ***[Erik Aybar](https://twitter.com/erikthedev_)***
+
+	@erikthedev_: *Husband/Father • Remote Worker • Software Engineer @PracticeGenius • @eggheadio • Javascript, #reactjs, occasional ranting...*
+
+- ***[Firede](https://twitter.com/firede)***
+
+	@firede: *...*
+
+- ***[Miloš Gavrilović](https://twitter.com/gavrisimo)***
+
+	@gavrisimo: *Freelance web developer or something like that...*
+
+- ***[Richard Gibson](https://twitter.com/gibson042)***
+
+	@gibson042: *Software engineer extraordinaire (@Dyn Architect, @jquery Core/Sizzle/QUnit), polymath, übergeek, and passionate agorist.*
+
+- ***[Aleksandr Filatov](https://twitter.com/greybax)***
+
+	@greybax: *#frontend web developer*
+
+- ***[Idan Gazit](https://twitter.com/idangazit)***
+
+	@idangazit: *Designer/Developer hybrid. @djangoproject core alum. Datavis junkie. Maker of things delightful. I like to ogle details. Extracting meaning from data @Heroku.*
+
+- ***[james young](https://twitter.com/jamsyoung)***
+
+	@jamsyoung: *Applications Architect at Turner Broadcasting and developer on a variety of open source projects*
+
+- ***[John-David Dalton](https://twitter.com/jdalton)***
+
+	@jdalton: *JavaScript tinkerer, bug fixer, & benchmark runner • Creator of Lodash • Former Chakra Perf PM • Current Web Apps & Frameworks PM @Microsoft.*
+
+- ***[John Resig](https://twitter.com/jeresig)***
+
+	@jeresig: *Creator of @jquery, JavaScript programmer, author, Japanese woodblock nerd (http://ukiyo-e.org ), work at @khanacademy.*
+
+- ***[jfroffice](https://twitter.com/jfroffice)***
+
+	@jfroffice: *Web Design, HTML5, ES6, SASS, CSS3, NodeJS, Angular, React, D3, JQuery, Docker, MongoDB, Nginx, Apache, Varnish*
+
+- ***[Kahlil Lechelt](https://twitter.com/kahliltweets)***
+
+	@kahliltweets: *JavaScript person. Co-host of @reactivepod. Deejay. kahlilsnaps on Snapchat & kahlillechelt on IG. Frontend Architect at 1&1. Opinions are mine.*
+
+- ***[Kent C. Dodds](https://twitter.com/kentcdodds)***
+
+	@kentcdodds: *Making software dev more accessible · Mormon, Husband, Father, Teacher · OSS, GDE, @TC39 · @PayPalEng @eggheadio @FrontendMasters @JavaScriptAir @React30 · #JS*
+
+- ***[Ulises Gascón](https://twitter.com/kom_256)***
+
+	@kom_256: *#Maker, #ComputerGeek, #WebDeveloper, #IoT | #Js, #Node, #Python | Co-organizador de @os_weekends | Profe en @fictiziaescuela | xIBMer*
+
+- ***[Hao-Wei Jeng](https://twitter.com/l0ckys)***
+
+	@l0ckys: *lockys on the internet, loving in #WebDevelop #FrontEnd #JavaScript #NodeJS #brainwarer*
+
+- ***[Tracy Lee | ladyleet](https://twitter.com/ladyleet)***
+
+	@ladyleet: *Speaker|#GoogleDevExpert|Cofounder @thisdotmedia|Sold last startup|@ModernWeb_ @ngcruise @rxworkshop @venturehacked @embermeetup #foodie http://ladyleet.com*
+
+- ***[Leonardo A. Souza](https://twitter.com/leobetosouza)***
+
+	@leobetosouza: *Chato. Carioca suburbano morando em Niterói. Cristão. Flamenguista. Web Developer. Chato.*
+
+- ***[Marco Trulla](https://twitter.com/marcotrulla)***
+
+	@marcotrulla: *#Freelance #WebDev #Graphics #NodeJS #Photo #WebDeveloperItaliani (http://bit.ly/1jz9IG7) - #WebDesignerItaliani (http://bit.ly/1o4yNe7)*
+
+- ***[marocchino](https://twitter.com/marocchino)***
+
+	@marocchino: *ruby, javascript, vim, elixir, elm*
+
+- ***[Mathias Bynens](https://twitter.com/mathias)***
+
+	@mathias: *Web standards fanatic. JavaScript, HTML, CSS, HTTP, performance, security, Bash, Unicode, macOS.*
+
+- ***[Mihai Paun](https://twitter.com/mihaipaun)***
+
+	@mihaipaun: *Web craftsman. Art aficionado. Music head. Husband of @Be_InSight / http://in-sight.ie/*
+
+- ***[NatalieMac](https://twitter.com/nataliemac)***
+
+	@nataliemac: *I'm a web developer, UI designer, and founder of the amazing creative agency Purple Pen Productions.*
+
+- ***[Nick Salloum](https://twitter.com/nicksalloum_)***
+
+	@nicksalloum_: *full stack software engineer // building stuff at @AxiomZenTeam // adaptive like a chameleon // loves surfing // stoked on life*
+
+- ***[Ryuichi Okumura](https://twitter.com/okuryu)***
+
+	@okuryu: *Technical @ Yahoo! JAPAN, made in Kyoto.*
+
+- ***[Open Source Weekends](https://twitter.com/os_weekends)***
+
+	@os_weekends: *#Meetup para amantes del #OpenSource. Nos reunimos una mañana de sábado al mes | Organizan @Josetekh, @kom_256, @ignaciodenuevo y @CodingCarlos*
+
+- ***[Paul Irish](https://twitter.com/paul_irish)***
+
+	@paul_irish: *The web is awesome, let's make it even better • I work on Chrome DevTools and browser performance • big fan of rye whiskey, data and whimsy*
+
+- ***[Axel Rauschmayer](https://twitter.com/rauschma)***
+
+	@rauschma: *JavaScript: blogger @2ality, trainer @Ecmanauten, books http://exploringjs.com, newsletter @ESnextNews.*
+
+- ***[rem](https://twitter.com/rem)***
+
+	@rem: *All about CSS sizing units. Sometimes about code too.*
+
+- ***[Brian Rinaldi](https://twitter.com/remotesynth)***
+
+	@remotesynth: *I share links on web, mobile development & tech. Work @ Progress (Telerik). Co-edit Mobile Web Weekly http://mobilewebweekly.co/ . Opinions no longer expressed here*
+
+- ***[Rebecca Murphey](https://twitter.com/rmurphey)***
+
+	@rmurphey: *Software engineer @IndeedEng. Tweets are my own, obvi.*
+
+- ***[Kristian Roebuck](https://twitter.com/roebuk)***
+
+	@roebuk: *Web Developer, Runner*
+
+- ***[rick waldron](https://twitter.com/rwaldron)***
+
+	@rwaldron: *Open Web Engineer at Bocoup. Ecma/TC39. http://github.com/rwaldron Creator of Johnny-Five: http://johnny-five.io  Black Lives Matter*
+
+- ***[stephan lindauer](https://twitter.com/stephanlindauer)***
+
+	@stephanlindauer: *#devops at @civey_de // computer science master student at @HTW_Berlin // opinions are someone else's // hier koennte ihre werbung stehen*
+
+- ***[Profunctor Optics](https://twitter.com/tomdale)***
+
+	@tomdale: *JavaScript thinkfluencer*
+
+- ***[φrevor ηorris](https://twitter.com/trevnorris)***
+
+	@trevnorris: *node.js core maintainer and destroyer of slow code @NodeSource*
+
+- ***[Umar Hansa](https://twitter.com/umaar)***
+
+	@umaar: *Web developer.*
+
+- ***[WeCodeSign Podcast](https://twitter.com/wecodesign)***
+
+	@wecodesign: *El #podcast de diseño, desarrollo front-end y ux quincenal por @IgnaciodeNuevo - Feed: http://feeds.feedburner.com/WecodesignPodcast …*
+
+- ***[Yotam Ofek](https://twitter.com/yotamofek)***
+
+	@yotamofek: *http://snd.sc/yUPbtT*
+

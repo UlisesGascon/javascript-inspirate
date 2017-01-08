@@ -1,0 +1,618 @@
+# Capítulo 3 - console.log("Hola Mundo");
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+## JSHint
+
+Es una herramienta clave para nuestro día a día, ya que nos permite detectar errores comunes en el código JavaScript que desarrollemos.
+
+Para usuarios más avanzados es recomendable utilizar *[esLint](http://eslint.org/)*, ya que nos proporciona múltiples configuraciones avanzadas.
+
+JSHint puede ser utilizado directamente desde la web o como un plugin más en tu editor favorito.
+
+I> #### Más información:
+I>
+I> - *[JSHint Online](http://jshint.com/)*
+I> - *[JSHint About](http://jshint.com/about/)*
+I> - *[JSHint Repository](https://github.com/jshint/jshint)*
+
+## Consola
+
+La herramienta más utilizada será la consola de JavaScript, que es una de las múltiples utilidades que nos ofrecen los navegadores para depurar nuestro código.
+
+Si ya desarrollas habitualmente utilizando CSS y HTML, estarás familiarizado con este conjunto de herramientas y su potencial, si no deberías *[seguir estos sencillo pasos](https://developers.google.com/web/tools/chrome-devtools/)*.
+
+Yo personalmente, prefiero utilizar Google Chrome aunque sin duda Mozilla Firefox, también es una buena opción para depurar y desarrollar nuestro código.
+
+Para hacer uso de la consola... necesitamos llamar al objeto *[console](https://developer.mozilla.org/es/docs/Web/API/Console)*.
+
+I> #### Más información:
+I>
+I> - *[@ChromeDevTools en Twitter](https://twitter.com/chromedevtools?lang=es)*
+I> - *[Chrome DevTools](https://developer.chrome.com/devtools)*
+
+
+### Métodos destacados:
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+- ***[.assert()](https://developer.mozilla.org/en-US/docs/Web/API/console/assert)***
+
+	Aparece un mensaje de error en la consola si la afirmación es falsa.
+
+    {lang=js}
+    ~~~~~~~
+    var controlador = false;
+    console.assert(controlador, "\"controlador\" es igual a \"false\"");
+    ~~~~~~~
+
+
+- ***[.clear()](https://developer.mozilla.org/es/docs/Web/API/Console/clear)***
+
+	Limpia la consola.
+
+    {lang=js}
+    ~~~~~~~
+    console.clear()
+    ~~~~~~~
+
+
+- ***[.dir()](https://developer.mozilla.org/en-US/docs/Web/API/Console/dir)***
+
+	Retorna una lista interactiva de las propiedades de un objeto.
+
+    {lang=js}
+    ~~~~~~~
+    console.dir(document.body);
+    ~~~~~~~
+
+- ***[.dirxml()](https://developer.mozilla.org/en-US/docs/Web/API/Console/dirxml)***
+
+	Retorna una representación HTML del objeto.
+
+    {lang=js}
+    ~~~~~~~
+    console.dirxml(document.body);
+    ~~~~~~~
+
+
+#### Agrupadores
+
+- ***[.group()](https://developer.mozilla.org/en-US/docs/Web/API/Console/group)***
+
+	Crea un grupo de mensajes de consola.
+
+- ***[.groupCollapsed()](https://developer.mozilla.org/en-US/docs/Web/API/Console/groupCollapsed)***
+
+	Crea un grupo de mensajes de consola minimizados por defecto.
+
+    {lang=js}
+    ~~~~~~~
+    console.groupCollapsed("bucleFor");
+    for(var i=100; i>0; i--){
+        console.info("Iteración numero %i", i)
+    }
+    console.groupEnd();
+    ~~~~~~~
+
+- ***[.groupEnd()](https://developer.mozilla.org/en-US/docs/Web/API/Console/groupEnd)***
+
+	Cierra el grupo de mensajes.
+
+{pagebreak}
+
+#### Tablas
+
+- ***[.table()](https://developer.mozilla.org/en-US/docs/Web/API/Console/table)***
+
+	Muestra los datos dentro de una tabla.
+
+    {lang=js}
+    ~~~~~~~
+    var lenguajes = [
+        { nombre: "JavaScript", extension: ".js" },
+        { nombre: "TypeScript", extension: ".ts" },
+        { nombre: "CoffeeScript", extension: ".coffee" }
+    ];
+
+    console.table(lenguajes);
+    console.table(lenguajes, "extension");
+    ~~~~~~~
+
+#### Gestión del tiempo
+
+- ***[.time()](https://developer.mozilla.org/en-US/docs/Web/API/Console/time)***
+
+	Inicia un contador en ms.
+
+- ***[.timeEnd()](https://developer.mozilla.org/en-US/docs/Web/API/Console/timeEnd)***
+
+	Para el contador y devuelve el resultado.
+
+    {lang=js}
+    ~~~~~~~
+    console.time("Medición de miArray");
+    var miArray = new Array(1000000);
+    for (var i = miArray.length - 1; i >= 0; i--) {
+     miArray[i] = new Object();
+    };
+    console.timeEnd("Medición de miArray");
+    ~~~~~~~
+
+
+#### Notificadores
+
+- ***[.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)***
+
+	Saca un mensaje por consola.
+
+    {lang=js}
+    ~~~~~~~
+    console.log("Hola en formato clásico");
+    ~~~~~~~
+
+- ***[.info()](https://developer.mozilla.org/en-US/docs/Web/API/Console/info)***
+
+	Saca un mensaje por consola con un estilo informativo.
+
+    {lang=js}
+    ~~~~~~~
+    console.info("Hola en formato informativo");
+    ~~~~~~~
+
+- ***[.warn()](https://developer.mozilla.org/en-US/docs/Web/API/Console/warn)***
+
+	Saca un mensaje por consola con un estilo alerta.
+
+    {lang=js}
+    ~~~~~~~
+    console.warn("Hola en formato alerta");
+    ~~~~~~~
+
+- ***[.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)***
+
+	Saca un mensaje por consola de error, con los mismos estilos, creando confusión.
+
+	No se recomienda su uso.
+
+    {lang=js}
+    ~~~~~~~
+    console.error("Hola en formato error");
+    ~~~~~~~
+
+#### Formateadores
+
+|Formato |Descripción   |
+|--------|--------------|
+|%s      |Cadena        |
+|%d o %i |Número entero |
+|%f      |Decimal       |
+|%o      |DOM           |
+|%O      |Objeto js     |
+|%c      |CSS           |
+
+
+**Ejemplos:**
+
+- *%o* para estructuras del DOM:
+
+    {lang=js}
+    ~~~~~~~
+    var parrafos = document.getElementsByTagName("p");
+    console.log("DOM: %o", parrafos);
+    ~~~~~~~
+
+- *%O* para objetos JS:
+
+    {lang=js}
+    ~~~~~~~
+    var objeto = {"nombre":"Yo","Apellido":"Mismo"};
+    console.log("Objeto: %O", objeto);
+    ~~~~~~~
+
+- Usando CSS:
+
+    {lang=js}
+    ~~~~~~~
+    console.log('Esto es aburrido...');
+    console.log('%c Pero se puede mejorar fácilmente! ', 'background: #3EBDFF; color: #FFF; font-size:25px;');
+    ~~~~~~~
+
+## Caracteres especiales:
+
+Incluyendo ciertos caracteres especiales en nuestras cadenas de texto, podemos maquetar el resultado que se imprimirá por la consola.
+
+* `\t` *Tabulador*
+* `\'` *Comillas Simples*
+* `\"` *Comillas Dobles*
+* `\n` *Salto de línea*
+
+{lang=js}
+~~~~~~~
+console.log("Hasta aquí... todo correcto. Ahora vamos a \"tabular\":\tves? Ya estamos más lejos.\n\'Otra linea ;-)\'")
+~~~~~~~
+
+## Comentarios
+
+T> Los comentarios nos ayudan a entender nuestro código, en ocasiones podemos utilizarlos para
+T> silenciar temporalmente partes del código.
+
+Algunos desarrolladores aconsejan utilizar *[JSDoc](https://en.wikipedia.org/wiki/JSDoc)*, como un sistema para determinar como debe comentarse de manera sistemática nuestro código.
+
+Al utilizar *[JSDoc](https://en.wikipedia.org/wiki/JSDoc)* puedes exportar esos comentarios como un fichero Html, que nos permitirá documentar nuestro proyecto fácilmente.
+
+Como regla general es mejor poner comentarios, que no ponerlos. También puedes usar los comentarios de una forma más eficiente si referencias (urls) a la documentación en el caso de las librerías.
+
+
+
+-  **Una línea**
+
+    {lang=js}
+    ~~~~~~~
+    // Comentario en una línea
+    ~~~~~~~
+
+- **Multiples líneas**
+
+    {lang=js}
+    ~~~~~~~
+    /*
+    Una Línea....
+    Otra linea...
+    Etc...
+    */
+    ~~~~~~~
+
+- **JSDoc**
+
+    {lang=js}
+    ~~~~~~~
+    /**
+     * Represents a book.
+     * @constructor
+     * @param {string} title - The title of the book.
+     * @param {string} author - The author of the book.
+     */
+    function Book(title, author) {
+    }
+    ~~~~~~~
+
+
+## Nombres de variables
+
+*[Las variables](https://es.wikipedia.org/wiki/Variable_(programaci%C3%B3n))* tienen unas reglas muy especificas que debemos seguir a la hora de designar sus nombres.
+
+* Debemos usar nombres que expliquen que aporta esa variable a nuestro código.
+* No se pueden usar espacios.
+
+    {lang=js}
+    ~~~~~~~
+    var con espacios = 1;
+    ~~~~~~~
+
+* No usar un número delante.
+
+    {lang=js}
+    ~~~~~~~
+    var 1numero = 1;
+    ~~~~~~~
+
+* Evitar símbolos y *[snake_case](https://en.wikipedia.org/wiki/Snake_case)*.
+
+    {lang=js}
+    ~~~~~~~
+    var con_guiones_bajos = 1; //snake_case es poco común en JavaScript
+    var dame$ = 1; // en serio?
+    ~~~~~~~
+
+
+
+* Usar *[camelCase](https://es.wikipedia.org/wiki/CamelCase)*.
+
+    {lang=js}
+    ~~~~~~~
+    var otraOpcion = 1;
+    var opcionCon123123 = 1;
+    ~~~~~~~
+
+
+T> **Truco**
+T>
+T> Si estas realizando cambios en un código que sigue una pauta distinta a cameCase. ¡Síguelo!
+T>
+T> La coherencia en el código es más importante, recuérdalo.
+
+
+## Tipos de variables
+
+Un primer paso para dominar los tipos de variables es utilizar el operador *typeof*, y conocer su *[especificación](http://www.ecma-international.org/ecma-262/5.1/#sec-11.4.3)*.
+
+I>***[Tipado Debil vs. Tipado Fuerte](https://es.wikipedia.org/wiki/Tipado_fuerte)***
+I>
+I> Las variables en JavaScript no necesitan ser declaradas teniendo en cuenta *[el tipo de dato](https://es.wikipedia.org/wiki/Tipo_de_dato)* que contienen, como sucede en otros lenguajes
+
+
+Es importante conocer los tipos de *[variables disponibles](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)*:
+
+
+- ***[Undefined](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof undefined
+    typeof noDefinido
+    typeof tampocoCreado
+    ~~~~~~~
+
+{pagebreak}
+
+- ***[Object](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof null
+    typeof [15, 4]
+    typeof new Date()
+    typeof {a:1}
+    ~~~~~~~
+
+- ***[Boolean](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof false
+    typeof true
+    typeof Boolean(false)
+    ~~~~~~~
+
+- ***[Number](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof 3
+    typeof 3.14
+    typeof NaN
+    typeof Infinity
+    ~~~~~~~
+
+- ***[String](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof "hola"
+    ~~~~~~~
+
+- ***[Function](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Function)***
+
+    {lang=js}
+    ~~~~~~~
+    typeof function(){}
+    ~~~~~~~
+
+Existe un tipo más... *[Symbol](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol)* pero pertenece a *[ECMA6](http://es6-features.org/#Constants)*, es por ello, que no lo desarrollamos aquí.
+
+
+## *[Matemáticas Básicas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)*
+
+La matemáticas básicas en JavaScirpt son muy similares a cualquier lenguaje.
+
+El único operador matemático que puede resultarnos extraño es *[el módulo](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Aritm%C3%A9ticos)*.
+
+{lang=js}
+~~~~~~~
+var suma = 5 + 4;
+var resta = 10 - 6;
+var multiplicacion = 3 * 3;
+var division = 6 / 2;
+var modulo = 43 % 10;
+~~~~~~~
+
+I> **Trabajando con Decimales**
+I>
+I> En JavaScript el decimal 1.0 y el entero 1, son iguales.
+I>
+I> `console.log((5.0+1) === (5+1)) // true`
+
+### Matemáticas Básicas (Agrupando operaciones)
+
+Con los paréntesis fácilmente se pueden priorizar operaciones.
+
+El orden de ejecución empieza por los parentesis, luego multiplicaciones y divisiones... para terminar con sumas y restas.
+
+{lang=js}
+~~~~~~~
+var expresion1 = (3 + 7) * 10;
+var expresion2 = (-56 * 6) - 74 * -25;
+var expresion3 = (3 * 3) + 10 - 12 / 2;
+var expresion4 = 44 + (83 % (33 + 100));
+var expresion5 = -145 + (500 / 10 - 5) + 10 * 10 ;
+~~~~~~~
+
+### Matemáticas Básicas (crecimiento y decrecimiento)
+
+El crecimiento y decrecimiento, puede suceder antes o después que el valor de la variable sea leído por el navegador, en función de dónde se sitúa el operador (++antes o después++).
+
+{lang=js}
+~~~~~~~
+var numero = 5;
+
+console.log(--numero); // 4
+console.log(numero--); // 5 (luego 4)
+console.log(++numero); // 6
+console.log(numero++); // 5 (luego 6)
+~~~~~~~
+
+## *[Operadores de asignación](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Assignment_Operators)*
+
+Estos operadores, nos permiten alterar de manera sencilla y controlada el valor de una variable.
+
+* = **Asignación**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x = y;
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+* += **Suma**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x += y; // x = x + y
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+{pagebreak}
+
+* -= **Resta**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x -= y; // x = x - y
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+- *= **Multiplicación**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x *= y; // x = x * y
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+* /= **División**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x /= y; // x = x / y
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+* %= **Módulo (Resto)**
+
+    {lang=js}
+    ~~~~~~~
+    var x = 1;
+    var y = 2;
+    x %= y;  // x = x % y
+    console.info("\"x\" vale ", x);
+    ~~~~~~~
+
+
+**Jugando con variables**
+
+Si ejecutas el siguiente fragmento de código, verás lo fácil que resulta perder el control de nuestras variables, si no tenemos mucho cuidado.
+
+{lang=js}
+~~~~~~~
+var empezoComo3 = 3;
+era3();
+
+empezoComo3 = 35;
+era3();
+
+empezoComo3 = empezoComo3 + 30;
+era3();
+
+empezoComo3 += 4;
+era3();
+
+empezoComo3++;
+era3();
+
+empezoComo3 -= 12;
+era3();
+
+empezoComo3--;
+era3();
+
+empezoComo3 *= 10;
+era3();
+
+empezoComo3 /= 11;
+era3();
+
+empezoComo3 += "texto";
+era3();
+
+empezoComo3 += 20;
+era3();
+
+empezoComo3++;
+era3();
+
+
+function era3 () {
+    console.log("empezoComo3 debería ser 3, ahora su valor es " + empezoComo3);
+};
+~~~~~~~
+
+
+
+## Interacción Básica con el Usuario
+
+Puedes interactuar con el usuario desde JavaScirpt, utilizando unos métodos sencillos que ya vienen implementados en todos los navegadores. Esto hace unos años era muy común y poco a poco se convirtió en una mala práctica.
+
+I> El propio navegador, ofrece al usuario la posibilidad de bloquear esta interacción. Lo ideal es
+I> gestionar esta interacción con el usuario desde el HTML, como veremos en próximos capítulos.
+I>
+I> En el caso de depuración y prototipado de código puede ser un recurso muy útil.
+
+{pagebreak}
+
+- ***[Window.alert()](https://developer.mozilla.org/es/docs/Web/API/window/alert)***
+
+	Muestra nuestro mensaje en una ventana.
+
+    {lang=js}
+    ~~~~~~~
+    alert("¡Bienvenido a esta web!");
+    ~~~~~~~
+
+- ***[Window.confirm()](https://developer.mozilla.org/es/docs/Web/API/Window/confirm)***
+
+	Pregunta al usuario y ofrece dos botones que se traducen en valores booleanos. Aceptar (true) y cancelar o cerrar la ventana (false).
+
+    {lang=js}
+    ~~~~~~~
+    confirm("¿Esta seguro que desea abandonar esta web?");
+    ~~~~~~~
+
+	Ejemplo:
+
+    {line-numbers=on, lang=js}
+    ~~~~~~~
+    var respuesta = confirm("presiona un botón!");
+    if (respuesta === true) {
+        console.log("Has aceptado!");
+    } else {
+        console.log("Has cancelado");
+    }
+    ~~~~~~~
+
+- ***[Window.prompt()](https://developer.mozilla.org/es/docs/Web/API/window/prompt)***
+
+	Pregunta al usuario y permite la escritura devolviendo el mensaje.
+
+    {lang=js}
+    ~~~~~~~
+    prompt("¿Como te llamas?");
+    ~~~~~~~
+
+	Registremos los datos en una variable:
+
+    {lang=js}
+    ~~~~~~~
+    var nombre = prompt("¿Como te llamas?");
+    ~~~~~~~

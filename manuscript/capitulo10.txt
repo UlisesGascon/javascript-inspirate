@@ -1,0 +1,793 @@
+# Capítulo 10 - Funciones
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+Las funciones de JavaScript son el alma de este lenguaje, por eso se consideran *[ciudadanos de primera clase (first-class citizen)](https://en.wikipedia.org/wiki/First-class_citizen)*, además de *[entidades de orden superior](https://es.wikipedia.org/wiki/Funci%C3%B3n_de_orden_superior)*.
+
+En JavaScript, las funciones tienen *"super poderes"*. Estos son algunos de los más importantes:
+
+- Ser pasadas como parámetros *[(callbacks)](https://es.wikipedia.org/wiki/Callback_(inform%C3%A1tica))*.
+- Ser parte de los objetos como métodos.
+- Ser asignadas a una variable (función anónima).
+- Ser retornadas por otra función.
+
+Una de las claves para entender la importancia de las funciones, aún cuando estamos dando nuestros primeros pasos en JavaScript es la reusabilidad. Podemos crear partes de código que fácilmente podremos reutilizar a lo largo de una aplicación o incluso a lo largo de muchos programas y aplicaciones... llegando incluso a crear nuestras propias librerías.
+
+Pero para dominar la reusabilidad y respetar con profundidad el principio de programación *[DRY (Don't Repeat Yourself)](https://es.wikipedia.org/wiki/No_te_repitas)*, deberemos en cualquier caso ser capaces de manejar los parámetros y el retorno de las funciones, algo de lo que hablaremos mucho en este capítulo.
+
+Las funciones, especialmente como *[parámetro (callback)](https://es.wikipedia.org/wiki/Callback_(inform%C3%A1tica))*, también será nuestra puerta de entrada al maravilloso, caótico y paradigmático *[mundo de la asincronía](https://carlosazaustre.es/blog/manejando-la-asincronia-en-javascript/)*.
+
+## Manejo
+
+- **Declarar funciones**
+
+	Como sentencia:
+
+    {lang=js}
+    ~~~~~~~
+    function miFuncion (){
+    	console.log("Hola!")
+    }
+    ~~~~~~~
+
+
+
+    Como valor de una variable:
+
+    {lang=js}
+    ~~~~~~~
+    var miFuncion = function(){
+    	console.log("Hola!")
+    }
+    ~~~~~~~
+
+	{pagebreak}
+
+    Como método en un objeto:
+
+    {lang=js}
+    ~~~~~~~
+    var miObjeto = {
+    	propiedad: "Soy una propiedad",
+    	metodo: function(){
+    		console.log("Hola!")
+    	}
+    }
+    ~~~~~~~
+
+- **Ejecutar funciones**
+
+	Aunque pueda parecer algo extraño, desde el principio, ya estábamos ejecutando funciones.
+
+    {lang=js}
+    ~~~~~~~
+    // Recuerdas isNaN?
+    console.log("Recuerdas isNaN?", isNaN(NaN))
+    ~~~~~~~
+
+	Ahora ejecutamos nuestras propias funciones y métodos.
+
+    {lang=js}
+    ~~~~~~~
+    var miFuncion = function(){
+    	console.log("Hola!");
+    }
+
+   	function otraFunción() {
+   		console.log("Hola de nuevo!");
+   	}
+
+   	var obj = {
+   		metodo: function () {
+   			console.log("Hola... ahora como método!");
+   		}
+   	}
+
+    miFuncion();
+    otraFunción();
+    obj.metodo();
+    ~~~~~~~
+
+
+## *[Argumentos y parámetros](https://es.wikipedia.org/wiki/Argumento_(inform%C3%A1tica))*
+
+Cuando queremos hacer funciones con un nivel de abstracción realmente alto, tenemos que recurrir al aislamiento. De tal forma que nuestra función no dependa de ciertas variables o datos externos a ella.
+
+Cuando definimos (creamos) una función, podemos incluir ciertos parámetros entre los paréntesis que actuarán como referencias. Funcionarán internamente igual que variables, de tal forma que a la hora de ejecutar la función... podremos pasarle ciertos argumentos y así tener funciones con un mayor nivel de abstracción.
+
+{pagebreak}
+
+### Uso Normal
+
+{lang=js}
+~~~~~~~
+// Declarando Parámetros
+function sumar (p1, p2){
+	console.log("suma:", p1 + p2)
+}
+
+// Pasando Argumentos
+sumar(2, 3);
+~~~~~~~
+
+El exceso de argumentos no es un problema.
+
+{lang=js}
+~~~~~~~
+// Declarando Parámetros
+function sumar (p1, p2){
+	console.log("suma:", p1 + p2)
+}
+
+// Pasando Argumentos
+sumar(2, 3, "más datos...", 45, true);
+~~~~~~~
+
+La falta de argumento crea un valor indefinido.
+
+{lang=js}
+~~~~~~~
+function testeando (p1, p2){
+	console.log("p1:", p1);
+	console.log("p2:", p2)
+}
+
+// Pasando Argumentos
+testeando(2);
+~~~~~~~
+
+
+### Parámetros opcionales
+
+Podremos simplificar enormemente la ejecución de las funciones si, definimos ciertos valores por defecto para aquellos parámetros que consideremos opcionales.
+
+Este trabajo adicional por nuestra parte, se verá recompensado posteriormente en tareas de soporte y documentación que no tendremos que realizar.
+
+Trabajar con valores por defecto nos ayudará mucho para construir librerías y un código modular eficiente.
+
+Básicamente existen dos maneras de hacer esto.
+
+{pagebreak}
+
+- **Utilizando el operador _||_**
+
+	{lang=js}
+	~~~~~~~
+	function userID(nombre, numero) {
+	  numero = numero || "000000E";
+	  console.log("ID:", nombre + "-" + numero)
+	}
+
+	userID("Ulises", 31); // Ulises-31
+	userID("Oscar");      // Oscar-000000E
+	userID("Pepe", 0)     // Pepe-000000E
+	~~~~~~~
+
+	Aunque este operador hace un buen trabajo se equivoca con el 0 -entre otros- por eso no es recomendable utilizarlo, especialmente cuando se encarga de gestionar el parámetro por defecto de valores numéricos.
+
+
+- **Utilizando un _if_**
+
+	Podemos hacer una validación por tipo, lo que descartará ciertos falsos positivos como en el caso del 0.
+
+	{lang=js}
+	~~~~~~~
+	function sumar(a, b) {
+	  if(typeof b === 'undefined'){
+	  	b = 0;
+	  }
+
+	  return a+b;
+	}
+
+	sumar(2);    // 2
+	sumar(2, 8); // 10
+	~~~~~~~
+
+	Con un operador ternario se hace más compacto pero menos legible:
+
+	{lang=js}
+	~~~~~~~
+	function sumar(a, b) {
+	  b = typeof b !== 'undefined' ?  b : 0;
+	  return a+b;
+	}
+
+	sumar(2);    // 2
+	sumar(2, 8); // 10
+	~~~~~~~
+
+{pagebreak}
+
+
+### El orden es clave
+
+El orden de los parámetros es muy importante, ya que su posición puede alterar enormemente la usabilidad a la hora de la ejecución, por eso el orden siempre será:
+
+- Parámetros fijos (primero).
+- Parámetros opcionales (después).
+
+
+### Objetos como argumento
+
+Se considera una buena práctica, pasar un único objeto como parámetro si estamos manejando más de tres parámetros fijos.
+
+De esta forma además de agrupar todo fácilmente, también podemos cambiar el orden de entrada de datos.
+
+Es importante recordar que debemos documentar muy bien lo que esperamos, que contenga el objeto, de lo contrario nuestros métodos y funciones pueden ser un infierno para cualquier otro programador e incluso para nosotros mismos pasado un tiempo.
+
+{lang=js}
+~~~~~~~
+contactos = [];
+
+function crearContacto (nombre, usuarioTwitter, referencias, notas, fotoUrl){
+	contactos.push({
+		"nombre": nombre,
+		"@": "@" + twitter
+	})
+}
+
+crearContacto("Oscar", "inventado", "amigos...", "etc...", "más cosas...");
+~~~~~~~
+
+**¡Refactorizemos!**
+
+{lang=js}
+~~~~~~~
+contactos = [];
+
+function crearContacto (datos){
+	contactos.push({
+		"nombre": datos.nombre,
+		"@": "@" + datos.twitter
+	})
+}
+
+// Puedo pasar los atributos en el orden que quiera
+crearContacto({twitter: "inventado", nombre: "Pepe", fotoUrl: "http..."});
+~~~~~~~
+
+{pagebreak}
+
+### Avanzado: Objeto *arguments*
+
+El Objeto Arguments no es un array, solo es similar.
+
+{lang=js}
+~~~~~~~
+function pruebaArgumentos () {
+	console.log(arguments);
+	console.info(arguments[0]);
+	console.info(arguments[1]);
+}
+
+pruebaArgumentos (1, "vale", true);
+~~~~~~~
+
+T> Conversión array require de ciertos conocimientos avanzados en el uso de
+T> *[protoype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)* y
+T> *[this](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this)*. Os
+T> dejo una función que os ayudará a realizar esta conversión de una forma fácil.
+T>
+T> {lang=js}
+T> ~~~~~~~
+T> function conversorArgumentos(arguments) {
+T>     var argumentos = Array.prototype.slice.call(arguments);
+T>     return argumentos.sort();
+T> }
+T> ~~~~~~~
+
+
+## Retorno
+
+Otro de los puntos fuertes a la hora de plantear estructuras de código modulares y reutilizables, es tener en cuenta el retorno. 
+
+El retorno nos permite devolver un valor al terminar de ejecutarse la función. Este valor puede ser cualquier tipo de dato de los muchos que tenemos en JavaScript. Por supuesto, también funciones y objetos.
+
+Cómo utilizar funciones que retornen valores en función de ciertas operaciones realizadas.
+
+{lang=js}
+~~~~~~~
+	function validarPar(numero){
+		var esPar = numero % 2 !== 1;
+		var mensaje;
+
+		if (esPar) {
+			mensaje = "Bravo! es un número par!";
+		} else {
+			mensaje = "ERROR! No es un número par.... ¬¬\"";
+		}
+		return mensaje;
+	};
+
+	console.log("El 5 es un número par?", validarPar(5));
+	console.log("El 2 es un número par?", validarPar(2));
+~~~~~~~
+
+Una suma de cuadrados en el retorno. Las operaciones también pueden ser realizadas en el retorno de la función.
+
+{lang=js}
+~~~~~~~
+function sumaCuadrados (a, b) {
+	return (a*a) + (b*b);
+};
+
+var resultado = sumaCuadrados(2, 3);
+console.log("2x2 + 3x3 =", resultado)
+~~~~~~~
+
+## Anidación
+
+Dentro de una función, podemos crear nuevas funciones al igual que variables de todo tipo. Este es un recurso a tener en cuenta, pero no debemos abusar de la anidación... ya que, el código puede volverse muy difícil de leer y depurar.
+
+{lang=js}
+~~~~~~~
+function saludar(quien){
+        function alertaSaludo(){
+                console.log("hola " +  quien);
+        }
+        return alertaSaludo;
+}
+
+var saluda = saludar("Amigo/a");
+saluda();
+~~~~~~~
+
+También podemos usar parámetros, al igual que una función normal.
+
+{lang=js}
+~~~~~~~
+function saludar(quien){
+        function alertaSaludo(){
+                console.log("hola " +  quien);
+        }
+        return alertaSaludo;
+}
+
+saludar("Amigo/a")();
+~~~~~~~
+
+## Ámbito (Scope)
+
+Por defecto en JavaScript existen dos tipos de ámbitos, local y global. Dominar los ámbitos nos hará llegar a ser grandes artesanos, pero no es una tarea sencilla.
+
+En principio aquellas variables que se han declarado fuera de la función, son de ámbito global, y las variables que se declaran en el interior serán consideradas de ámbito local.
+
+Desde cualquier función siempre podremos acceder a todas las variables que se han declarado en el ámbito global, pero desde el exterior de una función no podremos acceder a su ámbito local. Para poder solventar esta limitación se utilizan los retornos que vimos anteriormente y algunos recursos adicionales que veremos más adelante.
+
+{lang=js}
+~~~~~~~
+var ambitoGlobal = "Soy una variable Global!";
+
+function miFuncion () {
+	var ambitoLocal = "Soy una variable Local!";
+	console.log("Desde local puedo ver ambitoLocal?", ambitoLocal);
+	console.log("Desde local puedo ver ambitoGlobal?", ambitoGlobal);
+}
+
+console.log("Desde local puedo ver ambitoLocal?", ambitoLocal);
+//Uncaught ReferenceError: ambitoLocal is not defined(…)
+
+console.log("Desde local puedo ver ambitoGlobal?", ambitoGlobal);
+~~~~~~~
+
+Este juego de ámbito local y global, puede extenderse en el entorno compartido y aislado de las funciones anidadas.
+
+W> **Duplicando Variables**
+W>
+W> Una mala práctica a la hora de planificar nombres de las variables en nuestra aplicación puede
+W> llevarnos a la situación en la que tengamos variables creadas (declaradas) en el ámbito global
+W> y en el local con los mismos nombres.
+W>
+W> Esto puede ser evitado desde la planificación en una fase temprana o posterior con algún
+W> *linter* como *[JSHint](http://jshint.com/)* o *[ESLint](http://eslint.org/)*.
+
+
+
+## Funciones Anónimas
+
+En JavaScript podemos crear tantas funciones como queramos, sin embargo entre los requisitos de creación no esta incluir un nombre necesariamente.
+
+### Funciones que retornan funciones
+
+Cuando una función retorna una nueva función, esta nueva función lógicamente será anónima.
+
+{lang=js}
+~~~~~~~
+function saludo(quien){
+    return function(){
+        console.log("hola " + quien);
+    }
+}
+
+var saluda = saludo("Amigo/a");
+saluda();
+~~~~~~~
+
+Podemos ejecutar ambas funciones, sin asignar una variable necesariamente.
+
+{lang=js}
+~~~~~~~
+function saludo(quien){
+    return function(){
+        console.log("hola " + quien);
+    }
+}
+
+saludo("Amigo/a")();
+~~~~~~~
+
+### Funciones anónimas autoejecutadas
+
+I> Es uno de los patrones más clásicos y utilizados en JavaScript, para encapsular nuestro 
+I> código y prevenir que pueda ser alterado desde el exterior.
+
+Esta técnica da mucho juego, si tenemos en cuenta que podemos usar el retorno.
+
+Al aislar nuestro código tanto del exterior, podemos pensar que nuestro programa se queda lejos de ser capaz de interactuar con el usuario, pero esto es incorrecto, ya que en JavaScript podremos recurrir a la *[programación dirigida por eventos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos)*. Hablaremos en próximos capítulos sobre ello.
+
+{lang=js}
+~~~~~~~
+(function() {
+	console.log("hola Amigo/a")
+})();
+~~~~~~~
+
+Resulta más sencillo de entender esta estructura si entendemos el juego de los paréntesis.
+
+Declaramos una función:
+
+{lang=js}
+~~~~~~~
+(//código)()
+~~~~~~~
+
+Lo contenido en el primer paréntesis contiene el código encapsulado, al igual que haciamos con las operaciones matemáticas en capítulos anteriores.
+
+El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
+
+
+Como podemos, ver la estructura básica sería algo así:
+
+{lang=js}
+~~~~~~~
+(function(){})();
+~~~~~~~
+
+Aunque existen bastantes variantes y debates:
+
+{lang=js}
+~~~~~~~
+(function(){}());
+!function(){}();
++function(){}();
+!1%-+~function(){}();
+//...
+~~~~~~~
+
+Al igual que el resto de funciones podemos hacer uso de los parámetros.
+
+{lang=js}
+~~~~~~~
+( function(quien){
+   console.log("hola " + quien);
+})("Amigo/a");
+~~~~~~~
+
+I> **[Objeto Window](https://developer.mozilla.org/es/docs/Web/API/Window) como parámetro**
+I>
+I> Aunque por temas de rendimiento -lo más habitual- es pasar como argumento el *[objeto
+I> window](https://developer.mozilla.org/es/docs/Web/API/Window)*, así disponemos de una copia
+I> dentro del propio ámbito de la función.
+I>
+I> {lang=js}
+I> ~~~~~~~
+I> (function(window){
+I>   // código
+I> })(window);
+I> ~~~~~~~
+
+## Recursión
+
+Otra manera más *[funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)* y divertida de hacer bucles es utilizando la recursión. Básicamente una función es capaz de llamarse a sí misma durante su ejecución, lo que resulta ser una funcionalidad muy atractíva para ciertas operaciones.
+
+W> Por otro lado, aunque es una práctica muy habitual entre los programadores -que defienden- 
+W> la *[programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)* en
+W> JavaScript, puede ser complicado prevenir el riesgo de caer en bucles infinitos.
+
+
+{pagebreak}
+
+
+Un clásico donde podemos aplicar recursividad es en el cálculo del *[factorial](https://www.wikiwand.com/es/Factorial)*.
+
+{lang=js}
+~~~~~~~
+function factorial(n){
+	if(n <= 1){
+    	return 1
+  	} else {
+    	return n * factorial(n-1)
+	}
+}
+
+factorial(0); // n! = 1
+factorial(1); // n! = 1
+factorial(2); // n! = 2
+factorial(3); // n! = 6 (3*2*1)
+factorial(4); // n! = 24 (4*3*2*1)
+factorial(5); // n! = 120 (5*4*3*2*1)
+factorial(6); // n! = 720 (...)
+~~~~~~~
+
+
+## *[Callbacks](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks)*
+
+I> **La primera curiosidad sobre los callbacks:**
+I>
+I> Es una técnica de programación y no una facilidad del lenguaje, por ello *[callback](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks)* no es una
+I> palabra reservada en JavaScript, y puedes usarla en tu código, si te resulta más legible.
+
+{icon=quote-left}
+G> ***[Callbacks en Wikiwand](https://www.wikiwand.com/es/Callback_(inform%C3%A1tica)):***
+G>
+G> *"En programación de computadoras, una devolución de llamada o
+G> retrollamada (en inglés: callback) es una función "A" que se usa como
+G> argumento de otra función "B". Cuando se llama a "B", ésta ejecuta "A".
+G> Para conseguirlo, usualmente lo que se pasa a "B" es el puntero a "A"."*
+
+
+Esto quiere decir, **que cuando cierta función termina de realizar todo lo que tiene que hacer, ejecutará una función que le fue pasada como argumento**.
+
+En un principio, este concepto parece complicado, y sin duda lo es, pero este sistema es el primer paso para manejar la asincronía. Esto sucederá cuando nuestro código deja de ejecutarse de manera estructurada línea a línea, por ejemplo con las *[peticiones AJAX](https://developer.mozilla.org/es/docs/AJAX/Primeros_Pasos)*, lo que veremos en próximos capítulos.
+
+
+### Comparando por contexto
+
+Cuando tenemos un código síncrono, fácilmente podemos obviar el uso de callbacks, y llegar al mismo resultado, ya que nuestro código sigue un orden lógico.
+
+{pagebreak}
+
+**Sin Callbacks:**
+
+{lang=js}
+~~~~~~~
+function primerPaso() {
+	console.log("Este es el primer paso");
+};
+
+function segundoPaso() {
+	console.log("Este es el segundo paso");
+};
+
+primerPaso();
+segundoPaso();
+~~~~~~~
+
+**Con Callbacks:**
+
+{lang=js}
+~~~~~~~
+function primerPaso(callback) {
+	console.log("Este es el primer paso");
+	callback();
+};
+
+function segundoPaso() {
+	console.log("Este es el segundo paso");
+};
+
+primerPaso(segundoPaso);
+~~~~~~~
+
+Cuando nuestro código se ejecute de forma asíncrona, la única forma de conservar el flujo en orden, será utilizando entre otras cosas *[Callabcks](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Declaring_and_Using_Callbacks)* o *[Promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, como veremos a continuación.
+
+I> Si has desarrollado alguna vez con JQuery, habrás notado que tiene unas características
+I> ligeramente diferentes al JavaScript al que estamos acostumbrados.
+I>
+I> {lang=js}
+I> ~~~~~~~
+I> $('#elemento').fadeIn('slow', function() {
+I>   	// código del callback
+I> });
+I> ~~~~~~~
+I>
+I> Como puedes ver... en muchos métodos, pasamos como argumento una función que 
+I> declaramos en línea.
+I> Básicamente... **¡ya estábamos usando callabacks!** pero no eramos conscientes.
+
+
+{pagebreak}
+
+
+Veamos un ejemplo, un poco condensado. Os ayudaré comentando el código:
+
+{lang=js}
+~~~~~~~
+/*
+	Declaramos una función que espera dos parámetros
+	- parametro
+	- callback
+*/
+var quieroCallback = function(p1, callback){
+    // Consideramos el callback como algo opcional.
+    if ((callback){
+    	// Validamos si es una función o no.
+    	if (typeof callback === 'function')){
+    		/*
+    		  De ser una función lo ejecutamos y
+    		  y pasamos como argumento "p1"
+    		*/
+        	callback(p1);
+	    } else {
+	    	/*
+	    	  Si no se trata de una función...
+	    	  simplemente mostramos ambos datos.
+	    	 */
+	        console.log(p1, callback);
+		}
+    }
+}
+
+quieroCallback('a', 'b');
+
+quieroCallback('a', function(val){
+    console.log(val);
+});
+~~~~~~~
+
+
+## Asincronía
+
+I> **La naturaleza de la Asincronía**
+I>
+I> Hasta ahora todo el código que vimos se ejecutaba de una manera lógica, 
+I> previsible y secuencial.
+I> Cada línea de código era ejecutada después de la anterior, tardará lo que tardrá.
+I> Este estilo de programación es ineficiente y bloqueante, lo que en el mundo de 
+I> la web es intolerable.
+I>
+I> La asincronía es una caracteristica propia de ciertos métodos que permiten su 
+I> ejecución en un segundo plano.
+I> De tal forma que resulta imposible saber cuando terminarán y además antes de terminar su ejecucción se ejecutan la siguiente línea de código.
+
+
+Cuando en JavaScript se habla de asincronía, lo que realmente esta ocurriendo es que dejamos de ejecutar partes de nuestro script de manera secuencial. Esto crea un efecto curioso que tiene como consecuencia, un script muy escalable y rápido, ya que el sistema no espera a que algo termine para seguir ejecutando el resto del script.
+
+I> La mala noticia, es que recaerá en el lector todo el peso de controlar esos caballos 
+I> desbocados. 
+I> La asincronía es tan potente, que no existe otra forma de trabajar sobre Node.js. Por
+I> eso Nodejs está concebido -de principio a fin- como un sistema asíncrono.
+
+Existen muchas formas de manejar la asincronía.
+
+- Paso de continuadores (Callbacks).
+- Eventos.
+- Promesas (ECMA6 y librerías...).
+- Generadores (ECMA6, Closures, etc...).
+
+Nosotros veremos en este capítulo -exclusivamente- la gestión de asincronía por medio de callbacks.
+
+En el próximo capítulo hablaremos de *[programación dirigida por eventos](https://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos)* y como gestionar con ello la asincronía.
+
+
+Para hacer un poco más fluido esta explicación, utilizaremos *[setTimeout](https://developer.mozilla.org/es/docs/Web/API/WindowTimers/setTimeout)* que por defecto es una función asíncrona.
+
+Veamos como funciona el código sin gestionar la asincronía:
+
+{lang=js}
+~~~~~~~
+function traigoDatos (){
+    // Asincrona
+    setTimeout (function(){
+        console.log ("Esto son mis datos");
+    },2000)
+}
+
+function pintoDatos(){
+    // No asincrona
+    console.log("ya tengo los datos");
+}
+traigoDatos();
+pintoDatos();
+~~~~~~~
+
+Como puedes ver... los mensajes no salen en el orden correcto. Recuerda que, para pintar datos, el paso previo -siempre- es tener esos datos disponibles.
+
+Ahora vamos a intentar resolver este problema de una manera sencilla. Si introducimos un callback en la función asíncrona, seremos capaces de resolver el problema... aunque tarde 3 segundos o 5 minutos.
+
+{lang=js}
+~~~~~~~
+function traigoDatos (callback){
+    // Asincrona
+    setTimeout (function(){
+        console.log ("Esto son mis datos");
+        // Llamamos a Callback cuando haya llegado el fin de traigoDatos.
+        callback();
+    },2000)
+}
+
+function pintoDatos(){
+    // No asincrona
+    console.log("ya tengo los datos");
+}
+
+traigoDatos(pintoDatos);
+~~~~~~~
+
+Al ejecutarlo podemos ver que el problema de la asincronía ha sido resuelto.
+
+Normalmente, a la hora de hacer peticiones asíncronas, solemos *pedir/enviar* información al servidor... y hacemos esto a través de peticiones AJAX (también asíncronas). Cuando realizamos ese tipo de llamadas, queremos pasarle al callback los datos que nos han llegado del servidor.
+
+¡Veamos como hacerlo!
+
+
+{lang=js}
+~~~~~~~
+function traigoDatos (callback){
+    // Asíncrona
+    setTimeout (function(){
+        // muchas cosas pasan...
+        var resultado = "Esto son mis datos";
+        // Llamamos a Callback y pasamos el resultado
+        callback(resultado);
+    },2000)
+}
+
+function pintoDatos(data){
+    // No asíncrona
+    console.log("ya tengo los datos:");
+    console.log(data);
+}
+
+traigoDatos(pintoDatos);
+~~~~~~~
+
+
+{pagebreak}
+
+
+### Sobrevivir al *[Callback Hell](http://callbackhell.com/)*
+
+*[Callback Hell](http://callbackhell.com/)* es una situación que se suele producir cuando los  programadores no dominan el manejo de la asincronía, ni el uso de los callbacks. También se produce, cuando no han respetado conceptos básicos de modularización y prevención de anidación desmedida.
+
+
+Algunas soluciones a este problema:
+
+- No anidar en exceso... ¿Has oído hablar de la *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*?.
+- Cualquier anidación de funciones a más de dos o tres niveles esta pidiendo a gritos una refactorización.
+- No todas las funciones de tu código han de ser anónimas...
+- Modularizar y refactorizar son tus dos mejores amigos en JavaScript.
+- Gestiona los errores en cada función y no al final de la pila.
+
+Si aún así te ves totalmente incapaz de prevenir este error, siempre puedes recurrir a *[Generadores](https://ponyfoo.com/articles/es6-generators-in-depth)*, *[Promesas](https://ponyfoo.com/articles/es6-promises-in-depth)*, *[Funciones Async](https://ponyfoo.com/articles/understanding-javascript-async-await)*... o librerías como *[Async](https://github.com/caolan/async)*, *[Q](https://github.com/kriskowal/q)*, etc...
+
+## Documentar
+
+Si recordamos el tercer capítulo, dijimos que *[JSDoc](http://usejsdoc.org/index.html)* nos resultaría muy útil en el futuro para entender y documentar especialmente nuestras funciones. Veamos de nuevo aquel ejemplo, esta vez con una mirada más crítica.
+
+
+{lang=js}
+~~~~~~~
+/**
+ * Retorna los detalles del libro.
+ * @param {string} title - Título del libro.
+ * @param {string} author - Autor del libro.
+ * @returns {object} title, author, picture (referencia local), code
+ */
+function Book(title, author) {
+	return {
+		title: title,
+		author: author,
+		picture: "../images/"+author+"/"+title+".jpg",
+		code: 010203 + author + "/" + title
+	}
+}
+~~~~~~~
+
+{icon=bell}
+G> #### ¡Volver atrás!:
+G>
+G> Ahora puede ser un buen momento para volver a capítulos anteriores, 
+G> donde era necesario hacer uso de las funciones para gestionar ciertos métodos complejos en arrays y objetos.

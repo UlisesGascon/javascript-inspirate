@@ -1,0 +1,201 @@
+# Capítulo 7 - Cadenas de texto
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+I> Uno de los grandes cambios que llegaron con ECMA6 son las *[plantillas de cadenas de
+I> texto](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/template_strings)*.
+I> Que nos permiten almacenar un texto con espacios, tabulaciones, saltos de líneas... y
+I> además nos aporta postprocesado e interpolación de expresiones.
+
+## Propiedades
+
+- ***[.length()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/length)***
+
+    Devuelve la longitud de la cadena, lo que resulta muy importante ya que podremos utilizar bucles para recorrer cada una de las letras...
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log("JavaScript, ¡Inspírate! tiene " + cadena.length + " caracteres.");
+    console.log("Una cadena vacía tiene " + ''.length + " caracteres.");
+    ~~~~~~~
+
+## Métodos
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+
+- ***[.toLowerCase()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toLowerCase)***
+
+    Devuelve todo en minúsculas.
+
+    {lang=js}
+    ~~~~~~~
+    console.log('¡INSPÍRATE!'.toLowerCase());
+    ~~~~~~~
+
+
+- ***[.toUpperCase()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/toUpperCase)***
+
+    Devuelve todo en mayúsculas.
+
+    {lang=js}
+    ~~~~~~~
+    console.log('¡inspírate!'.toUpperCase());
+    ~~~~~~~
+
+{pagebreak}
+
+- ***[.fromCharCode()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/fromCharCode)***
+
+    Devuelve una cadena creada mediante una secuencia *[Unicode](https://www.wikiwand.com/es/Unicode)*.
+
+    {lang=js}
+    ~~~~~~~
+	console.info("Es es el año 2016 ("+ String.fromCharCode(8559,8559,8553,8548,8544) + ")");
+    ~~~~~~~
+
+
+- ***[.anchor()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/anchor)***
+
+    Crea un *[link interno (ancla)](https://developer.mozilla.org/es/docs/Web/HTML/Elemento/a)* HTML.
+
+    {lang=js}
+    ~~~~~~~
+	document.body.innerHTML = "Contenidos".anchor("contenidos");
+	// "<a name="contenidos">Contenidos</a>"
+    ~~~~~~~
+
+
+- ***[.charAt()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charAt)***
+
+    Devuelve el carácter específico.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log("El carácter(posición) 3 es '" + cadena.charAt(3) + "'")
+    ~~~~~~~
+
+
+- ***[.charCodeAt()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/charCodeAt)***
+
+    Devuelve el valor Unicode.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log("El carácter(posición) 3 es '" + cadena.charAt(3) + "', en unicode ("+cadena.charCodeAt(3)+")")
+    ~~~~~~~
+
+
+- ***[.concat()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/concat)***
+
+    Combina el texto de dos o más cadenas.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena1 = "Oh ";
+    var cadena2 = "qué maravillosa ";
+    var cadena3 = "mañana'.";
+    var combinacion = cadena1.concat(cadena2,cadena3);
+    console.log(combinacion); // devuelve "Oh qué maravillosa mañana'."
+    ~~~~~~~
+
+
+- ***[.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/indexOf)***
+
+    Devuelve la posición del elemento si es capaz de localizarlo o -1 en caso contrario.
+
+    {lang=js}
+    ~~~~~~~
+    "Mundo Web".indexOf("Web") // 6
+    "Mundo Web".indexOf("web") // -1
+    ~~~~~~~
+
+
+- ***[.lastIndexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/lastIndexOf)***
+
+    Devuelve la ultima localización del elemento si es capaz de encontrarlo o -1 en caso contrario.
+
+    {lang=js}
+    ~~~~~~~
+    "JavaScript, ¡Inspírate!".lastIndexOf("c"); // 16
+    "JavaScript, ¡Inspírate!".lastIndexOf("b"); // -1
+    ~~~~~~~
+
+- ***[.link()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/link)***
+
+    Crea un enlace.
+
+    {lang=js}
+    ~~~~~~~
+    var textoActivo="JavaScript, ¡Inspírate!"
+    var url="https://leanpub.com/javascript-inspirate/"
+    document.body.innerHTML = "Haga click para volver a " + textoActivo.link(url);
+    ~~~~~~~
+
+
+- ***[.trim()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/Trim)***
+
+    Elimina espacios vacíos al principio y al final de la cadena.
+
+    {lang=js}
+    ~~~~~~~
+    console.log('    ¡inspírate! '.trim()); // ¡Inspírate!
+    ~~~~~~~
+
+
+- ***[.slice()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/slice)***
+
+    Devuelve una cadena nueva con una sección de otra.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log(cadena.slice(12));      // ¡Inspírate!
+    console.log(cadena.slice(0, 10));   // JavaScript
+    console.log(cadena.slice(13, -1));  // Inspírate
+    ~~~~~~~
+
+
+- ***[.split()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/split)***
+
+    Divide una cadena usando un separador y retorna un array.
+
+    {lang=js}
+    ~~~~~~~
+    var cadenaMeses = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+    var meses = cadenaMeses.split(",");
+    console.log("Los meses son un Array?", Array.isArray(meses))
+    ~~~~~~~
+
+- ***[.substr()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)***
+
+    Devuelve los caracteres de una cadena, comenzando en la localización especificada, y en el número de caracteres especificado.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log("cadena.substr(12, 12):", cadena.substr(12, 12));
+    console.log("cadena.substr(0,10):", cadena.substr(0, 10));
+    ~~~~~~~
+
+
+- ***[.substring()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substring)***
+
+
+    Devuelve un subconjunto.
+
+    {lang=js}
+    ~~~~~~~
+    var cadena = "JavaScript, ¡Inspírate!";
+    console.log("(0,5): "    + cadena.substring(0,10));
+    ~~~~~~~
+
+I> Como puedes ver existen muchos métodos similares para retornar partes de una cadena. Sin
+I> embargo cada uno tiene matices que los hacen diferentes. Te recomiendo leer *[Using Slice(),
+I> Substring(), And Substr() in Javascript de Ben
+I> Naden](https://www.bennadel.com/blog/2159-using-slice-substring-and
+I> -substr-in-javascript.htm)*.

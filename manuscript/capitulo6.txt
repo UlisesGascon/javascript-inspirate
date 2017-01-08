@@ -1,0 +1,627 @@
+# Capítulo 6 - Números y fechas
+
+{:: encoding="utf-8" /}
+{footnotes-off}
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+JavaScript al igual que otros muchos lenguajes, permite el trabajo matemático, aún no siendo un lenguaje especialmente diseñado para científicos y matemáticos.
+
+A lo largo de este capítulo veremos que en JavaScript existen dos formas básicas de trabajar con los *"números"*, por un lado haciendo uso de *[Number](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math)*, y por otro con *[Math](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math)*, en función de la complejidad de nuestros algoritmos.
+
+Por lo general, es interesante utilizar ciertas librerías clave que nos facilitaran mucho el desarrollo cuando trabajamos con temas numéricos, os las presentaré a lo largo de este capítulo.
+
+## *[Numbers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)*
+
+A la hora de trabajar con números, puede darse el caso de encontrarnos con la *[notación científica](https://es.wikipedia.org/wiki/Notaci%C3%B3n_cient%C3%ADfica)* en vez del formato al que estamos acostumbrados. Su valor y tipo de variable se mantienen aunque se represente de forma diferente.
+
+Si deseamos trabajar con unidades monetarias, podemos hace uso de la librería *[accounting.js](http://openexchangerates.github.io/accounting.js/)*.
+
+### Propiedades
+
+- ***[.MAX_VALUE](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number/MAX_VALUE)***
+
+    Esta propiedad nos retornará el número (positivo) más grande representable en JavaScript:
+
+    {lang=js}
+    ~~~~~~~
+    var numero1 = 1.7976931348623157e+308;
+    var numero2 = 1.7976931348623157e+310;
+
+    function verificarValorMaximo(num){
+
+       	if (num <= Number.MAX_VALUE) {
+       	  console.log("El número no es infinito");
+       	} else {
+       	  console.log("El número es infinito");
+        }
+
+    }
+
+    verificarValorMaximo(numero1);
+    verificarValorMaximo(numero2);
+    ~~~~~~~
+
+- ***[.MIN_VALUE](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Number/MIN_VALUE)***
+
+    Nos retornará el número (negativo) más pequeño representable (5e-324)
+
+    {lang=js}
+    ~~~~~~~
+    var numero1 = 5e-323;
+    var numero2 = 5e-326;
+
+    function verificarValorMinimo(num){
+        if (num >= Number.MIN_VALUE) {
+            console.log("El número no es infinito");
+        } else {
+            console.log("El número es infinito");
+        }
+    }
+
+    verificarValorMinimo(numero1);
+    verificarValorMinimo(numero2);
+    ~~~~~~~
+
+- ***[.POSITIVE_INFINITY](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/POSITIVE_INFINITY)***
+
+    Retornará el valor de la propiedad del objeto *[global Infinity](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Infinity)*, es decir *[Infinity](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Infinity)*.
+
+    {lang=js}
+    ~~~~~~~
+    var numeroMaximo = Number.MAX_VALUE * 2
+    console.log(numeroMaximo);
+
+    if (numeroMaximo === Number.POSITIVE_INFINITY) {
+     numeroMaximo = 0;
+    }
+    console.log(numeroMaximo);
+    ~~~~~~~
+
+- ***[.NEGATIVE_INFINITY](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Number/NEGATIVE_INFINITY)***
+
+    Retornará el valor negativo de la propiedad del objeto *[global Infinity](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Infinity)*, es decir *[-Infinity](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Infinity)*.
+
+    {lang=js}
+    ~~~~~~~
+        var numeroMinimo = (-Number.MAX_VALUE) * 2
+        console.log(numeroMinimo);
+
+        if (numeroMinimo === Number.NEGATIVE_INFINITY) {
+         numeroMinimo = 0;
+        }
+        console.log(numeroMinimo);
+    ~~~~~~~
+
+- ***[.NaN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/NaN)***
+
+    En ocasiones al realizar operaciones matemáticas de forma errónea podemos encontrarnos con que el valor de nuestra variable ha sido sustituido por *[NAN (Not A Number)](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Nan)*. Este es un proceso irreversible que nos obligará a reasignar el valor de la variable posteriormente.
+    Hasta la llegada de ECMA6 la gestión y detección de estos valores era compleja, pero con el nuevo método *[isNaN()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/isNaN)* podemos solventarlo.
+
+    {lang=js}
+    ~~~~~~~
+        NaN === NaN;        // false
+        Number.NaN === NaN; // false
+        isNaN(NaN);         // true
+        isNaN(Number.NaN);  // true
+    ~~~~~~~
+
+
+### Métodos
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+- ***[.toExponential()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toExponential)***
+
+    Retorna una cadena de texto con el valor de los números en formato de potencia.
+
+    {lang=js}
+    ~~~~~~~
+    var numObj = 77.1234;
+
+    console.log(numObj.toExponential());  // 7.71234e+1
+    console.log(numObj.toExponential(4)); // 7.7123e+1
+    console.log(numObj.toExponential(2)); // 7.71e+1
+    console.log(77.1234.toExponential()); // 7.71234e+1
+    ~~~~~~~
+
+- ***[.toFixed()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)***
+
+    Retorna una cadena de texto con los números decimales.
+
+    Aunque no es la mejor forma, también podemos redondear el valor.
+
+    {lang=js}
+    ~~~~~~~
+    var numObj = 12345.6789;
+    numObj.toFixed();       //'12346' redondeo
+    ~~~~~~~
+
+    Podemos alterar la longitud (número de decimales) con el argumento que pasamos al método.
+
+    {lang=js}
+    ~~~~~~~
+    var numObj = 12345.6789;
+    numObj.toFixed();       //'12346' redondeo
+    numObj.toFixed(1);      //'12345.7'
+    numObj.toFixed(6);      //'12345.678900' Se añaden ceros en caso necesario
+    (1.23e+20).toFixed(2);  //'123000000000000000000.00'
+    (0).toFixed(2);         //'0.00'
+    2.34.toFixed(1);        //'2.3' redondeo
+    ~~~~~~~
+
+    Al utilizar valores decimales negativos es importante albergarlos dentro de los paréntesis para que respete el tipo de dato también.
+
+    {lang=js}
+    ~~~~~~~
+    -2.34.toFixed(1);       //-2.3 Números negativos no son devueltos como cadenas.
+    (-2.34).toFixed(1);     //'-2.3' Con paréntesis se salta la limitación
+    ~~~~~~~
+
+- ***[.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)***
+
+    Retorna una cadena con el valor representado en lenguaje local.
+
+    {lang=js}
+    ~~~~~~~
+    var numero = 3500;
+    // En Local
+    console.log(numero.toLocaleString());
+    // En Árabe
+    console.log(numero.toLocaleString('ar-EG'));
+    // En Chino decimal
+    console.log(numero.toLocaleString('zh-Hans-CN-u-nu-hanidec'));
+    ~~~~~~~
+
+
+- ***[.toPrecision()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toPrecision)***
+
+    Devuelve un numero con los decimales deseados pero sin redondear.
+
+    {lang=js}
+    ~~~~~~~
+    var numero = 5.123456;
+    console.log(numero.toPrecision());    // 5.123456
+    console.log(numero.toPrecision(5));   // 5.1235
+    console.log(numero.toPrecision(2));   // 5.1
+    console.log(numero.toPrecision(1));   // 5
+    console.log((1234.5).toPrecision(2)); // 1.2e+3 (En ocasiones )
+    ~~~~~~~
+
+- ***[.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toString)***
+
+    Devuelve una cadena con el número en la base (hexadecimal, binaria...) que determinemos.
+
+    {lang=js}
+    ~~~~~~~
+    console.log((17).toString());     // '17'
+    console.log((17.2).toString());   // '17.2'
+    console.log((-0xff).toString(2)); // '-11111111'
+    console.log((254).toString(16));  // 'fe'
+    ~~~~~~~
+
+
+- ***[.parseFloat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseFloat)***
+
+    Devuelve un número decimal o entero partiendo de una cadena.
+
+    {lang=js}
+    ~~~~~~~
+    Number.parseFloat("3.14");          // 3.14
+    Number.parseFloat("314e-2");        // 3.14
+    Number.parseFloat("0.0314E+2");     // 3.14
+    Number.parseFloat("3.14textos..."); // 3.14
+    Number.parseFloat("1textos...");    // 1
+    ~~~~~~~
+
+- ***[.parseInt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt)***
+
+    Devuelve un número entero partiendo de una cadena.
+
+    Además, nos permite seleccionar la base númerica sobre la que trabajaremos (binaria con 2, hexadecimal con 16, etc...). Por defecto se utiliza la base 10 (decimal).
+
+    {lang=js}
+    ~~~~~~~
+    parseInt(" 0xF", 16);    // 15
+    parseInt(" F", 16);      // 15
+    parseInt("17", 8);       // 15
+    parseInt(021, 8);        // 15
+    parseInt("015", 10);     // 15
+    parseInt(15.99, 10);     // 15
+    parseInt("15,123", 10);  // 15
+    parseInt("FXX123", 16);  // 15
+    parseInt("1111", 2);     // 15
+    parseInt("15*3", 10);    // 15
+    parseInt("15e2", 10);    // 15
+    parseInt("15px", 10);    // 15
+    parseInt("12", 13);      // 15
+    ~~~~~~~
+
+## *[Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)*
+
+
+[Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+ nos aporta infinidad de recursos matemáticos avanzados como la *[constante de Euler](https://es.wikipedia.org/wiki/Constante_de_Euler-Mascheroni)*, gestión de *[logaritmos](https://es.wikipedia.org/wiki/Logaritmo)*, *[senos](https://es.wikipedia.org/wiki/Seno_(trigonometr%C3%ADa))*, *[cosenos](https://es.wikipedia.org/wiki/Coseno)*, *[tangentes](https://es.wikipedia.org/wiki/Tangente_(trigonometr%C3%ADa))*... Cada lector debe de indagar y valorar lo que realmente quiere usar, ya que muchos de estos métodos y propiedades van más allá de nuestros objetivos, y no aportan directamente valor al contexto de aprender a programar en JavaScript.
+
+En general, cuando necesitemos desarrollar una aplicación con un gran soporte matemático recurriremos a librerías como *[Mathjs](http://mathjs.org/)*.
+
+### Métodos
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+- ***[.round()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/objetos_globales/Math/round)***
+
+    Devuelve el valor de un número redondeado al entero más cercano.
+
+    {lang=js}
+    ~~~~~~~
+    Math.round(20.5);   // 21
+    Math.round(20.49);  // 20
+    Math.round(-20.51); // -21
+    ~~~~~~~
+
+- ***[.Floor()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/objetos_globales/Math/floor)***
+
+    Devuelve el máximo entero menor o igual a un número.
+
+    {lang=js}
+    ~~~~~~~
+    Math.floor(20.5);   // 21
+    Math.floor(20.49);  // 20
+    Math.floor(-20.51); // -21
+    ~~~~~~~
+
+{pagebreak}
+
+- ***[.random()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random)***
+
+    Devuelve un número pseudo-aleatorio entre 0 y 1.
+
+    - Número aleatorio entre 0 (incluido) y 1 (excluido).
+
+        {lang=js}
+        ~~~~~~~
+        Math.random();
+        ~~~~~~~
+
+    - Número aleatorio entre min (incluido) y max (excluido).
+
+        {lang=js}
+        ~~~~~~~
+        Math.random() * (max - min) + min;
+        Math.random() * (11 - 0) + 0;
+        ~~~~~~~
+
+    - Número entero aleatorio entre min (incluido) y max (excluido).
+
+        {lang=js}
+        ~~~~~~~
+        Math.floor(Math.random() * (11 - 0)) + 0;
+        ~~~~~~~
+
+
+## Dates
+
+Sin duda, uno de los elementos que más utilizaremos a lo largo de nuestro camino por el mundo de JavaScript será el manejo de fechas.
+
+Desgraciadamente, en JavaScript el manejo de fechas es bastante complejo y poco intuitivo, lo que ha dado pie, a que existan muchas librerías, que nos facilitan mucho el día a día. Entre ellas:
+
+
+[Dates.js](http://www.datejs.com/)
+
+: Que nos permite una manipulación rápida y precisa con una sintaxis muy intuitiva.
+
+
+[Momments.js](http://momentjs.com)
+
+: Que nos aporta mejoras en la sintaxis, además de un complemento genial para gestionar zonas horarias.
+
+
+[Timeago](http://timeago.org/)
+: Que nos permite convertir fechas a "hace xxx minutos, segundos, días..." de forma dinámica.
+
+
+### Trabajando con fechas
+
+El punto de partida es trabajar *[instanciando](https://es.wikipedia.org/wiki/Instancia_(inform%C3%A1tica))* a *[Date()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date)*, para poder tener nuestra fecha... Para aquellos que estéis familiarizados con la programación orientada a objetos, aquí estamos usando *[new](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/new)* para instanciar una nueva fecha.
+
+I> Para aquellos que no estéis familiarizados aún, no pasa nada, porque hablaremos de ello más
+I> adelante... simplemente recordad, que se utiliza *new* cuando creamos una nueva fecha.
+
+Existen muchas formas de crear nuevas fechas, en función de que parámetro pasamos a *Date(mi_parametro)*.
+
+{pagebreak}
+
+- **Fecha Actual**
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    console.log(ahora);
+    ~~~~~~~
+
+- **Usando milisegundos (desde el 1/1/1970 00:00)**
+
+    Muy recomendable.
+
+    {lang=js}
+    ~~~~~~~
+    var diaDespues = new Date(3600*24*1000);
+    console.log(diaDespues);
+    ~~~~~~~
+
+- **Usando cadenas de texto**
+
+    Poco recomendable.
+
+    {lang=js}
+    ~~~~~~~
+    var newYear = new Date("January 1, 2016 00:00:00");
+    ~~~~~~~
+
+- **Usando números**
+
+    Recomendable, aunque tiene cierta complejidad oculta a simple vista.
+
+    {lang=js}
+    ~~~~~~~
+    var newYear = new Date(2016, 1, 1);          // AAAA, MM, DD
+    var newYear = new Date(2016, 1, 1, 0, 0, 0); // AAAA, MM, DD, HH, MM, SS
+    ~~~~~~~
+
+- ***Usando [UTC](https://es.wikipedia.org/wiki/Tiempo_universal_coordinado)***
+
+    {lang=js}
+    ~~~~~~~
+    var newYear = new Date(Date.UTC(2016, 1, 1));
+    ~~~~~~~
+
+### Métodos
+
+Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+
+En el caso de las fechas, podemos dividir casi todos los métodos en tres categorías principales:
+
+
+Getters
+
+: Que nos devuelven información concreta.
+
+
+Setters
+
+: Que nos permiten ajustar información concreta.
+
+
+Otros
+
+: Que nos facilitarán enormemente el trabajo.
+
+
+W> ##### Importante
+W>
+W> Todos aquellos métodos que son susceptibles de sufrir variaciones por la zona horaria, cuentan
+W> con un "método clon" que realiza la misma función, pero siguiendo las especificaciones 
+W> de la *[UTC](https://es.wikipedia.org/wiki/Tiempo_universal_coordinado)*,
+W> como veremos a continuación.
+W>
+W> Por otro lado, los meses y los días de la semana, empiezan a contarse desde el 0, y los días de
+W> la semana empiezan en domingo siendo este el día 0. El resto de componentes no sufren
+W> modificaciones (año, día del mes, etc..).
+
+#### Getters
+
+- **Versión UTC:**
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    console.log("Con UTC: ";
+    console.log("==== FECHA ====");
+    console.log("El año: " + ahora.getUTCFullYear());         // 4 dígitos
+    console.log("El mes: " + ahora.getUTCMonth());            // 0 - 11
+    console.log("El día de la semana: " + ahora.getUTCDay()); // 0 - 6 (D - S)
+    console.log("El día del mes: " + ahora.getUTCDate());     // 1-31
+    console.log("==== HORA ====");
+    console.log("Horas: " + ahora.getUTCHours());
+    console.log("Minutos: " + ahora.getUTCMinutes());
+    console.log("Segundos: " + ahora.getUTCSeconds());
+    console.log("milisegundos: " + ahora.getUTCMilliseconds());
+    ~~~~~~~
+
+- **Versión Local:**
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    console.log("La fecha es " + ahora);
+    console.log("==== FECHA ====");
+    console.log("El año: " + ahora.getFullYear());          // 4 dígitos
+    console.log("El mes: " + ahora.getMonth());             // 0 - 11
+    console.log("El día de la semana: " + ahora.getDay());  // 0 - 6 (D - S)
+    console.log("El día del mes: " + ahora.getDate());      // 1-31
+    console.log("==== HORA ====");
+    console.log("Horas: " + ahora.getHours());
+    console.log("Minutos: " + ahora.getMinutes());
+    console.log("Segundos: " + ahora.getSeconds());
+    console.log("Milisegundos desde 1/1/1970: "+ ahora.getTime());
+    console.log("milisegundos: " + ahora.getMilliseconds());
+    console.log("==== OTROS ====");
+    console.log("Diferencia horaria respecto a UTC: " + ahora.getTimezoneOffset());
+    ~~~~~~~
+
+
+#### Setters:
+
+Los setters en el caso de las fechas están planteados como una manera de ajustar la fecha y la hora dentro de un marco determinado. Veamos en el siguiente ejemplo:
+
+-  **Dentro del marco**
+
+    {lang=js}
+    ~~~~~~~
+    var newYear = new Date(Date.UTC(2016, 1, 1));
+    console.info("La fecha es " + newYear);
+
+    newYear.setFullYear(1980);          // Pasamos a 1980
+    console.info("La fecha es " + newYear);
+
+    newYear.setUTCMilliseconds(1500);   // 1500ms en formato UTC
+    console.info("La fecha es " + newYear);
+    ~~~~~~~
+
+- **Fuera del marco**
+
+    Debes tener en cuenta las leyes naturales: un día tiene 24 horas, un mes tiene un máximo de 31 días...
+
+    Si obviamos esta lógica, JavaScript improvisa una nueva fecha, pero esta no suele ser correcta.
+
+
+    {lang=js}
+    ~~~~~~~
+    newYear.setDate(56);      // Al día 56 de Enero
+    console.info("La fecha es " + newYear);
+
+    newYear.setUTCHours(36);  // Pasamos a la hora 36 del día
+    console.info("La fecha es " + newYear);
+
+    newYear.setMonth(-6);     // Retrocedemos 6 meses
+    console.info("La fecha es " + newYear);
+    ~~~~~~~
+
+#### Otros:
+
+- ***[.toString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toString), [.toDateString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString), [.toTimeString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toTimeString)***
+
+    Devuelve una cadena de texto con la fecha.
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    ahora.toString();     // Fecha y Hora
+    ahora.toDateString(); // Solo Fecha
+    ahora.toTimeString(); // Solo Hora
+    ~~~~~~~
+
+- ***[.toUTCString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString), [.toISOString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date/toISOString)***.
+
+    Devuelve una cadena con la fecha en formatos específicos *[UTC](https://es.wikipedia.org/wiki/Tiempo_universal_coordinado)* e *[ISO 8601](https://es.wikipedia.org/wiki/ISO_8601)*.
+
+    El formato *[ISO 8601](https://es.wikipedia.org/wiki/ISO_8601)* será de gran ayuda para comunicarnos con otras plataformas, librerías y sistemas, por tanto... **¡aprende como funciona!**
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    ahora.toISOString();
+    ahora.toUTCString();
+    ~~~~~~~
+
+- ***[.toLocaleString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)***
+
+    Devuelve una cadena con la fecha en version local. Si quieres un idioma/región específica deberás recurrir a la *[Lista de códigos IETF](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry)*.
+
+    También permite una configuración detallada.
+
+    {lang=js}
+    ~~~~~~~
+    var ahora = new Date();
+    console.info(ahora.toLocaleString());
+
+    // Código de idioma IETF para Alemán
+    console.info(ahora.toLocaleString("de-DE"));
+
+    // Opciones Avanzadas para fechas
+    var opciones = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'};
+    console.log(ahora.toLocaleString("de-DE", opciones));
+    ~~~~~~~
+
+## ***[Benchmark](https://es.wikipedia.org/wiki/Benchmark_(inform%C3%A1tica))***
+
+Ahora que ya sabemos manejar el tiempo, fácilmente podremos hacer pruebas básicas de rendimiento.
+
+Podremos crear una primera fecha antes de ejecutar cierto código y otra justo al final del mismo para así comparar el tiempo transcurrido.
+
+[Las pruebas de rendimiento (benchmarks)](https://es.wikipedia.org/wiki/Benchmark_(inform%C3%A1tica)), pueden ser de gran ayuda para tomar decisiones importantes a la hora de refactorizar nuestro código.
+
+{lang=js}
+~~~~~~~
+var inicio = new Date();
+    // Código a testear
+var fin = new Date();
+var transcurso = fin.getTime() - inicio.getTime();
+console.info("Pasaron "+transcurso+"ms");
+~~~~~~~
+
+
+I> **Recuerda**
+I>
+I> Se pueden realizar pruebas de rendimiento con la consola del navegador (*[console.time()](https://developer.mozilla.org/en-US/docs/Web/API/Console/time)* y
+I> *[console.timeEnd()](https://developer.mozilla.org/en-US/docs/Web/API/Console/timeEnd)*), como
+I> vimos en el capítulo 3.
+
+
+## Setters, problema resuelto
+
+I> **Usa librerías**
+I>
+I> Lidiar con fechas es una tarea compleja. Si vas a usar librerías, puedes saltarte el resto del capítulo sin ningún problema.
+
+Como vimos antes, en ocasiones deseamos poder sumar 56 días a la fecha actual. Si utilizamos solamente los *setters*, JavaScript estimará fechas seguramente erróneas. Para asegurarnos que estamos sumando y restando las cantidades correctas, lo ideal es siempre incluir el *getter* correspondiente dentro del *setter*.
+
+Veamos a continuación el uso de getters para modificar fechas (días, meses, etc...).
+
+Nota: Partiendo del *[ejemplo de MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/setDate)*.
+
+### Sin *getters*
+
+{lang=js}
+~~~~~~~
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.toLocaleString(); // 6/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(24);
+theBigDay.toLocaleString() // 23/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(32);
+theBigDay.toLocaleString() // 31/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(22);
+theBigDay.toLocaleString() // 21/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(22 + 32 +24);
+theBigDay.toLocaleString() // 15/9/1962 23:00:00
+~~~~~~~
+
+{pagebreak}
+
+
+### Con *getters*
+
+{lang=js}
+~~~~~~~
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.toLocaleString(); // 6/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(theBigDay.getDate() + 24);
+theBigDay.toLocaleString(); // 30/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(theBigDay.getDate() + 32);
+theBigDay.toLocaleString(); // 7/8/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(theBigDay.getDate() + 22);
+theBigDay.toLocaleString(); // 28/7/1962 23:00:00
+
+var theBigDay = new Date(1962, 6, 7);
+theBigDay.setDate(theBigDay.getDate() + 22 + 32 + 24);
+theBigDay.toLocaleString(); // 22/9/1962 23:00:00
+~~~~~~~
