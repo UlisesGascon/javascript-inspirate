@@ -443,7 +443,7 @@ Declaramos una función:
 (//código)()
 ~~~~~~~
 
-Lo contenido en el primer paréntesis contiene el código encapsulado, al igual que haciamos con las operaciones matemáticas en capítulos anteriores.
+Lo contenido en el primer paréntesis contiene el código encapsulado, al igual que hacíamos con las operaciones matemáticas en capítulos anteriores.
 
 El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
 

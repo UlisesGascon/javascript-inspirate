@@ -36,7 +36,7 @@ var igualTotalmenteCadena = 10 === "10"; //false
 var noIgual = 100 != 10; // true
 var noIgualCadena = 100 != "100"; // false
 var noIgualTotalmente = 100 !== 10; // true
-var igualTotalmenteCadena = 100 !== "100"; // true
+var noIgualTotalmenteCadena = 100 !== "100"; // true
 ~~~~~~~
 
 ## *[Operadores Lógicos](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operadores_l%C3%B3gicos)*
