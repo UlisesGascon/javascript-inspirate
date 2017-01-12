@@ -85,7 +85,7 @@ El *[pseudocódigo](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo)* nos permit
 
 No vamos a hablar de todas las posibilidades que nos aporta el pseudocódigo, pero si hablaremos de algunas estructuras que resultarán interesantes para nuestro aprendizaje orientado a JavaScript.
 
-Aunque no es necesario realizar nuestro pseusocódigo en un entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar de un entorno completo a  nuestro pseudocódigo.
+Aunque no es necesario realizar nuestro pseudocódigo en un entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar de un entorno completo a  nuestro pseudocódigo.
 
 Por todo ello, los ejemplos que veremos en este capítulo están basados en la sintaxis y funcionamiento de *[PseInt](http://pseint.sourceforge.net/)*. También incluyo su equiparación con JavaScript a modo de referencia.
 
