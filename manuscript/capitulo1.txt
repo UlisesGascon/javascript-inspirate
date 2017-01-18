@@ -391,4 +391,4 @@ Surgirán iniciativas con ideas tan potentes como *[Nobackend](http://nobackend.
 
 {pagebreak}
 
-Precisamente la innovación pasará a formar parte del ADN de nuevos tipos de empresas como las *[Stratups](https://es.wikipedia.org/wiki/Empresa_emergente)*. El *[MVP](https://es.wikipedia.org/wiki/Producto_viable_m%C3%ADnimo)* y el prototipado serán un concepto *[mainstream](https://es.wikipedia.org/wiki/Mainstream)* al igual que la metodología *[Lean Startup](https://es.wikipedia.org/wiki/Lean_startup)*.
+Precisamente la innovación pasará a formar parte del ADN de nuevos tipos de empresas como las *[Startups](https://es.wikipedia.org/wiki/Empresa_emergente)*. El *[MVP](https://es.wikipedia.org/wiki/Producto_viable_m%C3%ADnimo)* y el prototipado serán un concepto *[mainstream](https://es.wikipedia.org/wiki/Mainstream)* al igual que la metodología *[Lean Startup](https://es.wikipedia.org/wiki/Lean_startup)*.
