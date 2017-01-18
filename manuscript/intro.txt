@@ -67,7 +67,7 @@ Bases de datos
 
 Paradigmas  *[POO](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, *[Funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)*, etc...)
 
-: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScirpt, pero no iremos más allá.
+: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScript, pero no iremos más allá.
 
 
 HTML5 APIs
