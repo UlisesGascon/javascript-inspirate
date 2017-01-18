@@ -6,7 +6,7 @@
 I> **Fiero veterano**
 I>
 I> En este capítulo, hablaremos sobre como es la computación y que se espera de un
-I> desarrolladore.
+I> desarrollador.
 I> Si ya dominaís algun lenguaje de programación o sencillamente quiereís empezar ya mismo con JavaScript... pasad al siguiente capítulo.
 
 
@@ -104,7 +104,7 @@ Cuando programamos, podemos crear variables que son pequeños espacios de memori
     {lang=text}
     ~~~~~~~
     // Esto es un comentario
-    nombreUusario = "Pepe"
+    nombreUsuario = "Pepe"
     nombreOtroUsuario = "Roberta"
     ~~~~~~~
 
@@ -113,7 +113,7 @@ Cuando programamos, podemos crear variables que son pequeños espacios de memori
     {lang=js}
     ~~~~~~~
     // Esto es un comentario
-    var nombreUusario = "Pepe";
+    var nombreUsuario = "Pepe";
     var nombreOtroUsuario = "Roberta";
     ~~~~~~~
 
