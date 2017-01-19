@@ -1,20 +1,20 @@
--# Parte IV - Un pasito más...
+-# Parte IV - Un pasiño mais...
 
-# Anexo: ¡Queda mucho más por aprender!
+# Anexo: ¡Queda moito mais por aprender!
 
 {:: encoding="utf-8" /}
 {footnotes-off}
 
 ## Recursos
 
-A lo largo del libro hemos incluido gran cantidad de links para facilitarte recursos para aprender más acerca de conceptos claves.
+Ao longo do libro incluimos gran cantidade de links para facilitarche recursos para aprender mais acerca dos conceptos chaves.
 
-Hemos recopilado todos los enlaces de manera automática en esta lista de enlaces para vosotros en un solo lugar, *[extras/recursos.md](https://github.com/UlisesGascon/javascript-inspirate/tree/master/extras/recursos.md)* en *[nuestro repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
+Recopilamos todolos enlaces de maneira automática nesta lista de enlaces pra vos nun só lugar, *[extras/recursos.md](https://github.com/UlisesGascon/javascript-inspirate/tree/master/extras/recursos.md)* en *[nuestro repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
 
 ## Libros interesantes
 
 {icon=book}
-G> #### Deberías leer...
+G> #### Deberías ler...
 G>
 G> - *[JavaScript for PHP Developers: A Concise Guide to Mastering JavaScript by Stoyan Stefanov](https://www.amazon.es/JavaScript-PHP-Developers-Concise-Mastering-ebook/dp/B00CICVLQU/)*
 G> - *[You Don't Know JS (book series) by Kyle Simpson](https://github.com/getify/You-Dont-Know-JS)*
@@ -32,44 +32,44 @@ G> - *[Learning JavaScript Design Pattern by Addy Osmani](http://addyosmani.com/
 
 ## Ampliar horizontes
 
-Esperamos que este libro os haya resultado de utilidad y que os haya ayudado a empezar a recorrer el largo camino del desarrollador web.
+Esperamos que este libro resultaravos de utilidade e que os axudara a comezar a recorrer o longo camiño do desenvolvente web.
 
-Os proponemos algunas ideas para que podáis seguir creciendo y evolucionando, a pesar de que nuestra historia acaba aquí.
+Propoñemosvos algunhas ideas pra que podades seguir crecendo e evolucionando, a pesar de que a nosa historia acaba aquí.
 
-Esta claro que la mejor manera de aprender un lenguaje de programación es practicando, practicando y seguir practicando...
+Esta claro que a mellor maneira de aprender unha linguaxe de programación e practicando, practicando e seguir practicando...
 
-Estas son algunas formas sencillas pero efectivas de lograrlo:
+Estas son algunhas formas sinxelas pero efectivas de logralo:
 
-### Aprender a utilizar Git y GitHub
+### Aprender a utilizar Git e GitHub
 
-Si queréis formar parte de la comunidad o entrar a trabajar en un entorno ágil, uno de los primeros pasos es aprender a manejaros con el control de versiones.
+Se queredes formar parte da comunidade ou entrar a traballar nun entorno áxil, un dos primeiros pasos e aprender a manexarvos co control de versións.
 
-### Aprender un nuevo lenguaje
+### Aprender unha nova linguaxe
 
-Puede parecer una locura empezar con otro lenguaje, pero cada lenguaje tiene algo único y un enfoque especial. Aprender más lenguajes os ayudará a pensar mucho más allá del lenguaje que uses. Lo que a la larga hará que seáis un mejores artesanos.
+Pode parecer unha loucura comezar con outra linguaxe, pero cada linguaxe ten algo único e un enfoque especial. Aprender mais linguaxes axudarávos a pensar moito mais alá da linguaxe que uses. O que a la larga fará que sexades uns mellores artesans.
 
 ### Dominar un framework
 
-Es una decisión complicada... un framework es un recurso, que puede ser difícil de aprender y en ocasiones tiene una vida útil muy corta. Gran parte del trabajo será elegir el framework que más os convenga. Es muy importante, tener en cuenta, que si es el primer framework... os enseñará una nueva forma de ver las cosas y de trabajar en JavaScript. No lo desaprovechéis, merece la pena emplear un poco más de tiempo en aprender nuevas formas de hacer las cosas.
+E unha decisión compricada... un framework é un recurso, que pode ser difícil de aprender e en ocasións ten unha vida útil moi curta. Gran parte do traballo será elexir o framework que máis vos conveña. E moi importante, ter en conta, que se é o primeiro framework... enseñarávos unha nova forma de ver as cousas e de traballar en JavaScript. Non o desaproveitedes, merece a pena botar un poco máis de tempo en aprender novas formas de facer as cousas.
 
-### Familiarízate con las librerías más populares
+### Familiarízarse coas librerías máis populares
 
-JQuery puede ser un gran comienzo. Podéis adaptar librerías a JQuery o al revés, así rápidamente ganaréis soltura. Existen muchas otras librerías que deberíais conocer y que te harán la vida más fácil.
+JQuery pode ser un gran comenzo. Podedes adaptar librerías a JQuery ou ao revés, esí rápidamente gañarédes soltura. Existen moitas outras librerías que deberíades coñecer e que faranche a vida mais fácil.
 
-### Contribuye a mejorar las cosas
+### Contribue a mellorar as cousas
 
-Puedes unirte a grupos de trabajo y organizaciones en Github e ir colaborando en alguno de los muchos proyectos que existen sobre JavaScript.
+Podes unirte a grupos de trabajo e organizacions en Github e ir colaborando nalguns dos moitos proxectos que existen sobre JavaScript.
 
-### Documentar no es una mala idea
+### Documentar non é unha mala idea
 
-Durante la lectura de este libro, espero que hayáis podido consultar la *[documentación de MDN](https://developer.mozilla.org/es/)* para poder aprender más sobre lo que os contábamos.... Recuerdar que esa documentación la crean muchos voluntarios, en todo el mundo, que entre otras cosas, la mejoran, amplían y traducen a diversos idiomas. No lo dudéis... **¡uniros!**
+Durante a lectura deste libro, espero que poderades consultala *[documentación de MDN](https://developer.mozilla.org/es/)* pra poder aprender máis sobre o que vos contamos.... Recordade que esa documentación creaná moitos voluntarios, en todo o mundo, que entre outras cousas, a melloran, amplían e traducen a diversos idiomas. Non o dudedes... **unidevos!**
 
-### Ayuda al prójimo
+### Axuda ao veciño
 
-Seguro que has mirado -más de una vez- como se hace algo en *[Stackoverflow](http://stackoverflow.com/)*, *[Codepen](http://codepen.io/)*, foros especializados, comunidades, etc... Podéis también contribuir y ayudar a los demás, solucionando dudas. Al principio se hace muy cuesta arriba, pero luego es extraordinariamente atractivo. Y si no que le pregunten a *[Coma](http://stackoverflow.com/users/94144/coma)*.
+Seguro que mirache -máis dunha vez- como se fai algo en *[Stackoverflow](http://stackoverflow.com/)*, *[Codepen](http://codepen.io/)*, foros especializados, comunidades, etc... Podedes tamén contribuir e axudar aos demáis, solucionando dubidas. Ao principio faise moi costa arriba, pero logo é extraordinariamente atractivo. E se non que lle pregunten a *[Coma](http://stackoverflow.com/users/94144/coma)*.
 
 ### Guías de estilo
 
-Adoptar una *[guía de estilos](http://es.stackoverflow.com/questions/22406/gu%C3%ADa-de-estilo-para-html-css-y-javascript)* ayudará no solo a consolidar una forma correcta y uniforme de desarrollar código en JavaScript si no que también os ayudará a gestionaros con *[La Ley de Parkinson de la Trivialidad](https://es.wikipedia.org/wiki/Ley_de_Parkinson_de_la_trivialidad)*.
+Adoptar unha *[guía de estilos](http://es.stackoverflow.com/questions/22406/gu%C3%ADa-de-estilo-para-html-css-y-javascript)* axudará non só a consolidar unha forma correcta e uniforme de desenvolver código en JavaScript se non que tambén axudaravós a xestionarvos coa *[La Ley de Parkinson de la Trivialidad](https://es.wikipedia.org/wiki/Ley_de_Parkinson_de_la_trivialidad)*.
 
-Recomendamos usar *[Idiomatic.js](https://github.com/rwaldron/idiomatic.js/tree/master/translations/es_ES)* aunque existen muchas más como *[JavaScript Style Guide de Airbnb](https://github.com/airbnb/javascript)* y *[muchas más](http://noeticforce.com/best-javascript-style-guide-for-maintainable-code)*.
+Recomendamos usar *[Idiomatic.js](https://github.com/rwaldron/idiomatic.js/tree/master/translations/es_ES)* aínda que existen moitas máis como *[JavaScript Style Guide de Airbnb](https://github.com/airbnb/javascript)* e *[muchas más](http://noeticforce.com/best-javascript-style-guide-for-maintainable-code)*.
