@@ -1,4 +1,4 @@
-# Anexo: Comunidad...
+# Anexo: Comunidade...
 
 {:: encoding="utf-8" /}
 {footnotes-off}
@@ -7,12 +7,12 @@
 
 ### Meetups
 
-Una de las maneras más efectivas de entrar en contacto con la comunidad y formar parte de un grupo de personas con el mismo interés, es *[Meetup](https://www.meetup.com)*.
+Unha das maneiras mais efectivas de entrar en contacto coa comunidade e formar parte dun grupo de persoas co mesmo interése, é *[Meetup](https://www.meetup.com)*.
 
-Existen muchos grupos dedicados al desarrollo. Estos son solo algunos de los más activos.
+Existen moitos grupos dedicados ao desenvolvemento. Istes son só alguns dos mais activos.
 
 {icon=users}
-G> #### Deberías conocer...
+G> #### Deberías coñecer...
 G>
 G> - *[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*
 G> - *[MadridJS](http://www.meetup.com/es/madridjs/)*
@@ -40,24 +40,24 @@ G> - *[ReactJS Spain](https://www.meetup.com/es-ES/ReactJS-Spain/)*
 G> - *[AdaLab](http://adalab.es/)*
 G> - *[FrontGirls](http://frontgirls.io/)*
 
-### Otras formas
+### Outras formas
 
-También hay una gran oferta de eventos fuera de Meetup, como son:
+Tamén hai unha gran oferta de eventos fora de Meetup, como son:
 
 {icon=users}
-G> #### Deberías conocer...
+G> #### Deberías coñecer...
 G>
 G> - *[Campus Madrid Events](https://www.campus.co/madrid/es/events)*
 G> - *[Betabeers](https://betabeers.com/)*
 G> - *[MediaLab Prado](http://medialab-prado.es/)*
 
 
-## Desarrolladores que deberías seguir.
+## Desenvolventes que deberías seguir.
 
-Esta lista se regenera de manera automática -cada vez- que se actualiza el libro. Recoge la información pública directamente de Twitter y la organiza por orden alfabético, tomando como referencia el *@userId*.
+Esta lista regenerase de maneira automática -cada vez- que se actualiza o libro. Recolle a información pública directamente de Twitter e organizaa por orde alfabético, tomando como referencia o *@userId*.
 
-W> La lista no pretende ser exhaustiva ni completa en absoluto, por supuesto, no esta 
-W> todo el mundo y es meramente indicativa.
+W> A lista non pretende ser exhaustiva nin completa en absoluto, por suposto, non esta 
+W> todo o mundo e é meramente indicativa.
 
 
 - ***[Ariya Hidayat](https://twitter.com/AriyaHidayat)***
