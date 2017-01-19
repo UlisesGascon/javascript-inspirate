@@ -7,9 +7,9 @@
 
 ## Recursos
 
-Ao longo do libro incluimos gran cantidade de links para facilitarche recursos para aprender mais acerca dos conceptos chaves.
+Ao longo do libro incluímos gran cantidade de links para facilitarche recursos para aprender mais acerca dos conceptos chaves.
 
-Recopilamos todolos enlaces de maneira automática nesta lista de enlaces pra vos nun só lugar, *[extras/recursos.md](https://github.com/UlisesGascon/javascript-inspirate/tree/master/extras/recursos.md)* en *[nuestro repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
+Recopilamos tódolos enlaces de maneira automática nesta lista de enlaces pra vos nun só lugar, *[extras/recursos.md](https://github.com/UlisesGascon/javascript-inspirate/tree/master/extras/recursos.md)* no *[noso repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
 
 ## Libros interesantes
 
@@ -34,7 +34,7 @@ G> - *[Learning JavaScript Design Pattern by Addy Osmani](http://addyosmani.com/
 
 Esperamos que este libro resultaravos de utilidade e que os axudara a comezar a recorrer o longo camiño do desenvolvente web.
 
-Propoñemosvos algunhas ideas pra que podades seguir crecendo e evolucionando, a pesar de que a nosa historia acaba aquí.
+Propoñémosvos algunhas ideas pra que podades seguir crecendo e evolucionando, a pesar de que a nosa historia acaba aquí.
 
 Esta claro que a mellor maneira de aprender unha linguaxe de programación e practicando, practicando e seguir practicando...
 
@@ -46,30 +46,30 @@ Se queredes formar parte da comunidade ou entrar a traballar nun entorno áxil, 
 
 ### Aprender unha nova linguaxe
 
-Pode parecer unha loucura comezar con outra linguaxe, pero cada linguaxe ten algo único e un enfoque especial. Aprender mais linguaxes axudarávos a pensar moito mais alá da linguaxe que uses. O que a la larga fará que sexades uns mellores artesans.
+Pode parecer unha loucura comezar con outra linguaxe, pero cada linguaxe ten algo único e un enfoque especial. Aprender mais linguaxes axudáravos a pensar moito mais alá da linguaxe que uses. O que a la larga fará que sexades uns mellores artesáns.
 
 ### Dominar un framework
 
-E unha decisión compricada... un framework é un recurso, que pode ser difícil de aprender e en ocasións ten unha vida útil moi curta. Gran parte do traballo será elexir o framework que máis vos conveña. E moi importante, ter en conta, que se é o primeiro framework... enseñarávos unha nova forma de ver as cousas e de traballar en JavaScript. Non o desaproveitedes, merece a pena botar un poco máis de tempo en aprender novas formas de facer as cousas.
+E unha decisión complicada... un framework é un recurso, que pode ser difícil de aprender e en ocasións ten unha vida útil moi curta. Gran parte do traballo será elixir o framework que máis vos conveña. E moi importante, ter en conta, que se é o primeiro framework... ensinaravos unha nova forma de ver as cousas e de traballar en JavaScript. Non o desaproveitedes, merece a pena botar un pouco máis de tempo en aprender novas formas de facer as cousas.
 
-### Familiarízarse coas librerías máis populares
+### Familiarizarse coas librerías máis populares
 
-JQuery pode ser un gran comenzo. Podedes adaptar librerías a JQuery ou ao revés, esí rápidamente gañarédes soltura. Existen moitas outras librerías que deberíades coñecer e que faranche a vida mais fácil.
+JQuery pode ser un gran comenzo. Podedes adaptar librerías a JQuery ou ao revés, así rapidamente gañaredes soltura. Existen moitas outras librerías que deberiades coñecer e que faranche a vida mais fácil.
 
-### Contribue a mellorar as cousas
+### Contribúe a mellorar as cousas
 
-Podes unirte a grupos de trabajo e organizacions en Github e ir colaborando nalguns dos moitos proxectos que existen sobre JavaScript.
+Podes unirte a grupos de traballo e organizacións en Github e ir colaborando nalgúns dos moitos proxectos que existen sobre JavaScript.
 
 ### Documentar non é unha mala idea
 
-Durante a lectura deste libro, espero que poderades consultala *[documentación de MDN](https://developer.mozilla.org/es/)* pra poder aprender máis sobre o que vos contamos.... Recordade que esa documentación creaná moitos voluntarios, en todo o mundo, que entre outras cousas, a melloran, amplían e traducen a diversos idiomas. Non o dudedes... **unidevos!**
+Durante a lectura deste libro, espero que poderedes consultala *[documentación de MDN](https://developer.mozilla.org/es/)* pra poder aprender máis sobre o que vos contamos.... Recordade que esa documentación créana moitos voluntarios, en todo o mundo, que entre outras cousas, a melloran, amplían e traducen a diversos idiomas. Non o dubides... **unídevos!**
 
 ### Axuda ao veciño
 
-Seguro que mirache -máis dunha vez- como se fai algo en *[Stackoverflow](http://stackoverflow.com/)*, *[Codepen](http://codepen.io/)*, foros especializados, comunidades, etc... Podedes tamén contribuir e axudar aos demáis, solucionando dubidas. Ao principio faise moi costa arriba, pero logo é extraordinariamente atractivo. E se non que lle pregunten a *[Coma](http://stackoverflow.com/users/94144/coma)*.
+Seguro que miraches -máis dunha vez- como se fai algo en *[Stackoverflow](http://stackoverflow.com/)*, *[Codepen](http://codepen.io/)*, foros especializados, comunidades, etc... Podedes tamén contribuír e axudar aos demais, solucionando dubidas. Ao principio faise moi costa arriba, pero logo é extraordinariamente atractivo. E se non que lle pregunten a *[Coma](http://stackoverflow.com/users/94144/coma)*.
 
 ### Guías de estilo
 
-Adoptar unha *[guía de estilos](http://es.stackoverflow.com/questions/22406/gu%C3%ADa-de-estilo-para-html-css-y-javascript)* axudará non só a consolidar unha forma correcta e uniforme de desenvolver código en JavaScript se non que tambén axudaravós a xestionarvos coa *[La Ley de Parkinson de la Trivialidad](https://es.wikipedia.org/wiki/Ley_de_Parkinson_de_la_trivialidad)*.
+Adoptar unha *[guía de estilos](http://es.stackoverflow.com/questions/22406/gu%C3%ADa-de-estilo-para-html-css-y-javascript)* axudará non só a consolidar unha forma correcta e uniforme de desenvolver código en JavaScript se non que tamén axudáravos a xestionarvos coa *[La Ley de Parkinson de la Trivialidad](https://es.wikipedia.org/wiki/Ley_de_Parkinson_de_la_trivialidad)*.
 
 Recomendamos usar *[Idiomatic.js](https://github.com/rwaldron/idiomatic.js/tree/master/translations/es_ES)* aínda que existen moitas máis como *[JavaScript Style Guide de Airbnb](https://github.com/airbnb/javascript)* e *[muchas más](http://noeticforce.com/best-javascript-style-guide-for-maintainable-code)*.

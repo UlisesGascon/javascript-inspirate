@@ -7,9 +7,9 @@
 
 ### Meetups
 
-Unha das maneiras mais efectivas de entrar en contacto coa comunidade e formar parte dun grupo de persoas co mesmo interése, é *[Meetup](https://www.meetup.com)*.
+Unha das maneiras mais efectivas de entrar en contacto coa comunidade e formar parte dun grupo de persoas co mesmo interese, é *[Meetup](https://www.meetup.com)*.
 
-Existen moitos grupos dedicados ao desenvolvemento. Istes son só alguns dos mais activos.
+Existen moitos grupos dedicados ao desenvolvemento. Estes son só algúns dos mais activos.
 
 {icon=users}
 G> #### Deberías coñecer...
@@ -54,7 +54,7 @@ G> - *[MediaLab Prado](http://medialab-prado.es/)*
 
 ## Desenvolventes que deberías seguir.
 
-Esta lista regenerase de maneira automática -cada vez- que se actualiza o libro. Recolle a información pública directamente de Twitter e organizaa por orde alfabético, tomando como referencia o *@userId*.
+Esta lista rexenerase de maneira automática -cada vez- que se actualiza o libro. Recolle a información pública directamente de Twitter e organízaa por orde alfabético, tomando como referencia o *@userId*.
 
 W> A lista non pretende ser exhaustiva nin completa en absoluto, por suposto, non esta 
 W> todo o mundo e é meramente indicativa.
