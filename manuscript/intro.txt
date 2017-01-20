@@ -9,11 +9,11 @@
 
 I have had great teachers, who taught me a lot and I’ve read many books about this world… but I’ve never managed to find the book that will solve all the doubts or that would give me a solid base on which to grow in a language as fascinating and stigmatized as it is JavaScript.
 
-Por eso, este libro esta escrito como me hubiera gustado que fueran aquellos que yo leía cuando empezaba a programar en JavaScript.
+That’s why, this book is written as I liked them to be the ones I like when I started to code in JavaScript.
 
-Este libro que tienes ahora mismo ante tus ojos, es el resultado de mi esfuerzo personal, con el objeto de crear un instrumento sencillo y simple que muestre al lector la base de un lenguaje tan peculiar y extendido como JavaScript.
+This book that you have right now in front of your eyes, is the result of my personal effort, in order to create an easy and simple instrument that shows the reader the basis of a language as peculiar and extended as JavaScript.
 
-Mi idea, es empezar desde cero y hacer un viaje juntos desde los abismos profundos de la duda, pasando por el pseudocódigo hasta llegar al maravilloso mundo de las *[llamadas Ajax](https://es.wikipedia.org/wiki/AJAX)*, haciendo muchas paradas en el camino, en las que aprenderemos todo lo que necesitas para empezar tu aventura como desarrollador *[Front-end](https://es.wikipedia.org/wiki/Front-end_y_back-end)* con sólidas bases en JavaScript.
+My idea is to start from scratch and make a journey together from the deep gulfs of doubt, through the pseudocode to the wonderful world of *[Ajax Calls](https://es.wikipedia.org/wiki/AJAX)*, making many stops along the way, where we will learn everything you need to start your adventure as a developer *[Front-end](https://es.wikipedia.org/wiki/Front-end_y_back-end)* with solid JavaScript bases.
 
 
 ## Esto va de ser una comunidad
