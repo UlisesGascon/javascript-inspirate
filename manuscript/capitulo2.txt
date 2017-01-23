@@ -3,197 +3,198 @@
 {:: encoding="utf-8" /}
 {footnotes-off}
 
-I> **Fiero veterano**
+I> **Salvaxe veteran**
 I>
-I> En este capítulo, hablaremos sobre como es la computación y que se espera de un
-I> desarrollador.
-I> Si ya dominaís algun lenguaje de programación o sencillamente quiereís empezar ya mismo con JavaScript... pasad al siguiente capítulo.
+I> Neste capítulo, falaremos sobre como é a computación e que se espera dun
+I> desenvolvente.
+I> Se xa dominades algunha linguaxe de programación ou sinxelamente queredes comezar xa mesmo con JavaScript... pasade ao seguinte capítulo.
 
 
 ## Un mundo de máquinas
 
-Seguramente, cuando abras este libro tendrás un objetivo sencillo en mente, aprender JavaScript.
+Seguramente, cando abras este libro terás un obxectivo sinxelo en mente, aprender JavaScript.
 
-Pero antes de hablar de JavaScript, no es mala idea emplear un poco de tiempo, en aprender algunas cosas de interés sobre el entorno de JavaScript.
+Pero antes de falar de JavaScript, non é mala idea empregar un pouco de tempo, en aprender algunhas cousas de interese sobre o entorno de JavaScript.
 
-JavaScript es un lenguaje más de tantos que existen. Cada lenguaje tiene unas características y unas propiedades especiales que lo hacen más o menos apto para según que objetivos. Eso explica la *[existencia de tantísimos lenguajes de programación](https://es.wikipedia.org/wiki/Anexo:Lenguajes_de_programaci%C3%B3n)*, y que los programadores nos repartamos en función de los lenguajes que utilizamos y manejamos.
+JavaScript é unha linguaxe máis de tantos que existen. Cada linguaxe ten unhas características e unhas propiedades especiais que o fan máis ou menos apto para segundo que obxectivos. Iso explica a *[existencia de tantísimas linguaxes de programación](https://es.wikipedia.org/wiki/Anexo:Lenguajes_de_programaci%C3%B3n)*, e que os desenvolventes repartámonos en función das linguaxes que utilizamos e manexamos.
 
-Los lenguajes de programación y los que utilizamos los humanos no son tan diferentes en cuanto al objetivo principal, que es comunicarnos. En el caso de los lenguajes de los humanos la idea principal es que podamos comunicarnos y transmitir nuestras ideas entre los individuos. Cuando se habla de lenguajes de programación, el objetivo es lograr establecer una comunicación fluida con una máquina/sistema/protocolo/etc...
+As linguaxes de programación e os que utilizamos os humanos non son tan diferentes en canto ao obxectivo principal, que é comunicarnos. No caso das linguaxes dos humanos a idea principal é que podamos comunicarnos e transmitir as nosas ideas entre os individuos. Cando falase dunha linguaxe de programación, o obxectivo é lograr establecer unha comunicación fluída cunha máquina/sistema/protocolo/etc...
 
-Al igual que en los lenguajes humanos encontramos muchas similitudes entre si en cuanto a estructuración, los lenguajes de programación suelen compartir una base común en cuanto a estructuras y funcionalidades que toda máquina es capaz de comprender, tales como funciones, bucles, variables, condicionales, etc...
+Ao igual que nas linguaxes humanas atopamos moitas similitudes entre si en canto a estruturación, as linguaxes de programación soen compartir unha base común en canto a estruturas e funcionalidades que toda máquina é capaz de comprender, tales como funcións, bucles, variables, condicionais, etc...
 
-La parte más pura de la computación, *[lógica](https://es.wikipedia.org/wiki/L%C3%B3gica)*, *[abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))* y la capacidad de sintetizar una solución para un problema, en *[sentencias](https://www.ecured.cu/Sentencias_(Programaci%C3%B3n))* que una máquina pueda entender y ejecutar.
+A parte máis pura da computación, *[lóxica](https://es.wikipedia.org/wiki/L%C3%B3gica)*, *[abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))* e a capacidade de sintetizar unha solución pra un problema, nas *[sentencias](https://www.ecured.cu/Sentencias_(Programaci%C3%B3n))* que unha máquina poda comprender e executar.
 
-Los ordenadores son *[máquinas multipropósito](https://es.wikipedia.org/wiki/Computadora)* que pueden ser programadas. En función de su programación pueden hacer más o menos cosas y hacerlas de una forma concreta.
+Os ordenadores son *[máquinas multipropósito](https://es.wikipedia.org/wiki/Computadora)* que poden ser programadas. En función da súa programación poden facer máis ou menos cousas e facelas dunha forma concreta.
 
-Por si mismas, las máquinas no son capaces de razonar y tomar sus propias decisiones, excepto, que hablemos en el ámbito de la inteligencia artificial, donde se busca entre otras cosas lograr máquinas y sistemas que aprendan.
+Por se mesmas, as máquinas non son capaces de razoar e tomar as súas propias decisións, excepto, que falemos no ámbito da intelixencia artificial, onde buscase entre outras cousas lograr máquinas e sistemas que aprendan.
 
-Por lo general, en computación siempre hablaremos de sistemas dentro de sistemas y que han sido programados... es como una pirámide que cobra todo su sentido cuando por fin tenemos cada uno de sus componentes correctamente alineados.
+Polo xeral, na computación sempre falaremos de sistemas dentro de sistemas e que foron programados... é como una pirámide que cobra todo seu sentido cando por fin temos cada un dos seus compoñentes correctamente aliñados.
 
-JavaScript es un lenguaje de programación de alto nivel, que se ejecuta dentro de los navegadores, a excepción de Node.js. Esto quiere decir que nuestro código necesita mucho código previo para funcionar.
+JavaScript é unha linguaxe de programación de alto nivel, que se executa dentro dos navegadores, a excepción de Node.js. Isto quere dicir que o noso código necesita moito código previo pra funcionar.
 
-Por ejemplo, un sistema operativo (Linux, Windows, Mac..) que gestiona programas como el navegador (Firefox, Chrome, IE, etc...) y estos a su vez gestionan cómo se representan los entornos visuales en las pantallas, los sonidos, etc...
+Por exemplo, un sistema operativo (Linux, Windows, Mac..) que xestiona programas como o navegador (Firefox, Chrome, IE, etc...) e estes a súa vez xestionan como se representan os entornos visuais nas pantallas, os sons, etc...
 
-Sabiendo todo esto, al final del día nuestro código puede sufrir fluctuaciones a la hora de ejecutarse en función del entorno que estemos usando, por suerte, el navegador gestionará de manera automática gran parte de todo esto, pero aún así podemos sufrir gran cantidad de variaciones debido a que cada navegador "interpreta" nuestro JavaScript lo mejor que puede, aunque no de la misma forma.
+Sabendo todo isto, ao final do día o noso código pode sufrir flutuacións a hora de executarse na función do entorno que esteamos usando, por sorte, o navegador xestionará de maneira automática gran parte de todo isto, pero ainda así podemos sufrir gran cantidade de variacións debido a que cada navegador "interpreta" o noso JavaScript o mellor que pode, ainda non da mesma maneira.
 
-Uno de nuestros principales cometidos, será hacer que nuestro código sea capaz de lograr los objetivos que nos proponemos independientemente de la plataforma donde se vaya a ejecutar, aunque a esto ya estaréis familiarizados con el día a día desarrollando con HTML5 y CSS3.
+Un de nosos principais cometidos, será facer que o noso código sexa capaz de lograr os obxectivos que propoñémonos independentemente da plataforma onde se executara, aínda que a isto xa estaredes familiarizados co día a día desenvolvendo con HTML5 e CSS3.
 
 
-## Pensar como un programador
+## Pensar como un desenvolvente
 
 {icon=coffee}
 G> #### Lecturas recomendadas:
 G>
 G> - *[Don't learn to code. Learn to think by Yevgeny Brikman](http://www.ybrikman.com/writing/2014/05/19/dont-learn-to-code-learn-to-think/)*
-G> - *[Linus Torvalds: La mente detrás de Linux](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=es)*
+G> - *[Linus Torvalds: A mente detrás de Linux](https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux?language=es)*
 G> - *[What Most Schools Don't Teach by code.org](https://www.youtube.com/watch?v=nKIu9yen5nc)*
 G> - *[Computer science is for everyone by Hadi Partovi](https://www.youtube.com/watch?v=FpMNs7H24X0)*
 G> - *[The early days by Steve Wozniak ](https://www.youtube.com/watch?v=PwSyjz1off4)*
 G> - *[Hack your life in 48 hours by Dave Fontenot](https://www.youtube.com/watch?v=6VakF2hZFPQ)*
 G> - *[You Should Learn to Program by Christian Genco](https://www.youtube.com/watch?v=xfBWk4nw440)*
 
-Programar es un arte y el programador debería ser un artesano, aunque también existen otros puntos de vista menos románticos sobre nuestra profesión.
+Programar é un arte e o desenvolvente debería ser un artesán, aínda que tamén existen outros puntos de vista menos románticos sobre a nosa profesión.
 
-Las máquinas y los sistemas son geniales haciendo una única cosas, seguir pasos.... La responsabilidad de todo programador en relación a las máquinas es ser capaz de guiarlas con las instrucciones más precisas.
+As máquinas e os sistemas son xeniais facendo unha única cousa, seguir pasos.... A responsabilidade de todo desenvolvente en relación as máquinas é ser capaz de guialas coas instrucións máis precisas.
 
-A diferencia de un artesano convencional, el de código, puede evaluar la belleza de un código basándose en ciertos criterios. No se trata solo de que la máquina logre el objetivo deseado, se trata también de no llegar a ese objetivo con un código feo, desastrosos e ineficiente.
+A diferenza dun artesán convencional, o de código, pode avaliar a beleza dun código baseándose en certos criterios. Non se trata so de que a máquina logre o obxectivo desexado, tratase tamén de non chegar a ese obxectivo cun código feo, desastroso e ineficiente.
 
-En programación existen criterios como consistencia, rendimiento, integridad, *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*, *[nivel de abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))*, etc... Estos criterios determinan la calidad de un código.
+Na programación existen criterios como consistencia, rendemento, integridade, *[complexidade ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*, *[nivel de abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))*, etc... Estes criterios determinan a calidade dun código.
 
-Esto a su vez nos lleva al análisis de nuevos problemas relacionados con la legibilidad y el mantenimiento de nuestro código. El balance es muy complicado y por ello un programa jamás llega a ser perfecto, recuerda que al final, el programador sigue siendo humano...
+Isto a súa vez lévanos ao análise de novos problemas relacionados coa lexibilidade e o mantemento do noso código. O balance é moi complicado e po isto un programa xamais chega a ser perfecto, recorda que ao final, o desenvolvente segue sendo humano...
 
-I> ####Programar requiere aprender una nueva forma de pensar
+I> ####Programar require aprender unha nova forma de pensar
 I>
-I> Mucha gente omite este paso y acaba perdida en un infinito desierto de agonía y desesperación
-I> cuando se estancan... y se ven incapaces de resolver ciertas situaciones que surgen en el día a
-I> día de un programador.
+I> Moita xente omite este paso e acaba perdida nun infinito deserto de agonía e desesperación
+I> cando se estancan... e vense incapaces de resolver certas situacións que xorden no día a
+I> día dun desenvolvente.
 
-Cosas como la *[metaprogramación](https://es.wikipedia.org/wiki/Metaprogramaci%C3%B3n)* y el pensamiento abstracto serán dos objetivos loables a los que debes aspirar como buen artesano del código.
+Cousas como a *[metaprogramación](https://es.wikipedia.org/wiki/Metaprogramaci%C3%B3n)* e o pensamento abstracto serán dous obxectivos loables aos que debes aspirar como bo artesán do código.
 
-No te preocupes querido lector, porque tus hijos no sufrirán este tormento, ya que están aprendiendo programación de la manera más ágil y divertida, centrándose en el pensamiento abstracto y dejando los lenguajes de programación para más adelante... cosas como *[Scratch](https://scratch.mit.edu/)* o *[Bitbloq](http://bitbloq.bq.com/)* se encargan de ayudarles con esta ardua tarea de una manera amena.
+Non te preocupes querido lector, porque os teus fillos non sufrirán este tormento, xa que están aprendendo programación da maneira máis áxil e divertida, centrándose no pensamento abstracto e deixando as linguaxes de programación para máis adiante... cousas como *[Scratch](https://scratch.mit.edu/)* o *[Bitbloq](http://bitbloq.bq.com/)* encárganse de axudalos con esta ardua tarefa dunha maneira amena.
 
-Pero para los adultos es otra historia... por eso, antes de aterrizar en el siguiente capítulo, deberíamos emplear un poco más de tiempo aprendiendo las bases de la programación con pseudocódigo.
+Pero pra os adultos é outra historia... por iso, antes de aterrar no seguinte capítulo, deberíamos empregar un pouco máis de tempo aprendendo as bases da programación con pseudocódigo.
 
-Las máquinas procesan el mundo de manera binaria, no existen las escalas de grises, por eso el programador debe asumir que tiene que interiorizar y empatizar con la única forma de ver el mundo que tienen las máquinas. Debe aprender a pensar de una manera más "binaria", esto traerá consigo beneficios más allá de la computación, como es aprender a resolver problemas complejos, dividir tareas, etc... y así aumentará enormemente su creatividad. Aprenderá de los errores como nunca antes, tendrá nuevos retos cada día y cuando los supere, la satisfacción será increíble...
+As máquinas procesan o mundo de maneira binaria, non existen as escalas de grises, por iso o desenvolvente debe asumir que ten que interiorizar e empatizar coa única forma de ver o mundo que teñen as máquinas. Debe aprender a pensar dunha maneira máis "binaria", isto traerá consigo beneficios máis alá da computación, como é aprender a resolver problemas complexos, dividir tarefas, etc... e así aumentará enormemente a súa creatividade. Aprenderá dos erros como nunca antes, terá novos retos cada día e cando os supere, a satisfacción será incrible...
 
-Aprender a programar no tiene edad.
+
+Aprender a programar non ten idade.
 
 
 ## Pseudocódigo
 
-El *[pseudocódigo](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo)* nos permite aislarnos del lenguaje sobre el que finalmente deseamos programar y nos centra en la base lógica más pura de la programación, lo que nos permite adentrarnos en el problema en sí y en su resolución... sin tener que preocuparnos de particularidades de cada lenguaje y su entorno de ejecución.
+O *[pseudocódigo](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo)* permítenos illarnos da linguaxe sobre o que finalmente desexamos programar e céntranos na base lóxica máis pura da programación, o que nos permite adentrarnos no problema en si e na súa resolución... sen ter que preocuparnos de particularidades de cada linguaxe e o seu entorno de execución.
 
-No vamos a hablar de todas las posibilidades que nos aporta el pseudocódigo, pero si hablaremos de algunas estructuras que resultarán interesantes para nuestro aprendizaje orientado a JavaScript.
+Non imos falar de tódalas posibilidades que nos aporta o pseudocódigo, pero si falaremos dalgunhas estruturas que resultarán interesantes pra a nosa aprendizaxe orientado a JavaScript.
 
-Aunque no es necesario realizar nuestro pseudocódigo en un entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar de un entorno completo a  nuestro pseudocódigo.
+Anque non é necesario realizar o noso pseudocódigo nun entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar dun entorno completo o noso pseudocódigo.
 
-Por todo ello, los ejemplos que veremos en este capítulo están basados en la sintaxis y funcionamiento de *[PseInt](http://pseint.sourceforge.net/)*. También incluyo su equiparación con JavaScript a modo de referencia.
+Por isto, os exemplos que veremos neste capítulo están baseados na sintaxe e funcionamento de *[PseInt](http://pseint.sourceforge.net/)*. Tamén inclúo a súa equiparación con JavaScript a modo de referencia.
 
-W> **¡No te agobies!**
+W> **¡Non te sufoques!**
 W>
-W> Es normal que haya cosas que no entendamos de JavaScript en los próximos ejemplos, para eso
-W> tenemos el resto del libro...
+W> É normal que haxa cousas que non entendamos de JavaScript nos próximos exemplos, pra iso
+W> temos o resto do libro...
 
 
 ### Variables
 
-Cuando programamos, podemos crear variables que son pequeños espacios de memoria a los que ponemos un nombre como *"nombre_usuario"*, y que nos permite almacenar datos que posteriormente podremos modificar si deseamos.
+Cando programamos, podemos crear variables que son pequenos espazos de memoria aos que poñemos un nome como *"nome_usuario"*, e que nos permite almacenar datos que posteriormente poderemos modificar se o desexamos.
 
 - En Pseudocódigo:
 
     {lang=text}
     ~~~~~~~
-    // Esto es un comentario
-    nombreUsuario = "Pepe"
-    nombreOtroUsuario = "Roberta"
+    // Isto é un comentario
+    nomeUsuario = "Pepe"
+    nomeOutroUsuario = "Roberta"
     ~~~~~~~
 
 - Equiparación en JavaScript:
 
     {lang=js}
     ~~~~~~~
-    // Esto es un comentario
-    var nombreUsuario = "Pepe";
-    var nombreOtroUsuario = "Roberta";
+    // Isto es un comentario
+    var nomeUsuario = "Pepe";
+    var nomeOtroUsuario = "Roberta";
     ~~~~~~~
 
-### Interacción con el usuario
+### Interacción co usuario
 
-Podemos pedir al usuario que nos facilite algún tipo de dato, almacenarlo en una variable y también podemos mostrarle información.
+Podemos pedir ao usuario que nos facilite algún tipo de dato, almacenalo nunha variable e tamén podemos mostrarlle información.
 
 - En Pseudocódigo:
 
     {lang=text}
     ~~~~~~~
-    // Le mostraremos el siguiente mensaje
-	Escribir "hola usuario! ¿Cómo te llamas?"
+    // Mostrarémoslle a seguinte mensaxe
+	Escribir "Ola usuario! ¿Como te chamas?"
 
-	// Almacenamos su respuesta en una variable
-	Leer nombreUsuario
+	// Almacenamos a súa resposta nunha variable
+	Ler nomeUsuario
     ~~~~~~~
 
 - Equiparación en JavaScript:
 
     {lang=js}
     ~~~~~~~
-    // Le mostraremos el siguiente mensaje
-	var mensaje = "hola usuario! ¿Cómo te llamas?";
+    // Mostrarémoslle a seguinte mensaxe
+	var mensaxe = "Ola usuario! ¿Como te chamas?";
 
-	// Almacenamos su respuesta en una variable
-	var nombreUsuario = prompt(mensaje);
+	// Almacenamos a súa resposta nunha variable
+	var nomeUsuario = prompt(mensaxe);
     ~~~~~~~
 
-Como podemos ver... a la hora de equiparar este mensaje en JavaScript, he metido ciertos cambios para agilizar el *[algoritmo](https://es.wikipedia.org/wiki/Algoritmo)* y adaptarlo al contexto de JavaScript en el navegador.
+Como podemos ver... a hora de equiparar este mensaxe en JavaScript, metín certos cambios pra axilizar o *[algoritmo](https://es.wikipedia.org/wiki/Algoritmo)* e adaptalo ao contexto de JavaScript no navegador.
 
 
-### Estructuras condicionales
+### Estruturas condicionais
 
-Cuando necesitamos que el sistema tome decisiones, debemos plantearle las múltiples opciones en una estructura condicional concreta.
+Cando necesitamos que o sistema tome decisións, debemos plantexarlle as múltiples opcións na  estrutura condicional concreta.
 
-Para que la lógica del sistema pueda decidir, necesitamos reducir todo a comparaciones susceptibles de devolver un *[valor booleano (verdadero o falso)](https://es.wikipedia.org/wiki/Tipo_de_dato_l%C3%B3gico)*.
+Pra que la lóxica do sistema poda decidir, necesitamos reducir todo a comparacións susceptibles a devolver un *[valor booleano (verdadeiro ou falso)](https://es.wikipedia.org/wiki/Tipo_de_dato_l%C3%B3gico)*.
 
-**Por ejemplo:**
+**Por exemplo:**
 
-* Operaciones matemáticas
+* Operacións matemáticas
 
     * 1+1 = 2
-    * 5 es mayor que 3
-    * -5 es menor que cero
+    * 5 é maior que 3
+    * -5 é menor que cero
 
-- Operaciones lógicas
+- Operacións lóxicas
 
-    * La variable "nombreUsuario" es igual a "Pepe"
-    * La variable "nombreUsuario" no esta vacía
-
-
-A la hora de representar las opciones. *[PseInt](http://pseint.sourceforge.net/)* nos da dos opciones principales. La estructura *Si.. entonces* y *Según*, la diferencia en este contexto está en función del número de opciones.
+    * A variable "nomeUsuario" é igual a "Pepe"
+    * A variable "nomeUsuario" non esta baleira
 
 
-En el caso de *Si...*
-
-: Entonces solo manejamos dos opciones cuando la condición se cumple, y cuando no se cumple.
+A hora de representalas opcións. *[PseInt](http://pseint.sourceforge.net/)* danos dúas opcións principais. A estrutura *Si.. entón* e *Segundo*, a diferenza neste contexto está na función do número de opcións.
 
 
-En el caso de *Según*
+No caso de *Si...*
 
-: Podemos manejar multiples valores y con ello multiples opciones sobre las que el sistema deberá decidir.
-
-: Si una condición puede cumplirse en múltiples casos, el sistema se decidirá por la primera e ignorará el resto.
+: Entón so manexamos dúas opcións cando a condición cúmprese, e cando non se cumpre.
 
 
+No caso de *Segundo*
+
+: Podemos manexar múltiples valores e co elo múltiples opcións sobre as que o sistema deberá decidir.
+
+: Se unha condición pode cumprirse en múltiples casos, o sistema decidirase pola primeira e ignorará o resto.
 
 
-**Si... Entonces**
+
+
+**Si... Entón**
 
 - En Pseudocódigo:
 
     {lang=text}
     ~~~~~~~
-	Si 1 + 1 == 2 Entonces
-		Escribir "La suma es correcta"
-	Sino
-		Escribir "La suma es incorrecta"
-	Fin Si
+	Se 1 + 1 == 2 Entón
+		Escribir "A suma é correcta"
+	Se non
+		Escribir "A suma é incorrecta"
+	Fin Se
     ~~~~~~~
 
 {pagebreak}
@@ -203,29 +204,29 @@ En el caso de *Según*
     {lang=js}
     ~~~~~~~
     if (1 + 1 === 2) {
-        console.log("La suma es correcta")
+        console.log("A suma é correcta")
     } else {
-        console.log("La suma es incorrecta")
+        console.log("A suma é incorrecta")
     };
     ~~~~~~~
 
 
-**Según**
+**Segundo**
 
 - En Pseudocódigo:
 
     {lang=text}
     ~~~~~~~
-	Escribir "hola usuario! ¿Cómo te llamas?"
-	Leer nombreUsuario
-	Segun nombreUsuario Hacer
+	Escribir "ola usuario! ¿Como te chamas?"
+	Ler nomeUsuario
+	Segundo nomeUsuario Facer
 		"Pepe":
-			Escribir "Hola Pepe! Yo te conozco"
+			Escribir "Ola Pepe! Eu coñézote"
 		"Lucia":
-			Escribir "Hola Lucia! Yo te conozco"
-		De Otro Modo:
-			Escribir "Eres nuevo... Bienvenido!"
-		Fin Segun
+			Escribir "Ola Lucia! Eu coñézote"
+		Doutro Modo:
+			Escribir "Eres novo... Benvido!"
+		Fin Segundo
     ~~~~~~~
 
 
@@ -233,49 +234,49 @@ En el caso de *Según*
 
     {lang=js}
     ~~~~~~~
-	var nombreUsuario = prompt("hola usuario! ¿Cómo te llamas?")
+	var nomeUsuario = prompt("ola usuario! ¿Como te chamas?")
 
-    switch(nombreUsuario) {
+    switch(nomeUsuario) {
         case "Pepe":
-            console.log("Hola Pepe! Yo te conozco");
+            console.log("Ola Pepe! Eu coñézote");
             break;
         case "Lucia":
-            console.log("Hola Lucia! Yo te conozco");
+            console.log("Ola Lucia! Eu coñézote");
             break;
         default:
-            console.log("Eres nuevo... Bienvenido!");
+            console.log("Eres novo... Benvido!");
     }
     ~~~~~~~
 
 
 ### Bucles
 
-En ocasiones nuestro algoritmo requerirá ejecutar una serie de instrucciones de manera repetitiva hasta que cierta circunstancia cambie. Esto en programación se conoce como bucles, básicamente tenemos tres tipos.
+En ocasións o noso algoritmo requirirá executar unha serie de instrucións de maneira repetitiva ata que certa circunstancia cambie. Isto en programación coñecese como bucles, basicamente temos tres tipos.
 
-Al existir tres tipos, surge la duda de saber si realmente existen diferencias significativas entre ellos.
+Ao existir tres tipos, xurde a dubida de saber se realmente existen diferenzas significativas entre eles.
 
-Como es normal existen ciertas diferencias en el manejo de las interacciones, pero todos los bucles mantienen una estructura y funcionamiento común que se divide en dos partes:
+Como é normal existen certas diferenzas no manexo das interaccións, pero tódolos bucles manteñen unha estrutura e funcionamento común que se divide en dúas partes:
 
 Condición
 
-: Nos permite definir cual es la condición que debe cumplirse para que nuestro programa decida si hay que *entrar/seguir* en bucle o *ignorarlo/salir*.
+: Permitinos definir cal é a condición que debe cumprirse pra que o noso programa decida se hai que *entrar/seguir* no bucle ou *ignoralo/saír*.
 
-: El dominio de esta parte del bucle nos asegurará no caer en bucles infinitos o bucles que nunca serán ejecutados.
+: O dominio desta parte do bucle aseguráranos non caer en bucles infinitos ou bucles que nunca serán executados.
 
 
-Instrucciones
+Instrucións
 
-: Es un conjunto de comandos que serán ejecutados una vez el bucle haya validado las condiciones.
+: Nun conxunto de comandos que serán executados unha vez que o bucle validará as condicións.
 
 
 #### Tipos de bucles
 
-- **While (Mientras)**
+- **While (Mentres)**
 
-    Esta pensado para aquellos bucles que requieran de una condición lógica y no matemática para validar la iteracción.
+    Esta pensado pra aqueles bucles que requiran dunha condición lóxica e non matemática pra validala iteración.
 
 
-	T> Aunque lógicamente podremos mezclar entre las diversas condiciones (matemáticas y lógicas).
+	T> Anque loxicamente poderemos mesturar entre as diversas condicións (matemáticas e lóxicas).
 
 
 
@@ -283,38 +284,38 @@ Instrucciones
 
         {lang=text}
         ~~~~~~~
-        vuelta <- 0
-        Mientras vuelta < 100 Hacer
-            Escribir vuelta
-            vuelta = vuelta + 1
-        Fin Mientras
+        volta <- 0
+        Mentres volta < 100 Facer
+            Escribir volta
+            volta = volta + 1
+        Fin Mentres
         ~~~~~~~
 
     - Equiparación en JavaScript:
 
         {lang=js}
         ~~~~~~~
-        var vuelta = 0;
+        var volta = 0;
 
-        while(vuelta < 100){
-            console.log(vuelta)
-            vuelta++ // vuelta = vuelta +1
+        while(volta < 100){
+            console.log(volta)
+            volta++ // volta = volta +1
         }
         ~~~~~~~
 
 
 
-- **For (Para)**
+- **For (Pra)**
 
-    Esta diseñado específicamente para trabajar con series de números (longitud de cadena, elementos de un array, propiedades de un objeto, etc...) y nos provee de una estructura más sencilla para gestionar el flujo.
+    Esta deseñado especificamente pra traballar con series de números (lonxitude de cadea, elementos dun array, propiedades dun obxecto, etc...) e abastécenos dunha estrutura máis sinxela pra xestionar o fluxo.
 
     - En Pseudocódigo:
 
         {lang=text}
         ~~~~~~~
-        Para v_numerica<-v_inicial Hasta vuelta < 100 Con Paso vuelta = vuelta + 1 Hacer
-		    Escribir vuelta
-	    Fin Para
+        Pra v_numerica<-v_inicial ata volta < 100 Con Paso volta = volta + 1 Facer
+		    Escribir volta
+	    Fin Pra
         ~~~~~~~
         
     {pagebreak}
@@ -323,14 +324,14 @@ Instrucciones
 
         {lang=js}
         ~~~~~~~
-        for(var vuelta = 0; vuelta < 100; vuelta++ ){
-            console.log(vuelta);
+        for(var volta = 0; volta < 100; volta++ ){
+            console.log(volta);
         }
         ~~~~~~~
 
-- **Do... While (Repetir... Hasta Que)**
+- **Do... While (Repetir... Ata Que)**
 
-    Este bucle funciona de una manera diferente. Altera el orden al que estamos acostumbrados, ya que primero ejecutará el código una vez y luego evaluará si debe repetirse.
+    Este bucle funciona dunha maneira diferente. Altera o orden ao que estamos acostumados, xa que primeiro executará o código unha vez e logo avaliará se debe repetirse.
 
     - En Pseudocódigo:
 
@@ -338,8 +339,8 @@ Instrucciones
         ~~~~~~~
         dato <- Falso
         Repetir
-            Escribir "Al menos una vez..."
-        Hasta Que Dato == Verdadero
+            Escribir "Polo menos unha vez..."
+        Ata Que Dato == Verdadeiro
         ~~~~~~~
 
     - Equiparación en JavaScript:
@@ -349,49 +350,49 @@ Instrucciones
         var Dato = false;
 
         do {
-            console.log("Al menos una vez...");
+            console.log("Polo menos unha vez...");
         } while(Dato)
         ~~~~~~~
 
-### Funciones o subprocesos
+### Funcións ou subprocesos
 
-Las funciones son estructuras de código que nos permiten reutilizar en gran medida nuestro código, gracias a que encapsulan instrucciones en su interior.
+As funcións son estruturas de código que permítennos reutilizar en gran medida o noso código, grazas a que encapsulan instrucións no seu interior.
 
-Las funciones pueden realizar dos acciones principales, de manera independiente o interrelacionadas.
+As funcións poden realizar dúas accións principais, de maneira independente ou interrelacionadas.
 
-Pueden modificiar el valor de las variables que están fuera de la función (ámbito global) o retornando un nuevo valor al final de su ejecución.
+Poden modificar o valor das variables que están fora da función (ámbito global) ou retornando un novo valor ao final da súa execución.
 
-Otra de las características que hacen de las funciones estructuras muy valiosas, es el uso de argumentos. Esto es una especie de variable que se declara junto a la ejecución y que no tiene ningún valor hasta que no llamemos a la función.
+Outra das características que fan das funcións estruturas moi valiosas, é o uso de argumentos. Isto é unha especie de variable que se declara xunto a execución e que non ten ningún valor ata que non chamemos a función.
 
-A la hora de llamar a la función podemos pasarle parámetros que son valores con los que la función podrá realizar todo tipo de operaciones.
+A hora de chamar a función podemos pasarlle parámetros que son valores cos que a función poderá realizar todo tipo de operacións.
 
-Todo sistema, incluso *[PSeInt](http://pseint.sourceforge.net/)*, dispone de funciones que han sido creadas para facilitar nuestro trabajo, como son las funciones matemáticas que nos permiten calcular, desde valores absolutos hasta logaritmos, pasando por funciones de azar para generar números aleatorios.
+Todo sistema, incluso *[PSeInt](http://pseint.sourceforge.net/)*, dispón de funcións que foron creadas pra facilitar o noso traballo, como son as funcións matemáticas que nos permiten calcular, dende valores absolutos ata logaritmos, pasando por funcións de azar pra xerar números aleatorios.
 
 {pagebreak}
 
-También existen funciones propias según el tipo de dato con el que trabajemos, como es el caso de las cadenas de texto, donde podemos convertir su valor a números o saber la longitud total de los caracteres que lo componen, etc...
+Tamén existen funcións propias segundo o tipo de dato co que traballemos, como é o caso de das cadeas de texto, onde podemos converter o seu valor a números o saber que a lonxitude total dos caracteres que o compoñen, etc...
 
-Hablaremos de todo esto en próximos capítulos.
-
-
-
-### Operadores especiales
-
-En todo lenguaje de programación encontraremos ciertos operadores comunes que nos facilitarán tareas, como son:
+Falaremos de todo isto nos próximos capítulos.
 
 
-Algebraicos
 
-: Relacionados con operaciones matemáticas (sumar, restar, multiplicar, dividir...).
+### Operadores especiais
 
-
-Relacionales
-
-: Relacionados con comparaciones entre elementos (distinto a, igual que, menor que, mayor o igual que...).
+En toda linguaxe de programación atoparemos certos operadores comúns que facilitárannos tarefas, como son:
 
 
-Lógicos
+Alxebraicos
 
-: Permiten encadenar validaciones entre elementos. Y (conjunción) y O (disyunción).
+: Relacionados con operacións matemáticas (sumar, restar, multiplicar, dividir...).
 
-: Por ejemplo: ((es usuario) Y (está registrado)) O (es un invitado).
+
+Relacionais
+
+: Relacionados con comparacións entre elementos (distinto a, igual que, menor que, maior ou igual que...).
+
+
+Lóxicos
+
+: Permiten encadear validacións entre elementos. E (conxunción) e OU (disxunción).
+
+: Por exemplo: ((é usuario) E (está rexistrado)) OU (é un invitado).
