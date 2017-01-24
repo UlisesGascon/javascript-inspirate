@@ -264,7 +264,7 @@ Para hacernos una ligera idea de lo que necesitamos saber en las diversas áreas
 **¿Qué se espera de un Back-End Junior?**
 
 - Conocimientos sólidos de programación (Algorítmia, lógica, etc...).
-- Saber trabajar con bases de datos relaciones y/o no relacionales.
+- Saber trabajar con bases de datos relacionales y/o no relacionales.
 - Bases de una buena arquitectura (modularidad, *[microservicios](https://www.genbetadev.com/paradigmas-de-programacion/trabajar-con-microservicios-evitando-la-frustracion-de-las-enormes-aplicaciones-monoliticas)*, etc...).
 - Bases de nuevas arquitecturas  *[NoBackend](http://nobackend.org/)*, *[Serverless](https://en.wikipedia.org/wiki/Serverless_computing)*, *[WebSockets](https://es.wikipedia.org/wiki/WebSocket)*, etc...).
 - Desarrollo de aplicaciones seguras.
