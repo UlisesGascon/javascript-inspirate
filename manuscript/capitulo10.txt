@@ -265,7 +265,7 @@ function pruebaArgumentos () {
 pruebaArgumentos (1, "vale", true);
 ~~~~~~~
 
-T> Conversión array require de ciertos conocimientos avanzados en el uso de
+T> Conversión array requiere de ciertos conocimientos avanzados en el uso de
 T> *[protoype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)* y
 T> *[this](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this)*. Os
 T> dejo una función que os ayudará a realizar esta conversión de una forma fácil.
@@ -443,7 +443,7 @@ Declaramos una función:
 (//código)()
 ~~~~~~~
 
-Lo contenido en el primer paréntesis contiene el código encapsulado, al igual que haciamos con las operaciones matemáticas en capítulos anteriores.
+Lo contenido en el primer paréntesis contiene el código encapsulado, al igual que hacíamos con las operaciones matemáticas en capítulos anteriores.
 
 El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
 

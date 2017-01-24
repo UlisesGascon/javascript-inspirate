@@ -67,7 +67,7 @@ Bases de datos
 
 Paradigmas  *[POO](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, *[Funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)*, etc...)
 
-: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScirpt, pero no iremos más allá.
+: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScript, pero no iremos más allá.
 
 
 HTML5 APIs
@@ -194,13 +194,13 @@ Todos los ejemplos de código que veras en el libro tienen significado por si mi
 
 ### Iconos utilizados en este libro
 
-I> Cuando veas este inoco sabrás que tendras un lugar desde el que ampliar conocimientos y profundizar un poco más en los conceptos del capítulo.
+I> Cuando veas este icono sabrás que tendras un lugar desde el que ampliar conocimientos y profundizar un poco más en los conceptos del capítulo.
 
 
 W> Cuando veas este icono sabrás que debes prestar mucha atención, ya que se trata de un concepto clave para entender el capítulo en el que te encuentras.
 
 
-T> Cuando veas este icono sabrás que ese trata de un consejo que puedes seguir o no...
+T> Cuando veas este icono sabrás que se trata de un consejo que puedes seguir o no...
 
 
 {icon=users}

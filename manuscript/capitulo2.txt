@@ -6,7 +6,7 @@
 I> **Fiero veterano**
 I>
 I> En este capítulo, hablaremos sobre como es la computación y que se espera de un
-I> desarrolladore.
+I> desarrollador.
 I> Si ya dominaís algun lenguaje de programación o sencillamente quiereís empezar ya mismo con JavaScript... pasad al siguiente capítulo.
 
 
@@ -54,9 +54,9 @@ G> - *[You Should Learn to Program by Christian Genco](https://www.youtube.com/w
 
 Programar es un arte y el programador debería ser un artesano, aunque también existen otros puntos de vista menos románticos sobre nuestra profesión.
 
-Las máquinas y los sistemas son geniales haciendo una única cosas, seguir pasos.... La responsabilidad de todo programador en relación a las máquinas es ser capaz de guiarlas con las instrucciones más precisas.
+Las máquinas y los sistemas son geniales haciendo una única cosa, seguir pasos.... La responsabilidad de todo programador en relación a las máquinas es ser capaz de guiarlas con las instrucciones más precisas.
 
-A diferencia de un artesano convencional, el de código, puede evaluar la belleza de un código basándose en ciertos criterios. No se trata solo de que la máquina logre el objetivo deseado, se trata también de no llegar a ese objetivo con un código feo, desastrosos e ineficiente.
+A diferencia de un artesano convencional, el de código, puede evaluar la belleza de un código basándose en ciertos criterios. No se trata solo de que la máquina logre el objetivo deseado, se trata también de no llegar a ese objetivo con un código feo, desastroso e ineficiente.
 
 En programación existen criterios como consistencia, rendimiento, integridad, *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*, *[nivel de abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))*, etc... Estos criterios determinan la calidad de un código.
 
@@ -85,7 +85,7 @@ El *[pseudocódigo](https://es.wikipedia.org/wiki/Pseudoc%C3%B3digo)* nos permit
 
 No vamos a hablar de todas las posibilidades que nos aporta el pseudocódigo, pero si hablaremos de algunas estructuras que resultarán interesantes para nuestro aprendizaje orientado a JavaScript.
 
-Aunque no es necesario realizar nuestro pseusocódigo en un entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar de un entorno completo a  nuestro pseudocódigo.
+Aunque no es necesario realizar nuestro pseudocódigo en un entorno específico, existen programas como *[PseInt](http://pseint.sourceforge.net/)*, que intentan dotar de un entorno completo a  nuestro pseudocódigo.
 
 Por todo ello, los ejemplos que veremos en este capítulo están basados en la sintaxis y funcionamiento de *[PseInt](http://pseint.sourceforge.net/)*. También incluyo su equiparación con JavaScript a modo de referencia.
 
@@ -104,7 +104,7 @@ Cuando programamos, podemos crear variables que son pequeños espacios de memori
     {lang=text}
     ~~~~~~~
     // Esto es un comentario
-    nombreUusario = "Pepe"
+    nombreUsuario = "Pepe"
     nombreOtroUsuario = "Roberta"
     ~~~~~~~
 
@@ -113,7 +113,7 @@ Cuando programamos, podemos crear variables que son pequeños espacios de memori
     {lang=js}
     ~~~~~~~
     // Esto es un comentario
-    var nombreUusario = "Pepe";
+    var nombreUsuario = "Pepe";
     var nombreOtroUsuario = "Roberta";
     ~~~~~~~
 
@@ -359,7 +359,7 @@ Las funciones son estructuras de código que nos permiten reutilizar en gran med
 
 Las funciones pueden realizar dos acciones principales, de manera independiente o interrelacionadas.
 
-Pueden modificiar el valor de las variables que están fuera de la función (ámbito global) o retornando un nuevo valor al final de su ejecución.
+Pueden modificar el valor de las variables que están fuera de la función (ámbito global) o retornando un nuevo valor al final de su ejecución.
 
 Otra de las características que hacen de las funciones estructuras muy valiosas, es el uso de argumentos. Esto es una especie de variable que se declara junto a la ejecución y que no tiene ningún valor hasta que no llamemos a la función.
 

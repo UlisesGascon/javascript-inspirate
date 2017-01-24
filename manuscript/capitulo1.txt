@@ -264,7 +264,7 @@ Para hacernos una ligera idea de lo que necesitamos saber en las diversas áreas
 **¿Qué se espera de un Back-End Junior?**
 
 - Conocimientos sólidos de programación (Algorítmia, lógica, etc...).
-- Saber trabajar con bases de datos relaciones y/o no relacionales.
+- Saber trabajar con bases de datos relacionales y/o no relacionales.
 - Bases de una buena arquitectura (modularidad, *[microservicios](https://www.genbetadev.com/paradigmas-de-programacion/trabajar-con-microservicios-evitando-la-frustracion-de-las-enormes-aplicaciones-monoliticas)*, etc...).
 - Bases de nuevas arquitecturas  *[NoBackend](http://nobackend.org/)*, *[Serverless](https://en.wikipedia.org/wiki/Serverless_computing)*, *[WebSockets](https://es.wikipedia.org/wiki/WebSocket)*, etc...).
 - Desarrollo de aplicaciones seguras.
@@ -391,4 +391,4 @@ Surgirán iniciativas con ideas tan potentes como *[Nobackend](http://nobackend.
 
 {pagebreak}
 
-Precisamente la innovación pasará a formar parte del ADN de nuevos tipos de empresas como las *[Stratups](https://es.wikipedia.org/wiki/Empresa_emergente)*. El *[MVP](https://es.wikipedia.org/wiki/Producto_viable_m%C3%ADnimo)* y el prototipado serán un concepto *[mainstream](https://es.wikipedia.org/wiki/Mainstream)* al igual que la metodología *[Lean Startup](https://es.wikipedia.org/wiki/Lean_startup)*.
+Precisamente la innovación pasará a formar parte del ADN de nuevos tipos de empresas como las *[Startups](https://es.wikipedia.org/wiki/Empresa_emergente)*. El *[MVP](https://es.wikipedia.org/wiki/Producto_viable_m%C3%ADnimo)* y el prototipado serán un concepto *[mainstream](https://es.wikipedia.org/wiki/Mainstream)* al igual que la metodología *[Lean Startup](https://es.wikipedia.org/wiki/Lean_startup)*.
