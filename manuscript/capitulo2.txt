@@ -54,9 +54,9 @@ G> - *[You Should Learn to Program by Christian Genco](https://www.youtube.com/w
 
 Programar es un arte y el programador debería ser un artesano, aunque también existen otros puntos de vista menos románticos sobre nuestra profesión.
 
-Las máquinas y los sistemas son geniales haciendo una única cosas, seguir pasos.... La responsabilidad de todo programador en relación a las máquinas es ser capaz de guiarlas con las instrucciones más precisas.
+Las máquinas y los sistemas son geniales haciendo una única cosa, seguir pasos.... La responsabilidad de todo programador en relación a las máquinas es ser capaz de guiarlas con las instrucciones más precisas.
 
-A diferencia de un artesano convencional, el de código, puede evaluar la belleza de un código basándose en ciertos criterios. No se trata solo de que la máquina logre el objetivo deseado, se trata también de no llegar a ese objetivo con un código feo, desastrosos e ineficiente.
+A diferencia de un artesano convencional, el de código, puede evaluar la belleza de un código basándose en ciertos criterios. No se trata solo de que la máquina logre el objetivo deseado, se trata también de no llegar a ese objetivo con un código feo, desastroso e ineficiente.
 
 En programación existen criterios como consistencia, rendimiento, integridad, *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*, *[nivel de abstracción](https://es.wikipedia.org/wiki/Abstracci%C3%B3n_(inform%C3%A1tica))*, etc... Estos criterios determinan la calidad de un código.
 
@@ -359,7 +359,7 @@ Las funciones son estructuras de código que nos permiten reutilizar en gran med
 
 Las funciones pueden realizar dos acciones principales, de manera independiente o interrelacionadas.
 
-Pueden modificiar el valor de las variables que están fuera de la función (ámbito global) o retornando un nuevo valor al final de su ejecución.
+Pueden modificar el valor de las variables que están fuera de la función (ámbito global) o retornando un nuevo valor al final de su ejecución.
 
 Otra de las características que hacen de las funciones estructuras muy valiosas, es el uso de argumentos. Esto es una especie de variable que se declara junto a la ejecución y que no tiene ningún valor hasta que no llamemos a la función.
 
