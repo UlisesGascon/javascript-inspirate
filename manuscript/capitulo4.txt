@@ -1,4 +1,4 @@
--# Parte II - Mecánica del lenguaje
+-# Parte II - Mecánica da linguaxe
 
 # Capítulo 4 - Comparadores
 
@@ -8,42 +8,42 @@
 
 ## *[Operadores de Comparación](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Comparison_Operators)*
 
-Muchos de los comparadores, mayor que, menor que, igual que, etc... ya los conocemos. Pero en JavaScript tenemos un comparador adiccional, que nos permite comparar entre dos elementos, no solo por su valor, también por su tipología.
+Moitos dos comparadores, maior que, menor que, igual que, etc... xa os coñecemos. Pero en JavaScript temos un comparador adicional, que permítenos comparar entre dous elementos, non so polo seu valor, tamén pola súa tipoloxía.
 
 
 {lang=js}
 ~~~~~~~
-var mayorQue = 100 > 10;
+var maiorQue = 100 > 10;
 var menorQue = 10 < 100;
-var mayorIgual = 100 >= 10;
+var maiorIgual = 100 >= 10;
 var menorIgual = 10 <= 100;
 var igual = 10 == 10;
-var igualTotalmente = 10 === 10; // Ojo! Usamos también ===
-var noIgual = 100 != 10;
+var igualTotalmente = 10 === 10; // Ollo! Usamos tamén ===
+var nonIgual = 100 != 10;
 ~~~~~~~
 
-Como regla general, será imperativo utilizarlo siempre que comparemos entre valores el *===*, ya que debemos asegurarnos que no nos den "gato por liebre", confirmando que son iguales ambos datos en valor y tipo de dato.
+Como regra xeral, será imperativo utilizalo sempre que comparemos entre valores o *===*, xa que debemos asegurarnos que non nos deán "gato por lebre", confirmando que son iguais ámbolos datos en valor e tipo de dato.
 
-Veamos el siguiente ejemplo:
+Vexamos o seguinte exemplo:
 
 {lang=js}
 ~~~~~~~
 var igual = 10 == 10; // true
-var igualCadena = 10 == "10"; //true
+var igualCadea = 10 == "10"; //true
 var igualTotalmente = 10 === 10; // true
-var igualTotalmenteCadena = 10 === "10"; //false
+var igualTotalmenteCadea = 10 === "10"; //false
 
-var noIgual = 100 != 10; // true
-var noIgualCadena = 100 != "100"; // false
-var noIgualTotalmente = 100 !== 10; // true
-var noIgualTotalmenteCadena = 100 !== "100"; // true
+var nonIgual = 100 != 10; // true
+var nonIgualCadea = 100 != "100"; // false
+var nonIgualTotalmente = 100 !== 10; // true
+var nonIgualTotalmenteCadea = 100 !== "100"; // true
 ~~~~~~~
 
 ## *[Operadores Lógicos](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Operadores_l%C3%B3gicos)*
 
-Podemos concatenar validaciones y así evaluar expresiones más complejas.
+Podemos concatenar validacións e así avaliar expresións máis complexas.
 
-En JavaScript disponemos de *&&* _(todo debe resolverse como verdadero)_ y *||* _(Al menos uno de los elementos debe ser verdadero)_
+En JavaScript dispoñemos de *&&* _(todo debe resolverse como verdadeiro)_ e *||* _(Ao menos un dos elementos debe ser verdadeiro)_
 
 {pagebreak}
 
@@ -67,7 +67,7 @@ En JavaScript disponemos de *&&* _(todo debe resolverse como verdadero)_ y *||* 
     console.log(false || true);     // true
     ~~~~~~~
 
-Podemos también utilizar lo aprendido hasta ahora con operaciones matemáticas:
+Podemos tamén utilizalo aprendido ata agora con operacións matemáticas:
 
 {lang=js}
 ~~~~~~~
@@ -77,31 +77,31 @@ var ex3 = (2>3) || (17 <= 40);  // true
 var ex4 = false || false;       // false
 ~~~~~~~
 
-## Todo puede ser booleano
+## Todo pode ser booleano
 
-En JavaScirpt todo puede ser comparado en términos booleanos, especialmente si hacemos uso de la función *[Boolean()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean)*.
+En JavaScript todo pode ser comparado en términos booleanos, especialmente se facemos uso da función *[Boolean()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean)*.
 
-En general podemos saber cómo responderá JavaScript, si tenemos en cuenta el *"valor real"* de la expresión que deseamos validar.
+En xeral podemos saber como responderá JavaScript, se temos en conta o *"valor real"* da expresión que desexamos validar.
 
-Por ejemplo, una cadena de texto vacía *("")* no aportará valor real, por lo que será *false*.
+Por exemplo, una cadea de texto baleira *("")* non aportará valor real, polo que será *false*.
 
-Importante remarcar que el *0* y *-0* son false
+Importante remarcar que o *0* y *-0* son false
 
-- **Valor "real" es _true_:**
+- **Valor "real" é _true_:**
 
     {lang=js}
     ~~~~~~~
     console.log("valor boleano de \"JS!\":", Boolean("JS!\"));
     console.log("valor boleano de 1235:", Boolean(1235));
     console.log("valor boleano de -1235:", Boolean(-1235));
-    console.log("valor boleano de un objeto:", Boolean({saludo: "hola"}));
+    console.log("valor boleano de un obxecto:", Boolean({saúdo: "ola"}));
     console.log("valor boleano de un array:", Boolean(["platano", -1, false]));
     console.log("valor boleano de un array:", Boolean(function(){}));
     ~~~~~~~
 
 {pagebreak}
 
-- **Sin valor "real" es _false_:**
+- **Sen valor "real" é _false_:**
 
     {lang=js}
     ~~~~~~~
@@ -113,97 +113,97 @@ Importante remarcar que el *0* y *-0* son false
     console.log("valor boleano de NaN:", Boolean(NaN));
     ~~~~~~~
 
-## Asignación por igualdad
+## Asignación por igualdade
 
-Una manera ágil y dinámica de asignar valor a las variables, es haciendo uso de la asignación por igual. Básicamente almacenamos el resultado booleano de una comparación en una variable que podremos utilizar más adelante.
+Unha maneira áxil e dinámica de asignar valor as variables, é facendo uso da asignación por igual. Basicamente almacenamos o resultado booleano dunha comparación nunha variable que poderemos utilizar máis adiante.
 
 {lang=js}
 ~~~~~~~
-var administrador = 'Yo mismo';
-var esAdministrador = (administrador === 'Yo mismo');
-console.log(esAdministrador); // true
+var administrador = 'Eu mesmo';
+var eAdministrador = (administrador === 'Eu mesmo');
+console.log(eAdministrador); // true
 ~~~~~~~
 
 ## *[If](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)*
 
-Como ya vimos en pseudocódigo, una de las estructuras más útiles a la hora de gestionar el flujo de nuestra aplicación es el uso de condicionales.
+Como xa vimos en pseudocódigo, unha das estruturas máis útiles a hora de xestionar o fluxo da nosa aplicación é o uso de condicionais.
 
-*If* nos permite evaluar una condición y actuar en consecuencia.
+*If* permítenos avaliar unha condición e actuar en consecuencia.
 
-Las instrucciones que se encuentran entre corchetes, se ejecutan solo cuando cuando la condición se cumple.
+As instrucións que se atopan entre corchetes, execútanse so cando a condición cúmprese.
 
 
-I> #### Gestiona la complejidad
+I> #### Xestiona a complexidade
 I>
-I> Dentro de una estructura condicional podemos meter más estructuras condicionales, además de
-I> otras estructuras típicas del lenguaje... esto se conoce como *[anidación](https://es.wikipedia.
+I> Dentro dunha estrutura condicional podemos meter máis estruturas condicionais, ademais de
+I> outras estruturas típicas da linguaxe... isto coñecese coma *[anidación](https://es.wikipedia.
 I> org/wiki/Anidamiento_(inform%C3%A1tica))*.
 I>
-I> Cuando la anidación es desmesurada y poco óptima suele elevarse mucho la [complejidad ciclomática
-I> ](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica) de nuestro código. De esto
-I> hablaremos en próximos capítulos.
+I> Cando a anidación é desmesurada e pouco óptima sole elevarse moito a [complexidade ciclomática
+I> ](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica) do noso código. Disto
+I> falaremos nos próximos capítulos.
 
 {lang=js}
 ~~~~~~~
 if(1 === 1){
-	console.log("1 es igual a 1 y por eso me ejecuto")
+	console.log("1 é igual a 1 e por iso executome")
 }
 
 if(1 === "1"){
-	console.log("Nos son del mismo tipo y por eso... este texto jamás será mostrado en la consola.")
+	console.log("Non son do mesmo tipo e por iso... este texto xamais será mostrado na consola.")
 }
 ~~~~~~~
 
 ## *[If... else](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)*
 
-En ciertas ocasiones, necesitaremos que nuestro script elija entre dos caminos en función de si una premisa es *verdadera* o *falsa*, por eso JavaScript nos permite utilizar *else*.
+En certas ocasións, necesitaremos que o noso script elixa entre dous camiños en función de se unha premisa é *verdadeira* ou *falsa*, por iso JavaScript permítenos utilizar *else*.
 
-El programa solo puede ejecutar una de las dos opciones, por tanto una parte del código quedará sin ejecutarse.
+O programa só pode executar unha das dúas opcións, polo tanto unha parte do código quedará sen executarse.
 
 {lang=js}
 ~~~~~~~
-console.log("pase lo que pase... esto se ejecutará")
+console.log("pase o que pase... isto executárase")
 if (true) {
-    console.log("true, por eso me ejecuto");
+    console.log("true, por iso me executo");
 } else {
-    console.log("false, por eso me ejecuto");
+    console.log("false, por iso me executo");
 }
-console.log("pase lo que pase... esto se ejecutará también")
+console.log("pase o que pase... isto executárase tamén")
 ~~~~~~~
 
 
 ## *[Else if...](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)*
 
-Cuando necesitemos verificar diversas opciones lo más fácil es utilizar *else if*, así evitamos tener que anidar en exceso.
+Cando necesitemos verificar diversas opcións o máis fácil é utilizar *else if*, así evitamos ter que anidar en exceso.
 
-Es importante recordar que la primera condición válida será la que use el interprete (navegador), y que ignorará todas las demás.
+É importante recordar que a primeira condición válida será a que use o interprete (navegador), e que ignorará tódalas demais.
 
 {lang=js}
 ~~~~~~~
 var condicion = 2;
 if (condicion == 1) {
-    console.log("1, por eso me ejecuto");
+    console.log("1, por iso executome");
 } else if (condicion == 2){
-    console.log("2, por eso me ejecuto");
+    console.log("2, por iso executome");
 } else {
-    console.log("no es 1 o 2, por eso me ejecuto");
+    console.log("non e 1 ou 2, por iso executome");
 }
 ~~~~~~~
 
 
 ## *[Switch](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/switch)*
 
-JavaScript dispone de una opción más para crear estructuras condicionales.
-*Switch* permite crear estructuras más optimizadas para cubrir un amplio abanico de casos posibles.
+JavaScript dispón dunha opción máis pra crear estruturas condicionais.
+*Switch* permite crear estruturas máis optimizadas pra cubrir un amplo abanico de casos posibles.
 
-Por otra parte *Switch* tiene varias desventajas notables:
+Por outra parte *Switch* ten varias desvantaxes notables:
 
-* No tiene una sintaxis sencilla
-* Es importante utilizar y comprender conceptos propios como *case*, *break* o *default*.
+* Non ten unha séntese sinxela
+* É importante utilizar e comprender conceptos propios como *case*, *break* ou *default*.
 * En ocasiones puede ser difícil de depurar.
 * Erróneamente se piensa que *Switch* es exageradamente más rápido que *if-else*, aunque una *[simple prueba demuestra lo contrario](http://jsben.ch/#/o0UDx)*.
 
-- **Entendiendo la estructura:**
+- **Entendendo a estrutura:**
 
     {lang=js}
     ~~~~~~~
@@ -221,66 +221,66 @@ Por otra parte *Switch* tiene varias desventajas notables:
 
 
 
-- **Trabajando con "casos únicos":**
+- **Traballando con "casos únicos":**
 
     {lang=js}
     ~~~~~~~
-	var nombre = "";
-	switch (nombre) {
+	var nome = "";
+	switch (nome) {
 	  case "Pepe":
-	    console.log("Hola Pepe");
+	    console.log("Ola Pepe");
 	    break;
 	  case "Luis":
-	    console.log("Hola Luis");
+	    console.log("Ola Luis");
 	    break;
 	  case "Antonio":
-	    console.log("Hola Antonio");
+	    console.log("Ola Antonio");
 	    break;
 	  default:
-	    console.log('Ninguno de los nombres que pensamos... es '+nombre);
+	    console.log('Ningún dos nomes que pensamos... é '+nome);
 	}
     ~~~~~~~
 
 {pagebreak}
 
-- **Trabajando con "múltiples coincidencias":**
+- **Traballando con "múltiples coincidencias":**
 
     {lang=js}
     ~~~~~~~
-	var nombre = "";
-	switch (nombre)
+	var nome = "";
+	switch (nome)
 	{
 	   case "Pepe":
 	   case "Luis":
 	   case "Antonio":
-	       alert('Hola '+nombre);
+	       alert('Ola '+nome);
 	       break;
 
 	   default:
-	       console.log('Ninguno de los nombres que pensamos... es '+nombre);
+	       console.log('Ningún dos nomes que pensamos... é '+nome);
 	}
     ~~~~~~~
 
 ## *[Operador Ternario](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Conditional_Operator)*
 
-El *operador ternario (?:)* nos ofrece una manera propia hacer estructuras condicionales.
+O *operador ternario (?:)* ofrécenos unha maneira propia de facer estruturas condicionais.
 
-Este operador simplifica mucho la sintaxis propia de los condicionales, pero se desaconseja su uso para operaciones o evaluaciones múltiples.
+Este operador simplifica moito a sintaxe propia dos condicionais, pero desaconsellase o seu uso pra operacións ou evacuacións múltiples.
 
-I> Si estas empezando con JavaScirpt, debes tener en cuenta, que es un operador que resulta difícil
-I> de recordar al principio. Siendo bastante común su uso especialmente en proyectos desarrollados
+I> Se estas empezando con JavaScript, debes ter en conta, que é un operador que resulta difícil
+I> de recordar ao principio. Sendo bastante común o seu uso especialmente en proxectos desenvoltos
 I> con Node.js.
 
-### Estructura
+### Estrutura
 
-- **Entendiendo la estructura:**
+- **Entendendo a estrutura:**
 
     {lang=text}
     ~~~~~~~
 	condicion ? expresion1 : expresion2
     ~~~~~~~
 
-- **Múltiples expresiones (desaconsejado):**
+- **Múltiples expresiones (desaconsellado):**
 
     {lang=text}
     ~~~~~~~
@@ -297,7 +297,7 @@ I> con Node.js.
 
 {pagebreak}
 
-- **Evaluaciones múltiples (muy desaconsejado):**
+- **Evacuacións múltiples (moi desaconsellado):**
 
     {lang=text}
     ~~~~~~~
@@ -306,37 +306,37 @@ I> con Node.js.
 
 
 
-### Ejemplos
+### Exemplos
 
-- **Sencillo:**
-
-    {lang=js}
-    ~~~~~~~
-	var esMiembro = true;
-	console.info("El pago son  " + (esMiembro ? "20.00€" : "50.00€"));
-    ~~~~~~~
-
-- **Evaluación múltiple (muy desaconsejado):**
+- **Sinxelo:**
 
     {lang=js}
     ~~~~~~~
-	var esMiembro = true;
-	var esAdulto = true;
-	console.info(esMiembro ? "El pago son 20.00€" : esAdulto ? "Puedes enviar la solicitud cuando quieras" : "Tines que esperar aún. Lo siento.");
+	var eMembro = true;
+	console.info("O pago son  " + (eMembro ? "20.00€" : "50.00€"));
     ~~~~~~~
 
-- **Múltiples expresiones (desaconsejado):**
+- **Evaluación múltiple (moi desaconsellado):**
 
     {lang=js}
     ~~~~~~~
-	var mensaje,
-	esMiembro = true;
+	var eMembro = true;
+	var eAdulto = true;
+	console.info(eMembro ? "El pago son 20.00€" : eAdulto ? "Podes enviar a solicitude cando queiras" : "Tes que esperar aínda. Sinto.");
+    ~~~~~~~
 
-	esMiembro ? (
-		mensaje = "El pago son 20.00€",
-		console.info(mensaje)
+- **Múltiples expresións (desaconsellado):**
+
+    {lang=js}
+    ~~~~~~~
+	var mensaxe,
+	eMembro = true;
+
+	eMembro ? (
+		mensaxe = "O pago son 20.00€",
+		console.info(mensaxe)
 	) : (
-		mensaje = "El pago son 50.00€",
-		console.info(mensaje)
+		mensaxe = "O pago son 50.00€",
+		console.info(mensaxe)
 	);
     ~~~~~~~
