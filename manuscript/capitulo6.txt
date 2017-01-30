@@ -1,4 +1,4 @@
-# Capítulo 6 - Números e fechas
+# Capítulo 6 - Números e datas
 
 {:: encoding="utf-8" /}
 {footnotes-off}
@@ -569,7 +569,7 @@ I> **Usa librerías**
 I>
 I> Lidiar coas datas é unha tarefa complexa. Se vas a usar librerías, podes saltarte o resto do capítulo sen ningún problema.
 
-Como vimos antes, en ocasións desexamos poder sumar 56 días a data actual. Se utilizamos só os *setters*, JavaScript estimará fechas seguramente erróneas. Pra asegurarnos que estamos sumando e restando as cantidades correctas, o ideal é sempre incluír o *getter* correspondente dentro do *setter*.
+Como vimos antes, en ocasións desexamos poder sumar 56 días a data actual. Se utilizamos só os *setters*, JavaScript estimará datas seguramente erróneas. Pra asegurarnos que estamos sumando e restando as cantidades correctas, o ideal é sempre incluír o *getter* correspondente dentro do *setter*.
 
 Vexamos a continuación o uso de getters pra modificar datas (días, meses, etc...).
 
