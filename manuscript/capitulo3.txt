@@ -562,7 +562,7 @@ function era3 () {
 
 ## Interacción Básica con el Usuario
 
-Puedes interactuar con el usuario desde JavaScirpt, utilizando unos métodos sencillos que ya vienen implementados en todos los navegadores. Esto hace unos años era muy común y poco a poco se convirtió en una mala práctica.
+Puedes interactuar con el usuario desde JavaScript, utilizando unos métodos sencillos que ya vienen implementados en todos los navegadores. Esto hace unos años era muy común y poco a poco se convirtió en una mala práctica.
 
 I> El propio navegador, ofrece al usuario la posibilidad de bloquear esta interacción. Lo ideal es
 I> gestionar esta interacción con el usuario desde el HTML, como veremos en próximos capítulos.
