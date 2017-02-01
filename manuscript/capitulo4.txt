@@ -79,7 +79,7 @@ var ex4 = false || false;       // false
 
 ## Todo puede ser booleano
 
-En JavaScirpt todo puede ser comparado en términos booleanos, especialmente si hacemos uso de la función *[Boolean()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean)*.
+En JavaScript todo puede ser comparado en términos booleanos, especialmente si hacemos uso de la función *[Boolean()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean)*.
 
 En general podemos saber cómo responderá JavaScript, si tenemos en cuenta el *"valor real"* de la expresión que deseamos validar.
 
@@ -130,7 +130,7 @@ Como ya vimos en pseudocódigo, una de las estructuras más útiles a la hora de
 
 *If* nos permite evaluar una condición y actuar en consecuencia.
 
-Las instrucciones que se encuentran entre corchetes, se ejecutan solo cuando cuando la condición se cumple.
+Las instrucciones que se encuentran entre corchetes, se ejecutan solo cuando la condición se cumple.
 
 
 I> #### Gestiona la complejidad
@@ -150,7 +150,7 @@ if(1 === 1){
 }
 
 if(1 === "1"){
-	console.log("Nos son del mismo tipo y por eso... este texto jamás será mostrado en la consola.")
+	console.log("No son del mismo tipo y por eso... este texto jamás será mostrado en la consola.")
 }
 ~~~~~~~
 
@@ -267,7 +267,7 @@ El *operador ternario (?:)* nos ofrece una manera propia hacer estructuras condi
 
 Este operador simplifica mucho la sintaxis propia de los condicionales, pero se desaconseja su uso para operaciones o evaluaciones múltiples.
 
-I> Si estas empezando con JavaScirpt, debes tener en cuenta, que es un operador que resulta difícil
+I> Si estas empezando con JavaScript, debes tener en cuenta, que es un operador que resulta difícil
 I> de recordar al principio. Siendo bastante común su uso especialmente en proyectos desarrollados
 I> con Node.js.
 
@@ -322,7 +322,7 @@ I> con Node.js.
     ~~~~~~~
 	var esMiembro = true;
 	var esAdulto = true;
-	console.info(esMiembro ? "El pago son 20.00€" : esAdulto ? "Puedes enviar la solicitud cuando quieras" : "Tines que esperar aún. Lo siento.");
+	console.info(esMiembro ? "El pago son 20.00€" : esAdulto ? "Puedes enviar la solicitud cuando quieras" : "Tienes que esperar aún. Lo siento.");
     ~~~~~~~
 
 - **Múltiples expresiones (desaconsejado):**

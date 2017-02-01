@@ -53,7 +53,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
     {lang=js}
     ~~~~~~~
-	console.info("Es es el año 2016 ("+ String.fromCharCode(8559,8559,8553,8548,8544) + ")");
+	console.info("Es el año 2016 ("+ String.fromCharCode(8559,8559,8553,8548,8544) + ")");
     ~~~~~~~
 
 
