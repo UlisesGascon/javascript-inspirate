@@ -395,7 +395,7 @@ Existe un tipo más... *[Symbol](https://developer.mozilla.org/es/docs/Web/JavaS
 
 ## *[Matemáticas Básicas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators)*
 
-La matemáticas básicas en JavaScirpt son muy similares a cualquier lenguaje.
+Las matemáticas básicas en JavaScript son muy similares a cualquier lenguaje.
 
 El único operador matemático que puede resultarnos extraño es *[el módulo](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Aritm%C3%A9ticos)*.
 
