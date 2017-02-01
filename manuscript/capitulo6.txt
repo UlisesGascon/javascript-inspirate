@@ -15,7 +15,7 @@ Por lo general, es interesante utilizar ciertas librerías clave que nos facilit
 
 A la hora de trabajar con números, puede darse el caso de encontrarnos con la *[notación científica](https://es.wikipedia.org/wiki/Notaci%C3%B3n_cient%C3%ADfica)* en vez del formato al que estamos acostumbrados. Su valor y tipo de variable se mantienen aunque se represente de forma diferente.
 
-Si deseamos trabajar con unidades monetarias, podemos hace uso de la librería *[accounting.js](http://openexchangerates.github.io/accounting.js/)*.
+Si deseamos trabajar con unidades monetarias, podemos hacer uso de la librería *[accounting.js](http://openexchangerates.github.io/accounting.js/)*.
 
 ### Propiedades
 
