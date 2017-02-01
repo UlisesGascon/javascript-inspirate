@@ -3,51 +3,51 @@
 {:: encoding="utf-8" /}
 {footnotes-off}
 
-Los arrays son estructuras que nos permiten almacenar muchos datos, sin tener que preocuparnos
-por el orden o la organización interna.
+Os arrays son estruturas que permítennos almacenar moitos datos, sen ter que preocuparnos
+pola orde ou a organización interna.
 
-Otra forma más sencilla de entenderlo, es imaginar que un array es sencillamente como una lista de la compra.
+Outra forma máis sinxela de entendelo, é imaxinar que un array é sinxelamente como unha lista da compra.
 
-Partiendo de esta analogía será sencillo añadir elementos a nuestra lista:
+Partindo desta analoxía será sinxelo engadir elementos a nosa lista:
 
 {line-numbers=off, lang=text}
 ~~~~~~~
 - Tomates
 - Café
 - Brócoli
-- Cilantro
-- Bombillas
+- Coentro
+- Lámpadas
 ~~~~~~~
 
-Como el orden de los elementos en principio nos da igual, utilizaremos un marcador numerico para referirnos a cada elemento de la lista. lógicamente empezaremos por el cero, ya que somos programadores.
+Como a orde dos elementos en principio danos igual, utilizaremos un marcador numérico pra referirnos a cada elemento da lista. Loxicamente comezaremos polo cero, xa que somos desenvolventes.
 
 {line-numbers=off, lang=text}
 ~~~~~~~
 0 - Tomates
 1 - Café
 2 - Brócoli
-3 - Cilantro
-4 - Bombillas
+3 - Coentro
+4 - Lámpadas
 ~~~~~~~
 
-Cuando añadimos elementos a la lista el orden puede alterarse o no, en función de si se añadiran antes o después de otros elementos.
+Cando engadimos elementos a lista a orde pode alterarse ou non, en función de se se engadiran antes ou despois doutros elementos.
 
 {line-numbers=off, lang=text}
 ~~~~~~~
 0 - Tomates
 1 - Café
 leanpub-start-insert
-2 - Te (Nuevo)
+2 - Te (Novo)
 3 - Brócoli (movido)
-4 - Cilantro (movido)
-5 - Bombillas (movido)
+4 - Coentro (movido)
+5 - Lámpadas (movido)
 6 - Pen Drive
 leanpub-end-insert
 ~~~~~~~
 
 {pagebreak}
 
-Cuando eliminamos elementos tambien alteramos la lista.... en función de si están delante de otros elementos o no.
+Cando eliminamos elementos tamén alteramos a lista.... en función de se están diante de outros elementos ou non.
 
 {line-numbers=off, lang=text}
 ~~~~~~~
@@ -56,27 +56,27 @@ Cuando eliminamos elementos tambien alteramos la lista.... en función de si est
 2 - Te
 3 - Brócoli
 leanpub-start-delete
-4 Cilantro (Borrado)
+4 Coentro (Borrado)
 leanpub-end-delete
 leanpub-start-insert
-4 - Bombillas (movido)
+4 - Lámpadas (movido)
 leanpub-end-insert
 leanpub-start-delete
 6 - Pen Drive (Borrado)
 leanpub-end-delete
 ~~~~~~~
 
-Lógicamente dentro de un array podremos almacenar todo tipo de datos (cadenas, números, objetos, funciones…
+Loxicamente dentro dun array poderemos almacenar todo tipo de datos (cadeas, números, obxectos, funcións…
 
-I> En otros lenguajes de programación existen más estructuras similares a estas listas (arrays)
-I> como es el caso de las tuplas en Python.
+I> Noutras linguaxes de programación existen máis estruturas similares a estas listas (arrays)
+I> como é o caso das tuplas en Python.
 
 
-## Manejo
+## Manexo
 
 ### Creando un array
 
-Vacío:
+Baleiro:
 
 {lang=js}
 ~~~~~~~
@@ -87,25 +87,25 @@ Con elementos:
 
 {lang=js}
 ~~~~~~~
-var arreglo = [1, "plátano", "piscina", "manzana", true];
+var arreglo = [1, "plátano", "piscina", "mazá", true];
 ~~~~~~~
 
 ### Usando el Índice
 
 {lang=js}
 ~~~~~~~
-var arreglo = [1, "plátano", "piscina", "manzana", true];
+var arreglo = [1, "plátano", "piscina", "mazá", true];
 console.log("arreglo[1]:", arreglo[1]);
 ~~~~~~~
 
 {pagebreak}
 
 
-### Cambiar un valor del Índice
+### Cambiar un valor do Índice
 
 {lang=js}
 ~~~~~~~
-var arreglo = [1, "plátano", "piscina", "manzana", true];
+var arreglo = [1, "plátano", "piscina", "mazá", true];
 arreglo[0] = "fresa";
 arreglo[4] = "pera";
 arreglo[2] = "limón";
@@ -114,11 +114,11 @@ arreglo[2] = "limón";
 
 ### Borrando elementos
 
-#### Sobreescribiendo a *[undefined](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined)*
+#### Sobrescribindo a *[undefined](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined)*
 
-En ocasiones solo queremos dejar el hueco vacío y no cambiar el orden de los elementos de un array.
+En ocasións só queremos deixar o oco baleiro e non cambiar a orde dos elementos dun array.
 
-En estos casos lo mejor es sustituir el valor por *[undefined](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined)* ya sea usando *[delete](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/delete)* o igualando.
+Nestes casos o mellor é substituír o valor por *[undefined](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined)* xa sexa usando *[delete](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/delete)* ou igualando.
 
 {lang=js}
 ~~~~~~~
@@ -127,32 +127,32 @@ arreglo[0] = undefined;
 delete arreglo[1];
 ~~~~~~~
 
-#### Borrando el elemento
+#### Borrando o elemento
 
-Al eliminar un elemento del array cambiamos el orden dentro del array.
+Ao eliminar un elemento do array cambiamos a orde dentro do array.
 
 {lang=js}
 ~~~~~~~
-var arreglo = [1, "plátano", "manzana"];
+var arreglo = [1, "plátano", "mazá"];
 arreglo.splice(1, 1);
-console.log(arreglo[1]) // manzana
+console.log(arreglo[1]) // mazá
 ~~~~~~~
 
 ## Propiedades
 
 - ***[.length](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/length)***
 
-    Podremos saber cuantos elementos contiene un array.
+    Poderemos saber cantos elementos conten un array.
 
     {lang=js}
     ~~~~~~~
-    var arreglo = [1, "plátano", "manzana"]
+    var arreglo = [1, "plátano", "mazá"]
     arreglo.length; // 3
     ~~~~~~~
 
-    Al tener este dato clave podremos hacer bucles que realicen sus iteraciones en función de la cantidad de elementos.
+    Ao ter este dato chave poderemos facer bucles que realicen as súas iteracións en función da cantidade de elementos.
 
-    Presta atención al uso de la *variable i* en el interior del bucle para recorrer el array.
+    Presta atención ao uso da *variable i* no interior do bucle pra recorrer o array.
 
     {lang=js}
     ~~~~~~~
@@ -162,28 +162,28 @@ console.log(arreglo[1]) // manzana
     }
     ~~~~~~~
 
-    I> Más adelante veremos que existen estructuras más optimizadas para iterar sobre un array como
+    I> Máis adiante veremos que existen estruturas máis optimizadas pra iterar sobre un array como
     I> *map()* y *forEach()*.
 
 
 ## Métodos
 
-Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+Facemos unha recopilación simplificada dos métodos máis utilizados, anque existen moitos máis.
 
 
 - ***[.isArray()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/isArray)***
 
-    Retorna un booleano en función que el parámetro es un array o no.
+    Retorna un booleano en función de que o parámetro sexa un array ou non.
 
     {lang=js}
     ~~~~~~~
     var arreglo = [1,2,3]
 
-    // Estos son true
+    // Estes son true
     Array.isArray([1]);
     Array.isArray(arreglo);
 
-    // Estos son false
+    // Estes son false
     Array.isArray();
     Array.isArray({});
     Array.isArray(null);
@@ -192,50 +192,50 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)***
 
-    Permite organizar los elementos de un Array, por orden alfabético o en función numérica (ascendente).
+    Permite organizalos elementos dun Array, por orde alfabético ou en función numérica (ascendente).
 
     {lang=js}
     ~~~~~~~
-    var frutas = ['plátano', 'Naranja', 'Limón', 'Manzana', 'Mango'];
-  	frutas.sort(); // ["Limón", "Mango", "Manzana", "Naranja", "plátano"]
+    var froitas = ['plátano', 'Laranxa', 'Limón', 'Mazá', 'Mango'];
+  	froitas.sort(); // ["Limón", "Mango", "Mazá", "Laranxa", "plátano"]
   	var numeros = [0, 45, 2, -5, 123, -47];
   	numeros.sort() // [-47, -5, 0, 123, 2, 45]
     ~~~~~~~
 
-    Aunque en ocasiones el ordenado puede no funcionar como esperamos, si los elementos que componen el Array son de una naturaleza distinta.
+    Anque en ocasións o ordenado pode non funcionar como esperamos, se os elementos que compoñen o Array son dunha natureza distinta.
 
     {lang=js}
     ~~~~~~~
-    var miArray = ['uno', 2, true, 'más datos...'];
-  	miArray.sort(); // [2, "más datos...", true, "uno"]
+    var meuArray = ['un', 2, true, 'máis datos...'];
+  	meuArray.sort(); // [2, "máis datos...", true, "un"]
     ~~~~~~~
 
 - ***[.reverse()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/reverse)***
 
-    Invierte el orden de un array.
+    Inverte a orde dun array.
 
     {lang=js}
     ~~~~~~~
-	var miArray = ['uno', 2, true, 'más datos...'];
-	miArray.reverse();
-	console.log(miArray) // ["más datos...", true, 2, "uno"]
+	var meuArray = ['un', 2, true, 'máis datos...'];
+	meuArray.reverse();
+	console.log(meuArray) // ["máis datos...", true, 2, "un"]
     ~~~~~~~
 
 - ***[.join()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/join)***
 
-    Retorna una cadena con todos los elementos de array dentro.
+    Retorna unha cadea con tódolos elementos dun array dentro.
 
     {lang=js}
     ~~~~~~~
-	var array = ['dato1', 2, 'masDatos'];
-	var datosJuntos = array.join();       // 'dato1,2,masDatos'
-	var datosJuntos2 = array.join('');    // 'dato12masDatos'
-	var datosJuntos3 = array.join(' + '); // 'dato1 + 2 + masDatos'
+	var array = ['dato1', 2, 'maisDatos'];
+	var datosJuntos = array.join();       // 'dato1,2,maisDatos'
+	var datosJuntos2 = array.join('');    // 'dato12maisDatos'
+	var datosJuntos3 = array.join(' + '); // 'dato1 + 2 + maisDatos'
     ~~~~~~~
 
 - ***[.toString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/toString)***
 
-    Retorna una cadena de texto con todos los elementos.
+    Retorna una cadea de texto con tódolos elementos.
 
     {lang=js}
     ~~~~~~~
@@ -245,21 +245,21 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.toLocalString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)***
 
-    Retorna como string (configuración regional) todos los elementos.
+    Retorna coma string (configuración rexional) tódolos elementos.
 
     {lang=js}
     ~~~~~~~
 	var numero = 1337.89;
-	var fecha = new Date();
-	var miArray = [numero, fecha, 'más datos'];
+	var data = new Date();
+	var meuArray = [numero, data, 'máis datos'];
 
-	var arrayConvertida = miArray.toLocaleString();
+	var arrayConvertida = meuArray.toLocaleString();
 	console.log(arrayConvertida);
     ~~~~~~~
 
 - ***[.concat()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/concat)***
 
-    Retorna un nuevo array con los arrays especificados concatenados.
+    Retorna un novo array cos arrays especificados concatenados.
 
     - Dos arrays:
 
@@ -268,9 +268,9 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
         var arreglo = ['a', 2, true];
       	var arreglo2 = [1, 2, 4];
 
-      	var nuevaArray = arreglo.concat(arreglo2);
+      	var novoArray = arreglo.concat(arreglo2);
 
-  	    console.log(nuevaArray);
+  	    console.log(novoArray);
         ~~~~~~~
 
     {pagebreak}
@@ -281,16 +281,16 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
         ~~~~~~~
         var arreglo = ['a', 2, true];
       	var arreglo2 = [1, 2, 4];
-      	var otroArreglo = ['abc', 1, false]
+      	var outroArreglo = ['abc', 1, false]
 
-      	var nuevaArray = arreglo.concat(arreglo2, [5.25, 100], otroArreglo);
+      	var novaArray = arreglo.concat(arreglo2, [5.25, 100], outroArreglo);
 
-  	    console.log(nuevaArray);
+  	    console.log(novaArray);
         ~~~~~~~
 
 - ***[.indexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/indexOf)***
 
-    Devuelve la posición donde se encuentra el elemento en sí ó -1, si no lo encuentra.
+    Devolve a posición onde se atopa o elemento en sí ou -1, se non o atopa.
 
     {lang=js}
     ~~~~~~~
@@ -301,7 +301,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.lastIdexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/lastIndexOf)***
 
-    Devuelve la posición del último elemento en sí que coincide ó -1, si no lo encuentra.
+    Devolve a posición do último elemento en sí que coincide ou -1, se non o atopa.
 
     {lang=js}
     ~~~~~~~
@@ -312,44 +312,44 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.push()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/push)***
 
-    Añadir nuevos elementos al final de un array.
+    Engade novos elementos ao final dun array.
 
     {lang=js}
     ~~~~~~~
-    var arreglo = [1, "plátano", "manzana"];
+    var arreglo = [1, "plátano", "mazá"];
     console.log("Antes:", arreglo.length);
-	arreglo.push("nuevo");
-	console.log("Después:", arreglo.length);
+	arreglo.push("novo");
+	console.log("Despois:", arreglo.length);
 	console.log("arreglo[4]:", arreglo[4]);
     ~~~~~~~
 
 - ***[.unShift()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift)***
 
-    Añade nuevos elementos al principio del array.
+    Engade novos elementos ao principio del array.
 
     {lang=js}
     ~~~~~~~
-	var miArray = [1, 2];
-	miArray.unshift(true, "otros datos...");
-	console.log("Longitud actual:", miArray.length);
+	var meuArray = [1, 2];
+	meuArray.unshift(true, "outros datos...");
+	console.log("Lonxitude actual:", meuArray.length);
     ~~~~~~~
 
 - ***[.pop()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/pop)***
 
-    Eliminar el último elemento del array.
+    Eliminar o último elemento del array.
 
     {lang=js}
     ~~~~~~~
-    var miArray = [1, 2];
+    var meuArray = [1, 2];
     arreglo.pop();
-	console.log("Longitud actual:", miArray.length);
+	console.log("Lonxitude actual:", meuArray.length);
     ~~~~~~~
 
 {pagebreak}
 
 - ***[.shift()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/shift)***
 
-    Eliminar el primer elemento del array.
+    Eliminar o primeiro elemento do array.
 
     {lang=js}
     ~~~~~~~
@@ -358,43 +358,43 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.splice()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/splice)***
 
-    Borrar elementos del array, alterando con ello la posición de los demás.
+    Borrar elementos do array, alterando con elo a posición dos demais.
 
     {lang=js}
     ~~~~~~~
-    var frutas = ['plátano', 'Naranja', 'Limón', 'Manzana', 'Mango'];
-    console.log("frutas[1]:", frutas[1]) // Naranja
-    frutas.splice(1, 3);
-    console.log("frutas[1]:", frutas[1]) // Mango
-    console.info("frutas.length:", frutas.length); // 2
+    var froitas = ['plátano', 'Laranxa', 'Limón', 'Mazá', 'Mango'];
+    console.log("froitas[1]:", froitas[1]) // Laranxa
+    froitas.splice(1, 3);
+    console.log("froitas[1]:", froitas[1]) // Mango
+    console.info("froitas.length:", froitas.length); // 2
     ~~~~~~~
 
-    Si deseamos conservar en un variable aquellos elementos que hemos eliminado, es necesario hacer una asignación como esta:
+    Se desexamos conservar nunha variable aqueles elementos que eliminamos, é necesario facer unha asignación como esta:
 
     {lang=js}
     ~~~~~~~
-    var frutas = ['plátano', 'Naranja', 'Limón', 'Manzana', 'Mango'];
-    var citricos = frutas.splice(1, 2);
+    var froitas = ['plátano', 'Laranxa', 'Limón', 'Mazá', 'Mango'];
+    var citricos = froitas.splice(1, 2);
     console.info("citricos:", citricos);
-    console.info("frutas.length:", frutas.length);
+    console.info("froitas.length:", froitas.length);
     ~~~~~~~
 
 
 ## Métodos Avanzados
 
-Algunos de los métodos más utilizados, requieren comprender en profundidad el manejo de funciones y en especial el *retorno*.
+Algúns dos métodos máis utilizados, requiren comprender en profundidade o manexo de funcións e en especial o *retorno*.
 
-I> Como aún no hemos hablado de funciones directamente, nuestra recomendación es leer por
-I> encima los siguientes métodos y su funcionamiento... para regresar más adelante a este capítulo.
+I> Como aínda non falamos de funcións directamente, a nosa recomendación é ler por
+I> encima os seguintes métodos e o seu funcionamento... pra regresar máis adiante a este capítulo.
 
 
 - ***[.some()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/some)***
 
-    Verifica si alguno de los elementos del array pasan la prueba implementada por la función dada.
+    Verifica se algún dos elementos do array pasan a proba implementada pola función dada.
 
     {lang=js}
     ~~~~~~~
-	function tamañoValido(elemento, indice, arrreglo) {
+	function tamañoValido(elemento, indice, arreglo) {
 	  return elemento >= 10;
 	}
 	[12, 5, 8, 130, 44].some(tamañoValido);   // true
@@ -403,11 +403,11 @@ I> encima los siguientes métodos y su funcionamiento... para regresar más adel
 
 - ***[.every()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/every)***
 
-    Verifica si todos los elementos del array pasan la prueba implementada por la función dada.
+    Verifica se tódolos elementos do array pasan a proba implementada pola función dada.
 
     {lang=js}
     ~~~~~~~
-	function tamañoValido(elemento, indice, arrreglo) {
+	function tamañoValido(elemento, indice, arreglo) {
 	  return elemento >= 10;
 	}
 	[12, 5, 8, 130, 44].every(tamañoValido);   // false
@@ -416,19 +416,19 @@ I> encima los siguientes métodos y su funcionamiento... para regresar más adel
 
 - ***[.filter()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter)***
 
-    Crea un nuevo array con aquellos elementos que cumplan la condición.
+    Crea un novo array con aqueles elementos que cumpran a condición.
 
     {lang=js}
     ~~~~~~~
 	function tamañoValido(elemento) {
 	  return elemento >= 10;
 	}
-	var filtrados = [true, 134, 10, 0, null, "Hola"].filter(tamañoValido);
+	var filtrados = [true, 134, 10, 0, null, "Ola"].filter(tamañoValido);
     ~~~~~~~
 
 - ***[.forEach()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)***
 
-    Se ejecuta la función por cada elemento del array.
+    Executase a función por cada elemento do array.
 
     {lang=js}
     ~~~~~~~
@@ -440,27 +440,27 @@ I> encima los siguientes métodos y su funcionamiento... para regresar más adel
 
 - ***[.map()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map)***
 
-    Itera sobre el array aplicando una transformación, que definimos en una función y finalmente retorna un nuevo array con todos los componentes modificados.
+    Itera sobre o array aplicando unha transformación, que definimos nunha función e finalmente retorna un novo array con tódolos compoñentes modificados.
 
     {lang=js}
     ~~~~~~~
-	var arreglo = ["plátano", "fresa", "lima", "manzana"];
+	var arreglo = ["plátano", "fresa", "lima", "mazá"];
 	var resultado = arreglo.map(function (elemento){return elemento + " modificado!"});
 	console.log(resultado);
     ~~~~~~~
 
 
-## Arrays multidimensionales
+## Arrays multidimensionais
 
-No dejéis que el nombre os asuste, sencillamente cuando tenemos arrays almacenadas dentro de otros arrays, entendemos que se trabaja sobre *[Matrices o Arrays multidimensionales](https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica))*. Es sencillo:
+Non deixedes que o nome vos asuste, sinxelamente cando temos arrays almacenados dentro de outros arrays, entenderemos que traballase sobre *[Matrices ou Arrays multidimensionais](https://es.wikipedia.org/wiki/Vector_(inform%C3%A1tica))*. É sinxelo:
 
 {lang=js}
 ~~~~~~~
-var arreglo1 = ["plátano", "fresa", "lima", "manzana"];
-var arreglo2 = ["entrante", "primero", "segundo", "postre"];
+var arreglo1 = ["plátano", "fresa", "lima", "mazá"];
+var arreglo2 = ["entrante", "primeiro", "segundo", "sobremesa"];
 
-var juntandoArreglos = [arreglo1, arreglo2];
+var xuntandoArreglos = [arreglo1, arreglo2];
 
-console.log(juntandoArreglos[0][0]); // plátano
-console.log(juntandoArreglos[1][3]); // postre
+console.log(xuntandoArreglos[0][0]); // plátano
+console.log(xuntandoArreglos[1][3]); // sobremesa
 ~~~~~~~
