@@ -16,200 +16,196 @@ This book that you have right now in front of your eyes, is the result of my per
 My idea is to start from scratch and make a journey together from the deep gulfs of doubt, through the pseudocode to the wonderful world of *[Ajax Calls](https://es.wikipedia.org/wiki/AJAX)*, making many stops along the way, where we will learn everything you need to start your adventure as a developer *[Front-end](https://es.wikipedia.org/wiki/Front-end_y_back-end)* with solid JavaScript bases.
 
 
-## Esto va de ser una comunidad
+## This is about been a community
 
-Este libro esta licenciado bajo *[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)*, lo que permite compartir, distribuir, adaptarlo siempre y cuando no lo hagas con fines comerciales, atribuyas el crédito al autor y compartas las modificaciones bajo la misma licencia.
-
-
-Todo el código fuente, esta en *[este repositorio de GitHub](https://github.com/UlisesGascon/javascript-inspirate)*, desde este lugar espero poder ayudaros con las dudas que os puedan ir surgiendo, y también cuento con vuestras -siempre interesantes- aportaciones y sugerencias a través de *[estos issues](https://github.com/UlisesGascon/javascript-inspirate/issues)*
-
-Este libro es algo vivo y por ello estará evolucionando constantemente. Recuerda que tu puedes formar parte de todo esto, colaborando.
-
-Existen muchas formas de colaborar:
-
-- Avisando de los errores y de las posibles erratas que pudieses encontrar en el código.
-- Mejorando los ejemplos.
-- Traduciendo este libro a otros idiomas para que llegue a más lectores.
-- Compartiendo tus sensaciones en twitter con el hashtag *[#JavascriptInspirate](https://twitter.com/search?f=tweets&q=%23JavascriptInspirate&src=typd)*.
-
-Encontrarás más información en el archivo *[contributing.md](https://github.com/UlisesGascon/javascript-inspirate/blob/master/CONTRIBUTING.md)*, dentro de nuestro *[repositorio](https://github.com/UlisesGascon/javascript-inspirate)*.
+This book is licensed under *[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)*, allowing you to share, distribute, adapt as long as you do not do it for commercial purposes, attribute the credit to the author and share the modifications under the same license.
 
 
-## ¿Qué necesito saber antes de empezar?
+All source code, is in *[this GitHub repository](https://github.com/UlisesGascon/javascript-inspirate)*, from this place I hope to be able to help you with the doubts that may arise, and I also count on your - always interesting - contributions and suggestions through *[this issues](https://github.com/UlisesGascon/javascript-inspirate/issues)*
 
-No es necesario tener experiencia programando, pero si que es importante tener claro el contexto de cómo se hacen páginas web estáticas, ya que en la parte III nos centraremos en la manipulación dinámica del *[DOM](https://es.wikipedia.org/wiki/Document_Object_Model)* y las *[llamadas AJAX](https://es.wikipedia.org/wiki/AJAX)*.
+This book is alive and therefore it will be constantly evolving. Remember that you can be part of all this, collaborating.
 
-No me extenderé mucho acerca de *[HTML](https://es.wikipedia.org/wiki/HTML)* y *[CSS](https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada)*, por lo que espero que ya tengáis cierto conocimiento adquirido. Aunque vuestro nivel de conocimientos y experiencia sea relativamente bajo, hemos procurado evitar que esto sea un freno a tu aprendizaje en JavaScript.
+There are many ways to collaborate:
 
-Si tienes experiencia en otros lenguajes de programación, jugarás con ventaja al principio, pero no te confies...
+- Warning of the errors and possible mistakes you could find in the code.
+- Improving examples.
+- Translating this book into other languages so that it reaches more readers.
+- Sharing your feelings on twitter with the hashtag *[#JavascriptInspirate](https://twitter.com/search?f=tweets&q=%23JavascriptInspirate&src=typd)*.
 
-Si ya has trabajado con *[JQuery](https://jquery.com/)* hablaremos de como hacer todo lo que haces con JavaScript en los últimos capítulos.
-
-## ¿Qué aprenderemos?
-
-- Pseudocódigo.
-- A pensar como un programador.
-- Trabajar fluidamente con funciones.
-- Dominar las bases de JavaScript (estructuras del lenguaje).
-- Ajax y sus peticiones.
-- Manipulación dinámica del DOM.
+You will find more information in the file *[contributing.md](https://github.com/UlisesGascon/javascript-inspirate/blob/master/CONTRIBUTING.md)*, Within our *[repository](https://github.com/UlisesGascon/javascript-inspirate)*.
 
 
-## ¿Qué no aprenderemos?
+## What do I need to know before I start?
 
-JavaScript es un universo inmenso que va creciendo a pasos agigantados con expansiones. Recuerda que la idea es sentar las bases del lenguaje, por lo que no veremos cosas como:
+It is not necessary to have programming experience, but it is important to be clear about the context of how static web pages are made, since in Part III we will focus on the dynamic manipulation of the *[DOM](https://es.wikipedia.org/wiki/Document_Object_Model)* and the *[AJAX calls](https://es.wikipedia.org/wiki/AJAX)*.
+
+I will not elaborate much about *[HTML](https://es.wikipedia.org/wiki/HTML)* and *[CSS](https://es.wikipedia.org/wiki/Hoja_de_estilos_en_cascada)*, So I hope you already have some knowledge acquired. Although your level of knowledge and experience is relatively low, we have tried to avoid this being a brake on your learning in JavaScript.
+
+If you have experience in other programming languages, you play with advantage at first, but do not rely ...
+
+If you have already worked with *[JQuery](https://jquery.com/)* We will talk about how to do everything you do with JavaScript in the last chapters.
+
+## What will we learn?
+
+- Pseudocode.
+- To think like a programmer.
+- Work fluently with functions.
+- Mastering JavaScript bases (language structures).
+- Ajax and it's requests.
+- Dynamic DOM manipulation.
 
 
-Bases de datos
+## What will not we learn?
 
-: Ya sean *[SQL](https://es.wikipedia.org/wiki/Base_de_datos_relacional)* o *[NoSQL](https://es.wikipedia.org/wiki/NoSQL)*, es algo que no pretendemos tratar en este libro.
+JavaScript is an immense universe that is growing by leaps and bounds with expansions. Remember that the idea is to lay the foundations of language, so we will not see things like:
 
 
-Paradigmas  *[POO](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, *[Funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)*, etc...)
+Data Bases
 
-: Hablaremos de pasada de algunos conceptos interesantes de los diversos paradigmas que ofrece JavaScript, pero no iremos más allá.
+: Either *[SQL](https://es.wikipedia.org/wiki/Base_de_datos_relacional)* or *[NoSQL](https://es.wikipedia.org/wiki/NoSQL)*, is something that we do not intend to deal with in this book.
+
+
+Paradigms  *[POO](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, *[Funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional)*, etc...)
+
+: We will talk about some interesting concepts of the various paradigms that JavaScript offers, but we will not go further.
 
 
 HTML5 APIs
 
-: Aunque hablaremos de pasada sobre cosas tan potentes como *[LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)*, queda muy lejos de las bases de JavaScript sobre las que queremos centrarnos.
+: Although we will speak a little bit about things as powerful as *[LocalStorage](https://developer.mozilla.org/es/docs/Web/API/Window/localStorage)*, is very far from the bases of JavaScript on which we want to focus.
 
 
-Regex (*[Expresiones Regulares](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular)*)
+Regex (*[Regular Expressions](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular)*)
 
-: Es algo muy útil en el día a día, y será mencionado, pero solo por encima para entender como enfrentarnos a ello como desarrolladores noveles.
+: It is very useful in day to day, and will be mentioned, but only above to understand how to deal with it as novice developers.
 
 
-Patrones de diseño (*[Decorator](https://en.wikipedia.org/wiki/Decorator_pattern)*, *[Façade](https://en.wikipedia.org/wiki/Facade_pattern)*...)
+Design patterns (*[Decorator](https://en.wikipedia.org/wiki/Decorator_pattern)*, *[Façade](https://en.wikipedia.org/wiki/Facade_pattern)*...)
 
-: Son muchos *[los patrones](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)* que podemos aplicar a JavaScript para que nuestro código adquiera "super poderes", pero esto también queda muy lejos de nuestros objetivos.
+: They are many *[the patterns](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)* Which we can apply to JavaScript for our code to acquire "super powers", but this is also very far from our goals.
 
 
 Testing
 
-: Uno de los pilares del buen código, es hacer testing o seguir filosofías como *TDD* o *TBD*. Pero para alguien que empieza en este mundillo, creo que sería un freno a tu aprendizaje.
+: One of the pillars of good code is to do testing or follow philosophies like * TDD * or * TBD *. But for someone who starts in this world, I think it would be a brake on your learning.
 
 
-*[Git](https://git-scm.com/)* y *[Github](https://github.com/)*
+*[Git](https://git-scm.com/)* and *[Github](https://github.com/)*
 
-: Otra de las cosas sin las que uno no puede considerarse un desarrollador de verdad, si no sabe manejarse con fluidez en ello.
+: Another of the things without which one can not be considered a real developer, if he does not know how to be fluent in it.
 
 
 Frameworks  *[Angular](https://angularjs.org/)*, *[React](https://facebook.github.io/react/)*, *[Polymer](https://www.polymer-project.org/1.0/)*, *[Backbone](http://backbonejs.org/)*, etc...)
 
-: *[La fiebre MV* de JavaScript](https://gist.github.com/g6scheme/4157554)* quedará fuera de este libro por motivos evidentes... pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
+: *[The fever MV* of JavaScript](https://gist.github.com/g6scheme/4157554)* Will remain out of this book for obvious reasons ... but remember that here we will use the most popular and verteran JavaScript *[framework](https://es.wikipedia.org/wiki/Framework)*, *[Vanilla-js](http://vanilla-js.com/)*.
 
 
-Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
+Bookstores  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
 
-: La idea de este libro es trabajar sobre JavaScript -vieja escuela-, al estilo de *[Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford)*. Por eso no trabajaremos con *[JQuery](https://jquery.com/)* directamente, ni con ninguna otra librería, aunque si recomendaremos otras muchas librerías.
+: The idea of this book is to work on JavaScript-old school-life, in the style of *[Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford)*. That's why we will not work with *[JQuery](https://jquery.com/)* directly, or with any other bookstore, although we will recommend many other libraries.
 
 
 ECMAScript 6, ECMAScript 7
 
-: Aunque hablaremos de ciertas cosas que ha traído consigo *[ECMAScript 6](http://es6-features.org/#Constants)*, sin embargo nos centraremos en el clásico *[ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/)* (vigente desde 2011) con una *[compatibilidad nativa](http://kangax.github.io/compat-table/es5/)* envidiable.
+: Although we will talk about certain things that it has brought with him *[ECMAScript 6](http://es6-features.org/#Constants)*, however we will focus on the classic *[ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/)* (valid since 2011) with one enviable  *[native compatibility](http://kangax.github.io/compat-table/es5/)*.
 
 
 Node.js
 
-: Me encanta *[Node.js](https://es.wikipedia.org/wiki/Node.js)*, por tener todo el potencial de JavaScript, sin las restricciones del navegador... bucear en un *[mundo asíncrono](https://www.todojs.com/controlar-la-ejecucion-asincrona/)* de posibilidades infinitas donde puedes crear desde *[servidores Http](https://es.wikipedia.org/wiki/Servidor_web)*, hasta cosas tan alucinantes como *[robots](https://github.com/OSWeekends/OSWaldito/)*...
+: I love *[Node.js](https://es.wikipedia.org/wiki/Node.js)*, for having the full potential of JavaScript, without browser restrictions ... dive into a * [asynchronous world](https://www.todojs.com/controlar-la-ejecucion-asincrona/)* fnfinite possibilities where you can create from *[servers Http](https://es.wikipedia.org/wiki/Servidor_web)*, to amaizing things as [robots](https://github.com/OSWeekends/OSWaldito/)*...
 
-: *[Node.js](https://es.wikipedia.org/wiki/Node.js)* da para una colección de libros por si mismo, y por ello queda muy lejos de nuestros objetivos.
+: *[Node.js](https://es.wikipedia.org/wiki/Node.js)* gives for a collection of books by itself, and for that reason it is very far from our objectives.
 
 
 *[Gulp](http://gulpjs.com/)*, *[Grunt](http://gruntjs.com/)*, *[Broccoli](http://broccolijs.com/)*...
 
-: Aunque la automatización y la gestión de tareas es otra de las cosas que más me apasionan, queda también lejos de los objetivos que nos hemos marcado. ¡Lo siento!...
+: Although automation and task management is another of the things that fascinate me, also it falls far short of the goals we have set. I am sorry!...
 
-De paso también me gustaría desmitificar algunas cosas:
+Also, I would like to demystify some things:
 
-Matemáticas
+Maths
 
-: Programar es hacer magia con máquinas, las matemáticas son opcionales...
+: Program is to make magic with machines, mathematics is optional ...
 
+Advanced Mathematics, Statistics, etc ...
 
-Matemáticas Avanzadas, Estadística, etc...
+: To master the knowledge and techniques of JavaScript, you only need to know how to add, subtract, divide and multiply ... that's it!
 
-: Para dominar los conocimientos y las técnicas de JavaScript, solo necesitas... saber sumar, restar, dividir y multiplicar... ¡solo eso!
+Nuclear physics
 
-
-Física nuclear
-
-: Un poco de humor.
+: A little humor.
 
 
-*[Inteligencia Artificial](https://es.wikipedia.org/wiki/Inteligencia_artificial)*
+*[Artificial Intelligence](https://es.wikipedia.org/wiki/Inteligencia_artificial)*
 
-: Esto queda un poco lejos aún, pero sigue trabajando... ¡Padawan!
+: This is still a little far, but keep working... ¡Padawan!
 
 
-
-## Importante
-
+## Important
 
 Humor
 
-: Si no te ríes en algún momento mientras lees este libro.... claramente no es para ti y no he cumplido el reto de intentar enseñarte cosas alucinantes con un poco de humor :-D
+: If you do not laugh at some point while reading this book .... clearly is not for you and I have not met the challenge of trying to teach you amazing things with a little humor :-D
 
 
-Cero coste, 0$
+Zero cost, $ 0
 
-: Este libro es completamente gratuito, con un doble objetivo, que nadie se quede sin aprender por no tener recursos y además para contribuir de este modo a la comunidad del *[software libre](https://es.wikipedia.org/wiki/Software_libre)*.
+: This book is completely free, with a double objective, that no one is left without learning for not having resources and also to contribute in this way to the community of * [free software] (https://es.wikipedia.org/wiki /Free software)*.
 
-: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propio plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
+: Although the book is free, * [Leanpub] (https://leanpub.com/) * it allows you to buy this book at a price you consider. All benefits generated will be donated to * [Code Club] (https://www.codeclub.org.uk/) * from the [Leanpub] platform itself (https://leanpub.com/) *. The author will not receive any of these donations.
 
 
 Adaptable
 
-: En principio este libro esta disponible en tres formatos básicos *pdf*, *mobi*, *epub* y su código fuente esta en *[Markua](http://markua.com/)*. Pero partiendo del [repositorio en GitHub]() puede ser convertido a más formatos.
+: In principle this book is available in three basic formats * pdf *, * mobi *, * epub * and its source code is in * [Markua] (http://markua.com/) *. But starting from the [repository in GitHub] () can be converted to more formats.
 
 
-Este libro esta vivo
+This book is alive
 
-: Con el tiempo irá creciendo y mejorándose. Mantente al día desde su *[página oficial](https://leanpub.com/javascript-inspirate/)*
-
-
-Un mar de recursos
-
-: La mayoría de los links del libro, os dirigen a blogs técnicos y a la documentación oficial de *[Mozilla Developer Network](https://developer.mozilla.org/es/)*. Si un concepto resulta difícil de entender o deseas profundizar más... estos links pueden ser un buen punto de partida.
+: Over time it will grow and improve. Stay up to date on your * [official page] (https://leanpub.com/javascript-inspirate/) *
 
 
-Facilidades
+A sea of resources
 
-: La mayor parte del código está creado con la nomenclatura en español, para facilitar la comprensión y lectura por parte de nuevos desarrolladores. No obstante, recuerda que esto no está considerado una buena practica en entornos profesionales.
-
-
-¡A tu ritmo!
-
-: A lo largo del libro observaréis que hay numerosos ejemplos explicativos. Sin embargo no encontraréis ejercicios, para así hacer más ágil su lectura y para que os animéis a venir a una de las muchas reuniones de la comunidad (*[JS Dojo](https://www.meetup.com/es-ES/JS-Dojo-Madrid/)*, *[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*...) y practicar con proyectos de verdad y con el tiempo lleguéis a proponer vuestros propios proyectos dentro de la comunidad.
+: Most of the links in the book, direct you to technical blogs and the official documentation of * [Mozilla Developer Network] (https://developer.mozilla.org/es/) *. If a concept is difficult to understand or you want to go deeper ... these links can be a good starting point.
 
 
-## Convenciones utilizadas en este libro
+Features
+
+: Most of the code is created with the nomenclature in Spanish, to facilitate the understanding and reading by new developers. However, remember that this is not considered a good practice in professional settings.
 
 
-### Ejecuta el código
+At your own pace!
 
-Todos los ejemplos de código que veras en el libro tienen significado por si mismos y pueden ser ejecutados en la consola del navegador sin problema alguno, es más, os lo recomendamos encarecidamente.
-
-
-### Iconos utilizados en este libro
-
-I> Cuando veas este inoco sabrás que tendras un lugar desde el que ampliar conocimientos y profundizar un poco más en los conceptos del capítulo.
+: Throughout the book you will notice that there are numerous explanatory examples. However you will not find exercises, to make your reading more agile and to encourage you to come to one of the many meetings of the community (* [JS Dojo] (https://www.meetup.com/en-US/ JS-Dojo-Madrid /) *, * [Open Source Weekends] (https://www.meetup.com/en-US/Open-Source-Weekends/) * ...) and practice with real projects and with some time you come to propose your own projects within the community.
 
 
-W> Cuando veas este icono sabrás que debes prestar mucha atención, ya que se trata de un concepto clave para entender el capítulo en el que te encuentras.
+## Conventions used in this book
 
 
-T> Cuando veas este icono sabrás que ese trata de un consejo que puedes seguir o no...
+### Execute the code
+
+All the code examples you see in the book have meaning in themselves and can be executed in the browser console without any problem, in fact, we highly recommend you.
+
+
+### Icons used in this book
+
+I> When you see this icon you will know that you will have a place from which to extend knowledge and to deepen a little more in the concepts of the chapter.
+
+
+W> When you see this icon you will know that you must pay close attention, since it is a key concept to understand the chapter in which you are.
+
+
+T> When you see this icon you will know that this is a tip that you can follow or not ...
 
 
 {icon=users}
-G> Cuando veas este icono sabrás que estamos hablando de cosas relacionadas con la comunidad de desarrolladores.
+G> When you see this icon you will know that we are talking about things related to the developer community.
 
 
-{icon=history}
-G> Cuando veas este icono sabrás que los enlaces te llevarán a *[web.archive.org](http://web.archive.org)*, la máquina del tiempo de Internet.
+{Icon = history}
+G> When you see this icon you will know that the links will take you to * [web.archive.org] (http://web.archive.org) *, the Internet time machine.
 
 
-{icon=book}
-G> Cuando veas este icono sabrás que ha llegado el momento de preparar un buen café y dedicar un tiempo a leer con calma los links y ver algunos vídeos también.
+{Icon = book}
+G> When you see this icon you will know that the time has come to prepare a good coffee and spend some time reading the links calmly and watching some videos too.
