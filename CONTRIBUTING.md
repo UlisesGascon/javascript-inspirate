@@ -1,45 +1,45 @@
 # Contribuir
 
-**Sobre el desarrollo de este libro:**
+**Sobre o desenvolvemento deste libro:**
 
-Como regla general cualquier aportación de código/texto se realizará en la [rama "dev"](https://github.com/UlisesGascon/javascript-inspirate/tree/dev) ya sea por aporte directo o a través de [pull requests](https://github.com/UlisesGascon/javascript-inspirate/pulls).
+Como regra xeral calquera aportación de código/texto realizárase na [rama "dev"](https://github.com/UlisesGascon/javascript-inspirate/tree/dev) xa sexa por aporte directo ou a través de [pull requests](https://github.com/UlisesGascon/javascript-inspirate/pulls).
 
-Los capítulos del libro ([carpeta manuscript](https://github.com/UlisesGascon/javascript-inspirate/tree/master/manuscript)) no están escritos en Markdown.
+Os capítulos do libro ([carpeta manuscript](https://github.com/UlisesGascon/javascript-inspirate/tree/master/manuscript)) non están escritos en Markdown.
 
-Todo el libro esta escrito en [Markua](http://markua.com/) siguiendo las [recomendaciones de Leanpub](https://leanpub.com/help/manual). La renderización en formatos digitales (pdf, epub, etc..) se hace mediante una compilación en los servidores de Leanpub.
-
-
-### Avisando de los errores
-
-Solo necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) con la [etiqueta Errores](https://github.com/UlisesGascon/javascript-inspirate/labels/Errores) para avisarnos.
-
-Si además propones la solución al error... no dudes en hacer [referencia al issue](https://help.github.com/articles/closing-issues-via-commit-messages/) en tu pull request.
+Todo o libro esta escrito en [Markua](http://markua.com/) seguindo as [recomendacións de Leanpub](https://leanpub.com/help/manual). A renderización en formatos dixitais (pdf, epub, etc..) faise mediante unha compilación nos servidores de Leanpub.
 
 
-### Mejorando contenido
+### Avisando dos erros
 
-Solo necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) con la [etiqueta Mejoras](https://github.com/UlisesGascon/javascript-inspirate/labels/Mejoras) para compartir tu idea.
+Só necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) coa [etiqueta Errores](https://github.com/UlisesGascon/javascript-inspirate/labels/Errores) pra avisarnos.
 
-
-### Traducciones
-
-Por el momento el libro esta siendo traducido al inglés por [Roberto Moriyón](https://github.com/astur4) y [Nuria Sanz García](https://github.com/NuriaHill), para la coordinación estamos utilizando el [grupo de Slack](https://invitations-osweekends.herokuapp.com/) de [Open Source Weekends](http://osweekends.com/).
-
-Si deseas empezar la traducción en otro idioma solo necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) con la [etiqueta Traducción](https://github.com/UlisesGascon/javascript-inspirate/labels/Traducci%C3%B3n).
+Se ademais propós a solución ao error... non dubides en facer [referencia ao issue](https://help.github.com/articles/closing-issues-via-commit-messages/) no teu pull request.
 
 
-### Tu opinión es muy importante para mi
+### Mellorando contido
 
-Puedes compartirme tu opinión de diversas formas:
-
-- [Disqus (sobre el libro)](https://leanpub.com/javascript-inspirate/feedback).
-- [Mensaje directo (email)](https://leanpub.com/javascript-inspirate/email_author/new).
-- [Dejando tu testimonio en este issue](https://github.com/UlisesGascon/javascript-inspirate/issues/1).
-- Compartiendo tus sensaciones en twitter con el hashtag [#JavascriptInspirate](https://twitter.com/search?f=tweets&q=%23javascriptInspirate).
+Só necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) coa [etiqueta Melloras](https://github.com/UlisesGascon/javascript-inspirate/labels/Melloras) pra compartir a túa idea.
 
 
-### Otras formas de colaboración
+### Traducións
 
-Si crees que puedes colaborar de alguna forma que no esta en este documento...
+Polo momento o libro esta sendo traducido ao inglés por [Roberto Moriyón](https://github.com/astur4) e [Nuria Sanz García](https://github.com/NuriaHill), pra a coordinación estamos utilizando o [grupo de Slack](https://invitations-osweekends.herokuapp.com/) de [Open Source Weekends](http://osweekends.com/).
 
-**¡No lo dudes!** abre un [issue](https://github.com/UlisesGascon/javascript-inspirate/issues) con la [etiqueta opinión](https://github.com/UlisesGascon/javascript-inspirate/labels/Opini%C3%B3n), contacta conmigo por [Twitter](https://twitter.com/kom_256) o sencillamente [mándame un email](https://leanpub.com/javascript-inspirate/email_author/new).
+Se desexas comezar a tradución noutro idioma só necesitas [abrir un issue](https://github.com/UlisesGascon/javascript-inspirate/issues) coa [etiqueta Traducción](https://github.com/UlisesGascon/javascript-inspirate/labels/Traducci%C3%B3n).
+
+
+### A túa opinión es moi importante pra min
+
+Podes compartir a túa opinión de diversas formas:
+
+- [Disqus (sobre o libro)](https://leanpub.com/javascript-inspirate/feedback).
+- [Mensaxe directo (email)](https://leanpub.com/javascript-inspirate/email_author/new).
+- [Deixando o teu testimonio neste issue](https://github.com/UlisesGascon/javascript-inspirate/issues/1).
+- Compartindo as túas sensacións en twitter co hashtag [#JavascriptInspirate](https://twitter.com/search?f=tweets&q=%23javascriptInspirate).
+
+
+### Outras formas de colaboración
+
+Se crees que podes colaborar dalgunha forma que non esta neste documento...
+
+**¡Non o dubides!** abre un [issue](https://github.com/UlisesGascon/javascript-inspirate/issues) coa [etiqueta opinión](https://github.com/UlisesGascon/javascript-inspirate/labels/Opini%C3%B3n), contacta comigo por [Twitter](https://twitter.com/kom_256) ou sinxelamente [mándame un email](https://leanpub.com/javascript-inspirate/email_author/new).

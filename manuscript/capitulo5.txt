@@ -3,26 +3,26 @@
 {:: encoding="utf-8" /}
 {footnotes-off}
 
-En JavaScript existen diversos bucles que podremos utilizar en función de las necesidades de nuestro programa.
+En JavaScript existen diversos bucles que poderemos utilizar en función das necesidades do noso programa.
 
-Ahora veremos aquellos bucles que son de uso genérico, pero existen variaciones del bucle *for* específicas para Arrays  *[forEach](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)*) y Objetos  *[For... in](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/for...in)*) que veremos en próximos capítulos.
+Agora veremos aqueles bucles que son de uso xenérico, pero existen variacións do bucle *for* específicas pra Arrays  *[forEach](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/forEach)*) e Obxectos  *[For... in](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/for...in)*) que veremos nos próximos capítulos.
 
-Para el caso que os preocupe el rendimiento de vuestros bucles os dejo *[este link](https://blogs.oracle.com/greimer/entry/best_way_to_code_a)* con unos *[benchmarks](https://es.wikipedia.org/wiki/Benchmark_(inform%C3%A1tica))* bastante interesantes.
+Pra o caso que preocúpevos o rendemento dos vosos bucles déixovos *[este link](https://blogs.oracle.com/greimer/entry/best_way_to_code_a)* con uns *[benchmarks](https://es.wikipedia.org/wiki/Benchmark_(inform%C3%A1tica))* bastante interesantes.
 
 ## *[While](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/while)*
 
-El primer bucle que veremos está específicamente diseñado para funcionar de manera constante, mientras una condición dada siga cumpliéndose.
+O primeiro bucle que veremos está especificamente deseñado pra funcionar de maneira constante, mentres unha condición dada siga cumpríndose.
 
-Este bucle esta pensado para simplificarnos la sintaxis cuando el control del bucle no se realiza mediante operaciones matemáticas (mayor que... menor que...).
+Este bucle esta pensado pra simplificarnos a séntese cando o control del bucle non se realiza mediante operacións matemáticas (maior que... menor que...).
 
-### Funcionamiento
+### Funcionamento
 
--  **Estructura:**
+-  **Estrutura:**
 
     {lang=text}
     ~~~~~~~
     while (-Condición-) {
-        -Instrucciones-
+        -Instrucións-
     };
     ~~~~~~~
 
@@ -30,48 +30,48 @@ Este bucle esta pensado para simplificarnos la sintaxis cuando el control del bu
 
     {lang=js}
     ~~~~~~~
-    var condicion = true
-    while (condicion) {
-        console.log("hola");
-        condicion = false;
+    var condición = true
+    while (condición) {
+        console.log("ola");
+        condición = false;
     };
     ~~~~~~~
 
 ## *[For](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)*
 
-Este bucle presenta una estructura optimizada para controlar la ejecución de la iteración de manera numérica.
+Este bucle presenta unha estrutura optimizada pra controlar a execución da iteración de maneira numérica.
 
-El bucle *For* se divide en tres partes separadas por un punto y coma.
+O bucle *For* divídese en tres partes separadas por un punto e coma.
 
 {pagebreak}
 
 Expresión inicial
 
-: Será todo aquello que se ejecutará al iniciarse el bucle.
+: Será todo aquelo que executárase ao iniciarse o bucle.
 
 
 Condición
 
-: Será evaluada antes de cada iteración. Este es el único parámetro obligatorio.
+: Será avaliada antes de cada iteración. Este é o único parámetro obrigatorio.
 
 
 Expresión de actualización
 
-: Se ejecutará al final de cada iteración.
+: Executárase ao final de cada iteración.
 
 
-### Funcionamiento
+### Funcionamento
 
-* Estructura:
+* Estrutura:
 
     {lang=text}
     ~~~~~~~
     for (-Expresión inicial-; -Condición-; -Expresión Actualización-) {
-        -Instrucciones-
+        -Instrucións-
     };
     ~~~~~~~
 
-* Ejemplo clásico:
+* Exemplo clásico:
 
     {lang=js}
     ~~~~~~~
@@ -83,25 +83,25 @@ Expresión de actualización
 
 ## *[Do... While](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/do...while)*
 
-El tercer bucle que veremos en este capítulo es *Do... While* que se diferencia de todos los demás en que se ejecuta primero y se evalúa después.
+O terceiro bucle que veremos neste capítulo é *Do... While* que se diferencia de tódolos demais en que executase primeiro e evaluase despois.
 
-Al utilizar este bucle nos aseguramos que aunque la condición no se cumpla... el código se ejecuta al menos una vez.
+Ao utilizar este bucle asegurámonos que anque a condición non se cumpra... o código executase ao menos unha vez.
 
-### Funcionamiento
+### Funcionamento
 
-* Estructura:
+* Estrutura:
 
     {lang=text}
     ~~~~~~~
     do{
-       -Instrucciones-
+       -Instrucións-
     } while (-Condición-);
     ~~~~~~~
 
 {pagebreak}
 
 
-* Ejemplo:
+* Exemplo:
 
     {lang=js}
     ~~~~~~~
@@ -114,37 +114,37 @@ Al utilizar este bucle nos aseguramos que aunque la condición no se cumpla... e
 
 W> **Importante:**
 W>
-W> Al menos se ejecutará una vez, aunque la premisa no sea verdadera.
+W> Ao menos executárase unha vez, anque a premisa non sexa verdadeira.
 
 {lang=js}
 ~~~~~~~
 do{
-   console.warn("me ejecuto")
+   console.warn("executome")
 } while (false);
 ~~~~~~~
 
-## *[Break](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/break)* y *[Continue](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/continue)*
+## *[Break](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/break)* e *[Continue](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/continue)*
 
-W> **Dominando la eficiencia**
+W> **Dominando a eficiencia**
 W>
-W> Dos sentencias clave en JavaScript, son *break* y *continue*, que nos permiten romper o alterar el flujo normal de nuestra aplicación.
+W> Dúas sentencias chave en JavaScript, son *break* e *continue*, que permítennos romper ou alterar o fluxo normal da nosa aplicación.
 W>
-W> Pueden utilizarse también con las estructuras condicionales que vimos en el capítulo anterior.
+W> Poden utilizarse tamén coas estruturas condicionais que vimos no capítulo anterior.
 
 - **Continue**
 
-    Nos permite saltar parte del bucle.
+    Permítenos saltar parte do bucle.
 
     {lang=js}
     ~~~~~~~
     for (var i = 0; i < 10; i++) {
 
-        // Salta el 5 y sigue...
+        // Salta o 5 e segue...
         if (i === 5) {
         	continue;
         }
 
-        console.log("El valor de i es "+i);
+        console.log("O valor de i é "+i);
     }
     ~~~~~~~
 
@@ -152,48 +152,48 @@ W> Pueden utilizarse también con las estructuras condicionales que vimos en el 
 
 - **Break**
 
-    Nos permite salir del bucle.
+    Permítenos saír do bucle.
 
     {lang=js}
     ~~~~~~~
     for (var i = 0; i < 10; i++) {
 
-        // Llega a 5 y sale.
+        // Chega a 5 e sae.
         if (i === 5) {
         	break;
         }
 
-        console.log("El valor de i es "+i);
+        console.log("O valor de i é "+i);
     }
     ~~~~~~~
 
 
-## Errores comunes
+## Erros comúns
 
 ### Bucle infinito
 
-Es un error muy común y deberías evitarlo a toda costa. Suele ocurrir cuando no tenemos una estructura de control funcionando adecuadamente.
+É un erro moi común e deberías evitalo a toda costa. Soe ocorrer cando non temos unha estrutura de control funcionando adecuadamente.
 
 {lang=js}
 ~~~~~~~
 while (true) {
-    console.log("Este texto se imprime hasta el infinito...");
+    console.log("Este texto imprímese ata o infinito...");
 };
 ~~~~~~~
 
 
-### Bucle que no se ejecutará
+### Bucle que non se executará
 
-Igualmente es un error más sutil, pero por definición **un código que jamas se ejecuta... ¡sobra!**
+Igualmente é un erro máis sutil, pero por definición **un código que xamais se executa... ¡sobra!**
 
 {lang=js}
 ~~~~~~~
 while (false) {
-    console.log("Este texto jamas se imprimirá...");
+    console.log("Este texto xamais imprimírase...");
 };
 ~~~~~~~
 
-Ejemplo:
+Exemplo:
 
 {lang=js}
 ~~~~~~~
@@ -210,9 +210,9 @@ while (control <= 10) {
 
 ## Usos Avanzados
 
-### Decrecimiento:
+### Decrecemento:
 
-Es bastante común utilizar este tipo de bucles, cuando estamos trabajando sobre la representación dinámica de elementos en el DOM.
+E bastante común utilizar este tipo de bucles, cando estamos traballando sobre a representación dinámica de elementos no DOM.
 
 {lang=js}
 ~~~~~~~
@@ -223,24 +223,24 @@ for (var i = 10; i > 0; i--) {
 
 ### Anidación:
 
-Aunque resulta muy tentador... debemos de evitar en la medida de lo posible la anidación en JavaScript. Por regla general anidar hasta dos o tres niveles es aceptable.
+Anque resulta moi tentador... debemos de evitar na medida do posible a anidación en JavaScript. Por regra xeral anidar ata dous ou tres niveis é aceptable.
 
 {lang=js}
 ~~~~~~~
 for (var i = 0; i < 10; i++) {
-    console.log("Estoy en el primer bucle.");
+    console.log("Estou no primeiro bucle.");
     for (var j = 10; j > 0; j--) {
-        console.log("Estoy en el segundo bucle")
-        console.log("Vuelta: " + i + " - " + j);
+        console.log("Estou no segundo bucle")
+        console.log("Volta: " + i + " - " + j);
     }
 
 }
 ~~~~~~~
 
 
-### Exprimiendo el For
+### Espremendo o For
 
-Si dominamos las tres partes básicas que componen el bucle *for*, podemos plantearnos estructuras tan complejas como esta.
+Se dominamos as tres partes básicas que compoñen o bucle *for*, podemos plantexarnos estruturas tan complexas como esta.
 
 {lang=js}
 ~~~~~~~
@@ -249,16 +249,16 @@ for (var i = 0, x = 1, z = 2, tope = 10; i <= tope; x *= z, i++ ) {
 }
 ~~~~~~~
 
-T> Por lo general la *variable i* suele reservarse para controlar las iteraciones del bucle, aunque
-T> podamos utilizar otros nombres... esto suele estar muy aceptado por la comunidad y se considera
-T> una buena práctica.
+T> Polo xeral a *variable i* soe reservarse pra controlar as iteracións do bucle, anque
+T> podamos utilizar outros nomes... isto soe estar moi aceptado pola comunidade e considerase
+T> unha boa práctica.
 
 {pagebreak}
 
 
-### No refactorizar
+### Non refactorizar
 
-En ocasiones, el código evoluciona y no repasamos lo que habíamos construido previamente... llegando a situaciones tan monstruosas como esta.
+En ocasións, o código evoluciona e non repasamos o que construímos previamente... chegando a situacións tan monstruosas como esta.
 
 * Antes de refactorizar:
 
@@ -266,18 +266,18 @@ En ocasiones, el código evoluciona y no repasamos lo que habíamos construido p
     ~~~~~~~
     // Código
     for (;i === true;) {
-        // Más Código
+        // Máis Código
     }
     ~~~~~~~
 
 
 
-* Después de refactorizar:
+* Despois de refactorizar:
 
     {lang=js}
     ~~~~~~~
     // Código
     while (i) {
-        // Más Código
+        // Máis Código
     }
     ~~~~~~~

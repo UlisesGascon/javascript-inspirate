@@ -8,7 +8,7 @@ headerRegex = r"(#+) (.*)"
 linksRegex = r"(?!!).\[([^\[]+)\]\(([^\)]+)\)"
 endFile = "# Recursos\n\n"
 index = "# Índice\n\n"
-content = "# Contenido\n"
+content = "# Contido\n"
 
 # URLs that generated exceptions last time... now all are skipped.
 ignoreUrls = [

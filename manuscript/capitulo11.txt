@@ -1,47 +1,47 @@
--# Parte III - Web dinámica y conectada...
+-# Parte III - Web dinámica e conectada...
 
-# Capítulo 11 - Hackeando HTML y CSS
+# Capítulo 11 - Hackeando HTML e CSS
 
 {:: encoding="utf-8" /}
 {footnotes-off}
 
-![Imagen obtenida de javascript.info](images/arbol.png)
+![Imaxen obtida de javascript.info](images/arbol.png)
 
-A la hora de trabajar con el navegador fuera de la consola, disponemos básicamente de tres pilares:
+A hora de traballar co navegador fora da consola, dispoñemos basicamente de tres alicerces:
 
 
 JavaScript
 
-: Que es lo que intentamos aprender a lo largo de este libro, y que nos permite en esencia programar sobre la web que esta renderizada en el cliente.
+: Que é o que intentamos aprender ao longo deste libro, e que nos permite en esencia programar sobre a web que esta renderizada no cliente.
 
 
 BOM
 
-: *Browser Object Model*, que contiene navigator, *[history](https://developer.mozilla.org/es/docs/Web/API/history)*, *[screen](https://developer.mozilla.org/es/docs/Web/API/screen)*, *[location](https://developer.mozilla.org/es/docs/Web/API/Location)*, *[XMLHttpRequest](https://developer.mozilla.org/es/docs/XMLHttpRequest)*, etc... los cuales son hijos de *[window](https://developer.mozilla.org/pl/docs/Web/API/Window)*.
+: *Browser Object Model*, que conten navigator, *[history](https://developer.mozilla.org/es/docs/Web/API/history)*, *[screen](https://developer.mozilla.org/es/docs/Web/API/screen)*, *[location](https://developer.mozilla.org/es/docs/Web/API/Location)*, *[XMLHttpRequest](https://developer.mozilla.org/es/docs/XMLHttpRequest)*, etc... os cales son fillos de *[window](https://developer.mozilla.org/pl/docs/Web/API/Window)*.
 
 
 DOM
 
-: *[Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*, es una interfaz para HTML, CSS y SVG que nos facilita una representación en forma de árbol sobre la que podremos trabajar con JavaScript.
+: *[Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*, é unha interface pra HTML, CSS e SVG que nos facilita unha representación en forma de árbore sobre a que poderemos traballar con JavaScript.
 
 
 ## BOM (Browser Object Model)
 
-Es una recopilación de los componentes más utilizados, aunque existen algunos más.
+É unha recopilación dos compoñentes máis utilizados, anque existen algúns máis.
 
 
 ### *[window.history](https://developer.mozilla.org/es/docs/Web/API/History)*
 
-Nos permite manipular el historial de la sesión actual, eso incluye solamente las páginas visitadas con la pestaña actual.
+Permítenos manipulalo historial da sesión actual, iso inclúe soamente as páxinas visitadas coa pestana actual.
 
-Podemos averiguar la cantidad de páginas visitadas previamente, haciendo uso de la propiedad *[length](https://developer.mozilla.org/en-US/docs/Web/API/History/length)*.
+Podemos averiguala cantidade de páxinas visitadas previamente, facendo uso da propiedade *[length](https://developer.mozilla.org/en-US/docs/Web/API/History/length)*.
 
 {lang=js}
 ~~~~~~~
 history.length
 ~~~~~~~
 
-También podemos realizar acciones, como mandar al usuario a la pagina inmediatamente siguiente con el método *[forward](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*, a la anterior con *[back()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)* o directamente a cualquier posición del historial con *[go()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*.
+Tamén podemos realizar accións, como mandar ao usuario a paxina inmediatamente seguinte co método *[forward](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*, a anterior co *[back()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)* ou directamente a calquera posición do historial con *[go()](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)*.
 
 
 {lang=js}
@@ -59,11 +59,11 @@ history.forward();
 ### *[window.navigator](https://developer.mozilla.org/es/docs/Web/API/Navigator)*
 
 
-Es un API que nos permite sacar gran cantidad de información sobre la máquina donde se esta ejecutando nuestro script. Incluso dispone de algunos métodos tan interesantes como *[Navigator.vibrate()](https://developer.mozilla.org/es/docs/Web/API/Navigator/vibrate)*, que permite hacer vibrar el dispositivo (siempre que sea compatible).
+É unha API que permítenos sacar gran cantidade de información sobre a máquina onde se esta executando o noso script. Incluso dispón de algúns métodos tan interesantes como *[Navigator.vibrate()](https://developer.mozilla.org/es/docs/Web/API/Navigator/vibrate)*, que permite facer vibrar o dispositivo (sempre que sexa compatible).
 
-En el siguiente ejemplo, hacemos una lectura de gran información del sistema y además hacemos un par de cálculos interesantes para confirmar el nivel de batería.
+No seguinte exemplo, facemos unha lectura de gran información do sistema e ademais facemos un par de cálculos interesantes pra confirmar o nivel de batería.
 
-En la línea 28 hemos utilizado una *[promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, ya que *[navigator.getBattery()](https://developer.mozilla.org/es/docs/Web/API/Navigator/getBattery) lo requiere así. Recuerda que esta es otra de las formas válidas, que existen para manejar la asincronía.*
+Na liña 28 utilizamos unha *[promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, xa que *[navigator.getBattery()](https://developer.mozilla.org/es/docs/Web/API/Navigator/getBattery) o require así. Recorda que esta é outra das formas válidas, que existen pra manexar a asincronía.*
 
 
 
@@ -71,10 +71,10 @@ En la línea 28 hemos utilizado una *[promesa](https://developer.mozilla.org/es/
 {lang=js}
 ~~~~~~~
 function conversorTiempo(segundos){
-	var fecha = new Date(segundos * 1000);
-	var hh = fecha.getUTCHours();
-	var mm = fecha.getUTCMinutes();
-	var ss = fecha.getSeconds();
+	var data = new Date(segundos * 1000);
+	var hh = data.getUTCHours();
+	var mm = data.getUTCMinutes();
+	var ss = data.getSeconds();
 
 	if (hh < 10) {hh = "0"+hh;}
 	if (mm < 10) {mm = "0"+mm;}
@@ -101,10 +101,10 @@ function informacionSistema(){
 		console.log("Batería cargando?", bateria.charging)
 
 		if(bateria.charging){
-			console.log("Tiempo de carga:", bateria.chargingTime)
+			console.log("Tempo de carga:", bateria.chargingTime)
 		}
 		console.log("Batería %:", bateria.level*100)
-		console.log("Tiempo restante:", conversorTiempo(bateria.dischargingTime))
+		console.log("Tempo restante:", conversorTiempo(bateria.dischargingTime))
 	});
 
 }
@@ -114,7 +114,7 @@ function informacionSistema(){
 
 ### *[window.screen](https://developer.mozilla.org/en-US/docs/Web/API/Screen)*
 
-Esta API nos permite sacar toda la información disponible de la pantallá (márgenes, profundidad del color...), así podremos bloquear y desbloquear la rotación de la pantalla en el dispositivo.
+Esta API permítenos sacar toda a información dispoñible da pantalla (marxes, profundidade do color...), así poderemos bloquear e desbloquear a rotación da pantalla no dispositivo.
 
 
 {lang=js}
@@ -136,7 +136,7 @@ console.log("width:", window.screen.width);
 
 ### *[Window.location](https://developer.mozilla.org/es/docs/Web/API/Window/location)* y *[Document.location](https://developer.mozilla.org/es/docs/Web/API/Document/location)*
 
-*[Según la W3C](https://www.w3.org/TR/html/browsers.html#dom-location)* ambos objetos son lo mismo.
+*[Segundo a W3C](https://www.w3.org/TR/html/browsers.html#dom-location)* ambos obxectos son o mesmo.
 
 ### Propiedades
 
@@ -163,7 +163,7 @@ console.log("origin:", enlace.origin);
 
 - ***[.assign()](https://developer.mozilla.org/en-US/docs/Web/API/Location/assign)***
 
-	Carga una nueva página.
+	Carga una nova páxina.
 
 	{lang=js}
 	~~~~~~~
@@ -172,20 +172,20 @@ console.log("origin:", enlace.origin);
 
 - ***[.reload()](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)***
 
-	Recarga la página actual con opciones para manejar el cacheado.
+	Recarga a páxina actual con opcións pra manexar o cacheado.
 
 	{lang=js}
 	~~~~~~~
 	// Recarga
 	document.location.reload();
 
-	// Recarga sin usar el cache
+	// Recarga sen usar o cache
 	document.location.reload(true);
 	~~~~~~~
 
 - ***[.replace()](https://developer.mozilla.org/en-US/docs/Web/API/Location/replace)***
 
-	Carga una página nueva, sustituyendo la actual en el historial.
+	Carga unha páxina nova, substituíndo a actual no historial.
 
 	{lang=js}
 	~~~~~~~
@@ -195,40 +195,40 @@ console.log("origin:", enlace.origin);
 
 ## *[DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*
 
-Veamos como entiende la comunidad *[MDN (Mozilla Developer Network)](https://developer.mozilla.org)* el concepto *[DOM - Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*.
+Vexamos como entende a comunidade *[MDN (Mozilla Developer Network)](https://developer.mozilla.org)* o concepto *[DOM - Document Object Model](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)*.
 
 {icon=quote-left}
-G> El modelo de objeto de documento (DOM) es una interfaz de programación para los documentos HTML
-G> y XML. Facilita una representación estructurada del documento y define de qué manera los
-G> programas pueden acceder, con el fin de modificar, tanto su estructura, estilo y contenido. El
-G> DOM da una representación del documento como un grupo de nodos y objetos estructurados que
-G> tienen propiedades y métodos. Esencialmente, conecta las páginas web a scripts o lenguajes de
+G> O modelo de obxecto de documento (DOM) é unha interface de programación pra os documentos HTML
+G> e XML. Facilita unha representación estruturada do documento e define de que maneira os
+G> programas poden acceder, co fin de modificar, tanto a súa estrutura, estilo e contido. O
+G> DOM da unha representación do documento como un grupo de nodos e obxectos estruturados que
+G> teñen propiedades e métodos. Esencialmente, conecta as páxinas web a scripts ou a linguaxes de
 G> programación.
 G>
-G> Una página web es un documento. Éste documento puede exhibirse en la ventana de un navegador o
-G> también como código fuente HTML. Pero, en los dos casos, es el mismo documento. El modelo de
-G> objeto de documento (DOM) proporciona otras formas de presentar, guarda y manipular este mismo
-G> documento. El DOM es una representación completamente orientada al objeto de la página web y
-G> puede ser modificado con un lenguaje de script como JavaScript.
+G> Unha páxina web é un documento. Este documento pode exhibirse na venta dun navegador ou
+G> tamén como código fonte HTML. Pero, nos dous casos, é o mesmo documento. O modelo de
+G> obxecto de documento (DOM) proporciona outras formas de presentar, gardar e manipular este mesmo
+G> documento. O DOM é unha representación completamente orientada ao obxecto da páxina web e
+G> pode ser modificado cunha linguaxe de script como JavaScript.
 
 
-Nosotros creemos que el DOM es patio de juegos de cualquier developer que se precie. Tanto si haces frontend y lo utilizas para mostrar información dinamicamente como si estás en el backend y lo utilizas para *[scrapear](https://es.wikipedia.org/wiki/Web_scraping)*.
+Nos cremos que o DOM é patio de xogos de calquera desenvolvente que se precie. Tanto se fas frontend e o utilizas pra mostrar información dinamicamente como se estás no backend e o utilizas pra *[scrapear](https://es.wikipedia.org/wiki/Web_scraping)*.
 
-A los ojos de JavaScript el DOM es un objeto con el que podremos leer y modificar a nuestro antojo. Una vez se comprende con claridad la estructura de nodos que lo compone y sus métodos pricipales, está dominado.
+A os ollos de JavaScript o DOM é un obxecto co que poderemos ler e modificar ao noso antollo. Unha vez se comprende con claridade a estrutura de nodos que o compón e os seus métodos principais, está dominado.
 
 
 ### Selectores
 
-El primer paso para poder manipular el DOM, es adquirir cierta destreza en el manejo de los selectores, ya que siempre los selectores serán el primer paso, para realizar operaciones de lectura o modificación del DOM.
+O primeiro paso pra poder manipular o DOM, é adquirir certa destreza no manexo dos selectores, xa que sempre os selectores serán o primeiro paso, pra realizar operacións de lectura ou modificación do DOM.
 
-Es importante remarcar, que ciertos métodos para realizar selección de componentes, sufren del mismo problema que vimos en *arguments*, ya que aunque parecen *arrays*... realmente no lo son.
+É importante remarcar, que certos métodos pra realizar selección de compoñentes, sofren do mesmo problema que vimos en *arguments*, xa que anque parecen *arrays*... realmente non o son.
 
-Estos métodos son:
+Estes métodos son:
 
 - *[Node.childNodes](https://developer.mozilla.org/es/docs/Web/API/Node/childNodes)*
 - *[document.querySelectorAll](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*
 
-I> #### Podemos convertirlos fácilmente:
+I> #### Podemos convertelos facilmente:
 I>
 I> {lang=js}
 I> ~~~~~~~
@@ -237,14 +237,14 @@ I> // Conversión
 I> var listaDivsArray = Array.prototype.slice.call(listaDivs);
 I> ~~~~~~~
 I>
-I> Más información sobre la conversión en [Convert NodeList to Array de David Walsh](https://
+I> Máis información sobre a conversión en [Convert NodeList to Array de David Walsh](https://
 I> davidwalsh.name/nodelist-array).
 
-### Selectores tradicionales
+### Selectores tradicionais
 
 - ***[.getElementById()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementById)***
 
-	Permite la selección de un elemento por su *[id](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/id)*.
+	Permite a selección dun elemento polo seu *[id](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/id)*.
 
     {lang=js}
 	~~~~~~~
@@ -254,7 +254,7 @@ I> davidwalsh.name/nodelist-array).
 
 - ***[.getElementsByName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByName)***
 
-	Permite la selección de varios elementos por su atributo *[name](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)*.
+	Permite a selección de varios elementos polo seu atributo *[name](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes)*.
 
     {lang=js}
 	~~~~~~~
@@ -266,7 +266,7 @@ I> davidwalsh.name/nodelist-array).
 
 - ***[.getElementsByTagName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByTagName)***
 
-	Permite la selección de varios elementos por su *[etiqueta](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)*.
+	Permite a selección de varios elementos pola súa *[etiqueta](https://developer.mozilla.org/es/docs/Web/HTML/Elemento)*.
 
     {lang=js}
 	~~~~~~~
@@ -276,12 +276,12 @@ I> davidwalsh.name/nodelist-array).
 
 - ***[.getElementsByClassName()](https://developer.mozilla.org/es/docs/Web/API/Document/getElementsByClassName)***
 
-	Permite la selección de varios elementos por su *[clase](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/class)*.
+	Permite a selección de varios elementos pola súa *[clase](https://developer.mozilla.org/es/docs/Web/HTML/Atributos_Globales/class)*.
 
     {lang=js}
 	~~~~~~~
-    // <div class="rojo"></div>
-    document.getElementsByClassName("rojo");
+    // <div class="vermello"></div>
+    document.getElementsByClassName("vermello");
     ~~~~~~~
 
 ### Selectores Avanzados
@@ -289,7 +289,7 @@ I> davidwalsh.name/nodelist-array).
 {icon=coffee}
 G> #### Lecturas recomendadas:
 G>
-G> - *[Los 30 selectores CSS que debes memorizar](https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048)*
+G> - *[Os 30 selectores CSS que debes memorizar](https://code.tutsplus.com/es/tutorials/the-30-css-selectors-you-must-memorize--net-16048)*
 G> - *[Selectors Level 3 - W3C](https://www.w3.org/TR/css3-selectors/)*
 G> - *[CSS Cheat Sheet](http://www.cheetyr.com/css-selectors)*
 G> - *[Taming Advanced CSS Selectors by Inayaili de Leon](https://www.smashingmagazine.com/2009/08/taming-advanced-css-selectors/)*
@@ -299,17 +299,17 @@ G> - *[CSS Selectors by Adam Roberts](https://www.sitepoint.com/web-foundations/
 G> - *[CSS-TRICKS Selectors](https://css-tricks.com/almanac/selectors/)*
 G> - *[Interactive CSS Selectors by Ben Howdle](http://benhowdle.im/cssselectors/)*
 
-Si has trabajado intensamente con CSS3 ya sabrás que existen muchas posibilidades para realizar selecciones dentro de un documento html que van mucho más alla de la clase, id, etiqueta o propiedades, ya que *[el soporte](http://caniuse.com/#feat=css-sel3)* para ello es muy bueno en todos los navegadores.
+Se traballaches intensamente con CSS3 xa saberás que existen moitas posibilidades pra realizar seleccións dentro dun documento html que van moito máis ala da clase, id, etiqueta ou propiedades, xa que *[o soporte](http://caniuse.com/#feat=css-sel3)* pra elo es moi bon en tódolos navegadores.
 
-JavaScript no se queda atras y se pueden usar *[querySelector](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)* y *[querySelectorAll](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*  que además gozan de un gran *[soporte](http://caniuse.com/#search=querySelector)*.
-
-
-Veamos como se utilizan algunos selectores avanzados de CSS3:
+JavaScript non se queda atrás e pódense usar *[querySelector](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)* y *[querySelectorAll](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*  que ademais gozan dun gran *[soporte](http://caniuse.com/#search=querySelector)*.
 
 
+Vexamos como se utilizan algúns selectores avanzados de CSS3:
 
 
-- URL que empieza con "javascript:"
+
+
+- URL que empezan con "javascript:"
 
     {lang=css}
 	~~~~~~~
@@ -318,7 +318,7 @@ Veamos como se utilizan algunos selectores avanzados de CSS3:
     }
 	~~~~~~~
 
-- URL que contiene "google.es"
+- URL que conten "google.es"
 
     {lang=css}
 	~~~~~~~
@@ -327,7 +327,7 @@ Veamos como se utilizan algunos selectores avanzados de CSS3:
     }
 	~~~~~~~
 
-- URL que termina con ".pdf"
+- URL que rematan con ".pdf"
 
     {lang=css}
 	~~~~~~~
@@ -340,46 +340,46 @@ Veamos como se utilizan algunos selectores avanzados de CSS3:
 
 #### *[.querySelector()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelector)*
 
-Devuelve el primer elemento que coincida con el selector.
+Devolve o primeiro elemento que coincida co selector.
 
 {lang=html}
 ~~~~~~~
-<div id="miDiv">
-    <span id="miId5" class="miClase" title="cinco"></span>
-    <span id="miId4" class="miClase" title="cuatro"></span>
-    <span id="miId3" class="miClase" title="tres"></span>
-    <span id="miId2" class="miClase" title="dos"></span>
-    <span id="miId1" class="miClase" title="uno"></span>
+<div id="meuDiv">
+    <span id="meuId5" class="miñaClase" title="cinco"></span>
+    <span id="meuId4" class="miñaClase" title="catro"></span>
+    <span id="meuId3" class="miñaClase" title="tres"></span>
+    <span id="meuId2" class="miñaClase" title="dous"></span>
+    <span id="meuId1" class="miñaClase" title="un"></span>
 </div>
 ~~~~~~~
 
 {lang=js}
 ~~~~~~~
-document.getElementById('miId1').title // uno
-document.querySelector('#miDiv .miClase').title // cinco
-document.querySelector('#miDiv #miId1.miClase').title // uno
-document.querySelector('#miDiv .inventado').title // ERROR -> undefined
-document.querySelector('#miDiv .miClase[title^=u]').title // uno
+document.getElementById('meuId1').title // un
+document.querySelector('#meuDiv .miñaClase').title // cinco
+document.querySelector('#meuDiv #meuId1.miñaClase').title // un
+document.querySelector('#meuDiv .inventado').title // ERROR -> undefined
+document.querySelector('#meuDiv .miClase[title^=u]').title // un
 ~~~~~~~
 
 #### *[.querySelectorAll()](https://developer.mozilla.org/es/docs/Web/API/Document/querySelectorAll)*
 
-Devuelve todos los elementos que coincidan con el selector en un pseudo-array.
+Devolve tódolos elementos que coincidan co selector nun pseudo-array.
 
 {lang=js}
 ~~~~~~~
-document.querySelectorAll('p') // los párrafos
-document.querySelectorAll('div, img') // divs e imágenes
-document.querySelectorAll('a > img') // imágenes contenidas en enlaces
+document.querySelectorAll('p') // os parágrafos
+document.querySelectorAll('div, img') // divs e imaxes
+document.querySelectorAll('a > img') // imaxes contidas en enlaces
 ~~~~~~~
 
 
 
 ### Estilos con Javascript
 
-JavaScript también puede leer y alterar las reglas de estilo, que afectan a los elementos que componen el DOM.
+JavaScript tamén pode ler e alterar as regras de estilo, que afectan a los elementos que compoñen o DOM.
 
-**Leer valores**
+**Ler valores**
 
 {lang=js}
 ~~~~~~~
@@ -398,22 +398,22 @@ document.getElementById("id").style.display="none";
 {pagebreak}
 
 
-## Alterando el DOM
+## Alterando o DOM
 
-### Trabajar sin JQuery
+### Traballar sen JQuery
 
-Si llevas mucho tiempo trabajando con JQuery, sin duda, ya estás muy acostumbrado a utilizar ciertos métodos como *[show()](http://api.jquery.com/show/)*, *[hide()](http://api.jquery.com/hide/)*, *[empty()](http://api.jquery.com/empty/)*, *[append()](http://api.jquery.com/append/)* y muchos más...
+Si levas moito tempo traballando con JQuery, sen duda, xa estás moi acostumado a utilizar certos métodos como *[show()](http://api.jquery.com/show/)*, *[hide()](http://api.jquery.com/hide/)*, *[empty()](http://api.jquery.com/empty/)*, *[append()](http://api.jquery.com/append/)* e moitos máis...
 
-Para haceros la transición más fácil, *[HubSpot](http://product.hubspot.com/)* ha desarrollado *[You Might Not Need Jquery](http://youmightnotneedjquery.com/)*, que te permite visualizar como hacer todo lo que hacías con JQuery y que ahora harás con JavaScript.
+Pra facervos a transición máis fácil, *[HubSpot](http://product.hubspot.com/)* desenvolveu *[You Might Not Need Jquery](http://youmightnotneedjquery.com/)*, que te permite visualizar como facer todo o que facías con JQuery é que agora farás con JavaScript.
 
-### Métodos esenciales
+### Métodos esenciais
 
-Hacemos una recopilación simplificada de los métodos más utilizados, aunque existen muchos más.
+Facemos unha recompilación simplificada dos métodos máis utilizados, anque existen moitos máis.
 
 
 - ***[.textContent](https://developer.mozilla.org/es/docs/Web/API/Node/textContent)***
 
-	Nos devuelve el texto de un elemento previamente seleccionado.
+	Devólvenos o texto dun elemento previamente seleccionado.
 
 	{lang=js}
 	~~~~~~~
@@ -421,59 +421,59 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 	console.log("Texto:", el.textContent);
 	~~~~~~~
 
-	También permite cambiarlo.
+	Tamén permite cambialo.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
-	el.textContent = "Nuevo contenido";
+	var el = document.getElementById('meuDiv');
+	el.textContent = "Novo contido";
 	~~~~~~~
 
 - ***[.classList.contains()](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
 
-	Verifica si contiene cierta clase.
+	Verifica se conten certa clase.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
-	el.classList.contains("rojo");
+	var el = document.getElementById('meuDiv');
+	el.classList.contains("vermello");
 	~~~~~~~
 
 
 - ***[.classList.add()](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
 
-	Permite añadir una clase al elemento.
+	Permite engadir unha clase ao elemento.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
-	el.classList.add("rojo");
+	var el = document.getElementById('meuDiv');
+	el.classList.add("vermello");
 	~~~~~~~
 
 - ***[.classList.remove(className)](https://developer.mozilla.org/es/docs/Web/API/Element/classList)***
 
-	Permite eliminar una clase del elemento.
+	Permite eliminar unha clase do elemento.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
-	el.classList.remove("rojo");
+	var el = document.getElementById('meuDiv');
+	el.classList.remove("vermello");
 	~~~~~~~
 
 {pagebreak}
 
 - ***[.style.display](https://developer.mozilla.org/es/docs/Web/API/HTMLElement/style)***
 
-	Nos permite conocer y modificar la visualización de un elemento concreto.
+	Permítenos coñecer e modificar a visualización dun elemento concreto.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
+	var el = document.getElementById('meuDiv');
 
-	// Conocer el estado actual
+	// Coñecer o estado actual
 	console.log(el.style.display);
 
-	// No mostrar
+	// Non mostrar
 	el.style.display = 'none';
 
 	// Mostrar
@@ -484,39 +484,39 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.cloneNode()](https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode)***
 
-	Permite clonar un nodo y clonar o no, sus nodos hijo también.
+	Permite clonar un nodo e clonar o non, os seus nodos fillo tamén.
 
 	{lang=js}
 	~~~~~~~
 	var el = document.getElementById('miDiv');
 
-	// Clon simple (sin hijos)
+	// Clon simple (sen fillos)
 	var c1 = el.cloneNode();
 
-	// Clon profundo (con hijos)
+	// Clon profundo (con fillos)
 	var c2 = el.cloneNode(true);
 	~~~~~~~
 
 - ***[.innerHTML](https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML)***
-	Cambia o devuelve la sintaxis HTML de un elemento... así como de sus hijos.
+	Cambia ou devolve a séntese HTML dun elemento... así como dos seus fillos.
 
 	{lang=js}
 	~~~~~~~
 	var el = document.getElementById('miDiv');
-	// Ver el contenido
-	console.log("Contenido:", el.innerHTML);
+	// Ver o contido
+	console.log("Contido:", el.innerHTML);
 
-	// vaciar el contenido
+	// baleirar o contido
 	el.innerHTML = '';
 
-	// Sustituir el contenido
-	el.innerHTML = 'Nuevo contenido';
+	// Substituír o contido
+	el.innerHTML = 'Novo contido';
 	~~~~~~~
 
 
 - ***[.getAttribute()](https://developer.mozilla.org/es/docs/Web/API/Element/getAttribute)***
 
-	Devolver el valor de cierto atributo o una cadena vacía en caso de no existir.
+	Devolver o valor de certo atributo ou unha cadea baleira no caso de non existir.
 
 	{lang=js}
 	~~~~~~~
@@ -526,54 +526,54 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.setAttribute()](https://developer.mozilla.org/es/docs/Web/API/Element/setAttribute)***
 
-	Cambiar el valor de un atributo o lo añade si no existe.
+	Cambiar o valor dun atributo ou engádeo se non existe.
 
 	{lang=js}
 	~~~~~~~
-	var el = document.getElementById('miDiv');
-	el.setAttribute('data-secreto', 'Mucho...');
+	var el = document.getElementById('meuDiv');
+	el.setAttribute('data-secreto', 'Moito...');
 	~~~~~~~
 
 
 ## Eventos
 
-Una de las mayores barreras a la hora de introducir el dinamismo en una web es la gestión de los eventos, ya que estos son asíncronos por naturaleza, por lo que no puedes saber de antemano. Por ejemplo, cuántos segundos tardará un usuario en pinchar sobre un botón... lo que sumado a un funcionamiento peculiar con propagaciones, hace que el dominio de los eventos sea una tarea complicada.
+Unha das maiores barreiras a hora de introducir o dinamismo nunha web é a xestión dos eventos, xa que estes son asíncronos por natureza, polo que non podes saber de antemán. Por exemplo, cantos segundos tardará un usuario en pinchar sobre un botón... o que sumado a un funcionamento peculiar con propagacións, fai que o dominio dos eventos sexa unha tarefa complicada.
 
-I> Sin embargo, todo gran esfuerzo tiene una gran recompensa y el dominio de estos eventos
-I> nos abrirá las puertas a la *[programación dirigida a eventos](https://es.wikipedia.
-I> org/wiki/Programaci%C3%B3n_dirigida_por_eventos)*, y posteriormente a *[Node.js](https://
-I> nodejs.org/en/)*, si decidimos dar el gran paso hacia el *Back-End* o el *Full Stack*.
+I> Sen embargo, todo gran esforzo ten unha gran recompensa e o dominio destes eventos
+I> abriranos portas a *[programación dirixida a eventos](https://es.wikipedia.
+I> org/wiki/Programaci%C3%B3n_dirigida_por_eventos)*, é posteriormente a *[Node.js](https://
+I> nodejs.org/en/)*, se decidimos dar o gran paso ata o *Back-End* ou o *Full Stack*.
 
-### Funcionamiento
+### Funcionamento
 
-Básicamente podemos seleccionar un elemento de HTML, y suscribir uno de los posibles eventos de los que dispone:
+Basicamente podemos seleccionar un elemento de HTML, e subscribir un dos posibles eventos dos que dispón:
 
-- *[Eventos de ratón](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)*
+- *[Eventos de rato](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent)*
 - *[Eventos de teclado](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)*
-- Y *[muchos más...](https://developer.mozilla.org/es/docs/Web/Reference/Events)*
+- E *[moitos máis...](https://developer.mozilla.org/es/docs/Web/Reference/Events)*
 
-Una vez hemos definido estos detalles, en dónde escuchamos y qué esperamos, solo queda definir que haremos cuando esto ocurra.
+Unha vez definimos estes detalles, onde escoitamos e esperamos, so queda definir que faremos cando isto ocurra.
 
-Lógicamente al tratarse de asincronía, debemos definir una función, ya sea en línea o reutilizable para gestionarlo todo.
+Loxicamente ao tratarse de asincronía, debemos definir unha función, xa sexa en liña ou reutilizable pra xestionalo todo.
 
-Si necesitamos información adicional sobre el evento sucedido, el propio sistema mandará *[un objeto con detalles clave sobre el evento](https://developer.mozilla.org/en-US/docs/Web/API/Event)*, como argumento a la hora de ejecutar nuestro callback.
+Se necesitamos información adicional sobre o evento sucedido, o propio sistema mandará *[un obxecto con detalles chave sobre o evento](https://developer.mozilla.org/en-US/docs/Web/API/Event)*, como argumento a hora de executar o noso callback.
 
 
 
 ### Utilizando eventos
 
-Existen dos formas básicas de añadir eventos a nuestra aplicación. Una es por medio de html con atributos como *[onclick](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick)*, y la otra desde el JavaScript, haciendo uso de métodos como *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+Existen dúas formas básicas de engadir eventos a nosa aplicación. Unha é por medio de html con atributos como *[onclick](https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/Attribute/onclick)*, e a outra dende o JavaScript, facendo uso de métodos como *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
 
-Cuál es mejor o cuál es peor... realmente varia en función de las circunstancias del código y su programador. Yo creo firmemente, que es mucho mejor separar JavaScript, HTML y CSS.
+Cal é mellor ou cal é peor... realmente varia en función das circunstancias do código ou o seu desenvolvente. Eu creo firmemente, que é moito mellor separar JavaScript, HTML e CSS.
 
-Así evitamos el *[antipatrón ](https://es.wikipedia.org/wiki/Antipatr%C3%B3n_de_dise%C3%B1o)* de mezclar JavaScript en el HTML. Por otra parte, si encapsulas tu código en una función anónima autoejecutada, no podrás acceder a las funciones directamente desde el HTML...
+Así evitamos o *[antipatrón ](https://es.wikipedia.org/wiki/Antipatr%C3%B3n_de_dise%C3%B1o)* de mesturar JavaScript no HTML. Por outra parte, se encapsulas o teu código nunha función anónima autoexecutada, non poderás acceder as funcións directamente dende o HTML...
 
-Así que por estos motivos principales, recomendamos encarecidamente el uso de *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+Así que por estes motivos principais, recomendamos encarecidamente o uso de *[.addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
 
 
-#### Añadir un evento
+#### Engadir un evento
 
-Veamos como funciona con *onclick*.
+Vexamos como funciona co *onclick*.
 
 {lang=html}
 ~~~~~~~
@@ -583,55 +583,55 @@ Veamos como funciona con *onclick*.
 {lang=js}
 ~~~~~~~
 function cambiarFondo() {
-	// color = 'rgb(0-255,0-255,0-255)'
-	var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-	color += Math.floor((Math.random() * 255)) + ',';
-	color += Math.floor((Math.random() * 255)) + ')';
-	document.body.style.backgroundColor= color;
-	console.info("Nuevo color:", color);
+	// cor = 'rgb(0-255,0-255,0-255)'
+	var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+	cor += Math.floor((Math.random() * 255)) + ',';
+	cor += Math.floor((Math.random() * 255)) + ')';
+	document.body.style.backgroundColor= cor;
+	console.info("Nova cor:", cor);
 }
 ~~~~~~~
 
-Veamos como funciona con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
+Vexamos como funciona con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*.
 
 {lang=js}
 ~~~~~~~
 document.body.addEventListener('click', function (e) {
-    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-    color += Math.floor((Math.random() * 255)) + ',';
-    color += Math.floor((Math.random() * 255)) + ')';
-    document.body.style.backgroundColor= color;
-    console.info("Nuevo color:", color);
+    var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    cor += Math.floor((Math.random() * 255)) + ',';
+    cor += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= cor;
+    console.info("Nova cor:", cor);
 });
 ~~~~~~~
 
 #### Eliminar un evento
 
-Los eventos ocupan memoria. Es un factor a tener en cuenta, especialmente, si queremos hacer una web con un buen soporte para smartphones. Si un evento deja de tener sentido, sencillamente puedes eliminarlo con *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*.
+Os eventos ocupan memoria. É un factor a ter en conta, especialmente, se queremos facer unha web cun bo soporte pra smartphones. Se un evento deixa de ter sentido, sinxelamente podes eliminalo co *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*.
 
 {lang=js}
 ~~~~~~~
-function cambiarColor (){
-    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-    color += Math.floor((Math.random() * 255)) + ',';
-    color += Math.floor((Math.random() * 255)) + ')';
-    document.body.style.backgroundColor= color;
-    console.info("Nuevo color:", color);
+function cambiarCor (){
+    var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    cor += Math.floor((Math.random() * 255)) + ',';
+    cor += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= cor;
+    console.info("Nova cor:", cor);
 }
 
-document.body.addEventListener('click', cambiarColor);
-document.body.removeEventListener('click', cambiarColor);
+document.body.addEventListener('click', cambiarCor);
+document.body.removeEventListener('click', cambiarCor);
 ~~~~~~~
 
-#### Manejadores de eventos
+#### Manexadores de eventos
 
-Cuando se dispara un evento, podemos recopilar mucha información útil, si no ignoramos el argumento que nos pasan.
+Cando se dispara un evento, podemos recopilar moita información útil, se non ignoramos o argumento que nos pasan.
 
-Podemos fácilmente crearnos una función que nos aporte información real sobre el evento y que no ejecute ninguna acción en nuestra aplicación. Este tipo de funciones son muy útiles y deberían estar en tu kit de herramientas para desarrollar webs como un artesano de verdad.
+Podemos facilmente crearnos unha función que nos aporte información real sobre o evento e que non execute ningunha acción na nosa aplicación. Este tipo de funciones son moi útiles e deberían estar no teu kit de ferramentas pra desenvolver webs como un artesán de verdade.
 
 {lang=js}
 ~~~~~~~
-function manejadorEventos(elEvento) {
+function manexadorEventos(elEvento) {
   	// Compatibilizar el evento
   	var evento = elEvento || window.event;
 
@@ -665,20 +665,20 @@ document.addEventListener('click', function(evento){
 {lang=js}
 ~~~~~~~
 document.body.addEventListener('click', function (e) {
-    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-    color += Math.floor((Math.random() * 255)) + ',';
-    color += Math.floor((Math.random() * 255)) + ')';
-    document.body.style.backgroundColor= color;
-    console.info("Nuevo color:", color);
+    var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    cor += Math.floor((Math.random() * 255)) + ',';
+    cor += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= cor;
+    console.info("Nova cor:", cor);
 });
 
 var lanzadorEventos = new Event('click');
 document.body.dispatchEvent(lanzadorEventos);
 ~~~~~~~
 
-#### Compatibilidad con Internet Explorer <= IE8
+#### Compatibilidade co Internet Explorer <= IE8
 
-Si tienes la mala suerte de tener que dar soporte a versiones obsoletas de Internet Explorer, además de todo el sufrimiento acumulado, deberás añadirte una carga extra... y es que por aquel entonces Internet Explorer, no era compatible con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*, ni con *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*, así que necesitamos utilizar *[.attachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/attachEvent)* y *[.detachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/detachEvent)*.
+Se tes a mala sorte de ter que dar soporte a versións obsoletas de Internet Explorer, ademais de todo o sufrimento acumulado, deberás engadirte unha carga extra... e que por aqueles tempos Internet Explorer, non era compatible con *[addEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/addEventListener)*, nin con *[.removeEventListener()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/removeEventListener)*, así que necesitamos utilizar *[.attachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/attachEvent)* e *[.detachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/detachEvent)*.
 
 
 ***[.attachEvent()](https://developer.mozilla.org/es/docs/Web/API/EventTarget/attachEvent)***
@@ -686,11 +686,11 @@ Si tienes la mala suerte de tener que dar soporte a versiones obsoletas de Inter
 {lang=js}
 ~~~~~~~
 document.attachEvent('onclick', function (e) {
-    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-    color += Math.floor((Math.random() * 255)) + ',';
-    color += Math.floor((Math.random() * 255)) + ')';
-    document.body.style.backgroundColor= color;
-    console.info("Nuevo color:", color);
+    var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    cor += Math.floor((Math.random() * 255)) + ',';
+    cor += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= cor;
+    console.info("Nova cor:", cor);
 });
 ~~~~~~~
 
@@ -698,35 +698,35 @@ document.attachEvent('onclick', function (e) {
 
 {lang=js}
 ~~~~~~~
-function cambiarColor (){
-    var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-    color += Math.floor((Math.random() * 255)) + ',';
-    color += Math.floor((Math.random() * 255)) + ')';
-    document.body.style.backgroundColor= color;
-    console.info("Nuevo color:", color);
+function cambiarCor (){
+    var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+    cor += Math.floor((Math.random() * 255)) + ',';
+    cor += Math.floor((Math.random() * 255)) + ')';
+    document.body.style.backgroundColor= cor;
+    console.info("Nova cor:", cor);
 }
 
-document.body.attachEvent('onclick', cambiarColor);
-document.body.detachEvent('onclick', cambiarColor);
+document.body.attachEvent('onclick', cambiarCor);
+document.body.detachEvent('onclick', cambiarCor);
 ~~~~~~~
 
-Dado este panorama de tener que usar dos métodos diferentes, cuando además tienen una estructura similar, pero no idéntica... tenemos un reto entre manos que merece una solución duradera.
+Dado este panorama de ter que usar dous métodos diferentes, cando ademais teñen unha estrutura similar, pero non idéntica... temos un reto entre as mans que merece unha solución duradeira.
 
-Aunque descartamos enseñar el uso de *[patrones](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)*, sería injusto por nuestra parte no arrojar al menos un poco de luz sobre el asunto, así que nos gustaría mostrarte un par de trucos de *"artesano veterano"*.
+Anque descartamos ensinar o uso de *[patróns](https://es.wikipedia.org/wiki/Patr%C3%B3n_de_dise%C3%B1o)*, sería injusto pola nosa parte non arroxar ao menos un pouco de luz sobre o asunto, así que gustaríanos mostrarte un par de trucos de *"artesán veterano"*.
 
-Vamos a crear un objeto (literal), donde guardaremos todo lo necesario para manejar eventos, subiendo así el nivel de abstracción de vuestra aplicación.
+Vamos a crear un obxecto (literal), onde gardaremos todo o necesario pra manexar eventos, subindo así o nivel de abstracción da vosa aplicación.
 
-Ya no usaremos *.attachEvent()* o *.addEventListener()*. Ahora utilizaremos *.agregar()*, que internamente llamará a *.attachEvent()* o *.addEventListener()*, en función del navegador en el que nos encontremos.
+Xa non usaremos *.attachEvent()* o *.addEventListener()*. Agora utilizaremos *.engadir()*, que internamente chamará a *.attachEvent()* o *.addEventListener()*, en función do navegador no que nos atopemos.
 
-Cambiar de navegador en medio de la ejecución del script parece altamente improbable. No tiene mucho sentido comprobar cada vez que agreguemos un evento, si usaremos *.attachEvent()* o *.addEventListener()*.
+Cambiar de navegador no medio da execución do script parece altamente improbable. Non tne moito sentido comprobar cada vez que agreguemos un evento, se usaremos *.attachEvent()* o *.addEventListener()*.
 
-Por eso los patrones de diseño pueden ayudarnos a solucionar cosas así. En este caso usaremos *Init-time branching*, que es una variante de *[Lazy initialization](https://en.wikipedia.org/wiki/Lazy_initialization)*.
+Por iso os patróns de deseño poden axudarnos a solucionar cousas así. Neste caso usaremos *Init-time branching*, que é unha variante de *[Lazy initialization](https://en.wikipedia.org/wiki/Lazy_initialization)*.
 
-Básicamente crearemos un objeto con los métodos *agregar* y *quitar* vacíos. Al ejecutarse el código por primera vez, comprobaremos que navegador usamos y en función de ello sobreescribirá *agregar* y *quitar*, llamando por debajo a los métodos correspondientes.
+Basicamente crearemos un obxecto cos métodos *engadir* e *baleirar* baleiros. Ao executarse o código por vez primeira, comprobaremos que navegador usamos e en función de este sobrescribirá *engadir* y *baleirar*, chamando por debaixo aos métodos correspondentes.
 
-Es un poco más de trabajo de lo esperado, pero así es mucho mas sencillo gestionar nuestra aplicación, ya que nuestros métodos se adaptarán y no así nuestro código.
+É un pouco máis de traballo do esperado, pero así é moito mais sinxelo xestionar a nosa aplicación, xa que os nosos métodos adaptáranse e non así o noso código.
 
-El valor añadido de usar este patrón esta, en que en un solo punto tomo una decisión que se extenderá por toda nuestra aplicación.
+O valor engadido de usar este patrón esta, en que nun so punto tomo unha decisión que se estenderá por toda a nosa aplicación.
 
 {lang=js}
 ~~~~~~~
@@ -734,7 +734,7 @@ var eventos = {
 	agregar: null,
 	quitar: null,
 	manejador: function(evento) {
-        console.group("Manejador de Eventos");
+        console.group("Manexador de Eventos");
         console.log("-----------------------------");
         console.log("Type: " + evento.type); // Tipo
         console.log("Bubbles: " + evento.bubbles); // sube por el DOM
@@ -752,14 +752,14 @@ var eventos = {
 
 // Init-time branching (Patrón)
 if (typeof window.addEventListener === 'function') {
-    eventos.agregar = function(el, type, fn) {
+    eventos.engadir = function(el, type, fn) {
     	el.addEventListener(type, fn, false);
 	};
 	eventos.quitar = function(el, type, fn) {
 	   	el.removeEventListener(type, fn, false);
 	};
 } else { // Soporte para <= IE8
-    eventos.agregar = function(el, type, fn) {
+    eventos.engadir = function(el, type, fn) {
         el.attachEvent('on' + type, fn);
     };
     eventos.quitar = function(el, type, fn) {
@@ -767,30 +767,30 @@ if (typeof window.addEventListener === 'function') {
     };
 }
 
-eventos.agregar(document.body, 'click', function (e) {
-	var color = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
-	color += Math.floor((Math.random() * 255)) + ',';
-	color += Math.floor((Math.random() * 255)) + ')';
-	document.body.style.backgroundColor= color;
-	console.info("Nuevo color:", color);
+eventos.engadir(document.body, 'click', function (e) {
+	var cor = 'rgb(' + Math.floor((Math.random() * 255))+ ',';
+	cor += Math.floor((Math.random() * 255)) + ',';
+	cor += Math.floor((Math.random() * 255)) + ')';
+	document.body.style.backgroundColor= cor;
+	console.info("Nova cor:", cor);
 })
 ~~~~~~~
 
 
 #### Delegación de Eventos
 
-Una de las técnicas más útiles para ahorrar memorIa, es utilizar la *delegación de eventos*, es decir, en vez de poner un evento por cada uno de los elementos que compone una estructura de datos, es preferible hacerlo únicamente, sobre el elemento padre común a todos ellos y simplemente filtrar cuál de los hijos fue disparado.
+Unha das técnicas máis útiles pra aforrar memoria, é utilizala *delegación de eventos*, é dicir, en vez de poñer un evento por cada un dos elementos que compón unha estrutura de datos, é preferible facelo unicamente, sobre o elemento pai común a todos eles e simplemente filtrar cal dos fillos foi disparado.
 
 
-**Modo Clásico (sin delegación)**
+**Modo Clásico (sen delegación)**
 
 {lang=html}
 ~~~~~~~
-<ul id="miNav">
-	<li><a href="#nosotros">¿Quienes Somos?</a></li>
-	<li><a href="#objetivos">Los objetivos</a></li>
-	<li><a href="#equipo">Nuestro Equipo</a></li>
-	<li><a href="#detalles">Más detalles</a></li>
+<ul id="meuNav">
+	<li><a href="#nos">¿Quen Somos?</a></li>
+	<li><a href="#obxectivos">Os obxectivos</a></li>
+	<li><a href="#equipo">Noso Equipo</a></li>
+	<li><a href="#detalles">Máis detalles</a></li>
 	<li><a href="#contacta">Contactanos</a></li>
 </ul>
 ~~~~~~~
@@ -798,11 +798,11 @@ Una de las técnicas más útiles para ahorrar memorIa, es utilizar la *delegaci
 
 {lang=js}
 ~~~~~~~
-var miNav = document.getElementById("miNav");
-var miNavLinks = miNav.getElementsByTagName("a");
+var meuNav = document.getElementById("meuNav");
+var meuNavLinks = meuNav.getElementsByTagName("a");
 
-for (var i = 0; i < miNavLinks.length; i++) {
-    miNavLinks[i].onclick = function(){
+for (var i = 0; i < meuNavLinks.length; i++) {
+    meuNavLinks[i].onclick = function(){
 	    console.info(this.innerHTML);
 	}
 };
@@ -816,8 +816,8 @@ for (var i = 0; i < miNavLinks.length; i++) {
 
 {lang=js}
 ~~~~~~~
-var miNav = document.getElementById("miNav");
-miNav.onclick = function(evento){
+var meuNav = document.getElementById("meuNav");
+meuNav.onclick = function(evento){
 
 var evento = evento || window.event;
 var elemento = evento.target || evento.srcElement;
@@ -829,17 +829,17 @@ var elemento = evento.target || evento.srcElement;
 
 #### Creación de Eventos Personalizados
 
-Otra estrategia más avanzada, es hacer nuestro código más modular e interconectado por eventos, aunque esto es más típico de Node.js. En el lado del cliente también podemos hacer uso de ello.
+Outra estratexia máis avanzada, é facer o noso código máis modular e interconectado por eventos, anque isto é máis típico de Node.js. No lado do cliente tamén podemos facer uso de isto.
 
-I> Como verás incluso podemos disparar eventos, lo que amplia mucho las posibilidades para
-I> jugar con páginas web existentes desde la consola... ***[¡Yo no digo nada...!](https://gist
+I> Como verás incluso podemos disparar eventos, o que amplía moito sas posibilidades pra
+I> xogar con páxinas web existentes dende a consola... ***[¡Eu non digo nada...!](https://gist
 I> .github.com/UlisesGascon/57ed4ed61fbc987b0e3265568a27f6c4)***
 
 {lang=js}
 ~~~~~~~
-var evento = new Event('miEventoInventado');
+var evento = new Event('meuEventoInventado');
 
-document.body.addEventListener('miEventoInventado', function (e) {
+document.body.addEventListener('meuEventoInventado', function (e) {
 	console.info(e); // {isTrusted: false}
 });
 
@@ -850,15 +850,15 @@ document.body.dispatchEvent(evento);
 {pagebreak}
 
 
-## Propagación (Capturing y Bubbling)
+## Propagación (Capturing e Bubbling)
 
-Uno de los puntos de fricción más altos a la hora de trabajar con eventos, es entender como funciona la propagación que JavaScript realiza.
+Un dos puntos de fricción máis altos a hora de traballar con eventos, é entender como funciona a propagación que JavaScript realiza.
 
-![Imagen obtenida de W3C](images/eventflow.png)
+![Imaxe obtida de W3C](images/eventflow.png)
 
-La mejor manera de entenderlo es con un *[ejemplo](http://jsfiddle.net/x72ez79t/)*.
+A mellor maneira de entendelo é cun *[exemplo](http://jsfiddle.net/x72ez79t/)*.
 
-Si ejecutas el evento verás que existe un pequeño conflicto de intereses en el HTML.
+Se executas o evento verás que existe un pequeno conflito de intereses no HTML.
 
 {lang=html}
 ~~~~~~~
@@ -869,30 +869,30 @@ Si ejecutas el evento verás que existe un pequeño conflicto de intereses en el
 </div>
 ~~~~~~~
 
-Tanto *parent* como *children* tienen eventos suscritos. El problema básico, que nos encontramos es que *children* está envuelto por *parent*, lo que hace que pinchemos, donde pinchemos siempre se disparan ambos.
+Tanto *parent* como *children* teñen eventos subscritos. O problema básico, que nos atopamos é que *children* está envolto por *parent*, o que fai que pinchemos, onde pinchemos sempre dispáranse ambos.
 
-Esto se debe a la propagación, que funciona en tres fases:
+Isto debese a propagación, que funciona en tres fases:
 
 
 Capturing
 
-: Recorre todo el documento desde *document* hasta el elemento en sí.
+: Recorre todo o documento dende *document* ata o elemento en si.
 
 
 Target
 
-: Es cuando se llega al elementos en cuestión.
+: É cando chegase a elementos en cuestión.
 
 
 Bubbling
 
-: Realiza el recorrido de vuelta hacía arriba desde el elemento en sí.
+: Realiza o recorrido de volta ata arriba dende o elemento en si.
 
 
-Podemos interrumpir este proceso de propagación si hacemos uso de *[stopPropagation()](https://developer.mozilla.org/es/docs/Web/API/Event/stopPropagation)*.
+Podemos interromper este proceso de propagación se facemos uso de *[stopPropagation()](https://developer.mozilla.org/es/docs/Web/API/Event/stopPropagation)*.
 
-Como has podido ver, el ejemplo en sí que hemos utilizado aquí, fuerza un poco la situación, ya que existe mucho código duplicado y gestiona los eventos de una manera incorrecta.
+Como viche, o exemplo en si que utilizamos aquí, forza un pouco a situación, xa que existe moito código duplicado e xestiona os eventos dunha maneira incorrecta.
 
-Otro método interesante, que no debemos perder de vista es *[.preventDefault](https://developer.mozilla.org/es/docs/Web/API/Event/preventDefault)*. Evita el comportamiento por defecto, por ejemplo si queremos que un link no actúe como tal.
+Outro método interesante, que non debemos perder de vista é *[.preventDefault](https://developer.mozilla.org/es/docs/Web/API/Event/preventDefault)*. Evita o comportamento por defecto, por exemplo se queremos que un link non actúe como tal.
 
-Al contrario de lo que pueda parecer ahora mismo, la propagación es uno de los mejores aliados a la hora de gestionar nuestros eventos, como vimos anteriormente con la *delegación de eventos*.
+Ao contrario do que poda parecer agora mesmo, a propagación é un dos mellores aliados a a hora de xestionar os nosos eventos, como vimos anteriormente coa *delegación de eventos*.
