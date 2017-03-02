@@ -44,7 +44,7 @@ Los métodos más utilizados son *GET*, *POST (típico de formularios)*, *PUT* y
 
 Cuando nos llega la respuesta del servidor, siempre viene acompañada de un código numérico que nos confirma el resultado de la petición, por ejemplo, el *[mítico error 404](https://www.genbeta.com/web/error-404-not-found-historia-y-hazanas-de-este-mitico-codigo)*, que nos habremos encontrado en multitud de ocasiones navegando por la red.
 
-Estos códigos de estado puede dividirse en cinco categorías principales:
+Estos códigos de estado pueden dividirse en cinco categorías principales:
 
 - 1xx **Informativas**.
 - 2xx **Peticiones Correctas**.
@@ -55,7 +55,7 @@ Estos códigos de estado puede dividirse en cinco categorías principales:
 Siendo especialmente importantes para nosotros, los 4xx y los 5xx, ya que nos indican errores que están sucediendo y esto seguramente derive en un tráfico de datos erróneo.
 
 
-I> Aquí podéis encontrar la *[lista de completa](https://es.wikipedia.
+I> Aquí podéis encontrar la *[lista completa](https://es.wikipedia.
 I> org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)* y la *[especificación](https://tools.ietf.
 I> org/html/rfc2616#section-10)*.
 
@@ -79,7 +79,7 @@ Para hacer que todo esto fluya, es necesario comprender que juegan muchos factor
 
 Normalmente en el mundo de la web cuando nos referimos a una API, casi siempre hablamos de una API REST, que nos permite a través de una serie de urls y siguiendo una *[metodología CRUD](https://www.wikiwand.com/es/CRUD)*, trabajar con un backend desde el cliente.
 
-Esto permite conseguir datos (peticiones GET), actualizar datos (peticiones PUT), crear nuevos datos (peticiones POST) y eliminar datos (Peticiones Delete).
+Esto permite conseguir datos (peticiones GET), actualizar datos (peticiones PUT), crear nuevos datos (peticiones POST) y eliminar datos (peticiones Delete).
 
 En la mayoría de los casos, el intercambio de información entre el cliente y servidor se realiza utilizando un formato de intercambio de datos conocido como JSON y no XML como antiguamente. De todo esto hablaremos a lo largo de este último capítulo.
 
@@ -167,7 +167,7 @@ Respuesta 409
 
 Antes de realizar nuestra primera llamada Ajax, veamos como trabajar con JSON.
 
-Para la visualización, validación y conversión dinámica de datos contamos con alguna herramientas muy Útiles.
+Para la visualización, validación y conversión dinámica de datos contamos con algunas herramientas muy útiles.
 
 - *[JSONLint](http://jsonlint.com/)*
 - *[JSON Formatter & Validator](https://jsonformatter.curiousconcept.com/)*
