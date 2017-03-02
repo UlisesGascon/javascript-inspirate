@@ -173,7 +173,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
 - ***[.isArray()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/isArray)***
 
-    Retorna un booleano en función que el parámetro es un array o no.
+    Retorna un booleano en función de si el parámetro es un array o no.
 
     {lang=js}
     ~~~~~~~
@@ -394,7 +394,7 @@ I> encima los siguientes métodos y su funcionamiento... para regresar más adel
 
     {lang=js}
     ~~~~~~~
-	function tamañoValido(elemento, indice, arrreglo) {
+	function tamañoValido(elemento, indice, arreglo) {
 	  return elemento >= 10;
 	}
 	[12, 5, 8, 130, 44].some(tamañoValido);   // true
@@ -407,7 +407,7 @@ I> encima los siguientes métodos y su funcionamiento... para regresar más adel
 
     {lang=js}
     ~~~~~~~
-	function tamañoValido(elemento, indice, arrreglo) {
+	function tamañoValido(elemento, indice, arreglo) {
 	  return elemento >= 10;
 	}
 	[12, 5, 8, 130, 44].every(tamañoValido);   // false
