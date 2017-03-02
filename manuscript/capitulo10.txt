@@ -362,14 +362,14 @@ var ambitoGlobal = "Soy una variable Global!";
 
 function miFuncion () {
 	var ambitoLocal = "Soy una variable Local!";
-	console.log("Desde local puedo ver ambitoLocal?", ambitoLocal);
-	console.log("Desde local puedo ver ambitoGlobal?", ambitoGlobal);
+	console.log("Desde -local- puedo ver ambitoLocal?", ambitoLocal);
+	console.log("Desde -local- puedo ver ambitoGlobal?", ambitoGlobal);
 }
 
-console.log("Desde local puedo ver ambitoLocal?", ambitoLocal);
+console.log("Desde -global- puedo ver ambitoLocal?", ambitoLocal);
 //Uncaught ReferenceError: ambitoLocal is not defined(…)
 
-console.log("Desde local puedo ver ambitoGlobal?", ambitoGlobal);
+console.log("Desde -global- puedo ver ambitoGlobal?", ambitoGlobal);
 ~~~~~~~
 
 Este juego de ámbito local y global, puede extenderse en el entorno compartido y aislado de las funciones anidadas.
@@ -658,7 +658,7 @@ Cuando en JavaScript se habla de asincronía, lo que realmente esta ocurriendo e
 I> La mala noticia, es que recaerá en el lector todo el peso de controlar esos caballos 
 I> desbocados. 
 I> La asincronía es tan potente, que no existe otra forma de trabajar sobre Node.js. Por
-I> eso Nodejs está concebido -de principio a fin- como un sistema asíncrono.
+I> eso Node.js está concebido -de principio a fin- como un sistema asíncrono.
 
 Existen muchas formas de manejar la asincronía.
 

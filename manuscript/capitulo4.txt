@@ -263,7 +263,7 @@ Por otra parte *Switch* tiene varias desventajas notables:
 
 ## *[Operador Ternario](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Conditional_Operator)*
 
-El *operador ternario (?:)* nos ofrece una manera propia hacer estructuras condicionales.
+El *operador ternario (?:)* nos ofrece una manera propia de hacer estructuras condicionales.
 
 Este operador simplifica mucho la sintaxis propia de los condicionales, pero se desaconseja su uso para operaciones o evaluaciones múltiples.
 
