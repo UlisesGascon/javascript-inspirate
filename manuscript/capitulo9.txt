@@ -131,7 +131,8 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 	Object.defineProperties(miObjeto, {
 	  "propiedad1": {
 	    value: true,
-	    writable: true
+	    writable: true,
+	    value: "Propiedad1 original..."
 	  },
 	  "propiedad2": {
 	    value: "Cadena de texto",
@@ -139,8 +140,8 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 	  }
 	});
 	console.info(miObjeto);
-	miObjeto.propiedad = "Propiedad original Modificada";
-	console.info(miObjeto.propiedad);
+	miObjeto.propiedad1 = "Propiedad1 original Modificada";
+	console.info(miObjeto.propiedad1);
 	miObjeto.propiedad2 = "Cadena de texto... ¿modificada?";
 	console.info(miObjeto.propiedad2);
     ~~~~~~~
@@ -348,4 +349,4 @@ objetoAbreviado.propiedad1;
 Un buen manejo de objetos, nos dará las claves para poder tener una estructura de datos eficiente en nuestra aplicación y en las *[comunicaciones cliente-servidor](https://es.wikipedia.org/wiki/Cliente-servidor)*.
 
 I> Los objetos, sientan las bases sobre las que luego almacenaremos mucha más información, 
-I> en el capítulo 13, veremos mucho más sobre esto.
+I> en el capítulo 12, veremos mucho más sobre esto.
