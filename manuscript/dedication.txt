@@ -1,0 +1,60 @@
+{:: encoding="utf-8" /}
+{footnotes-off}
+
+*Most good programmers do programming not because they expect to get paid or get adulation by the public, but  because it is fun to program.*
+
+ **Linus Torvalds**
+
+{pagebreak}
+
+### Agradecementos
+
+
+Moitas gracias a todos aqueles que me asesoraron, axudado e opinado sobre os *drafts* deste traballo.
+
+Tampouco sería posible sen axuda de *[Open Source Weekends](http://osweekends.com/)*, especialmente a *[Ignacio Villanueva](https://github.com/ignaciodenuevo)*, que deseñou a incrible portada, ademais de participar na revisión xunto con [José Gallego](https://github.com/Josheriff), [Nuria Sanz](https://github.com/NuriaHill), [Carlos Hernandez](https://github.com/CodingCarlos) e [Roberto Moriyón](https://github.com/astur4). 
+
+Este libro é produto, dun aprendizaxe continuo e profundo, engadido a un intenso e constante esforzo persoal, que proxecta todo o que aprendín sendo profesor, nas empresas que traballei e as que asesorei. Así como as numerosas aportacións dos meus colegas de profesión e as dos meus propios alumnos.
+
+Estes agradecementos non estarán completos, se non recoñecera a intensa labor que realizaron os grandes desenvolventes que nos precederon, que a día a día esforzáronse en levantar unha comunidade libre e unha filosofía que me inspira pra seguir sendo un "artesán do código".
+
+Case todo este libro escribiuse a -medio camiño- entre [Tetuán Valley](http://tetuanvalley.com/) e a cafetería do [Campus de Google](https://www.campus.co/madrid/es) en Madrid. 
+
+
+{pagebreak}
+
+### Agradecementos a comunidade
+
+Por axudarme a mellorar o libro unha vez publicado reportando errores e propoñendo melloras dende [o noso repositorio](https://github.com/UlisesGascon/javascript-inspirate):
+
+- [Jorge Muñoz Rodenas](https://github.com/jorgeroden)
+- [Carlos Bravo](https://github.com/tecnicbravo)
+- [Yoel Macia Delgado](https://github.com/ymdx)
+
+{pagebreak}
+
+
+### Noutros idiomas
+
+Este libro orixinalmente foi escrito en [español](https://leanpub.com/javascript-inspirate), pero foi traducido pola comunidade aos seguintes idiomas:
+
+- [Gallego](https://leanpub.com/javascript-inspirate-gallego). Gracias a [Yoel Macia Delgado](https://github.com/ymdx)
+
+
+{pagebreak}
+
+
+### Sobre o autor
+
+{width=30%,float=left}
+![](images/ulises.jpg)
+
+Desenvolvente Full Stack JavaScript e Python. Especializado en [Internet of Things]() con [hardware libre](https://es.wikipedia.org/wiki/Hardware_libre) como [Arduino](https://es.wikipedia.org/wiki/Arduino) y [Raspberry Pi](https://es.wikipedia.org/wiki/Raspberry_Pi).
+
+Colaborador activo na comunidade de desenvolvemento de Software Libre, co-organiza [Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/).
+
+Na actualidade traballa como consultor independente e é profesor, impartindo formación sobre JavaScript, Node.js, Python e Internet of Things, entre outros.
+
+Redes Sociais: *[Github](https://github.com/ulisesGascon)* | *[Twitter](https://twitter.com/kom_256)* | *[Linkedin](https://www.linkedin.com/in/ulisesgascon/)* | *[Blog](http://www.blog.ulisesgascon.com/)*
+
+{pagebreak}
