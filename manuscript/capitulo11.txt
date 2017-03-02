@@ -114,7 +114,7 @@ function informacionSistema(){
 
 ### *[window.screen](https://developer.mozilla.org/en-US/docs/Web/API/Screen)*
 
-Esta API nos permite sacar toda la información disponible de la pantallá (márgenes, profundidad del color...), así podremos bloquear y desbloquear la rotación de la pantalla en el dispositivo.
+Esta API nos permite sacar toda la información disponible de la pantalla (márgenes, profundidad del color...), así podremos bloquear y desbloquear la rotación de la pantalla en el dispositivo.
 
 
 {lang=js}
@@ -779,7 +779,7 @@ eventos.agregar(document.body, 'click', function (e) {
 
 #### Delegación de Eventos
 
-Una de las técnicas más útiles para ahorrar memorIa, es utilizar la *delegación de eventos*, es decir, en vez de poner un evento por cada uno de los elementos que compone una estructura de datos, es preferible hacerlo únicamente, sobre el elemento padre común a todos ellos y simplemente filtrar cuál de los hijos fue disparado.
+Una de las técnicas más útiles para ahorrar memoria, es utilizar la *delegación de eventos*, es decir, en vez de poner un evento por cada uno de los elementos que compone una estructura de datos, es preferible hacerlo únicamente, sobre el elemento padre común a todos ellos y simplemente filtrar cuál de los hijos fue disparado.
 
 
 **Modo Clásico (sin delegación)**
