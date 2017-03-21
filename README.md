@@ -10,6 +10,13 @@
 > – *Linus Torvalds*
 
 
+### En otros idiomas
+
+Este libro originalmente fue escrito en [español](https://leanpub.com/javascript-inspirate), pero ha sido traducido por la comunidad a los siguientes idiomas:
+
+- [Gallego](https://leanpub.com/javascript-inspirate-gallego). Gracias a [Yoel Macia Delgado](https://github.com/ymdx)
+
+
 ### Acerca de este libro
 
 #### Un libro de programación sencillo y divertido que nos muestra como programar en JavaScript desde cero.
