@@ -416,7 +416,7 @@ W> modificaciones (año, día del mes, etc..).
     {lang=js}
     ~~~~~~~
     var ahora = new Date();
-    console.log("Con UTC: ";
+    console.log("Con UTC: ");
     console.log("==== FECHA ====");
     console.log("El año: " + ahora.getUTCFullYear());         // 4 dígitos
     console.log("El mes: " + ahora.getUTCMonth());            // 0 - 11
