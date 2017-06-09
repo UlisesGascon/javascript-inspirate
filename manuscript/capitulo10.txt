@@ -448,7 +448,7 @@ Lo contenido en el primer paréntesis contiene el código encapsulado, al igual 
 El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
 
 
-Como podemos, ver la estructura básica sería algo así:
+Como podemos ver, la estructura básica sería algo así:
 
 {lang=js}
 ~~~~~~~
