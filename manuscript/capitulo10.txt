@@ -612,9 +612,9 @@ Veamos un ejemplo, un poco condensado. Os ayudaré comentando el código:
 */
 var quieroCallback = function(p1, callback){
     // Consideramos el callback como algo opcional.
-    if ((callback){
+    if (callback){
     	// Validamos si es una función o no.
-    	if (typeof callback === 'function')){
+    	if (typeof callback === 'function'){
     		/*
     		  De ser una función lo ejecutamos y
     		  y pasamos como argumento "p1"
