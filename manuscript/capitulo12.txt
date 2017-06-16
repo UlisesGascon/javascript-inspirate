@@ -55,15 +55,13 @@ Estos códigos de estado pueden dividirse en cinco categorías principales:
 Siendo especialmente importantes para nosotros, los 4xx y los 5xx, ya que nos indican errores que están sucediendo y esto seguramente derive en un tráfico de datos erróneo.
 
 
-I> Aquí podéis encontrar la *[lista completa](https://es.wikipedia.
-I> org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)* y la *[especificación](https://tools.ietf.
-I> org/html/rfc2616#section-10)*.
+I> Aquí podéis encontrar la *[lista completa](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)*
+I> y la *[especificación](https://tools.ietf.org/html/rfc2616#section-10)*.
 
 
 W> **Misterioso estado 418**
 W>
-W> Existen algunos códigos tan increíbles como *[418. I´m a teapot](http://www.josevazquez.net/codigo
-W> -de-estado-http-418-i%C2%B4m-a-teapot/)*.
+W> Existen algunos códigos tan increíbles como *[418. I´m a teapot](http://www.josevazquez.net/codigo-de-estado-http-418-i%C2%B4m-a-teapot/)*.
 
 
 ## Trabajando con APIs
@@ -84,8 +82,8 @@ Esto permite conseguir datos (peticiones GET), actualizar datos (peticiones PUT)
 En la mayoría de los casos, el intercambio de información entre el cliente y servidor se realiza utilizando un formato de intercambio de datos conocido como JSON y no XML como antiguamente. De todo esto hablaremos a lo largo de este último capítulo.
 
 
-I> Para ilustrar un poco el ejemplo, te invito a visitar *[jsonplaceholder](https://jsonplaceholder.
-I> typicode.com/)* que es una especie de *[Lorem Ipsum](https://es.wikipedia.org/wiki/Lorem_ipsum)*
+I> Para ilustrar un poco el ejemplo, te invito a visitar *[jsonplaceholder](https://jsonplaceholder.typicode.com/)* 
+I> que es una especie de *[Lorem Ipsum](https://es.wikipedia.org/wiki/Lorem_ipsum)*
 I> para peticiones Ajax.
 
 
@@ -112,8 +110,8 @@ Petición DELETE a *api.loremblog.com/posts/hello*
 
 
 I> Partiendo de esta filosofía, podremos atrevernos con muchas APIs, tan divertidas como [Twitter](
-I> https://dev.twitter.com/), *[Facebook](https://developers.facebook.com/)*, *[Spotify](https://
-I> developer.spotify.com/web-api/)* e incluso *[Yahoo!](https://developer.yahoo.com/everything.html)*
+I> https://dev.twitter.com/), *[Facebook](https://developers.facebook.com/)*, 
+I> *[Spotify](https://developer.spotify.com/web-api/)* e incluso *[Yahoo!](https://developer.yahoo.com/everything.html)*
 
 
 
