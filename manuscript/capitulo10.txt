@@ -448,7 +448,7 @@ Lo contenido en el primer paréntesis contiene el código encapsulado, al igual 
 El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
 
 
-Como podemos, ver la estructura básica sería algo así:
+Como podemos ver, la estructura básica sería algo así:
 
 {lang=js}
 ~~~~~~~
@@ -612,9 +612,9 @@ Veamos un ejemplo, un poco condensado. Os ayudaré comentando el código:
 */
 var quieroCallback = function(p1, callback){
     // Consideramos el callback como algo opcional.
-    if ((callback){
+    if (callback){
     	// Validamos si es una función o no.
-    	if (typeof callback === 'function')){
+    	if (typeof callback === 'function'){
     		/*
     		  De ser una función lo ejecutamos y
     		  y pasamos como argumento "p1"
@@ -644,7 +644,7 @@ I> **La naturaleza de la Asincronía**
 I>
 I> Hasta ahora todo el código que vimos se ejecutaba de una manera lógica, 
 I> previsible y secuencial.
-I> Cada línea de código era ejecutada después de la anterior, tardará lo que tardrá.
+I> Cada línea de código era ejecutada después de la anterior, tardará lo que tardará.
 I> Este estilo de programación es ineficiente y bloqueante, lo que en el mundo de 
 I> la web es intolerable.
 I>

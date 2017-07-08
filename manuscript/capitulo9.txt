@@ -12,7 +12,7 @@ I>
 I> No es necesario saber *[programación orientada a objetos](https://es.wikipedia.
 I> org/wiki/Programaci%C3%B3n_orientada_a_objetos)*, para trabajar con objetos.
 
-De hecho hasta la llegada de ECMAScript 6 no había algo como *[Class](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)*, ya que en JavaScript este paradigma se hace de otra forma, gracias a *[Protoype](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype)*.
+De hecho hasta la llegada de ECMAScript 6 no había algo como *[Class](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)*, ya que en JavaScript este paradigma se hace de otra forma, gracias a *[Prototype](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/prototype)*.
 
 W> Pero... ¡no os agobiéis! con saber que no estamos haciendo *[Programación Orientada a Objetos
 W> (POO)](https://es.wikipedia.org/wiki/Programaci%C3%B3n_orientada_a_objetos)*

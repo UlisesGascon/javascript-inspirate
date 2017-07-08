@@ -266,7 +266,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 
     {lang=js}
     ~~~~~~~
-    Math.floor(20.5);   // 21
+    Math.floor(20.5);   // 20
     Math.floor(20.49);  // 20
     Math.floor(-20.51); // -21
     ~~~~~~~
@@ -416,7 +416,7 @@ W> modificaciones (año, día del mes, etc..).
     {lang=js}
     ~~~~~~~
     var ahora = new Date();
-    console.log("Con UTC: ";
+    console.log("Con UTC: ");
     console.log("==== FECHA ====");
     console.log("El año: " + ahora.getUTCFullYear());         // 4 dígitos
     console.log("El mes: " + ahora.getUTCMonth());            // 0 - 11
