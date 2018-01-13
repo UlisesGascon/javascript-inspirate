@@ -243,7 +243,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 	console.log(amigos.toString());
     ~~~~~~~
 
-- ***[.toLocalString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)***
+- ***[.toLocaleString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)***
 
     Retorna como string (configuración regional) todos los elementos.
 
