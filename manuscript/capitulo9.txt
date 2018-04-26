@@ -320,8 +320,8 @@ I> encima los siguientes métodos y su funcionamiento... para retornar más adel
 ~~~~~~~
 var miObjeto = {
 	nombre: "objeto",
-    "año": 2015,
-    "estado del sistema": "correcto"
+	"año": 2015,
+	"estado del sistema": "correcto"
 };
 
 console.log(miObjeto["año"]);

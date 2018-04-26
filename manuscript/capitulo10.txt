@@ -70,19 +70,19 @@ Las funciones, especialmente como *[parámetro (callback)](https://es.wikipedia.
 
     {lang=js}
     ~~~~~~~
-    var miFuncion = function(){
-    	console.log("Hola!");
-    }
+	var miFuncion = function(){
+		console.log("Hola!");
+	}
 
-   	function otraFunción() {
-   		console.log("Hola de nuevo!");
-   	}
+	function otraFunción() {
+		console.log("Hola de nuevo!");
+	}
 
-   	var obj = {
-   		metodo: function () {
-   			console.log("Hola... ahora como método!");
-   		}
-   	}
+	var obj = {
+		metodo: function () {
+			console.log("Hola... ahora como método!");
+		}
+	}
 
     miFuncion();
     otraFunción();

@@ -322,7 +322,7 @@ Veamos como se utilizan algunos selectores avanzados de CSS3:
 
     {lang=css}
 	~~~~~~~
-    a[href*="leanpub"] {
+    a[href*="google.es"] {
     	color:orange;
     }
 	~~~~~~~
