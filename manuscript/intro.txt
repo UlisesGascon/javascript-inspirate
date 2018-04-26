@@ -156,7 +156,7 @@ Cero coste, 0$
 
 : Este libro es completamente gratuito, con un doble objetivo, que nadie se quede sin aprender por no tener recursos y además para contribuir de este modo a la comunidad del *[software libre](https://es.wikipedia.org/wiki/Software_libre)*.
 
-: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propio plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
+: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propia plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
 
 
 Adaptable
