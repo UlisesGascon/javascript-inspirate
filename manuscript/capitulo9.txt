@@ -130,7 +130,6 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
     var miObjeto = {propiedad: "Propiedad original..."}
 	Object.defineProperties(miObjeto, {
 	  "propiedad1": {
-	    value: true,
 	    writable: true,
 	    value: "Propiedad1 original..."
 	  },
