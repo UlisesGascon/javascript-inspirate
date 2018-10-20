@@ -7,7 +7,7 @@ I> **Fiero veterano**
 I>
 I> En este capítulo, hablaremos sobre como es la computación y que se espera de un
 I> desarrollador.
-I> Si ya dominaís algun lenguaje de programación o sencillamente quiereís empezar ya mismo con JavaScript... pasad al siguiente capítulo.
+I> Si ya dominaís algún lenguaje de programación o sencillamente queréis empezar ya mismo con JavaScript, pasad al siguiente capítulo.
 
 
 ## Un mundo de máquinas
