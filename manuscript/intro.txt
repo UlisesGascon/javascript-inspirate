@@ -97,7 +97,7 @@ Testing
 
 Frameworks  *[Angular](https://angularjs.org/)*, *[React](https://facebook.github.io/react/)*, *[Polymer](https://www.polymer-project.org/1.0/)*, *[Backbone](http://backbonejs.org/)*, etc...)
 
-: *[La fiebre MV* de JavaScript](https://gist.github.com/g6scheme/4157554)* quedará fuera de este libro por motivos evidentes... pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
+: *La fiebre MV* de JavaScript* quedará fuera de este libro por motivos evidentes pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
 
 
 Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
