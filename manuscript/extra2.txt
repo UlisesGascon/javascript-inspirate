@@ -56,7 +56,7 @@ G> - *[MediaLab Prado](http://medialab-prado.es/)*
 
 Esta lista se regenera de manera automática -cada vez- que se actualiza el libro. Recoge la información pública directamente de Twitter y la organiza por orden alfabético, tomando como referencia el *@userId*.
 
-W> La lista no pretende ser exhaustiva ni completa en absoluto, por supuesto, no esta 
+W> La lista no pretende ser exhaustiva ni completa en absoluto, por supuesto, no está 
 W> todo el mundo y es meramente indicativa.
 
 

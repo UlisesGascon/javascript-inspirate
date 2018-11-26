@@ -152,7 +152,7 @@ G> - *[Facebook en 2015](http://web.archive.org/web/20150731235552/https://faceb
 
 ## El largo camino del Developer
 
-Este esquemático *[mapa mental](https://coggle.it/diagram/WF5nS6mGe9w7iwoZ)*, puede ayudaros a visualizar lo que esta ocurriendo hoy en día en la web, y comprender como los profesionales de la industria, hemos ido migrando de nombres y funciones hasta donde estamos ahora mismo, que no es definitivo y lógicamente seguirá evolucionando.
+Este esquemático *[mapa mental](https://coggle.it/diagram/WF5nS6mGe9w7iwoZ)*, puede ayudaros a visualizar lo que está ocurriendo hoy en día en la web, y comprender como los profesionales de la industria, hemos ido migrando de nombres y funciones hasta donde estamos ahora mismo, que no es definitivo y lógicamente seguirá evolucionando.
 
 ### Una historia de evolución
 

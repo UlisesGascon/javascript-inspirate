@@ -163,7 +163,7 @@ Para que la lógica del sistema pueda decidir, necesitamos reducir todo a compar
 - Operaciones lógicas
 
     * La variable "nombreUsuario" es igual a "Pepe"
-    * La variable "nombreUsuario" no esta vacía
+    * La variable "nombreUsuario" no está vacía
 
 
 A la hora de representar las opciones. *[PseInt](http://pseint.sourceforge.net/)* nos da dos opciones principales. La estructura *Si.. entonces* y *Según*, la diferencia en este contexto está en función del número de opciones.
@@ -272,7 +272,7 @@ Instrucciones
 
 - **While (Mientras)**
 
-    Esta pensado para aquellos bucles que requieran de una condición lógica y no matemática para validar la iteracción.
+    Está pensado para aquellos bucles que requieran de una condición lógica y no matemática para validar la iteracción.
 
 
 	T> Aunque lógicamente podremos mezclar entre las diversas condiciones (matemáticas y lógicas).
@@ -306,7 +306,7 @@ Instrucciones
 
 - **For (Para)**
 
-    Esta diseñado específicamente para trabajar con series de números (longitud de cadena, elementos de un array, propiedades de un objeto, etc...) y nos provee de una estructura más sencilla para gestionar el flujo.
+    Está diseñado específicamente para trabajar con series de números (longitud de cadena, elementos de un array, propiedades de un objeto, etc...) y nos provee de una estructura más sencilla para gestionar el flujo.
 
     - En Pseudocódigo:
 

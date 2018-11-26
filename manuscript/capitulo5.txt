@@ -13,7 +13,7 @@ Para el caso que os preocupe el rendimiento de vuestros bucles os dejo *[este li
 
 El primer bucle que veremos está específicamente diseñado para funcionar de manera constante, mientras una condición dada siga cumpliéndose.
 
-Este bucle esta pensado para simplificarnos la sintaxis cuando el control del bucle no se realiza mediante operaciones matemáticas (mayor que... menor que...).
+Este bucle está pensado para simplificarnos la sintaxis cuando el control del bucle no se realiza mediante operaciones matemáticas (mayor que... menor que...).
 
 ### Funcionamiento
 
@@ -240,7 +240,7 @@ for (var i = 0; i < 10; i++) {
 
 ### Exprimiendo el For
 
-Si dominamos las tres partes básicas que componen el bucle *for*, podemos plantearnos estructuras tan complejas como esta.
+Si dominamos las tres partes básicas que componen el bucle *for*, podemos plantearnos estructuras tan complejas como ésta.
 
 {lang=js}
 ~~~~~~~
@@ -258,7 +258,7 @@ T> una buena práctica.
 
 ### No refactorizar
 
-En ocasiones, el código evoluciona y no repasamos lo que habíamos construido previamente... llegando a situaciones tan monstruosas como esta.
+En ocasiones, el código evoluciona y no repasamos lo que habíamos construido previamente... llegando a situaciones tan monstruosas como ésta.
 
 * Antes de refactorizar:
 

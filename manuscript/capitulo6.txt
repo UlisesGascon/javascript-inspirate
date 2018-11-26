@@ -473,7 +473,7 @@ Los setters en el caso de las fechas están planteados como una manera de ajusta
 
     Debes tener en cuenta las leyes naturales: un día tiene 24 horas, un mes tiene un máximo de 31 días...
 
-    Si obviamos esta lógica, JavaScript improvisa una nueva fecha, pero esta no suele ser correcta.
+    Si obviamos esta lógica, JavaScript improvisa una nueva fecha, pero ésta no suele ser correcta.
 
 
     {lang=js}

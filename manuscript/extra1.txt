@@ -36,9 +36,9 @@ Esperamos que este libro os haya resultado de utilidad y que os haya ayudado a e
 
 Os proponemos algunas ideas para que podáis seguir creciendo y evolucionando, a pesar de que nuestra historia acaba aquí.
 
-Esta claro que la mejor manera de aprender un lenguaje de programación es practicando, practicando y seguir practicando...
+Está claro que la mejor manera de aprender un lenguaje de programación es practicando, practicando y seguir practicando...
 
-Estas son algunas formas sencillas pero efectivas de lograrlo:
+Éstas son algunas formas sencillas pero efectivas de lograrlo:
 
 ### Aprender a utilizar Git y GitHub
 
