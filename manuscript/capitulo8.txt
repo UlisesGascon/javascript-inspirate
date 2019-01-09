@@ -243,7 +243,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
 	console.log(amigos.toString());
     ~~~~~~~
 
-- ***[.toLocalString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)***
+- ***[.toLocaleString()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/toLocaleString)***
 
     Retorna como string (configuración regional) todos los elementos.
 
@@ -369,7 +369,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
     console.info("frutas.length:", frutas.length); // 2
     ~~~~~~~
 
-    Si deseamos conservar en un variable aquellos elementos que hemos eliminado, es necesario hacer una asignación como esta:
+    Si deseamos conservar en un variable aquellos elementos que hemos eliminado, es necesario hacer una asignación como ésta:
 
     {lang=js}
     ~~~~~~~

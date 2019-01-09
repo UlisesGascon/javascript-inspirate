@@ -9,7 +9,7 @@
 
 He tenido grandes maestros, que me han enseñado mucho y he leído muchos libros sobre este mundillo... pero nunca he logrado dar con el libro que solucionará todas las dudas o me diera una base sólida sobre la que crecer en un lenguaje tan fascinante y estigmatizado como es JavaScript.
 
-Por eso, este libro esta escrito como me hubiera gustado que fueran aquellos que yo leía cuando empezaba a programar en JavaScript.
+Por eso, este libro está escrito como me hubiera gustado que fueran aquellos que yo leía cuando empezaba a programar en JavaScript.
 
 Este libro que tienes ahora mismo ante tus ojos, es el resultado de mi esfuerzo personal, con el objeto de crear un instrumento sencillo y simple que muestre al lector la base de un lenguaje tan peculiar y extendido como JavaScript.
 
@@ -18,10 +18,10 @@ Mi idea, es empezar desde cero y hacer un viaje juntos desde los abismos profund
 
 ## Esto va de ser una comunidad
 
-Este libro esta licenciado bajo *[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)*, lo que permite compartir, distribuir, adaptarlo siempre y cuando no lo hagas con fines comerciales, atribuyas el crédito al autor y compartas las modificaciones bajo la misma licencia.
+Este libro está licenciado bajo *[Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/)*, lo que permite compartir, distribuir, adaptarlo siempre y cuando no lo hagas con fines comerciales, atribuyas el crédito al autor y compartas las modificaciones bajo la misma licencia.
 
 
-Todo el código fuente, esta en *[este repositorio de GitHub](https://github.com/UlisesGascon/javascript-inspirate)*, desde este lugar espero poder ayudaros con las dudas que os puedan ir surgiendo, y también cuento con vuestras -siempre interesantes- aportaciones y sugerencias a través de *[estos issues](https://github.com/UlisesGascon/javascript-inspirate/issues)*
+Todo el código fuente, está en *[este repositorio de GitHub](https://github.com/UlisesGascon/javascript-inspirate)*, desde este lugar espero poder ayudaros con las dudas que os puedan ir surgiendo, y también cuento con vuestras -siempre interesantes- aportaciones y sugerencias a través de *[estos issues](https://github.com/UlisesGascon/javascript-inspirate/issues)*
 
 Este libro es algo vivo y por ello estará evolucionando constantemente. Recuerda que tu puedes formar parte de todo esto, colaborando.
 
@@ -97,7 +97,7 @@ Testing
 
 Frameworks  *[Angular](https://angularjs.org/)*, *[React](https://facebook.github.io/react/)*, *[Polymer](https://www.polymer-project.org/1.0/)*, *[Backbone](http://backbonejs.org/)*, etc...)
 
-: *[La fiebre MV* de JavaScript](https://gist.github.com/g6scheme/4157554)* quedará fuera de este libro por motivos evidentes... pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
+: *La fiebre MV* de JavaScript* quedará fuera de este libro por motivos evidentes pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
 
 
 Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
@@ -156,15 +156,15 @@ Cero coste, 0$
 
 : Este libro es completamente gratuito, con un doble objetivo, que nadie se quede sin aprender por no tener recursos y además para contribuir de este modo a la comunidad del *[software libre](https://es.wikipedia.org/wiki/Software_libre)*.
 
-: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propio plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
+: Aunque el libro es gratuito, *[Leanpub](https://leanpub.com/)* permite comprar este libro al precio que tu consideres. Todos los beneficios generados serán donados integramente a *[Code Club](https://www.codeclub.org.uk/)* desde la propia plataforma de *[Leanpub](https://leanpub.com/)*. El autor no percibirá nada de esas donaciones.
 
 
 Adaptable
 
-: En principio este libro esta disponible en tres formatos básicos *pdf*, *mobi*, *epub* y su código fuente esta en *[Markua](http://markua.com/)*. Pero partiendo del [repositorio en GitHub]() puede ser convertido a más formatos.
+: En principio este libro está disponible en tres formatos básicos *pdf*, *mobi*, *epub* y su código fuente está en *[Markua](http://markua.com/)*. Pero partiendo del [repositorio en GitHub]() puede ser convertido a más formatos.
 
 
-Este libro esta vivo
+Este libro está vivo
 
 : Con el tiempo irá creciendo y mejorándose. Mantente al día desde su *[página oficial](https://leanpub.com/javascript-inspirate/)*
 
@@ -181,7 +181,7 @@ Facilidades
 
 ¡A tu ritmo!
 
-: A lo largo del libro observaréis que hay numerosos ejemplos explicativos. Sin embargo no encontraréis ejercicios, para así hacer más ágil su lectura y para que os animéis a venir a una de las muchas reuniones de la comunidad (*[JS Dojo](https://www.meetup.com/es-ES/JS-Dojo-Madrid/)*, *[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*...) y practicar con proyectos de verdad y con el tiempo lleguéis a proponer vuestros propios proyectos dentro de la comunidad.
+: A lo largo del libro observaréis que hay numerosos ejemplos explicativos. Sin embargo no encontraréis ejercicios, para así hacer más ágil su lectura y para que os animéis a venir a una de las muchas reuniones de la comunidad (*[Open Source Weekends](https://www.meetup.com/es-ES/Open-Source-Weekends/)*, *[Node Girls Madrid](https://twitter.com/nodegirlsmadrid)*...) y practicar con proyectos de verdad y con el tiempo lleguéis a proponer vuestros propios proyectos dentro de la comunidad.
 
 
 ## Convenciones utilizadas en este libro

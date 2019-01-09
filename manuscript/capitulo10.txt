@@ -70,19 +70,19 @@ Las funciones, especialmente como *[parámetro (callback)](https://es.wikipedia.
 
     {lang=js}
     ~~~~~~~
-    var miFuncion = function(){
-    	console.log("Hola!");
-    }
+	var miFuncion = function(){
+		console.log("Hola!");
+	}
 
-   	function otraFunción() {
-   		console.log("Hola de nuevo!");
-   	}
+	function otraFunción() {
+		console.log("Hola de nuevo!");
+	}
 
-   	var obj = {
-   		metodo: function () {
-   			console.log("Hola... ahora como método!");
-   		}
-   	}
+	var obj = {
+		metodo: function () {
+			console.log("Hola... ahora como método!");
+		}
+	}
 
     miFuncion();
     otraFunción();
@@ -266,7 +266,7 @@ pruebaArgumentos (1, "vale", true);
 ~~~~~~~
 
 T> Conversión array requiere de ciertos conocimientos avanzados en el uso de
-T> *[protoype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)* y
+T> *[prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)* y
 T> *[this](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this)*. Os
 T> dejo una función que os ayudará a realizar esta conversión de una forma fácil.
 T>
@@ -387,7 +387,7 @@ W> *linter* como *[JSHint](http://jshint.com/)* o *[ESLint](http://eslint.org/)*
 
 ## Funciones Anónimas
 
-En JavaScript podemos crear tantas funciones como queramos, sin embargo entre los requisitos de creación no esta incluir un nombre necesariamente.
+En JavaScript podemos crear tantas funciones como queramos, sin embargo entre los requisitos de creación no está incluir un nombre necesariamente.
 
 ### Funciones que retornan funciones
 
@@ -448,7 +448,7 @@ Lo contenido en el primer paréntesis contiene el código encapsulado, al igual 
 El segundo paréntesis es el encargado de ejecutar el bloque de código anterior, asi es como logramos que la función sea inmediatamente ejecutada dentro de un ámbito al que no podremos acceder.
 
 
-Como podemos, ver la estructura básica sería algo así:
+Como podemos ver, la estructura básica sería algo así:
 
 {lang=js}
 ~~~~~~~
@@ -612,9 +612,9 @@ Veamos un ejemplo, un poco condensado. Os ayudaré comentando el código:
 */
 var quieroCallback = function(p1, callback){
     // Consideramos el callback como algo opcional.
-    if ((callback){
+    if (callback){
     	// Validamos si es una función o no.
-    	if (typeof callback === 'function')){
+    	if (typeof callback === 'function'){
     		/*
     		  De ser una función lo ejecutamos y
     		  y pasamos como argumento "p1"
@@ -644,7 +644,7 @@ I> **La naturaleza de la Asincronía**
 I>
 I> Hasta ahora todo el código que vimos se ejecutaba de una manera lógica, 
 I> previsible y secuencial.
-I> Cada línea de código era ejecutada después de la anterior, tardará lo que tardrá.
+I> Cada línea de código era ejecutada después de la anterior, tardará lo que tardará.
 I> Este estilo de programación es ineficiente y bloqueante, lo que en el mundo de 
 I> la web es intolerable.
 I>
@@ -653,7 +653,7 @@ I> ejecución en un segundo plano.
 I> De tal forma que resulta imposible saber cuando terminarán y además antes de terminar su ejecucción se ejecutan la siguiente línea de código.
 
 
-Cuando en JavaScript se habla de asincronía, lo que realmente esta ocurriendo es que dejamos de ejecutar partes de nuestro script de manera secuencial. Esto crea un efecto curioso que tiene como consecuencia, un script muy escalable y rápido, ya que el sistema no espera a que algo termine para seguir ejecutando el resto del script.
+Cuando en JavaScript se habla de asincronía, lo que realmente está ocurriendo es que dejamos de ejecutar partes de nuestro script de manera secuencial. Esto crea un efecto curioso que tiene como consecuencia, un script muy escalable y rápido, ya que el sistema no espera a que algo termine para seguir ejecutando el resto del script.
 
 I> La mala noticia, es que recaerá en el lector todo el peso de controlar esos caballos 
 I> desbocados. 
@@ -756,7 +756,7 @@ traigoDatos(pintoDatos);
 Algunas soluciones a este problema:
 
 - No anidar en exceso... ¿Has oído hablar de la *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*?.
-- Cualquier anidación de funciones a más de dos o tres niveles esta pidiendo a gritos una refactorización.
+- Cualquier anidación de funciones a más de dos o tres niveles está pidiendo a gritos una refactorización.
 - No todas las funciones de tu código han de ser anónimas...
 - Modularizar y refactorizar son tus dos mejores amigos en JavaScript.
 - Gestiona los errores en cada función y no al final de la pila.

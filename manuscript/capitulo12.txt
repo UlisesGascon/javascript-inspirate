@@ -55,15 +55,13 @@ Estos códigos de estado pueden dividirse en cinco categorías principales:
 Siendo especialmente importantes para nosotros, los 4xx y los 5xx, ya que nos indican errores que están sucediendo y esto seguramente derive en un tráfico de datos erróneo.
 
 
-I> Aquí podéis encontrar la *[lista completa](https://es.wikipedia.
-I> org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)* y la *[especificación](https://tools.ietf.
-I> org/html/rfc2616#section-10)*.
+I> Aquí podéis encontrar la *[lista completa](https://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP)*
+I> y la *[especificación](https://tools.ietf.org/html/rfc2616#section-10)*.
 
 
 W> **Misterioso estado 418**
 W>
-W> Existen algunos códigos tan increíbles como *[418. I´m a teapot](http://www.josevazquez.net/codigo
-W> -de-estado-http-418-i%C2%B4m-a-teapot/)*.
+W> Existen algunos códigos tan increíbles como *[418. I´m a teapot](http://www.josevazquez.net/codigo-de-estado-http-418-i%C2%B4m-a-teapot/)*.
 
 
 ## Trabajando con APIs
@@ -84,8 +82,8 @@ Esto permite conseguir datos (peticiones GET), actualizar datos (peticiones PUT)
 En la mayoría de los casos, el intercambio de información entre el cliente y servidor se realiza utilizando un formato de intercambio de datos conocido como JSON y no XML como antiguamente. De todo esto hablaremos a lo largo de este último capítulo.
 
 
-I> Para ilustrar un poco el ejemplo, te invito a visitar *[jsonplaceholder](https://jsonplaceholder.
-I> typicode.com/)* que es una especie de *[Lorem Ipsum](https://es.wikipedia.org/wiki/Lorem_ipsum)*
+I> Para ilustrar un poco el ejemplo, te invito a visitar *[jsonplaceholder](https://jsonplaceholder.typicode.com/)* 
+I> que es una especie de *[Lorem Ipsum](https://es.wikipedia.org/wiki/Lorem_ipsum)*
 I> para peticiones Ajax.
 
 
@@ -112,14 +110,14 @@ Petición DELETE a *api.loremblog.com/posts/hello*
 
 
 I> Partiendo de esta filosofía, podremos atrevernos con muchas APIs, tan divertidas como [Twitter](
-I> https://dev.twitter.com/), *[Facebook](https://developers.facebook.com/)*, *[Spotify](https://
-I> developer.spotify.com/web-api/)* e incluso *[Yahoo!](https://developer.yahoo.com/everything.html)*
+I> https://dev.twitter.com/), *[Facebook](https://developers.facebook.com/)*, 
+I> *[Spotify](https://developer.spotify.com/web-api/)* e incluso *[Yahoo!](https://developer.yahoo.com/everything.html)*
 
 
 
 ## Peticiones AJAX
 
-Ya hemos visto que las peticiones Ajax son la esencia en la web de hoy, pero siempre que las utilicemos, debemos recordar, que nosotros somos consumidores/generadores de datos y que nuestra aplicación, esta dependiendo de manera permanente de otros sistemas.
+Ya hemos visto que las peticiones Ajax son la esencia en la web de hoy, pero siempre que las utilicemos, debemos recordar, que nosotros somos consumidores/generadores de datos y que nuestra aplicación, está dependiendo de manera permanente de otros sistemas.
 
 Esto quiere decir, que puede haber errores en su código, que hagan que las respuestas a nuestras peticiones no traigan los datos como esperamos. Por tanto, tendremos que hacer un esfuerzo adicional para validar todos los datos que recibimos. En ocasiones la documentación sobre la API, puede ser poco precisa o estar desfasada... dejándonos en una situación muy comprometida.
 
@@ -145,7 +143,7 @@ Respuesta 204
 
 Respuesta 401
 
-: *No autorizado*. Hemos olvidado utilizar el token. O nuestro token no esta correctamente configurado.
+: *No autorizado*. Hemos olvidado utilizar el token. O nuestro token no está correctamente configurado.
 
 
 Respuesta 403
@@ -318,7 +316,7 @@ Y por ello, cualquier petición que hagamos desde el navegador cliente no podrá
 
 La mejor solución, es comunicarnos con los responsables de la API y facilitarles *[este link](http://enable-cors.org/index.html)*, donde *[Monsur Hossain](http://monsur.hossa.in/)* y *[Michael Hausenblas](http://mhausenblas.info/)*, explican como realizar las configuraciones adecuadas en muchos entornos.
 
-Si por desgracia esta opción esta descartada, no pasa nada.... existen más posibilidades.
+Si por desgracia esta opción está descartada, no pasa nada.... existen más posibilidades.
 
 La primera y más útil es crear/configurar/usar un *[proxy](https://es.wikipedia.org/wiki/Servidor_proxy)*. La idea del proxy, es que realice una petición capturando esos datos y enviándolos de nuevo, teniendo CORS habilitado en la cabecera, de tal forma que podremos hacer peticiones Ajax, aunque tengamos que pasar por nuestro servidor.
 

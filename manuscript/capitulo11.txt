@@ -12,7 +12,7 @@ A la hora de trabajar con el navegador fuera de la consola, disponemos básicame
 
 JavaScript
 
-: Que es lo que intentamos aprender a lo largo de este libro, y que nos permite en esencia programar sobre la web que esta renderizada en el cliente.
+: Que es lo que intentamos aprender a lo largo de este libro, y que nos permite en esencia programar sobre la web que está renderizada en el cliente.
 
 
 BOM
@@ -59,11 +59,11 @@ history.forward();
 ### *[window.navigator](https://developer.mozilla.org/es/docs/Web/API/Navigator)*
 
 
-Es un API que nos permite sacar gran cantidad de información sobre la máquina donde se esta ejecutando nuestro script. Incluso dispone de algunos métodos tan interesantes como *[Navigator.vibrate()](https://developer.mozilla.org/es/docs/Web/API/Navigator/vibrate)*, que permite hacer vibrar el dispositivo (siempre que sea compatible).
+Es un API que nos permite sacar gran cantidad de información sobre la máquina donde se está ejecutando nuestro script. Incluso dispone de algunos métodos tan interesantes como *[Navigator.vibrate()](https://developer.mozilla.org/es/docs/Web/API/Navigator/vibrate)*, que permite hacer vibrar el dispositivo (siempre que sea compatible).
 
 En el siguiente ejemplo, hacemos una lectura de gran información del sistema y además hacemos un par de cálculos interesantes para confirmar el nivel de batería.
 
-En la línea 28 hemos utilizado una *[promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, ya que *[navigator.getBattery()](https://developer.mozilla.org/es/docs/Web/API/Navigator/getBattery) lo requiere así. Recuerda que esta es otra de las formas válidas, que existen para manejar la asincronía.*
+En la línea 28 hemos utilizado una *[promesa](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Promesa)*, ya que *[navigator.getBattery()](https://developer.mozilla.org/es/docs/Web/API/Navigator/getBattery) lo requiere así. Recuerda que ésta es otra de las formas válidas, que existen para manejar la asincronía.*
 
 
 
@@ -322,7 +322,7 @@ Veamos como se utilizan algunos selectores avanzados de CSS3:
 
     {lang=css}
 	~~~~~~~
-    a[href*="leanpub"] {
+    a[href*="google.es"] {
     	color:orange;
     }
 	~~~~~~~
@@ -726,7 +726,7 @@ Básicamente crearemos un objeto con los métodos *agregar* y *quitar* vacíos. 
 
 Es un poco más de trabajo de lo esperado, pero así es mucho mas sencillo gestionar nuestra aplicación, ya que nuestros métodos se adaptarán y no así nuestro código.
 
-El valor añadido de usar este patrón esta, en que en un solo punto tomo una decisión que se extenderá por toda nuestra aplicación.
+El valor añadido de usar este patrón está en que en un solo punto tomo una decisión que se extenderá por toda nuestra aplicación.
 
 {lang=js}
 ~~~~~~~

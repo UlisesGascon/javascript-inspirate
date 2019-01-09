@@ -7,7 +7,7 @@ def change_text(text):
 
 developers_md = ""
 
-developers = ["AriyaHidayat", "BrendanEich", "DotProto", "John_Papa", "MatiasArriola", "PascalPrecht", "SachaGreif", "SimoAhava", "addyosmani", "alexnavasardyan", "amasad", "brianleroux", "codepo8", "codylindley", "codingcarlos", "davidwalshblog", "dejan_dimic", "dshaw", "ducntq", "elijahmanor", "erikthedev_", "firede", "garu_rj", "gavrisimo", "gibson042", "greybax", "idangazit", "jamsyoung", "jdalton", "jeresig", "jfroffice", "kahliltweets", "kentcdodds", "kom_256", "l0ckys", "ladyleet", "leobetosouza", "marcotrulla", "marocchino", "mathias", "mihaipaun", "nataliemac", "nicksalloum_", "okuryu", "os_weekends", "ossreleasefeed", "paul_irish", "rauschma", "rem", "remotesynth", "rmurphey", "roebuk", "rwaldron", "stephanlindauer", "tomdale", "trevnorris", "umaar", "wecodesign", "yotamofek"]
+developers = ["AriyaHidayat", "BrendanEich", "DotProto", "John_Papa", "MatiasArriola", "PascalPrecht", "SachaGreif", "SimoAhava", "addyosmani", "alexnavasardyan", "amasad", "brianleroux", "codepo8", "codylindley", "codingcarlos", "davidwalshblog", "dejan_dimic", "dshaw", "ducntq", "elijahmanor", "erikthedev_", "firede", "garu_rj", "gavrisimo", "gibson042", "greybax", "idangazit", "jamsyoung", "jdalton", "jeresig", "jfroffice", "kahliltweets", "kentcdodds", "kom_256", "l0ckys", "ladyleet", "leobetosouza", "marcotrulla", "marocchino", "mathias", "mihaipaun", "nataliemac", "nicksalloum_", "okuryu", "os_weekends", "ossreleasefeed", "paul_irish", "rauschma", "rem", "remotesynth", "rmurphey", "roebuk", "rwaldron", "stephanlindauer", "tomdale", "trevnorris", "umaar", "wecodesign", "yotamofek", "_ericelliott", "slicknet"]
 
 for developer in developers:
     
