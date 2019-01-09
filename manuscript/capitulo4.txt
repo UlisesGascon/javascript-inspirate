@@ -267,7 +267,7 @@ El *operador ternario (?:)* nos ofrece una manera propia de hacer estructuras co
 
 Este operador simplifica mucho la sintaxis propia de los condicionales, pero se desaconseja su uso para operaciones o evaluaciones múltiples.
 
-I> Si estas empezando con JavaScript, debes tener en cuenta, que es un operador que resulta difícil
+I> Si estás empezando con JavaScript, debes tener en cuenta, que es un operador que resulta difícil
 I> de recordar al principio. Siendo bastante común su uso especialmente en proyectos desarrollados
 I> con Node.js.
 

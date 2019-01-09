@@ -387,7 +387,7 @@ W> *linter* como *[JSHint](http://jshint.com/)* o *[ESLint](http://eslint.org/)*
 
 ## Funciones Anónimas
 
-En JavaScript podemos crear tantas funciones como queramos, sin embargo entre los requisitos de creación no esta incluir un nombre necesariamente.
+En JavaScript podemos crear tantas funciones como queramos, sin embargo entre los requisitos de creación no está incluir un nombre necesariamente.
 
 ### Funciones que retornan funciones
 
@@ -653,7 +653,7 @@ I> ejecución en un segundo plano.
 I> De tal forma que resulta imposible saber cuando terminarán y además antes de terminar su ejecucción se ejecutan la siguiente línea de código.
 
 
-Cuando en JavaScript se habla de asincronía, lo que realmente esta ocurriendo es que dejamos de ejecutar partes de nuestro script de manera secuencial. Esto crea un efecto curioso que tiene como consecuencia, un script muy escalable y rápido, ya que el sistema no espera a que algo termine para seguir ejecutando el resto del script.
+Cuando en JavaScript se habla de asincronía, lo que realmente está ocurriendo es que dejamos de ejecutar partes de nuestro script de manera secuencial. Esto crea un efecto curioso que tiene como consecuencia, un script muy escalable y rápido, ya que el sistema no espera a que algo termine para seguir ejecutando el resto del script.
 
 I> La mala noticia, es que recaerá en el lector todo el peso de controlar esos caballos 
 I> desbocados. 
@@ -756,7 +756,7 @@ traigoDatos(pintoDatos);
 Algunas soluciones a este problema:
 
 - No anidar en exceso... ¿Has oído hablar de la *[complejidad ciclomática](https://es.wikipedia.org/wiki/Complejidad_ciclom%C3%A1tica)*?.
-- Cualquier anidación de funciones a más de dos o tres niveles esta pidiendo a gritos una refactorización.
+- Cualquier anidación de funciones a más de dos o tres niveles está pidiendo a gritos una refactorización.
 - No todas las funciones de tu código han de ser anónimas...
 - Modularizar y refactorizar son tus dos mejores amigos en JavaScript.
 - Gestiona los errores en cada función y no al final de la pila.

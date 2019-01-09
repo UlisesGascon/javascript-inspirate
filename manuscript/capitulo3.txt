@@ -586,7 +586,7 @@ I> En el caso de depuración y prototipado de código puede ser un recurso muy �
 
     {lang=js}
     ~~~~~~~
-    confirm("¿Esta seguro que desea abandonar esta web?");
+    confirm("¿Está seguro que desea abandonar esta web?");
     ~~~~~~~
 
 	Ejemplo:

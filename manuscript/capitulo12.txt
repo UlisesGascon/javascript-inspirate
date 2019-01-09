@@ -117,7 +117,7 @@ I> *[Spotify](https://developer.spotify.com/web-api/)* e incluso *[Yahoo!](https
 
 ## Peticiones AJAX
 
-Ya hemos visto que las peticiones Ajax son la esencia en la web de hoy, pero siempre que las utilicemos, debemos recordar, que nosotros somos consumidores/generadores de datos y que nuestra aplicación, esta dependiendo de manera permanente de otros sistemas.
+Ya hemos visto que las peticiones Ajax son la esencia en la web de hoy, pero siempre que las utilicemos, debemos recordar, que nosotros somos consumidores/generadores de datos y que nuestra aplicación, está dependiendo de manera permanente de otros sistemas.
 
 Esto quiere decir, que puede haber errores en su código, que hagan que las respuestas a nuestras peticiones no traigan los datos como esperamos. Por tanto, tendremos que hacer un esfuerzo adicional para validar todos los datos que recibimos. En ocasiones la documentación sobre la API, puede ser poco precisa o estar desfasada... dejándonos en una situación muy comprometida.
 
@@ -143,7 +143,7 @@ Respuesta 204
 
 Respuesta 401
 
-: *No autorizado*. Hemos olvidado utilizar el token. O nuestro token no esta correctamente configurado.
+: *No autorizado*. Hemos olvidado utilizar el token. O nuestro token no está correctamente configurado.
 
 
 Respuesta 403
@@ -316,7 +316,7 @@ Y por ello, cualquier petición que hagamos desde el navegador cliente no podrá
 
 La mejor solución, es comunicarnos con los responsables de la API y facilitarles *[este link](http://enable-cors.org/index.html)*, donde *[Monsur Hossain](http://monsur.hossa.in/)* y *[Michael Hausenblas](http://mhausenblas.info/)*, explican como realizar las configuraciones adecuadas en muchos entornos.
 
-Si por desgracia esta opción esta descartada, no pasa nada.... existen más posibilidades.
+Si por desgracia esta opción está descartada, no pasa nada.... existen más posibilidades.
 
 La primera y más útil es crear/configurar/usar un *[proxy](https://es.wikipedia.org/wiki/Servidor_proxy)*. La idea del proxy, es que realice una petición capturando esos datos y enviándolos de nuevo, teniendo CORS habilitado en la cabecera, de tal forma que podremos hacer peticiones Ajax, aunque tengamos que pasar por nuestro servidor.
 
