@@ -30,7 +30,6 @@ Por ayudarme a mejorar el libro una vez publicado reportando errores y proponien
 - [Jorge Muñoz Rodenas](https://github.com/jorgeroden)
 - [Carlos Bravo](https://github.com/tecnicbravo)
 - [Yoel Macia Delgado](https://github.com/ymdx)
-- [Teba Gomez](https://github.com/kooltheba)
 - [Andrés `(@7vlr)`](https://twitter.com/7vlr)
 - [Theba Gómez](https://twitter.com/KoolTheba)
 - [Álvaro Ramírez](https://github.com/AlvaroRM88)
@@ -68,5 +67,9 @@ Colaborador activo en la comunidad de desarrollo de Software Libre, co-organiza 
 En la actualidad trabaja como consultor independiente y es profesor, impartiendo formación sobre JavaScript, Node.js, Python e Internet of Things, entre otros.
 
 Redes Sociales: *[Github](https://github.com/ulisesGascon)* | *[Twitter](https://twitter.com/kom_256)* | *[Linkedin](https://www.linkedin.com/in/ulisesgascon/)* | *[Blog](http://www.blog.ulisesgascon.com/)*
+
+
+### Sobre el libro
+version: *v1.0.2*
 
 {pagebreak}
