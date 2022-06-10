@@ -299,7 +299,7 @@ Hacemos una recopilación simplificada de los métodos más utilizados, aunque e
   	var index = array.indexOf(12); // -1
     ~~~~~~~
 
-- ***[.lastIdexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/lastIndexOf)***
+- ***[.lastIndexOf()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/lastIndexOf)***
 
     Devuelve la posición del último elemento en sí que coincide ó -1, si no lo encuentra.
 
