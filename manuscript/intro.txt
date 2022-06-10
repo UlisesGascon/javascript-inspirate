@@ -100,7 +100,7 @@ Frameworks  *[Angular](https://angularjs.org/)*, *[React](https://facebook.githu
 : *La fiebre MV* de JavaScript* quedará fuera de este libro por motivos evidentes pero recuerda que aqui utilizaremos el *[framework](https://es.wikipedia.org/wiki/Framework)* de JavaScript más popular y veterano, *[Vanilla-js](http://vanilla-js.com/)*.
 
 
-Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Momments.js](http://momentjs.com/)*...)
+Librerías  *[Jquery](https://jquery.com/)*, *[Mathjs](http://mathjs.org/)*, *[Moment.js](http://momentjs.com/)*...)
 
 : La idea de este libro es trabajar sobre JavaScript -vieja escuela-, al estilo de *[Douglas Crockford](https://en.wikipedia.org/wiki/Douglas_Crockford)*. Por eso no trabajaremos con *[JQuery](https://jquery.com/)* directamente, ni con ninguna otra librería, aunque si recomendaremos otras muchas librerías.
 
